@@ -32,58 +32,6 @@ export const TextbookView = ({
     onViewChange(view);
   };
 
-  // const CardView = () => (
-  //   <div className="space-y-6">
-  //     {textbook.chapters.map((chapter) => (
-  //       <Card 
-  //         key={chapter.id}
-  //         className="bg-card text-card-foreground hover:shadow-lg transition-shadow"
-  //       >
-  //         <CardHeader>
-  //           <CardTitle className="text-foreground text-foreground">
-  //             {chapter.title}
-  //           </CardTitle>
-  //           <p className="text-muted-foreground">
-  //             {chapter.description}
-  //           </p>
-  //         </CardHeader>
-  //         <CardContent>
-  //           <div className="text-muted-foreground">
-  //             <p className="mb-4">
-  //               {chapter.problemSets.length} sections {" • "} 
-  //               {chapter.problemSets.reduce((total, set) => 
-  //                 total + set.problems.length, 0
-  //               )} problems
-  //             </p>
-  //           </div>
-  //           <Button 
-  //             onClick={() => onSelectChapter(chapter)}
-  //             className="flex items-center"
-  //           >
-  //             View chapter <ChevronRight className="w-4 h-4 ml-1" />
-  //           </Button>
-  //         </CardContent>
-  //       </Card>
-  //     ))}
-  //   </div>
-  // );
-
-  // const CompactView = () => (
-  //   <div className="p-6 bg-card text-card-foreground rounded-lg">
-  //     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-  //       {textbook.chapters.map((chapter) => (
-  //         <button
-  //           key={chapter.id}
-  //           onClick={() => onSelectChapter(chapter)}
-  //           className="text-left p-2 rounded text-primary hover:text-primary/80"
-  //         >
-  //           {chapter.title}
-  //         </button>
-  //       ))}
-  //     </div>
-  //   </div>
-  // );
-
   return (
     <div className="max-w-4xl mx-auto p-8">
       <div className="mb-8">
@@ -97,10 +45,10 @@ export const TextbookView = ({
 
       <div className="space-y-4 mb-8">
         <div className="flex justify-between items-center">
-          <h1 className="text-4xl font-bold text-foreground">
+          <h1 className="text-3xl font-bold text-foreground">
             {textbook.title}
           </h1>
-          <div className="flex space-x-2">
+          <div className="flex space-x-3">
             <Button
               variant="outline"
               size="icon"
@@ -109,7 +57,7 @@ export const TextbookView = ({
                 "bg-background",
                 "hover:bg-transparent",
                 viewType === 'card' 
-                  ? 'ring-2 ring-primary/30' 
+                  ? 'ring-2 ring-yellow-500/30' 
                   : ''
               )}
             >
@@ -128,7 +76,7 @@ export const TextbookView = ({
                 "bg-background",
                 "hover:bg-transparent",
                 viewType === 'compact' 
-                  ? 'ring-2 ring-primary/30' 
+                  ? 'ring-2 ring-yellow-500/30' 
                   : ''
               )}
             >
@@ -146,7 +94,6 @@ export const TextbookView = ({
         </p>
       </div>
 
-      {/* {viewType === 'card' ? <CardView /> : <CompactView />} */}
       <ContentView
         items={textbook.chapters}
         viewType={viewType}

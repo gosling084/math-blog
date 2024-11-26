@@ -57,8 +57,8 @@ export const ProblemView = ({
 
       {/* Problem content with hint - buttons on one line */}
       <Card className="bg-card text-card-foreground">
-        <CardHeader>
-          <CardTitle className="text-foreground bg-card text-card-foreground">
+        <CardHeader className="space-y-1">
+          <CardTitle className="text-2xl text-foreground bg-card">
             Problem {problem.number}
           </CardTitle>
           <p className="text-muted-foreground">
@@ -68,9 +68,6 @@ export const ProblemView = ({
         <CardContent className="space-y-8">
           {/* Problem Statement */}
           <div>
-            <h2 className="text-xl font-bold mb-4 bg-card text-card-foreground">
-              Problem Statement
-            </h2>
             <div className="math-content">
               <MathContent content={problem.content} />
             </div>
@@ -107,7 +104,7 @@ export const ProblemView = ({
           {/* Hint Content */}
           {showHint && problem.hint !== "" && (
             <div>
-              <h2 className="text-xl font-bold mb-4 bg-card text-card-foreground">
+              <h2 className="text-2xl mb-4 text-foreground bg-card">
                 Hint
               </h2>
               <div className="math-content">
@@ -119,7 +116,7 @@ export const ProblemView = ({
           {/* Solution Content */}
           {showSolution && (
             <div>
-              <h2 className="text-xl font-bold mb-4 bg-card text-card-foreground">
+              <h2 className="text-2xl mb-4 text-foreground bg-card">
                 Solution
               </h2>
               <div className="math-content">

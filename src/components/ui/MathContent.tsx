@@ -1,7 +1,26 @@
-// src/components/MathContent.tsx
-"use client";
-import React from 'react';
-import katex from 'katex';
+// src/components/ui/MathContent.tsx
+import React, { useEffect, useRef } from 'react';
+import { cn } from "@/lib/utils";
+
+declare global {
+  interface Window {
+    MathJax: {
+      typesetPromise: (elements?: (HTMLElement | null)[]) => Promise<void>;
+      typeset?: (elements?: (HTMLElement | null)[]) => void;
+      tex?: {
+        inlineMath: string[][];
+        displayMath: string[][];
+      };
+      startup?: {
+        promise: Promise<void>;
+      };
+      hub?: {
+        Queue: (callback: () => void) => void;
+        Typeset: (element?: HTMLElement) => void;
+      };
+    };
+  }
+}
 
 interface MathContentProps {
   content: string;
@@ -9,31 +28,22 @@ interface MathContentProps {
 }
 
 export const MathContent = ({ content, className = '' }: MathContentProps) => {
-  const renderContent = React.useMemo(() => {
-    try {
-      return content.split(/(\$\$.*?\$\$|\$.*?\$)/gs).map((text, index) => {
-        if (text.startsWith('$')) {
-          const isDisplayMode = text.startsWith('$$');
-          const tex = isDisplayMode ? text.slice(2, -2) : text.slice(1, -1);
-          return (
-            <span
-              key={index}
-              dangerouslySetInnerHTML={{
-                __html: katex.renderToString(tex, {
-                  displayMode: isDisplayMode,
-                  throwOnError: false
-                })
-              }}
-            />
-          );
-        }
-        return <span key={index}>{text}</span>;
-      });
-    } catch (e) {
-      console.error('KaTeX error:', e);
-      return content;
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    if (window.MathJax?.typesetPromise) {
+      window.MathJax.typesetPromise([containerRef.current]);
     }
   }, [content]);
 
-  return <div className={className}>{renderContent}</div>;
+  return (
+    <div 
+      ref={containerRef} 
+      className={cn("math-content prose", className)}
+    >
+      {content}
+    </div>
+  );
 };

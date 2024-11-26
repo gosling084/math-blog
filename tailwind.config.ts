@@ -10,6 +10,16 @@ const config: Config = {
   
   theme: {
   	extend: {
+		fontFamily: {
+			sans: ['Inter', 'system-ui', 'sans-serif'],
+			serif: ['Georgia', 'Cambria', 'serif'],
+			mono: ['Consolas', 'Monaco', 'monospace'],
+			// Add more custom fonts:
+			math: ['Computer Modern', 'Latin Modern Math', 'serif'],  // Common math fonts
+			times: ['Times New Roman', 'serif'],
+			garamond: ['Garamond', 'serif'],
+			palatino: ['Palatino', 'serif']
+		  },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -63,5 +73,15 @@ const config: Config = {
 	require("tailwindcss-animate"),
 	require("@tailwindcss/typography")
 ],
+safelist: [
+    'font-default',
+    'font-serif',
+    'font-mono',
+    'font-times',
+    'text-size-small',
+    'text-size-default',
+    'text-size-large',
+    'text-size-xl'
+  ]
 };
 export default config;

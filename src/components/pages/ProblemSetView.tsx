@@ -58,10 +58,10 @@ interface ProblemSetViewProps {
         {/* Problem Set header with view toggle */}
         <div className="space-y-4 mb-8">
           <div className="flex justify-between items-center">
-            <h1 className="text-4xl font-bold text-card-foreground">
+            <h1 className="text-3xl font-bold text-card-foreground">
               {problemSet.title}
             </h1>
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               <Button
                 variant="outline"
                 size="icon"
