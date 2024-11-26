@@ -124,6 +124,14 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   
+  .font-times {
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .font-palatino {
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  }
+  
   .font-serif {
     font-family: Georgia, Times, "Times New Roman", serif;
   }
@@ -132,8 +140,17 @@
     font-family: Consolas, Monaco, "Courier New", monospace;
   }
   
-  .font-times {
-    font-family: "Times New Roman", Times, serif;
+  .font-courier {
+    font-family: "Courier New", Courier, "Lucida Console", monospace;
+  }
+
+  .font-arial {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .font-terminal {
+    font-family: "Lucida Console", Monaco, "DejaVu Sans Mono", monospace;
+    letter-spacing: 0.05em;
   }
 
   /* Enhanced font size classes with header and math-content scaling */
@@ -281,7 +298,7 @@
   }
 
   .math-content {
-    @apply prose max-w-none bg-card;
+    @apply prose max-w-none bg-card whitespace-pre-wrap;
     /* Light theme (default) */
     @apply text-card-foreground;
     

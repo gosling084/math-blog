@@ -13,9 +13,26 @@ import {
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Type } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 export function FontToggle() {
   const { settings, setFontFamily, setFontSize } = useFont();
+
+  const fontOptions = [
+    { value: 'default', label: 'System UI', className: 'font-default' },
+    { value: 'arial', label: 'Arial', className: 'font-arial' },
+    { value: 'serif', label: 'Georgia', className: 'font-serif' },
+    { value: 'mono', label: 'Monospace', className: 'font-mono' },
+    { value: 'terminal', label: 'Terminal', className: 'font-terminal' },  // using Lucida Console
+    { value: 'times', label: 'Times New Roman', className: 'font-times' },
+  ];
+
+  const sizeOptions = [
+    { value: 'small', label: 'Small' },
+    { value: 'default', label: 'Default' },
+    { value: 'large', label: 'Large' },
+    { value: 'xl', label: 'Extra Large' }
+  ];
 
   return (
     <DropdownMenu>
@@ -29,26 +46,19 @@ export function FontToggle() {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>Font Family</DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
-            <DropdownMenuItem onClick={() => setFontFamily("default")}>
-              <span className={settings.family === "default" ? "font-bold" : ""}>
-                Default
-              </span>
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setFontFamily("serif")}>
-              <span className={settings.family === "serif" ? "font-bold" : ""}>
-                Serif
-              </span>
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setFontFamily("mono")}>
-              <span className={settings.family === "mono" ? "font-bold" : ""}>
-                Monospace
-              </span>
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setFontFamily("times")}>
-              <span className={settings.family === "times" ? "font-bold" : ""}>
-                Times New Roman
-              </span>
-            </DropdownMenuItem>
+            {fontOptions.map((font) => (
+              <DropdownMenuItem 
+                key={font.value}
+                onClick={() => setFontFamily(font.value as any)}
+              >
+                <span className={cn(
+                  font.className,
+                  settings.family === font.value && "font-bold"
+                )}>
+                  {font.label}
+                </span>
+              </DropdownMenuItem>
+            ))}
           </DropdownMenuSubContent>
         </DropdownMenuSub>
         
@@ -57,26 +67,16 @@ export function FontToggle() {
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>Font Size</DropdownMenuSubTrigger>
           <DropdownMenuSubContent>
-            <DropdownMenuItem onClick={() => setFontSize("small")}>
-              <span className={settings.size === "small" ? "font-bold" : ""}>
-                Small
-              </span>
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setFontSize("default")}>
-              <span className={settings.size === "default" ? "font-bold" : ""}>
-                Default
-              </span>
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setFontSize("large")}>
-              <span className={settings.size === "large" ? "font-bold" : ""}>
-                Large
-              </span>
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => setFontSize("xl")}>
-              <span className={settings.size === "xl" ? "font-bold" : ""}>
-                Extra Large
-              </span>
-            </DropdownMenuItem>
+            {sizeOptions.map((size) => (
+              <DropdownMenuItem 
+                key={size.value}
+                onClick={() => setFontSize(size.value as any)}
+              >
+                <span className={settings.size === size.value ? "font-bold" : ""}>
+                  {size.label}
+                </span>
+              </DropdownMenuItem>
+            ))}
           </DropdownMenuSubContent>
         </DropdownMenuSub>
       </DropdownMenuContent>
