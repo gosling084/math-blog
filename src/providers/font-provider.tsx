@@ -2,7 +2,7 @@
 'use client';
 import { createContext, useContext, useState, useEffect } from 'react';
 
-type FontFamily = 
+export type FontFamily = 
   | 'default' 
   | 'times' 
   | 'palatino'
@@ -11,7 +11,7 @@ type FontFamily =
   | 'courier'
   | 'arial'
   | 'terminal';
-type FontSize = 'small' | 'default' | 'large' | 'xl';
+export type FontSize = 'small' | 'default' | 'large' | 'xl';
 
 interface FontSettings {
   family: FontFamily;

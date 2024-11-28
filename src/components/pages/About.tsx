@@ -2,7 +2,6 @@
 "use client";
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 
 export const About = () => {
   return (
@@ -23,10 +22,9 @@ export const About = () => {
                 Project Goals
               </h2>
               <ul className="list-disc pl-6 text-muted-foreground">
-                <li>Going "cover-to-cover" on theoretical texts in mathematics</li>
+                <li>Going &quot;cover-to-cover&quot; on theoretical texts in mathematics</li>
                 <li>Learning through teaching; writing solutions manuals for others doing self-study</li>
                 <li>Building a base for future work in theoretical and practical applications alike</li>
-                <></>
               </ul>
             </div>
 

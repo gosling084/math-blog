@@ -1,13 +1,60 @@
 // src/components/ChapterView.tsx
 "use client";
 import React, { useState } from 'react';  // Add useState
-import { ChevronRight, LayoutGrid, List } from 'lucide-react';  // Add LayoutGrid and List
+import { LayoutGrid, List } from 'lucide-react';  // Add LayoutGrid and List
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Textbook, Chapter, ProblemSet, ViewType } from "@/types/types";
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ContentView } from '../ui/ContentView';
+
+export const ChapterViewSkeleton = () => {
+  return (
+    <div className="max-w-4xl mx-auto p-8">
+      {/* Breadcrumb skeleton */}
+      <div className="mb-8 flex gap-2 items-center">
+        {[1, 2, 3].map((i) => (
+          <React.Fragment key={i}>
+            <div className="h-4 bg-gray-200 rounded animate-pulse w-20" />
+            {i < 3 && <div className="h-4 w-4" />} {/* Space for chevron */}
+          </React.Fragment>
+        ))}
+      </div>
+
+      {/* Header section skeleton */}
+      <div className="space-y-4 mb-8">
+        <div className="flex justify-between items-center">
+          {/* Title */}
+          <div className="h-9 bg-gray-200 rounded-lg w-1/3 animate-pulse" />
+          {/* View toggle buttons */}
+          <div className="flex space-x-3">
+            <div className="h-9 w-9 bg-gray-200 rounded animate-pulse" />
+            <div className="h-9 w-9 bg-gray-200 rounded animate-pulse" />
+          </div>
+        </div>
+        {/* Description */}
+        <div className="h-5 bg-gray-200 rounded w-2/3 animate-pulse" />
+      </div>
+
+      {/* Content card skeleton */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-card rounded-lg p-6 space-y-4 shadow-sm">
+          {/* Problem set title */}
+          <div className="h-7 bg-gray-200 rounded-lg w-3/4 animate-pulse" />
+          {/* Metadata */}
+          <div className="h-5 bg-gray-200 rounded w-1/3 animate-pulse" />
+          {/* Description lines */}
+          <div className="space-y-2">
+            <div className="h-4 bg-gray-200 rounded w-full animate-pulse" />
+            <div className="h-4 bg-gray-200 rounded w-5/6 animate-pulse" />
+          </div>
+          {/* Action button */}
+          <div className="h-9 bg-gray-200 rounded w-32 mt-4 animate-pulse" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 interface ChapterViewProps {
   textbook: Textbook;

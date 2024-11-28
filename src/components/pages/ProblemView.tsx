@@ -24,6 +24,50 @@ interface ProblemViewProps {
   onNavigateToProblem: (problem: Problem) => void;
 }
 
+// In ProblemView.tsx, above the main component
+export const ProblemViewSkeleton = () => {
+  return (
+    <div className="max-w-4xl mx-auto p-8">
+      {/* Breadcrumb skeleton */}
+      <div className="mb-8 flex gap-2 items-center">
+        {[1, 2, 3, 4, 5].map((i) => (
+          <React.Fragment key={i}>
+            <div className="h-4 bg-gray-200 rounded animate-pulse w-20" />
+            {i < 5 && <div className="h-4 w-4" />} {/* Space for chevron */}
+          </React.Fragment>
+        ))}
+      </div>
+
+      <Card className="bg-card text-card-foreground">
+        <CardHeader className="space-y-1">
+          <div className="h-8 bg-gray-200 rounded-lg w-48 animate-pulse" /> {/* Problem number */}
+          <div className="h-5 bg-gray-200 rounded w-36 animate-pulse" /> {/* Date */}
+        </CardHeader>
+        <CardContent className="space-y-8">
+          {/* Problem Statement skeleton */}
+          <div className="space-y-4">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-6 bg-gray-200 rounded animate-pulse" />
+            ))}
+          </div>
+
+          {/* Hint and Solution Buttons skeleton */}
+          <div className="flex gap-4">
+            <div className="h-10 w-24 bg-gray-200 rounded animate-pulse" />
+            <div className="h-10 w-24 bg-gray-200 rounded animate-pulse" />
+          </div>
+
+          {/* Navigation buttons skeleton */}
+          <div className="mt-8 flex justify-between items-center">
+            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
+            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+};
+
 export const ProblemView = ({
   textbook,
   chapter,

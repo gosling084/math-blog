@@ -1,13 +1,44 @@
 // src/components/HomePage.tsx
 "use client";
 import React from 'react';
-import { ChevronRight, BookOpen } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { cn } from "@/lib/utils";
 import { Textbook } from "@/types/types";
 import { textbookData } from "@/data/textbooks";
-import { themeStyles } from '@/lib/styles';
+
+export const HomePageSkeleton = () => {
+  return (
+    <div className="content-layout">
+      {/* Header section skeleton */}
+      <div className="space-y-4 text-center mb-8">
+        <div className="h-12 bg-gray-200 rounded-lg w-2/3 mx-auto animate-pulse" />
+        <div className="h-8 bg-gray-200 rounded-lg w-1/2 mx-auto animate-pulse" />
+      </div>
+
+      {/* Section title skeleton */}
+      <div className="h-4 bg-gray-200 rounded w-48 mb-6 animate-pulse" />
+
+      {/* Cards skeleton */}
+      <div className="card-layout">
+        {[1].map((i) => (
+          <Card key={i} className="card-hover">
+            <CardHeader>
+              <div className="h-7 bg-gray-200 rounded-lg w-3/4 animate-pulse" />
+              <div className="h-5 bg-gray-200 rounded-lg w-1/2 mt-2 animate-pulse" />
+            </CardHeader>
+            <CardContent>
+              <div className="flex justify-between items-center">
+                <div className="h-5 bg-gray-200 rounded-lg w-1/3 animate-pulse" />
+                <div className="h-10 bg-gray-200 rounded-lg w-36 animate-pulse" />
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 interface HomePageProps {
   onSelectTextbook: (textbook: Textbook) => void;

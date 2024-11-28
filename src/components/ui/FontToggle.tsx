@@ -1,6 +1,6 @@
 // src/components/ui/FontToggle.tsx
 "use client";
-import { useFont } from '@/providers/font-provider';
+import { useFont, FontFamily, FontSize } from '@/providers/font-provider';
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -49,7 +49,7 @@ export function FontToggle() {
             {fontOptions.map((font) => (
               <DropdownMenuItem 
                 key={font.value}
-                onClick={() => setFontFamily(font.value as any)}
+                onClick={() => setFontFamily(font.value as FontFamily)}
               >
                 <span className={cn(
                   font.className,
@@ -70,7 +70,7 @@ export function FontToggle() {
             {sizeOptions.map((size) => (
               <DropdownMenuItem 
                 key={size.value}
-                onClick={() => setFontSize(size.value as any)}
+                onClick={() => setFontSize(size.value as FontSize)}
               >
                 <span className={settings.size === size.value ? "font-bold" : ""}>
                   {size.label}
