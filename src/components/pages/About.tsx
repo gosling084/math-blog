@@ -36,6 +36,15 @@ export const About = () => {
                 Contributions and feedback are welcome. Please see the Contact page for more information.
               </p>
             </div>
+
+            <div>
+              <h2 className="text-2xl font-bold mb-4 bg-card text-card-foreground">
+                Acknowledgements
+              </h2>
+              <p className="text-muted-foreground">
+                Special thanks to <a href="https://stumblingrobot.com" rel="noopener noreferrer">Stumbling Robot</a>, whose solutions for "Tommy 1" helped pave the way for this blog.
+              </p>
+            </div>
           </CardContent>
         </Card>
       </div>
