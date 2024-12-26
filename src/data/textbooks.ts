@@ -139,6 +139,109 @@ Note: these are the same points of intersection from (a). `,
                   hint: `The Cartesian equation is $$\\frac{x^{2}}{a^{2}} + \\frac{y^{2}}{a^{2}(1 - e^{2})} = 1$$What is its derivative?`,
                   solution: `Taking the derivative of $\\frac{x^{2}}{a^{2}} + \\frac{y^{2}}{a^{2}(1 - e^{2})} = 1$ with respect to $x$ we get $$\\frac{2x}{a^{2}} + \\frac{2y(y')}{a^{2}(1 - e^{2})} = 0$$Solving for $y'$, we get $$y' = (e^{2} - 1)\\frac{x}{y}$$But this implies that the set of Cartesian equations for a conic of eccentricity $e$ and center at the origin is the set of indefinite integrals of this function. $\\blacksquare$`,
                   date: "2024-12-07"
+                },
+                {
+                  id: 15,
+                  number: "13.25.15",
+                  content: `(a) Prove that the collection of all parabolas is invariant under a similarity transformation. That is, a similarity transformation carries a parabola into a parabola.\n
+(b) Find all the parabolas similar to $y = x^2$.`,
+                  hint: `(a) What happens to the focus and directrix line after the parabola undergoes a similarity transformation?`,
+                  solution: `(a) Let $X = (x, y)$ be a point on the parabola with the standard form equation $$y^2 = 4cx$$Then, let $tX = (tx, ty)$ be the similarity transformation of $X$, where $t \\neq 0$. The above equation becomes $$y^2 = 4kx$$ where $k = \\frac{c}{t}$. But this describes a parabola with focus at $(k, 0)$ and directrix line $x = -k \\quad \\blacksquare$
+
+(b) Since we know that all parabolas are invariant under similarity transform, then for any $C \\neq 0$,$$y = 4Cx^2$$ is similar to $y = x^2 \\quad \\blacksquare$`,
+                  date: "2024-12-23"
+                },
+                {
+                  id: 16,
+                  number: "13.25.16",
+                  content: `The line $x - y + 4 = 0$ is tangent to the parabola $y^2 = 16x$. Find the point of contact.`,
+                  hint: "Find $(x, y)$ such that $x - y + 4= 0$ and $y^2 = 16x$",
+                  solution: `$$\\displaylines{y = x + 4; \\quad y^2 = 16\\\\ \\rightarrow x^2 + 8x + 16 = 16x\\\\ \\rightarrow (x - 4)^2 = 0\\\\ \\rightarrow x = 4,\\quad y = 8 \\quad \\blacksquare}$$`,
+                  date: "2024-12-23"
+                },
+                {
+                  id: 17,
+                  number: "13.25.17",
+                  content: `(a) Given $a ≠ 0$. If the two parabolas $y^2 = 4p(x - a)$ and $x^2 = 4qy$ are tangent to each other, show that the $x$-coordinate of the point of contact is determined by $a$ alone.\n
+(b) Find a condition on $a$, $p$, and $q$ which expresses the fact that the two parabolas are tangent to each other.`,
+                  hint: ``,
+                  solution: `(a) First, we express the parabola $y^2 = 4p(x - a)$ as a function of $x$: $$y = 2\\sqrt{p(x-a)}$$Then, we note that if the two parabolas are tangent, there exists some common point $(x_0, y_0)$ at which the derivatives of the two functions are equal. In other words, at $(x_0, y_0)$: $$\\frac{x_0}{2q} = \\sqrt{\\frac{p}{x_0 - a}}$$Squaring both sides and rearranging terms gives us $$x_0^2(x_0 - a) = 4pq^2$$But we know that $(x_0 - a) = \\frac{y_0^2}{4p}$ and that $y_0 = \\frac{x_0^2}{4q}$, which means that $$(x_0 - a) = \\frac{x_0^4}{64pq^2}$$And since $4pq^2 = x_0^2(x_0 - a)$, this simplifies to $$x_0^4 = 16x_0^2(x_0 - a)^2$$Solving for $x_0$ we find that $$x_0 = \\frac{4}{3}a$$Thus proving that the $x$-coordinate of the point of contact is determined only by $a \\quad \\blacksquare$
+
+(b) From (a) we know that the $x$-coordinate of the point of contact is $x_0 = \\frac{4}{3}a$, plugging this into the equations for the parabolas we get $$y_0^2 = \\frac{4p}{3}a; \\quad x_0^2 = 4qy_0 = \\frac{16}{9}a^2$$And their respective derivatives at $(x_0, y_0)$ are $$\\sqrt{\\frac{p}{x_0 - a}}; \\quad \\frac{x_0}{2q}$$Setting $x_0 = \\frac{4}{3}a$ and setting the derivatives equal to eachother, we get $$2a^2 = 9pq$$But since $x_0^2 = \\frac{16}{9}a^2 = 4qy_0$, this means that $a^2 = \\frac{9}{4}qy_0$ and that $$2a^2 = 9pq = \\frac{9}{2}qy_0$$meaning that $y_0 = 2p$. And since $y_0^2 = \\frac{4p}{3}a$, this means that $a = 3p$ and $q = 2p$. 
+
+Plugging these values back into our previous equation of derivatives, we find the following condition on $a$, $p$, and $q$ which expresses the fact that the two parabolas are tangent to eachother: $$4a^3 = 27pq^2 \\quad \\blacksquare$$`,
+                  date: "2024-12-23"
+                },
+                {
+                  id: 18,
+                  number: "13.25.18",
+                  content: `Consider the locus of the points $P$ in the plane for which the distance of $P$ from the point $(2, 3)$ is equal to the sum of the distances of $P$ from the two coordinate axes.\n
+(a) Show that the part of this locus which lies in the first quadrant is part of a hyperbola. Locate the asymptotes and make a sketch.
+(b) Sketch the graph of the locus in the other quadrants.`,
+                  hint: "If we set the focus $F = (2, 3)$, then the distance $\\|P - F \\| = x + y$. This means for some eccentricity $e > 0$, $$x + y = ed(P, L)$$where $d(P, L)$ is the distance from $P$ to the directrix line $L$.",
+                  solution: `(a) Let the focus $F = (2, 3)$, then the distance $\\|P - F \\| = x + y$. Then, for some directrix $L$ and eccentricity $e > 0$, $$x + y = ed(P, L)$$where $d(P, L)$ is the distance from $P$ to $L$. But by definition, if $N$ is the vector normal to $L$ and $X$ is a point on $L$, $d(P, L) = \\frac{|(P - X) \\cdot N|}{\\|N\\|}$. Applying this to our previous equation we see that $$\\frac{x + y}{e} = \\frac{|(P - X) \\cdot N|}{\\|N\\|}$$But since $P = (x, y)$ if we denote $X = (x_0, y_0)$, this means that $(P - X) \\cdot N = (x - x_0, y - y_0)\\cdot N = (x + y),$ which is satisfied by $X = O$ and $N = (1, 1)$. But if $N = (1, 1)$, then $\\|N\\| = \\sqrt{2}$, thus $e$ must also be $\\sqrt{2}$ if the above equation is to be satisfied. Thus, the locus of points $P$ in $Q1$ whose distance from $F = (2,3)$ is equal to $(x + y)$ must be part of a hyperbola since $e > 1$.
+
+To find the asymptote lines of the hyperbola, recall that $\\|P - F\\| = x + y$, which means that if we square both sides we get $$2xy + 4x + 6y = 13$$Put in terms of $y$ we get $$y = \\frac{13 - 4x}{2x + 6}$$As $x$ approaches either $+\\infty$ or $-\\infty$, we see that the limit of $y$ goes to $-2$. As $x$ approaches $-3$ from the left, we see that $y$ goes to $-\\infty$ and likewise $y$ goes to $+\\infty$ as $x$ approaches $-3$ from the right. Thus, the asymptote lines of the hyperbola are the lines $x = -3$ and $y = -2$`,
+                  date: "2024-12-23"
+                },
+                {
+                  id: 19,
+                  number: "13.25.19",
+                  content: `Two parabolas have the same point as focus and the same line as axis, but their vertices lie on opposite sides of the focus. Prove that the parabolas intersect orthogonally (i.e., their tangent lines are perpendicular at the points of intersection).`,
+                  hint: ``,
+                  solution: `We know by definition that the vertex is the point midway between the directrix and the focus. Suppose the vertex of one parabola is at $O$ and its focus at $(c, 0)$, then this implies that the second vertex with the same focus is at $(2c, 0)$. If the standard form equation for the first parabola is $y^2 = 4cx$, then the second parabola, translated by $(2c, 0)$ and which opens in the opposite direction, has standard form equation $y^2 = -4c(x - 2c)$.
+
+Taking these equations as functions of y, we get $$x = \\frac{y^2}{4c}; \\quad x = 2c - \\frac{y^2}{4c}$$Setting these equal to one-another, we find the points of intersection occur when $y^2 = 4c^2$. In other words, the graphs intersect at $(c, -2c)$ and $(c, 2c)$. Taking their respective derivatives gives us $$x' = \\frac{y}{2c}; \\quad x' = \\frac{-y}{2c}$$Evaluated at $(c, 2c)$ we get slopes $1$ and $-1$ respectively, which can be represented by the vectors $(1, 1)$ and $(1, -1)$, the dot product of which is $0$. Evaluating the derivatives at $(c, -2c)$ yield vectors $(1, -1)$ and $(1, 1)$, whose dot product is also $0$. Thus, we have proven that the two parabolas intersect orthogonally. $\\quad \\blacksquare$`,
+                  date: "2024-12-23"
+                },
+                {
+                  id: 20,
+                  number: "13.25.20",
+                  content: `(a) Prove that the Cartesian equation $$\\frac{x^2}{a^2} + \\frac{y^2}{a^2 - c^2} = 1$$represents all conics symmetric about the origin with foci at $(c, 0)$ and $(-c, 0)$.\n
+(b) Keep $c$ fixed and let $S$ denote the set of all such conics obtained as $a^2$ varies over all positive numbers $> c^2$. Prove that every curve in $S$ satisfies the differential equation $$xy\\left(\\frac{dy}{dx}\\right)^2 + (x^2 - y^2 - c^2)\\frac{dy}{dx} - xy = 0.$$(c) Prove that $S$ is self-orthogonal; that is, the set of all orthogonal trajectories of curves in $S$ is $S$ itself. [Hint: Replace $y'$ by $-1/y'$ in the differential equation in (b).]`,
+                  hint: `(a) Turn the Cartesian equation provided into a standard form equation. What is $e^2$ in this case? 
+
+(b) The right-hand side of the derivative of the Cartesian equation in (a) is 0, this allows for multiplication of both sides by different values while maintaining equality.
+
+(c) Perform the subsitution suggested by the hint in the problem and then multiply both sides by $-(y')^2$.`,
+                  solution: `(a) If we set $e^2 = \\frac{c^2}{a^2}$, then the Cartesian equation becomes $$\\frac{x^2}{a^2} + \\frac{y^2}{a^2(1 - e^2)} = 1$$Simplifying terms, we get $$x^2(1 - e^2) + y^2 = a^2(1 - e^2)$$If we denote $X = (x, y)$ and let $N = \\textbf{i}$, then rearranging terms gives us $$\\|X\\|^2 + e^2a^2 = e^2(X \\cdot N)^2 + a^2$$But if $F = c = eaN$ where $a = \\frac{ed}{1 - e^2}$ with $d$ being the distance from $F$ to the directrix line $L$, then the set of points satisfying the Cartesian equation $$\\frac{x^2}{a^2} + \\frac{y^2}{a^2 - c^2} = 1$$is a conic section with eccentricity $e \\neq 1$, symmetric about the origin as per Theorem 13.19 $\\quad \\blacksquare$
+                  
+(b) First, we take the derivative with respect to $x$ of the Cartesian equation in (a): $$\\frac{2x}{a^2} + \\frac{2yy'}{a^2 - c^2} = 0$$This simplifies to $$a^2(x + yy') - c^2 = 0$$Which we can then rewrite as $$\\left(\\frac{a^2 - c^2}{a^2}\\right)x + yy' = 0$$This equation remains unchanged when multipliying both sides by $x$: $$\\left(\\frac{a^2 - c^2}{a^2}\\right)x^2 + xyy' = 0$$But from the Cartesian equation we know that $\\left(\\frac{a^2 - c^2}{a^2}\\right)x^2 = (a^2 - c^2 - y^2)$, giving us $$(a^2 - c^2 - y^2) + xyy' = 0$$Again we use the Cartesian equation to show that $a^2 = x^2 + \\frac{a^2y^2}{a^2 - c^2}$, giving us $$\\left(x^2 + \\frac{a^2y^2}{a^2 - c^2}\\right) - c^2 - y^2 + xyy' = 0$$Multiplying both sides by $y'$ and rearranging terms, we get $$xy(y')^2 +(x^2 - y^2 - c^2)y' + \\frac{a^2y^2y'}{a^2 - c^2} = 0$$But we know from the derivative of the Cartesian equation that $x = \\frac{-a^2yy'}{a^2-c^2}$, turning the above equation (substituting the Leibniz notation $\\frac{dy}{dx}$ for $y'$) into: $$xy\\left(\\frac{dy}{dx}\\right)^2 + (x^2 - y^2 - c^2)\\frac{dy}{dx}  - xy = 0 \\quad \\blacksquare$$
+(c) If we replace $y'$ with $-\\frac{1}{y'}$ in the equation from part (b), we get $$\\frac{xy}{(y')^2} - \\frac{(x^2 - y^2 - c^2)}{y'} - xy = 0$$Multiplying both sides by $-(y')^2$, we get $$xy(y')^2 + (x^2 - y^2 - c^2)y' - xy = 0$$Thus showing that any curve in $S$ is self-orthogonal as the differential equation is satisfied equally by $y'$ and $-1/y' \\quad \\blacksquare$`,
+                  date: "2024-12-23"
+                },
+                {
+                  id: 21,
+                  number: "13.25.21",
+                  content: `Show that the locus of the centers of a family of circles, all of which pass through a given point and are tangent to a given line, is a parabola.`,
+                  hint: "",
+                  solution: "",
+                  date: "2024-12-23"
+                },
+                {
+                  id: 22,
+                  number: "13.25.22",
+                  content: `Show that the locus of the centers of a family of circles, all of which are tangent (externally) to a given circle and also to a given straight line, is a parabola. (Exercise 21 can be considered to be a special case.)`,
+                  hint: "",
+                  solution: "",
+                  date: "2024-12-23"
+                },
+                {
+                  id: 23,
+                  number: "23",
+                  content: `(a) A chord of length $8|c|$ is drawn perpendicular to the axis of the parabola $y^2 = 4cx$. Let $P$ and $Q$ be the points where the chord meets the parabola. Show that the vector from $O$ to $P$ is perpendicular to that from $O$ to $Q$.\n
+(b) The chord of a parabola drawn through the focus and parallel to the directrix is called the latus rectum. Show first that the length of the latus rectum is twice the distance from the focus to the directrix, and then show that the tangents to the parabola at both ends of the latus rectum intersect the axis of the parabola on the directrix.`,
+                  hint: "",
+                  solution: "",
+                  date: "2024-12-23"
+                },
+                {
+                  id: 24,
+                  number: "24",
+                  content: `Two points $P$ and $Q$ are said to be symmetric with respect to a circle if $P$ and $Q$ are collinear with the center, if the center is not between them, and if the product of their distances from the center is equal to the square of the radius. Given that $Q$ describes the straight line $x + 2y - 5 = 0$, find the locus of the point $P$ symmetric to $Q$ with respect to the circle $x^2 + y^2 = 4$.`,
+                  hint: "",
+                  solution: "",
+                  date: "2024-12-23"
                 }
               ]
             }
