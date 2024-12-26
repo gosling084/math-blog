@@ -214,33 +214,39 @@ Taking these equations as functions of y, we get $$x = \\frac{y^2}{4c}; \\quad x
                   id: 21,
                   number: "13.25.21",
                   content: `Show that the locus of the centers of a family of circles, all of which pass through a given point and are tangent to a given line, is a parabola.`,
-                  hint: "",
-                  solution: "",
+                  hint: "If you're trying to calculate it, you're doing it wrong.",
+                  solution: "Let the given point be the focus $F$, and the tangent line be the directrix $L$. Then, since $F$ and the point of contact $P$ on $L$ are both on the circle, then they are both the same distance from the center of the circle. In other words, the locus of centers is the set of $X$ satisfying $$\\|X - F\\| = d(X, L)$$which is, by definition, a parabola. $\\quad \\blacksquare$",
                   date: "2024-12-23"
                 },
                 {
                   id: 22,
                   number: "13.25.22",
                   content: `Show that the locus of the centers of a family of circles, all of which are tangent (externally) to a given circle and also to a given straight line, is a parabola. (Exercise 21 can be considered to be a special case.)`,
-                  hint: "",
-                  solution: "",
+                  hint: "This solution follows the same logic as that of (13.25.21)",
+                  solution: "We know that a parabola is symmetric about its axis, thus the chord of length $8|c|$ can be broken down into two chords of length $4|c|$",
                   date: "2024-12-23"
                 },
                 {
                   id: 23,
-                  number: "23",
+                  number: "13.25.23",
                   content: `(a) A chord of length $8|c|$ is drawn perpendicular to the axis of the parabola $y^2 = 4cx$. Let $P$ and $Q$ be the points where the chord meets the parabola. Show that the vector from $O$ to $P$ is perpendicular to that from $O$ to $Q$.\n
 (b) The chord of a parabola drawn through the focus and parallel to the directrix is called the latus rectum. Show first that the length of the latus rectum is twice the distance from the focus to the directrix, and then show that the tangents to the parabola at both ends of the latus rectum intersect the axis of the parabola on the directrix.`,
-                  hint: "",
-                  solution: "",
+                  hint: `(a) Recall that a parabola is symmetric about its axis (that is, the line defined by the focus and vertex). What can we deduce from this symmetry regarding the chord from $P$ to $Q$?
+
+(b) What are the points at which the latus rectum intersect with the parabola? What is the derivative of the function at those two points?`,
+                  solution: `(a) The parabola described by the Cartesian equation $y^2 = 4cx$ is symmetric about the $x$-axis, thus the chord of length $8|c|$ drawn perpendicular to the $x$ axis can be described as two chords of length $4|c|$ drawn from the $x$-axis to the points $P = (4c, 4c)$ and $Q = (4c, -4c)$. Taking the dot product of these two points (that, is, vectors from $O$ to $P$ and $Q$, respectively), we get $0$. Thus, the two vectors are perpendicular. $\\blacksquare$
+
+(b) First, we note that the Cartesian equation $y^2 = 4cx$ describes a parabola with focus $F = (c, 0)$ and vertex at $O$, thus putting the directrix line at $x = -c$, making the axis of the parabola the $x$ axis. 
+
+Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and $(c, -2c)$. This means that the length of the latus rectum is $4c$. But we know that the distance from $(c, 0)$ to $(-c, 0)$ is $2c$, thus the latus rectum has length of twice the distance from the focus to the directrix. To find the slope of the lines tangent to the parabola at $(c, 2c)$ and $(c, -2c)$, we take the derivative with respect to $y$: $$\\frac{d}{dy}\\left(\\frac{y^2}{4c}\\right) = \\frac{y}{2c}$$Evaluating this at $y=2c$ and $y=-2c$, we get slopes $1$ and $-1$, respectively, meaning that the line tangent to the parabola at $(c, 2c)$ has equation $x = y + b$. Evaluating the line at $(c, 2c),$ we find that $b$, the $x$-intercept, is $-c$, meaning that the line intercepts the $x$ axis through the directrix line. Doing this at $(c, -2c)$ gives a tangent line with equation $x = b - y$, evaluating at $(c, -2c)$ gives $b = -c$, meaning that this tangent line also intercepts the $x$ axis through the directrix line. This completes the proof.`,
                   date: "2024-12-23"
                 },
                 {
                   id: 24,
-                  number: "24",
+                  number: "13.25.24",
                   content: `Two points $P$ and $Q$ are said to be symmetric with respect to a circle if $P$ and $Q$ are collinear with the center, if the center is not between them, and if the product of their distances from the center is equal to the square of the radius. Given that $Q$ describes the straight line $x + 2y - 5 = 0$, find the locus of the point $P$ symmetric to $Q$ with respect to the circle $x^2 + y^2 = 4$.`,
-                  hint: "",
-                  solution: "",
+                  hint: `From the given Cartesian equation, we know that the center of the circle is at the origin. If $P$ and $Q$ are collinear with $O$, with $O$ not being between between $P$ and $Q$, what is the relationship between $P$ and $Q$?`,
+                  solution: `If points $P$ and $Q$ are collinear with the origin, but the origin is not between $P$ and $Q$, then this implies that $P$ is a positive scalar multiple of $Q$. In other words, $P = (u, v) = k(x, 2y)$, where $k > 0$. To find $k$, we note that the product of the lengths of $P$ and $Q$ must equal $4$, thus $$\\left(\\sqrt{x^2 + 4y^2}\\right)\\left(k\\sqrt{x^2 + ky^2}\\right) = 4$$In other words, $k\\left(x^2 + y^2\\right) = 4$, making $k = \\frac{4}{x^2 + 4y^2}$. Thus, the locus of $P$ is the set of points satisfying $k(x, 2y)$ where $x + 2y - 5 = 0$`,
                   date: "2024-12-23"
                 }
               ]
