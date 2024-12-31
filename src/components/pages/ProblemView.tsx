@@ -24,26 +24,26 @@ interface ProblemViewProps {
   onNavigateToProblem: (problem: Problem) => void;
 }
 
-// In ProblemView.tsx, above the main component
+// Skeleton component for loading state
 export const ProblemViewSkeleton = () => {
   return (
-    <div className="max-w-4xl mx-auto p-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
       {/* Breadcrumb skeleton */}
-      <div className="mb-8 flex gap-2 items-center">
+      <div className="mb-4 sm:mb-8 flex gap-2 items-center overflow-x-auto">
         {[1, 2, 3, 4, 5].map((i) => (
           <React.Fragment key={i}>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-20" />
-            {i < 5 && <div className="h-4 w-4" />} {/* Space for chevron */}
+            <div className="h-4 bg-gray-200 rounded animate-pulse w-20 flex-shrink-0" />
+            {i < 5 && <div className="h-4 w-4 flex-shrink-0" />}
           </React.Fragment>
         ))}
       </div>
 
       <Card className="bg-card text-card-foreground">
         <CardHeader className="space-y-1">
-          <div className="h-8 bg-gray-200 rounded-lg w-48 animate-pulse" /> {/* Problem number */}
-          <div className="h-5 bg-gray-200 rounded w-36 animate-pulse" /> {/* Date */}
+          <div className="h-8 bg-gray-200 rounded-lg w-48 animate-pulse" />
+          <div className="h-5 bg-gray-200 rounded w-36 animate-pulse" />
         </CardHeader>
-        <CardContent className="space-y-8">
+        <CardContent className="space-y-6 sm:space-y-8">
           {/* Problem Statement skeleton */}
           <div className="space-y-4">
             {[1, 2, 3].map((i) => (
@@ -52,15 +52,15 @@ export const ProblemViewSkeleton = () => {
           </div>
 
           {/* Hint and Solution Buttons skeleton */}
-          <div className="flex gap-4">
-            <div className="h-10 w-24 bg-gray-200 rounded animate-pulse" />
-            <div className="h-10 w-24 bg-gray-200 rounded animate-pulse" />
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div className="h-10 w-full sm:w-24 bg-gray-200 rounded animate-pulse" />
+            <div className="h-10 w-full sm:w-24 bg-gray-200 rounded animate-pulse" />
           </div>
 
           {/* Navigation buttons skeleton */}
-          <div className="mt-8 flex justify-between items-center">
-            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
-            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-0">
+            <div className="h-10 w-full sm:w-32 bg-gray-200 rounded animate-pulse" />
+            <div className="h-10 w-full sm:w-32 bg-gray-200 rounded animate-pulse" />
           </div>
         </CardContent>
       </Card>
@@ -81,13 +81,13 @@ export const ProblemView = ({
   previousProblem,
   onNavigateToProblem
 }: ProblemViewProps) => {
-
   const [showHint, setShowHint] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
+  
   return (
-    <div className="max-w-4xl mx-auto p-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
       {/* Breadcrumb navigation */}
-      <div className="mb-8">
+      <div className="mb-4 sm:mb-8 overflow-x-auto">
         <Breadcrumb
           items={[
             { label: "Books", onClick: onNavigateToTextbook, type: 'home' },
@@ -99,32 +99,31 @@ export const ProblemView = ({
         />
       </div>
 
-      {/* Problem content with hint - buttons on one line */}
-      <Card className="bg-card text-card-foreground">
+      <Card className="bg-card text-card-foreground overflow-hidden">
         <CardHeader className="space-y-1">
-          <CardTitle className="text-2xl text-foreground bg-card">
+          <CardTitle className="text-xl sm:text-2xl text-foreground bg-card">
             Problem {problem.number}
           </CardTitle>
-          <p className="text-muted-foreground">
+          <p className="text-sm sm:text-base text-muted-foreground">
             Added {new Date(problem.date).toLocaleDateString()}
           </p>
         </CardHeader>
-        <CardContent className="space-y-8">
+        <CardContent className="space-y-6 sm:space-y-8">
           {/* Problem Statement */}
-          <div>
+          <div className="overflow-x-auto">
             <div className="math-content">
               <MathContent content={problem.content} />
             </div>
           </div>
 
           {/* Hint and Solution Buttons */}
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button 
               variant="outline"
               onClick={() => setShowHint(!showHint)}
               disabled={problem.hint === ""}
               className={cn(
-                "bg-card text-card-foreground",
+                "bg-card text-card-foreground w-full sm:w-auto",
                 "hover:bg-transparent",
                 "text-muted-foreground"
               )}
@@ -136,7 +135,7 @@ export const ProblemView = ({
               variant="outline"
               onClick={() => setShowSolution(!showSolution)}
               className={cn(
-                "bg-card text-card-foreground",
+                "bg-card text-card-foreground w-full sm:w-auto",
                 "hover:bg-transparent",
                 "text-muted-foreground"
               )}
@@ -147,8 +146,8 @@ export const ProblemView = ({
 
           {/* Hint Content */}
           {showHint && problem.hint !== "" && (
-            <div>
-              <h2 className="text-2xl mb-4 text-foreground bg-card">
+            <div className="overflow-x-auto">
+              <h2 className="text-xl sm:text-2xl mb-4 text-foreground bg-card">
                 Hint
               </h2>
               <div className="math-content">
@@ -159,8 +158,8 @@ export const ProblemView = ({
 
           {/* Solution Content */}
           {showSolution && (
-            <div>
-              <h2 className="text-2xl mb-4 text-foreground bg-card">
+            <div className="overflow-x-auto">
+              <h2 className="text-xl sm:text-2xl mb-4 text-foreground bg-card">
                 Solution
               </h2>
               <div className="math-content">
@@ -168,52 +167,48 @@ export const ProblemView = ({
               </div>
             </div>
           )}
-        </CardContent>
 
-        {/* Navigation buttons remain the same */}
-        <div className="mt-8 flex justify-between items-center px-6 pb-6">
-        {previousProblem ? (
-          <Button
-            onClick={() => onNavigateToProblem(previousProblem)}
-            className={cn(
-              "flex items-center",
-              "bg-card text-card-foreground",
-              "hover:bg-transparent",
-              "text-muted-foreground"
+          {/* Navigation buttons */}
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-0">
+            {previousProblem ? (
+              <Button
+                onClick={() => onNavigateToProblem(previousProblem)}
+                className={cn(
+                  "flex items-center justify-center",
+                  "bg-card text-card-foreground",
+                  "hover:bg-transparent",
+                  "text-muted-foreground",
+                  "w-full sm:w-auto"
+                )}
+                variant="outline"
+              >
+                <ChevronRight className="w-4 h-4 mr-2 rotate-180 text-muted-foreground" />
+                <span className="whitespace-nowrap">Previous Problem</span>
+              </Button>
+            ) : (
+              <div className="sm:flex-1" />
             )}
-            variant="outline"
-          >
-            <ChevronRight className={cn(
-              "w-4 h-4 mr-2 rotate-180",
-              "text-muted-foreground"
-            )} />
-            Previous Problem
-          </Button>
-        ) : (
-          <div />
-        )}
-        {nextProblem ? (
-          <Button
-            onClick={() => onNavigateToProblem(nextProblem)}
-            className={cn(
-              "flex items-center",
-              "bg-card text-card-foreground",
-              "hover:bg-transparent",
-              "text-muted-foreground"
+            {nextProblem ? (
+              <Button
+                onClick={() => onNavigateToProblem(nextProblem)}
+                className={cn(
+                  "flex items-center justify-center",
+                  "bg-card text-card-foreground",
+                  "hover:bg-transparent",
+                  "text-muted-foreground",
+                  "w-full sm:w-auto"
+                )}
+                variant="outline"
+              >
+                <span className="whitespace-nowrap">Next Problem</span>
+                <ChevronRight className="w-4 h-4 ml-2 text-muted-foreground" />
+              </Button>
+            ) : (
+              <div className="sm:flex-1" />
             )}
-            variant="outline"
-          >
-            Next Problem
-            <ChevronRight className={cn(
-              "w-4 h-4 ml-2",
-              "text-muted-foreground"
-            )} />
-          </Button>
-        ) : (
-          <div />
-        )}
-        </div>
-        </Card>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

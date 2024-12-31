@@ -34,14 +34,28 @@ export const MathContent = ({ content, className = '' }: MathContentProps) => {
     if (!containerRef.current) return;
 
     if (window.MathJax?.typesetPromise) {
-      window.MathJax.typesetPromise([containerRef.current]);
+      window.MathJax.typesetPromise([containerRef.current])
+        .then(() => {
+          // After MathJax processing, ensure any overflow containers are properly sized
+          if (containerRef.current) {
+            const mathElements = containerRef.current.querySelectorAll('.MathJax');
+            mathElements.forEach(element => {
+              (element as HTMLElement).style.maxWidth = '100%';
+              (element as HTMLElement).style.overflowX = 'auto';
+            });
+          }
+        });
     }
   }, [content]);
 
   return (
     <div 
       ref={containerRef} 
-      className={cn("math-content prose", className)}
+      className={cn(
+        "math-content prose max-w-none",
+        "overflow-x-auto", // Only handle horizontal overflow
+        className
+      )}
     >
       {content}
     </div>
