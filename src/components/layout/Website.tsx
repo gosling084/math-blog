@@ -253,7 +253,7 @@ const Website = () => {
       <footer className="border-t bg-background">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <p className="text-center text-muted-foreground">
-            © {new Date().getFullYear()} Mathematical Immaturity. All rights reserved.
+            © 2024-{new Date().getFullYear()} Mathematical Immaturity. All rights reserved.
           </p>
         </div>
       </footer>

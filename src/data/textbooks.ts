@@ -253,6 +253,212 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
             }
           ]
         },
+        {
+          id: 14,
+          title: "Chapter 14: Calculus of Vector-Valued Functions",
+          description: "This chapter combines vector algebra with the methods of calculus and describes some applications to the study of curves and to some problems in mechanics.",
+          problemSets: [
+            {
+              id: 4,
+              title: "14.4 Exercises",
+              description: "Exercises on limits, derivatives, and integrals of vector-valued functions",
+              problems: [
+                {
+                  id: 1,
+                  number: "14.4.1",
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = (t, t^2, t^3, t^4)$`,
+                  hint: ``,
+                  solution: `Using the power rule of derivatives: $$\\displaylines{F'(t) &= (1, 2t, 3t^2, 4t^3)\\\\F''(t) &= (0, 2, 6t, 12t^2)}$$Note: the back-of-book solution has a typo which says $$F'(t) = (1, 2t, 3t^2 + 4t^3)$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 2,
+                  number: "14.4.2",
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = (\\cos t, \\sin^2 t, \\sin 2t, \\tan t)$`,
+                  hint: `Recall from section 2.5 that: $2\\ \\text{sin}(t)\\text{cos}(t) = \\text{sin}(2t)$.`,
+                  solution: `$$\\displaylines{F'(t) &= (-\\text{sin}(t), 2\\ \\text{sin}(t)\\text{cos}(t), 2\\ \\text{cos}(2t), \\text{sec}^2(t)) \\\\ &= (-\\text{sin}(t), \\text{sin}(2t), 2\\ \\text{cos}(2t), \\text{sec}^2(t))}$$ $$\\displaylines{F''(t) &= (-\\text{cos}(t), 2\\text{cos}(2t), -4\\text{sin}(2t), 2\\text{sec}^2(t)\\text{tan}(t))}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 3,
+                  number: "14.4.3",
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = (\\arcsin t, \\arccos t)$`,
+                  hint: `Recall from section 6.20 that: $$D(\\text{arcsin}(t)) = \\frac{1}{\\sqrt{1 - t^2}}$$if $-1 < t < 1$, and $$D(\\text{arccos}(t)) = \\frac{-1}{\\sqrt{1 - t^2}}$$if $-1 < t < 1$`,
+                  solution: `$$F'(t) = \\left(\\frac{1}{\\sqrt{1 - t^2}}, \\frac{-1}{\\sqrt{1 - t^2}}\\right)$$ $$F''(t) = \\left(\\frac{t}{(1 - t^2)^{3/2}}, \\frac{-t}{(1 - t^2)^{3/2}}\\right)$$Note: the back-of-book solution has a typo which says that $$F''(t) = \\left(\\frac{t}{(1 + t^2)^{3/2}}, \\frac{-t}{(1 + t^2)^{3/2}}\\right)$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 4,
+                  number: "14.4.4",
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = 2e^t \\mathbf{i} + 3e^t \\mathbf{j}$`,
+                  hint: ``,
+                  solution: `Since we know that $D(e^t) = e^t$, we have: $$F'(t) = F''(t) = F(t) = 2e^t \\mathbf{i} + 3e^t \\mathbf{j}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 5,
+                  number: "14.4.5",
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\cosh t\\mathbf{i} + \\sinh 2t\\mathbf{j} + e^{-3t}\\mathbf{k}$`,
+                  hint: `Recall from section 6.18 that $$\\text{sinh}(t) = \\frac{e^t - e^{-t}}{2};\\quad \\text{cosh}(t) = \\frac{e^t + e^{-t}}{2}$$This means that $$F(t) = \\left(\\frac{e^t + e^{-t}}{2}, \\frac{e^{2t} - e^{-2t}}{2}, e^{-3t}\\right)$$`,
+                  solution: `$$F(t) = \\left(\\frac{e^t + e^{-t}}{2}, \\frac{e^{2t} - e^{-2t}}{2}, e^{-3t}\\right)$$$$\\displaylines{F'(t) &= \\left(\\frac{e^t - e^{-t}}{2}, e^{2t} + e^{-2t}, -3e^{-3t}\\right)\\\\ &=\\left(\\text{sinh}(t), 2\\text{cosh}(t), -3e^{-3t}\\right)}$$$$\\displaylines{F''(t) &= \\left(\\frac{e^t + e^{-t}}{2}, 2e^{2t} - 2e^{-2t}, 9e^{-3t}\\right)\\\\ &= \\left(\\text{cosh}(t), 4\\text{sinh}(2t), 9e^{-3t}\\right)}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 6,
+                  number: "14.4.6",
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\log(1 + t^2)\\mathbf{i} + \\arctan t\\mathbf{j} + \\frac{1}{1+t^2}\\mathbf{k}$`,
+                  hint: `Recall from section 6.20 that $$D(\\text{arctan}(t)) = \\frac{1}{1 + t^2}$$for all real $t$`,
+                  solution: `$$F'(t) = \\left(\\frac{2t}{1 + t^2}, \\frac{1}{1 + t^2}, \\frac{-2t}{(1 + t^2)^2}\\right)$$$$F''(t) = \\left(\\frac{(2 - 2t^2)}{(1 + t^2)^2}, \\frac{-2t}{(1 + t^2)^2}, \\frac{6t^2 - 2}{(1 + t^2)^3}\\right)$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 7,
+                  number: "14.4.7",
+                  content: `Let $F$ be the vector-valued function given by: $$F(t) = \\frac{2t}{1+t^2}\\mathbf{i} + \\frac{1-t^2}{1+t^2}\\mathbf{j} + \\mathbf{k}$$Prove that the angle between $F(t)$ and $F'(t)$ is constant, that is, independent of $t$.`,
+                  hint: `Recall from section 12.9 that the cosine of the angle between two vectors can be expressed in terms of their dot product and their norms: $$\\text{cos}\\ \\theta = \\frac{A \\cdot B}{\\|A\\|\\|B\\|}$$Then, if the cosine of the angle between the two vectors is constant, this imples that the angle itself is constant.`,
+                  solution: `First, we calculate $F'(t)$:$$F'(t) = \\left(\\frac{2 - 2t^2}{(1 + t^2)^2}, \\frac{-4t}{(1 + t^2)^2}, 0\\right)$$Then, we calculate the dot product $F(t) \\cdot F'(t)$:$$F(t) \\cdot F'(t) = \\frac{4t(1 - t^2)}{(1 + t^2)^3} - \\frac{4t(1 - t^2)}{(1 + t^2)^3} = 0$$But this means that the cosine of the angle between $F(t)$ and $F'(t)$ is constant. Thus, the angle between the two vectors must be constant, that is, independent of $t. \\ \\blacksquare$ `,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 8,
+                  number: "14.4.8",
+                  content: `Compute the vector-valued integral:$$\\int_0^1 (t, \\sqrt{t}, e^t)\\,dt$$`,
+                  hint: ``,
+                  solution: `Evaluating the integrals component-wise, we get: $$\\left(\\frac{t^2}{2},\\  \\frac{2}{3}t^{3/2},\\ e^t\\right)\\Biggr|_0^1 = \\left(\\frac{1}{2},\\ \\frac{3}{2},\\ e - 1\\right)$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 9,
+                  number: "14.4.9",
+                  content: `Compute the vector-valued integral:$$\\int_0^{\\pi/4} (\\sin t, \\cos t, \\tan t)\\,dt$$`,
+                  hint: ``,
+                  solution: `Evaluating the integrals component-wise, we get:$$\\displaylines{\\left(-\\text{cos}\\,t,\\  \\text{sin}\\,t,-\\text{log}\\,\\text{cos}\\,t\\right)\\,\\Biggr|_0^{\\pi/4} &= \\left(1 - \\frac{\\sqrt{2}}{2},\\ \\frac{\\sqrt{2}}{2},\\  -\\text{log}\\,\\frac{\\sqrt{2}}{2}\\right)\\\\ &= \\left(1 - \\frac{\\sqrt{2}}{2},\\ \\frac{\\sqrt{2}}{2},\\ \\frac{\\text{log}\\,{2}}{2}\\right)}$$Note: the back-of-book solution contains a typo for the rightmost element, which says $\\text{log}\\,\\frac{\\sqrt{2}}{2}$ instead of $-\\text{log}\\,\\frac{\\sqrt{2}}{2}$ or $\\frac{\\text{log}\\,{2}}{2}$.`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 10,
+                  number: "14.4.10",
+                  content: `Compute the vector-valued integral:$$\\int_0^1 \\left(\\frac{e^t}{1+e^t}\\mathbf{i} + \\frac{1}{1+e^t}\\mathbf{j}\\right)\\,dt$$`,
+                  hint: `Use a $u$ substitution where $u(t) = 1 + e^t$ and $du = e^t\\, dt$. Then, rewrite $\\frac{1}{1 + e^t} = 1 - \\frac{e^t}{1 + e^t}$`,
+                  solution: `Evaluating the integral, we get:$$\\displaylines{\\int_0^1 \\left(\\frac{e^t}{1+e^t}\\mathbf{i} + \\frac{1}{1+e^t}\\mathbf{j}\\right)\\,dt &= \\text{log}\\,(1 + e^t)\\mathbf{i} + t - \\log(1 + e^t)\\,\\mathbf{j}\\,\\Biggr|_0^1\\\\ &= \\text{log}\\frac{1 + e}{2}\\mathbf{i} + \\left(1 - \\text{log}\\frac{1 + e}{2}\\right)\\mathbf{j}}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 11,
+                  number: "14.4.11",
+                  content: `Compute the vector-valued integral:$$\\int_0^1 (te^t\\mathbf{i} + t^2e^t\\mathbf{j} + te^{-t}\\mathbf{k})\\,dt$$`,
+                  hint: `Use integration by parts with $u = t^n$ and $dv = e^t\\, dt$`,
+                  solution: `Using integration by parts on each component, we get:$$\\left(te^t - e^t\\right)\\Biggr|_0^1\\textbf{i}\\ + \\left(t^2e^t - 2(te^t - e^t)\\right)\\Biggr|_0^1\\textbf{j}\\ + \\left(-te^{-t} - e^{-t}\\right)\\Biggr|_0^1\\textbf{k}$$Evaluating over the limits of integration, we get:$$\\left(1,\\ e-2,\\ 1 - \\frac{2}{e}\\right)$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 12,
+                  number: "14.4.12",
+                  content: `Compute $A \\cdot B$, where $A = 2\\mathbf{i} - 4\\mathbf{j} + \\mathbf{k}$ and $B = \\int_0^2 (te^{2t}\\mathbf{i} + t\\cosh 2t\\mathbf{j} + 2te^{-t}\\mathbf{k})\\,dt$`,
+                  hint: `Recall from section 6.18 that $$\\text{sinh}\\,t = \\frac{e^t - e^{-t}}{2};\\quad \\text{cosh}\\,t = \\frac{e^t + e^{-t}}{2}$$`,
+                  solution: `Note that $\\text{cosh}\\,2t = \\frac{e^{2t} + e^{-2t}}{2}$, then:$$B = \\int_0^2 (te^{2t}\\mathbf{i} + \\frac{te^{2t} + te^{-2t}}{2}\\mathbf{j} + 2te^{-2t}\\mathbf{k})\\,dt$$Taking the dot product $A \\cdot B$, we get: $$A \\cdot B = \\int_0^2 2te^{2t} - 2te^{2t} - 2te^{-2t} + 2te^{-2t}\\, dt$$But the terms of the integrand simplify to $0$, thus $A \\cdot B = 0$.`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 13,
+                  number: "14.4.13",
+                  content: `Given a nonzero vector $B$ and a vector-valued function $F$ such that $F(t) \\cdot B = t$ for all $t$, and such that the angle between $F'(t)$ and $B$ is constant (independent of $t$). Prove that $F''(t)$ is orthogonal to $F'(t)$.`,
+                  hint: `Recall the dot product identity from Theorem 14.1:$$\\left(F \\cdot G \\right)' = F' \\cdot G + F \\cdot G'$$If the angle between $F'$ and $B$ is constant, then the cosine of this angle is also constant. What does this imply about $F' \\cdot B$?`,
+                  solution: `We know from the dot product identity in Theorem 14.1 that $$\\left(F \\cdot B \\right)' = F' \\cdot B + F \\cdot B'$$But $B$ is a vector of constants, so $B' = O$, and $F \\cdot B = t$, so $(F \\cdot B)' = 1$. Combining this with the above, we get $$\\left(F \\cdot B\\right)' = F' \\cdot B = 1$$Taking the derivative of $(F' \\cdot B)$, we see that $$F'' \\cdot B = 0$$But by definition, $B$ is nonzero, thus $F''(t)$ must be the zero vector, meaning that $F'' \\cdot F = 0$ for any $t$. Put another way, $F''(t)$ is orthogonal to $F'(t)$ for all $t. \\quad \\blacksquare$ `,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 14,
+                  number: "14.4.14",
+                  content: `Given fixed nonzero vectors $A$ and $B$, let $F(t) = e^{2t}A + e^{-2t}B$. Prove that $F''(t)$ has the same direction as $F(t)$.`,
+                  hint: `For two vectors $A$ and $B$ to have the same direction, then for some positive scalar $c$, $A$ = $cB$`,
+                  solution: `It will suffice to show that for some positive scalar $c$, that $F''(t) = cF(t)$. Taking the second derivative of of $F(t)$: $$\\displaylines{F'(t) &= 2e^{2t}A - 2e^{-2t}B}$$$$\\displaylines{F''(t) &= 4e^{2t}A + 4e^{-2t}B\\\\ &= 4F(t) \\quad \\blacksquare}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 15,
+                  number: "14.4.15",
+                  content: `If $G = F \\times F'$, compute $G'$ in terms of $F$ and derivatives of $F$.`,
+                  hint: `Use the cross product identity from Theorem 14.1:$$(F \\times G)' = F' \\times G + F \\times G'$$and recall from section 13.9 that $A \\times B = O$ if and only if $A$ and $B$ are linearly dependent.`,
+                  solution: `Using the cross product identity from theorem 14.1: $$(F \\times F')' = F' \\times F' + F \\times F''$$And since F' is linearly dependent to itself, $F' \\times F' = O$, giving us $$G' = F \\times F''$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 16,
+                  number: "14.4.16",
+                  content: `If $G = F \\cdot F' \\times F''$, prove that $G' = F \\cdot F' \\times F'''$.`,
+                  hint: `Recall from section 13.9 that the cross product of two vectors is orthogonal to those two vectors.`,
+                  solution: `Taking the dot product first, we get: $$F \\cdot \\left(F' \\times F''\\right) = F' \\cdot \\left(F ' \\times F''\\right) + F \\cdot \\left(F ' \\times F''\\right)'$$But since the cross product of two vectors is orthogonal to those two vectors, $F' \\cdot \\left(F' \\times F''\\right) = O$\n\nUsing this and extending the result of problem (15) to $\\left(F' \\times F''\\right)'$, we see that $$G' = F \\cdot \\left(F' \\times F'''\\right) \\quad \\blacksquare$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 17,
+                  number: "14.4.17",
+                  content: `Prove that $\\lim_{t\\to p} F(t) = A$ if and only if $\\lim_{t\\to p} \\|F(t) - A\\| = 0$.`,
+                  hint: `If $\\lim_{t \\to\\ p}\\|F(t) - A\\| = 0$, then it must be the case that $\\lim_{t \\to\\ p}\\|F(t) - A\\|^2 = 0$`,
+                  solution: `If $\\lim_{t \\to\\ p}F(t) = A$, then it follows that $\\lim_{t \\to\\ p}\\|F(t) - A\\| = 0$. Now, suppose that $\\lim_{t \\to\\ p}\\|F(t) - A\\| = 0$, this means that $\\lim_{t \\to\\ p}\\|F(t) - A\\|^2 = 0$, or in other words: $$\\lim_{t \\to\\ p}\\left[F(t) - A\\right] \\cdot \\left[F(t) - A\\right] = 0$$But this implies that $C = \\left[F(t) - A\\right] \\to 0$ as $t \\to p$. In other words, $$\\lim_{t \\to \\ p} F(t) = A$$Thus, we have shown that $\\lim_{t\\to p} F(t) = A$ if and only if $\\lim_{t\\to p} \\|F(t) - A\\| = 0. \\quad \\blacksquare$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 18,
+                  number: "14.4.18",
+                  content: `Prove that a vector-valued function $F$ is differentiable on an open interval $I$ if and only if for each $t$ in $I$ we have:$$F'(t) = \\lim_{h\\to 0} \\frac{1}{h}[F(t + h) - F(t)]$$`,
+                  hint: ``,
+                  solution: `By definition, a vector-valued function is differentiable on an open interval $I$ if and only if every component is differentiable on that open interval. In other words, for each component $f$ of $F$, $$f'(t) = \\lim_{h \\to 0}\\frac{1}{h}\\left[f(t + h) - f(t)\\right]$$for all $t$ in the open interval $I$.`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 19,
+                  number: "14.4.19",
+                  content: `Prove the zero-derivative theorem for vector-valued functions. If $F'(t) = O$ for each $t$ in an open interval $I$, then there is a vector $C$ such that $F(t) = C$ for all $t$ in $I$.`,
+                  hint: ``,
+                  solution: `In problem (18), we showed that a vector-valued function is differentiable if and only if for every $t$ in an open interval $I$, and for every component $f_i$ of $F$, $$f_i'(t) = \\lim_{h \\to 0}\\frac{1}{h}\\left[f_i(t + h) - f_i(t)\\right]$$Now, suppose that for every $t$ in the open interval $I$, $f_i'(t) = 0$. Then, the above limit can be rewritten as $$\\lim_{h \\to 0}\\frac{1}{h}\\,f_i(t + h) = f_i(t)$$But this implies that there is some real scalar $c_i$ such that for every $t$ in $I$, $f_i(t) = c_i$. But if this is true for each $f_i$ of $F$, then the vector-valued function $F(t) = C$ on the open interval $I$, where $C = (c_1, ..., c_n)$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 20,
+                  number: "14.4.20",
+                  content: `Given fixed vectors $A$ and $B$ and a vector-valued function $F$ such that $F''(t) = tA + B$, determine $F(t)$ if $F(0) = D$ and $F'(0) = C$.`,
+                  hint: ``,
+                  solution: `Using the definition of an integral for a vector-valued function along with the second fundamental theorem, we have: $$\\displaylines{F'(t) = \\int_0^tF''(t)\\,dt + F'(0)\\\\ =\\frac{t^{2}}{2}A + Bt + C}$$Integrating and applying the second fundamental theorem again: $$\\displaylines{F(t) = \\int_0^t F'(t)\\, dt + F(0)\\\\ = \\frac{t^3}{6}A + \\frac{t^2}{2}B + Ct + D}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 21,
+                  number: "14.4.21",
+                  content: `A differential equation of the form $Y'(x) + p(x)Y(x) = Q(x)$, where $p$ is a given real-valued function, $Q$ a given vector-valued function, and $Y$ an unknown vector-valued function, is called a first-order linear vector differential equation. Prove that if $p$ and $Q$ are continuous on an interval $I$, then for each $a$ in $I$ and each vector $B$ there is one and only one solution $Y$ which satisfies the initial condition $Y(a) = B$, and that this solution is given by the formula:\n$Y(t) = Be^{-q(t)} + e^{-q(t)}\\int_a^t Q(x)e^{q(x)}\\,dx$\nwhere $q(x) = \\int_a^x p(t)\\,dt$.`,
+                  hint: ``,
+                  solution: `We can apply the result of Theorem 8.3 component-wise to achieve this result for a vector-valued function.`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 22,
+                  number: "14.4.22",
+                  content: `A vector-valued function $F$ satisfies the equation $tF'(t) = F(t) + tA$ for each $t \\geq 0$, where $A$ is a fixed vector. Compute $F''(1)$ and $F(3)$ in terms of $A$, if $F(1) = 2A$.`,
+                  hint: `To apply the second fundamental theorem, use the given value for $F(1)$ and calculate $F'(1)$ using the given equation.`,
+                  solution: `Taking the derivative of the given equation, we get $$tF''(t) = A$$Thus, $F''(1) = A$. Now, to find $F(3)$, consider that by rearranging the given equation, we can express $F(t)$ as $$F(t) = tF'(t) - tA$$But since $F(1) = 2A$, this means that $F'(1) = F(1) + A = 3A$.\n\nRewriting $F''(t) = \\frac{A}{t}$ for $t > 0$ with $F'(1) = 3A$ we can integrate $F''(t)$ giving us: $$F'(t) - F'(1) = \\int_1^t \\frac{A}{x}\\,dx$$Evaluating the integral gives us $$F'(t) = A\\text{log}\\,t + 3A$$Integrating again with $F(1) = 2A$, we find that $$F(t) = \\int_1^t A\\text{log}\\,x + 3A\\,dx + 2A$$Evaluating the integral for $t = 3$, we get $$\\displaylines{F(3) &= Ax\\text{log}\\,x + 2Ax\\,\\Biggr|_1^3 + 2A\\\\&= (6 + 3\\text{log}\\,3)A \\quad \\blacksquare}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 23,
+                  number: "14.4.23",
+                  content: `Find a vector-valued function $F$, continuous on the interval $(0, +\\infty)$, such that:$$F(x) = xe^xA + \\frac{1}{x}\\int_1^x F(t)\\,dt$$for all $x > 0$, where $A$ is a fixed nonzero vector.`,
+                  hint: `Multiply both sides by $x$ before differentiating.`,
+                  solution: `Multiplying both sides by $x$, we get$$xF(x) = x^2e^xA + \\int_1^x F(t)\\,dt$$Taking the derivative with respect to $x$, we get $$F(x) + xF'(x) = 2xe^xA + F(x)$$Simplifying terms gives us $F'(x) = 2e^xA + xe^xA.$Integrating both sides using the second fundamental theorem with $F(1) = eA$, we get$$\\displaylines{F(x) &= eA + \\int_1^x 2e^tA + te^tA\\,dt\\\\ &= 2e^tA\\,\\Biggr|_1^x + \\int_1^x te^tA\\,dt + eA\\\\&= e^tA + te^tA\\,\\Biggr|_1^x + eA \\\\&= e^x(x + 1)A - eA \\quad \\blacksquare}$$`,
+                  date: "2024-01-02"
+                },
+                {
+                  id: 24,
+                  number: "14.4.24",
+                  content: `A vector-valued function $F$, which is never zero and has a continuous derivative $F'(t)$ for all $t$, is always parallel to its derivative. Prove that there is a constant vector $A$ and a positive real-valued function $u$ such that $F(t) = u(t)A$ for all $t$.`,
+                  hint: `By definition, two vectors $A$ and $B$ are parallel if for some nonzero scalar $c$, $B = cA$.`,
+                  solution: `If we set $u(t) = e^{ct}$ for some nonzero $c$, then it follows that $u$ is positive for all $t$, $F(t)$ is never zero, and $F'(t)$ is parallel to $F(t)$ for all $t$.`,
+                  date: "2024-01-02"
+                }
+              ]
+            }
+          ]
+        },
       ]
     },
     // {
