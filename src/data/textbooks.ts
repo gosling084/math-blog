@@ -456,7 +456,13 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   date: "2024-01-02"
                 }
               ]
-            }
+            },
+            {
+              id: 7,
+              title: "14.7 Exercises",
+              description: "Exercises on the calculus of vector-valued functions with applications to curve tangency and curvilinear motion.",
+              problems: []
+            },
           ]
         },
       ]
