@@ -298,7 +298,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                 {
                   id: 5,
                   number: "14.4.5",
-                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\cosh t\\mathbf{i} + \\sinh 2t\\mathbf{j} + e^{-3t}\\mathbf{k}$`,
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\cosh t\\mathbf{i} + \\sinh 2t\\mathbf{j} + e^{-3t}\\,\\mathbf{k}$`,
                   hint: `Recall from section 6.18 that $$\\text{sinh}(t) = \\frac{e^t - e^{-t}}{2};\\quad \\text{cosh}(t) = \\frac{e^t + e^{-t}}{2}$$This means that $$F(t) = \\left(\\frac{e^t + e^{-t}}{2}, \\frac{e^{2t} - e^{-2t}}{2}, e^{-3t}\\right)$$`,
                   solution: `$$F(t) = \\left(\\frac{e^t + e^{-t}}{2}, \\frac{e^{2t} - e^{-2t}}{2}, e^{-3t}\\right)$$$$\\displaylines{F'(t) &= \\left(\\frac{e^t - e^{-t}}{2}, e^{2t} + e^{-2t}, -3e^{-3t}\\right)\\\\ &=\\left(\\text{sinh}(t), 2\\text{cosh}(t), -3e^{-3t}\\right)}$$$$\\displaylines{F''(t) &= \\left(\\frac{e^t + e^{-t}}{2}, 2e^{2t} - 2e^{-2t}, 9e^{-3t}\\right)\\\\ &= \\left(\\text{cosh}(t), 4\\text{sinh}(2t), 9e^{-3t}\\right)}$$`,
                   date: "2024-01-02"
@@ -306,7 +306,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                 {
                   id: 6,
                   number: "14.4.6",
-                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\log(1 + t^2)\\mathbf{i} + \\arctan t\\mathbf{j} + \\frac{1}{1+t^2}\\mathbf{k}$`,
+                  content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\log(1 + t^2)\\mathbf{i} + \\arctan t\\mathbf{j} + \\frac{1}{1+t^2}\\,\\mathbf{k}$`,
                   hint: `Recall from section 6.20 that $$D(\\text{arctan}(t)) = \\frac{1}{1 + t^2}$$for all real $t$`,
                   solution: `$$F'(t) = \\left(\\frac{2t}{1 + t^2}, \\frac{1}{1 + t^2}, \\frac{-2t}{(1 + t^2)^2}\\right)$$$$F''(t) = \\left(\\frac{(2 - 2t^2)}{(1 + t^2)^2}, \\frac{-2t}{(1 + t^2)^2}, \\frac{6t^2 - 2}{(1 + t^2)^3}\\right)$$`,
                   date: "2024-01-02"
@@ -346,7 +346,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                 {
                   id: 11,
                   number: "14.4.11",
-                  content: `Compute the vector-valued integral:$$\\int_0^1 (te^t\\mathbf{i} + t^2e^t\\mathbf{j} + te^{-t}\\mathbf{k})\\,dt$$`,
+                  content: `Compute the vector-valued integral:$$\\int_0^1 (te^t\\mathbf{i} + t^2e^t\\mathbf{j} + te^{-t}\\,\\mathbf{k})\\,dt$$`,
                   hint: `Use integration by parts with $u = t^n$ and $dv = e^t\\, dt$`,
                   solution: `Using integration by parts on each component, we get:$$\\left(te^t - e^t\\right)\\Biggr|_0^1\\textbf{i}\\ + \\left(t^2e^t - 2(te^t - e^t)\\right)\\Biggr|_0^1\\textbf{j}\\ + \\left(-te^{-t} - e^{-t}\\right)\\Biggr|_0^1\\textbf{k}$$Evaluating over the limits of integration, we get:$$\\left(1,\\ e-2,\\ 1 - \\frac{2}{e}\\right)$$`,
                   date: "2024-01-02"
@@ -354,9 +354,9 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                 {
                   id: 12,
                   number: "14.4.12",
-                  content: `Compute $A \\cdot B$, where $A = 2\\mathbf{i} - 4\\mathbf{j} + \\mathbf{k}$ and $B = \\int_0^2 (te^{2t}\\mathbf{i} + t\\cosh 2t\\mathbf{j} + 2te^{-t}\\mathbf{k})\\,dt$`,
+                  content: `Compute $A \\cdot B$, where $A = 2\\,\\mathbf{i} - 4\\,\\mathbf{j} + \\mathbf{k}$ and $B = \\int_0^2 (te^{2t}\\,\\mathbf{i} + t\\cosh 2t\\,\\mathbf{j} + 2te^{-t}\\,\\mathbf{k})\\,dt$`,
                   hint: `Recall from section 6.18 that $$\\text{sinh}\\,t = \\frac{e^t - e^{-t}}{2};\\quad \\text{cosh}\\,t = \\frac{e^t + e^{-t}}{2}$$`,
-                  solution: `Note that $\\text{cosh}\\,2t = \\frac{e^{2t} + e^{-2t}}{2}$, then:$$B = \\int_0^2 (te^{2t}\\mathbf{i} + \\frac{te^{2t} + te^{-2t}}{2}\\mathbf{j} + 2te^{-2t}\\mathbf{k})\\,dt$$Taking the dot product $A \\cdot B$, we get: $$A \\cdot B = \\int_0^2 2te^{2t} - 2te^{2t} - 2te^{-2t} + 2te^{-2t}\\, dt$$But the terms of the integrand simplify to $0$, thus $A \\cdot B = 0$.`,
+                  solution: `Note that $\\text{cosh}\\,2t = \\frac{e^{2t} + e^{-2t}}{2}$, then:$$B = \\int_0^2 (te^{2t}\\,\\mathbf{i} + \\frac{te^{2t} + te^{-2t}}{2}\\,\\mathbf{j} + 2te^{-2t}\\,\\mathbf{k})\\,dt$$Taking the dot product $A \\cdot B$, we get: $$A \\cdot B = \\int_0^2 2te^{2t} - 2te^{2t} - 2te^{-2t} + 2te^{-2t}\\, dt$$But the terms of the integrand simplify to $0$, thus $A \\cdot B = 0$.`,
                   date: "2024-01-02"
                 },
                 {
@@ -461,7 +461,144 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
               id: 7,
               title: "14.7 Exercises",
               description: "Exercises on the calculus of vector-valued functions with applications to curve tangency and curvilinear motion.",
-              problems: []
+              problems: [
+                {
+                  id: 1,
+                  number: "14.7.1",
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = (3t - t^3)\\,\\mathbf{i} + 3t^3\\,\\mathbf{j} + (3t + t^3)\\,\\mathbf{k}$$`,
+                  hint: ``,
+                  solution: `$$\\displaylines{\\textbf{v}(t) = (3 - 3t^2)\\,\\textbf{i} + 6t\\,\\textbf{j} + (3 + 3t^2)\\textbf{k}\\\\ \\textbf{a}(t) = -6t\\,\\textbf{i} + 6\\,\\textbf{j} + 6t\\,\\textbf{k}\\\\ v(t) = 3\\sqrt{2}(1 + t^2)}$$`,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 2,
+                  number: "14.7.2",
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = \\cos t\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + e^t\\,\\mathbf{k}$$`,
+                  hint: ``,
+                  solution: `$$\\displaylines{\\textbf{v}(t) = -\\text{sin}\\,t\\,\\textbf{i} + \\text{cos}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k}\\\\ \\textbf{a}(t) = -\\text{cos}\\,t\\,\\textbf{i} - \\text{sin}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k} \\\\ v(t) = \\left(1 + e^{2t}\\right)^{1/2}}$$`,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 3,
+                  number: "14.7.3",
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t\\cos t\\mathbf{i} + 3t\\sin t\\mathbf{j} + 4t\\,\\mathbf{k}$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 4,
+                  number: "14.7.4",
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = (t - \\sin t)\\mathbf{i} + (1 - \\cos t)\\mathbf{j} + 4\\sin \\frac{t}{2}\\mathbf{k}$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 5,
+                  number: "14.7.5",
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t^2\\mathbf{i} + 2t^3\\mathbf{j}$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 6,
+                  number: "14.7.6",
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = t\\mathbf{i} + \\sin t\\mathbf{j} + (1 - \\cos t)\\,\\mathbf{k}$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 7,
+                  number: "14.7.7",
+                  content: `Consider the helix described by the vector equation $\\textbf{r}(t) = a\\cos \\omega t\\mathbf{i} + a\\sin \\omega t\\mathbf{j} + b\\omega t\\,\\mathbf{k}$, where $\\omega$ is a positive constant. Prove that the tangent line makes a constant angle with the $z$-axis and that the cosine of this angle is $b/\\sqrt{a^2 + b^2}$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 8,
+                  number: "14.7.8",
+                  content: `Referring to the helix in Exercise 7, prove that the velocity $v$ and acceleration $a$ are vectors of constant length, and that:\n $$\\frac{\\|v \\times a\\|}{\\|v\\|^3} = \\frac{a}{a^2 + b^2}$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 9,
+                  number: "14.7.9",
+                  content: `Referring to Exercise 7, let $u(t)$ denote the unit vector $u(t) = \\sin \\omega t\\mathbf{i} - \\cos \\omega t\\mathbf{j}$. Prove that there are constants $A$ and $B$ such that $v \\times a = Au(t) + B\\,\\mathbf{k}$, and express $A$ and $B$ in terms of $a$, $b$, and $\\omega$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 10,
+                  number: "14.7.10",
+                  content: `Prove that for any motion the dot product of the velocity and acceleration is half the derivative of the square of the speed:\n$$\\textbf{v}(t) \\cdot \\textbf{a}(t) = \\frac{1}{2}\\frac{d}{dt}v^2(t)$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 11,
+                  number: "14.7.11",
+                  content: `Let $c$ be a fixed unit vector. A particle moves in space in such a way that its position vector $\\textbf{r}(t)$ satisfies the equation $\\textbf{r}(t) \\cdot c = e^{2t}$ for all $t$, and its velocity vector $\\textbf{v}(t)$ makes a constant angle $\\theta$ with $c$, where $0 < \\theta ≤ 1$.\n\n(a) Prove that the speed at time $t$ is $2e^{2t}/\\cos \\theta$.\n(b) Compute the dot product $\\textbf{a}(t) \\cdot \\textbf{v}(t)$ in terms of $t$ and $\\theta$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 12,
+                  number: "14.7.12",
+                  content: `The identity $\\cosh^2 \\theta - \\sinh^2 \\theta = 1$ for hyperbolic functions suggests that the hyperbola $x^2/a^2 - y^2/b^2 = 1$ may be represented by the parametric equations $x = a\\cosh \\theta$, $y = b\\sinh \\theta$, or what amounts to the same thing, by the vector equation $r = a\\cosh \\theta\\mathbf{i} + b\\sinh \\theta\\mathbf{j}$. When $a = b = 1$, the parameter $\\theta$ may be given a geometric interpretation analogous to that which holds between $\\theta$, $\\sin \\theta$, and $\\cos \\theta$ in the unit circle shown in Figure 14.7(a). Figure 14.7(b) shows one branch of the hyperbola $x^2 - y^2 = 1$. If the point $P$ has coordinates $x = \\cosh \\theta$ and $y = \\sinh \\theta$, prove that $\\theta$ equals twice the area of the sector $OAP$ shaded in the figure.\n[Hint: Let $A(\\theta)$ denote the area of sector $OAP$. Show that $$A(\\theta) = \\frac{1}{2}\\cosh \\theta \\sinh \\theta - \\int_1^{\\cosh \\theta} \\sqrt{x^2 - 1}\\,dx$$Differentiate to get $A'(\\theta) = \\frac{1}{2}$.]`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 13,
+                  number: "14.7.13",
+                  content: `A particle moves along a hyperbola according to the equation $\\textbf{r}(t) = a\\cosh \\omega t\\mathbf{i} + b\\sinh \\omega t\\mathbf{j}$, where $\\omega$ is a constant. Prove that the acceleration is centrifugal.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 14,
+                  number: "14.7.14",
+                  content: `Prove that the tangent line at a point $X$ of a parabola bisects the angle between the line joining $X$ to the focus and the line through $X$ parallel to the axis. This gives the reflection property of the parabola. (See Figure 14.3.)`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 15,
+                  number: "14.7.15",
+                  content: `A particle of mass 1 moves in a plane according to the equation $\\textbf{r}(t) = x(t)\\mathbf{i} + y(t)\\mathbf{j}$. It is attracted toward the origin by a force whose magnitude is four times its distance from the origin. At time $t = 0$, the initial position is $r(0) = 4\\mathbf{i}$ and the initial velocity is $v(0) = 6\\mathbf{j}$.\n\n(a) Determine the components $x(t)$ and $y(t)$ explicitly in terms of $t$.\n(b) The path of the particle is a conic section. Find a Cartesian equation for this conic, sketch the conic, and indicate the direction of motion along the curve.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 16,
+                  number: "14.7.16",
+                  content: `A particle moves along the parabola $x^2 + c(y - x) = 0$ in such a way that the horizontal and vertical components of the acceleration vector are equal. If it takes $T$ units of time to go from the point $(c, 0)$ to the point $(0, 0)$, how much time will it require to go from $(c, 0)$ to the halfway point $(c/2, c/4)$?`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                },
+                {
+                  id: 17,
+                  number: "14.7.17",
+                  content: `Suppose a curve $C$ is described by two equivalent functions $X$ and $Y$, where $Y(t) = X[\\varphi(t)]$. Prove that at each point of $C$ the velocity vectors associated with $X$ and $Y$ are parallel, but that the corresponding acceleration vectors need not be parallel.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-01-27"
+                }
+              ]
             },
           ]
         },
