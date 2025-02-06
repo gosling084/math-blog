@@ -483,15 +483,15 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.3",
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t\\cos t\\mathbf{i} + 3t\\sin t\\mathbf{j} + 4t\\,\\mathbf{k}$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `$$\\displaylines{\\mathbf{v}(t) = (3\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\, \\mathbf{i} + (3\\,\\text{sin}\\,t + 3t\\,\\text{cos}\\,t)\\,\\mathbf{j} + 4\\,\\textbf{k}\\\\ \\mathbf{a}(t) = (-6\\,\\text{sin}\\,t - 3t\\,\\text{cos}\\,t)\\,\\mathbf{i} + (6\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\,\\mathbf{j}\\\\ v(t) = \\sqrt{9t^2 + 25}}$$`,
                   date: "2024-01-27"
                 },
                 {
                   id: 4,
                   number: "14.7.4",
-                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = (t - \\sin t)\\mathbf{i} + (1 - \\cos t)\\mathbf{j} + 4\\sin \\frac{t}{2}\\mathbf{k}$$`,
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n$$\\textbf{r}(t) = (t - \\sin t)\\mathbf{i} + (1 - \\cos t)\\mathbf{j} + 4\\sin \\frac{t}{2}\\mathbf{k}$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `$$\\displaylines{\\textbf{v}(t) = (1 - \\cos t)\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + 2\\cos \\frac{t}{2}\\,\\mathbf{k}\\\\ \\textbf{a}(t) = \\sin t\\,\\mathbf{i} + \\cos t\\,\\mathbf{j} - \\sin \\frac{t}{2}\\,\\mathbf{k}\\\\ v(t) = \\left(1 - 2 \\cos t  + \\cos^2 t + \\sin^2 t + 4 \\cos^2 \\frac{t}{2}\\right)^{1/2}\\\\ = 2}$$`,
                   date: "2024-01-27"
                 },
                 {
@@ -499,7 +499,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.5",
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t^2\\mathbf{i} + 2t^3\\mathbf{j}$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `$$\\displaylines{\\mathbf{v}(t) = 6t\\,\\mathbf{i} + 6t^2\\,\\mathbf{j} +3\\,\\mathbf{k}\\\\ \\mathbf{a} = 6\\,\\mathbf{i} + 12t\\,\\mathbf{j}\\\\ v(t) = 3 + 6t^2}$$`,
                   date: "2024-01-27"
                 },
                 {
@@ -507,7 +507,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.6",
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = t\\mathbf{i} + \\sin t\\mathbf{j} + (1 - \\cos t)\\,\\mathbf{k}$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `$$\\displaylines{\\mathbf{v}(t) = \\mathbf{i} + \\cos t\\,\\mathbf{j} + \\sin t \\,\\mathbf{k}\\\\ \\mathbf{a}(t) = -\\sin t\\,\\mathbf{j} + \\cos t\\,\\mathbf{k}\\\\ v(t) = \\sqrt{2}}$$`,
                   date: "2024-01-27"
                 },
                 {
@@ -515,31 +515,31 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.7",
                   content: `Consider the helix described by the vector equation $\\textbf{r}(t) = a\\cos \\omega t\\mathbf{i} + a\\sin \\omega t\\mathbf{j} + b\\omega t\\,\\mathbf{k}$, where $\\omega$ is a positive constant. Prove that the tangent line makes a constant angle with the $z$-axis and that the cosine of this angle is $b/\\sqrt{a^2 + b^2}$.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `First, we find the equation of the tangent vector $\\mathbf{v}(t) = \\mathbf{r}'(t)$:$$\\mathbf{v}(t) = -a\\omega\\,\\sin \\omega t\\,\\mathbf{i} + a\\omega \\cos \\omega t\\,\\mathbf{j} + b \\omega\\,\\mathbf{k}$$Then, we take its dot product with $\\mathbf{k}$, which is equal to $b\\,\\omega$. Written another way,$$b\\,\\omega = \\|\\mathbf{v}(t)\\|\\,\\|\\mathbf{k}\\|\\cos \\theta$$Where $\\theta$ is the angle between $\\mathbf{v}$ and $\\mathbf{k}$. Evaluating the norm of $\\mathbf{v}(t)$ gives us $\\omega\\,\\left(a^2 + b^2\\right)^{1/2}$, and of course the norm of the unit vector $\\mathbf{k}$ is 1. Combining these terms, we show that the angle $\\theta$ is constant, with $$\\cos \\theta = \\frac{b}{\\sqrt{a^2 + b^2}} \\quad \\blacksquare$$ `,
                   date: "2024-01-27"
                 },
                 {
                   id: 8,
                   number: "14.7.8",
-                  content: `Referring to the helix in Exercise 7, prove that the velocity $v$ and acceleration $a$ are vectors of constant length, and that:\n $$\\frac{\\|v \\times a\\|}{\\|v\\|^3} = \\frac{a}{a^2 + b^2}$$`,
+                  content: `Referring to the helix in Exercise 7, prove that the velocity $v$ and acceleration $a$ are vectors of constant length, and that:\n $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Recall from exercise 7 that $$\\mathbf{v}(t) = -a\\omega\\,\\sin \\omega t\\,\\mathbf{i} + a\\omega \\cos \\omega t\\,\\mathbf{j} + b \\omega\\,\\mathbf{k}$$Taking its derivative, we get $$\\mathbf{a}(t) = -a\\omega^2\\,\\cos \\omega t\\,\\mathbf{i} - a\\omega^2 \\sin \\omega t\\,\\mathbf{j}$$Taking its norm, we see that $\\|\\mathbf{a}\\| = \\left[a^2\\omega^4\\left(\\cos^2 \\omega t + \\sin^2 \\omega t\\right)\\right]^{1/2} = a\\omega^2$. And we know from exercise 7 that $\\mathbf{v}$ is of constant length $\\omega \\sqrt{a^2 + b^2}$. This proves that $\\mathbf{v}$ and $\\mathbf{a}$ are of constant length.\n\nTo prove that $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$we first calculate $\\mathbf{v} \\times \\mathbf{a}$:$$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\,\\mathbf{i} - \\left(ab\\omega^3 \\cos \\omega t\\right)\\,\\mathbf{j} + \\left(a^2\\omega^3 \\sin^2 \\omega t + a^2\\omega^3 \\cos^2 \\omega t\\right)\\,\\mathbf{k}$$Taking its norm, we get $$\\displaylines{\\|\\mathbf{v} \\times \\mathbf{a}\\| = \\left(a^2b^2\\omega^6 + a^4\\omega^6\\right)^{1/2}\\\\ = a\\omega^3\\sqrt{a^2 + b^2}}$$Combining this result with $\\|\\mathbf{v}\\|^3 = \\omega^3\\left(a^2 + b^2\\right)^{3/2}$, we find that $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$`,
                   date: "2024-01-27"
                 },
                 {
                   id: 9,
                   number: "14.7.9",
-                  content: `Referring to Exercise 7, let $u(t)$ denote the unit vector $u(t) = \\sin \\omega t\\mathbf{i} - \\cos \\omega t\\mathbf{j}$. Prove that there are constants $A$ and $B$ such that $v \\times a = Au(t) + B\\,\\mathbf{k}$, and express $A$ and $B$ in terms of $a$, $b$, and $\\omega$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `Referring to Exercise 7, let $\\mathbf{u}(t)$ denote the unit vector $\\mathbf{u}(t) = \\sin \\omega t\\mathbf{i} - \\cos \\omega t\\mathbf{j}$. Prove that there are constants $A$ and $B$ such that $\\mathbf{v} \\times \\mathbf{a} = A\\mathbf{u}(t) + B\\,\\mathbf{k}$, and express $A$ and $B$ in terms of $a$, $b$, and $\\omega$.`,
+                  hint: `Recall from exercise 8:$$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\,\\mathbf{i} - \\left(ab\\omega^3 \\cos \\omega t\\right)\\,\\mathbf{j} + a^2\\omega^3\\left(\\sin^2 \\omega t + \\cos^2 \\omega t\\right)\\,\\mathbf{k}$$`,
+                  solution: `We can express the cross product $\\mathbf{v} \\times \\mathbf{a}$ as the linear combination $A\\mathbf{u}(t) + B\\mathbf{k}$, where $$A = ab\\omega^3, \\quad B = a^2\\omega^3$$`,
                   date: "2024-01-27"
                 },
                 {
                   id: 10,
                   number: "14.7.10",
                   content: `Prove that for any motion the dot product of the velocity and acceleration is half the derivative of the square of the speed:\n$$\\textbf{v}(t) \\cdot \\textbf{a}(t) = \\frac{1}{2}\\frac{d}{dt}v^2(t)$$`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall that $v^2(t) = \\mathbf{v}(t) \\cdot \\mathbf{v}(t)$. Then, apply the dot product rule for vector derivatives.`,
+                  solution: `$$\\displaylines{\\mathbf{v}(t) \\cdot \\mathbf{a}(t)\\ = \\frac{1}{2}\\left(\\mathbf{v}(t) \\cdot \\mathbf{v}(t)\\right)'\\\\ = \\frac{1}{2}\\frac{d}{dt}v^2(t) \\quad \\blacksquare}$$`,
                   date: "2024-01-27"
                 },
                 {
