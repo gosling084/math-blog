@@ -515,7 +515,15 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.7",
                   content: `Consider the helix described by the vector equation $\\textbf{r}(t) = a\\cos \\omega t\\mathbf{i} + a\\sin \\omega t\\mathbf{j} + b\\omega t\\,\\mathbf{k}$, where $\\omega$ is a positive constant. Prove that the tangent line makes a constant angle with the $z$-axis and that the cosine of this angle is $b/\\sqrt{a^2 + b^2}$.`,
                   hint: ``,
-                  solution: `First, we find the equation of the tangent vector $\\mathbf{v}(t) = \\mathbf{r}'(t)$:$$\\mathbf{v}(t) = -a\\omega\\,\\sin \\omega t\\,\\mathbf{i} + a\\omega \\cos \\omega t\\,\\mathbf{j} + b \\omega\\,\\mathbf{k}$$Then, we take its dot product with $\\mathbf{k}$, which is equal to $b\\,\\omega$. Written another way,$$b\\,\\omega = \\|\\mathbf{v}(t)\\|\\,\\|\\mathbf{k}\\|\\cos \\theta$$Where $\\theta$ is the angle between $\\mathbf{v}$ and $\\mathbf{k}$. Evaluating the norm of $\\mathbf{v}(t)$ gives us $\\omega\\,\\left(a^2 + b^2\\right)^{1/2}$, and of course the norm of the unit vector $\\mathbf{k}$ is 1. Combining these terms, we show that the angle $\\theta$ is constant, with $$\\cos \\theta = \\frac{b}{\\sqrt{a^2 + b^2}} \\quad \\blacksquare$$ `,
+                  solution: `First, we find the equation of the tangent vector $\\mathbf{v}(t) = \\mathbf{r}'(t)$:
+
+$$\\mathbf{v}(t) = -a\\omega\\,\\sin \\omega t\\,\\mathbf{i} + a\\omega \\cos \\omega t\\,\\mathbf{j} + b \\omega\\,\\mathbf{k}$$
+Then, we take its dot product with $\\mathbf{k}$, which is equal to $b\\,\\omega$. Written another way,
+
+$$b\\,\\omega = \\|\\mathbf{v}(t)\\|\\,\\|\\mathbf{k}\\|\\cos \\theta$$
+Where $\\theta$ is the angle between $\\mathbf{v}$ and $\\mathbf{k}$. Evaluating the norm of $\\mathbf{v}(t)$ gives us $\\omega\\,\\left(a^2 + b^2\\right)^{1/2}$, and of course the norm of the unit vector $\\mathbf{k}$ is 1. Combining these terms, we show that the angle $\\theta$ is constant, with 
+
+$$\\cos \\theta = \\frac{b}{\\sqrt{a^2 + b^2}}$$ `,
                   date: "2024-01-27"
                 },
                 {
@@ -523,14 +531,34 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.8",
                   content: `Referring to the helix in Exercise 7, prove that the velocity $v$ and acceleration $a$ are vectors of constant length, and that:\n $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$`,
                   hint: ``,
-                  solution: `Recall from exercise 7 that $$\\mathbf{v}(t) = -a\\omega\\,\\sin \\omega t\\,\\mathbf{i} + a\\omega \\cos \\omega t\\,\\mathbf{j} + b \\omega\\,\\mathbf{k}$$Taking its derivative, we get $$\\mathbf{a}(t) = -a\\omega^2\\,\\cos \\omega t\\,\\mathbf{i} - a\\omega^2 \\sin \\omega t\\,\\mathbf{j}$$Taking its norm, we see that $\\|\\mathbf{a}\\| = \\left[a^2\\omega^4\\left(\\cos^2 \\omega t + \\sin^2 \\omega t\\right)\\right]^{1/2} = a\\omega^2$. And we know from exercise 7 that $\\mathbf{v}$ is of constant length $\\omega \\sqrt{a^2 + b^2}$. This proves that $\\mathbf{v}$ and $\\mathbf{a}$ are of constant length.\n\nTo prove that $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$we first calculate $\\mathbf{v} \\times \\mathbf{a}$:$$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\,\\mathbf{i} - \\left(ab\\omega^3 \\cos \\omega t\\right)\\,\\mathbf{j} + \\left(a^2\\omega^3 \\sin^2 \\omega t + a^2\\omega^3 \\cos^2 \\omega t\\right)\\,\\mathbf{k}$$Taking its norm, we get $$\\displaylines{\\|\\mathbf{v} \\times \\mathbf{a}\\| = \\left(a^2b^2\\omega^6 + a^4\\omega^6\\right)^{1/2}\\\\ = a\\omega^3\\sqrt{a^2 + b^2}}$$Combining this result with $\\|\\mathbf{v}\\|^3 = \\omega^3\\left(a^2 + b^2\\right)^{3/2}$, we find that $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$`,
+                  solution: `Recall from exercise 7 that 
+
+$$\\mathbf{v}(t) = -a\\omega\\,\\sin \\omega t\\,\\mathbf{i} + a\\omega \\cos \\omega t\\,\\mathbf{j} + b \\omega\\,\\mathbf{k}$$
+Taking its derivative, we get 
+
+$$\\mathbf{a}(t) = -a\\omega^2\\,\\cos \\omega t\\,\\mathbf{i} - a\\omega^2 \\sin \\omega t\\,\\mathbf{j}$$
+Taking its norm, we see that $\\|\\mathbf{a}\\| = \\left[a^2\\omega^4\\left(\\cos^2 \\omega t + \\sin^2 \\omega t\\right)\\right]^{1/2} = a\\omega^2$. And we know from exercise 7 that $\\mathbf{v}$ is of constant length $\\omega \\sqrt{a^2 + b^2}$. This proves that $\\mathbf{v}$ and $\\mathbf{a}$ are of constant length.
+
+To prove that 
+$$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$
+we first calculate $\\mathbf{v} \\times \\mathbf{a}$:
+
+$$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\,\\mathbf{i} - \\left(ab\\omega^3 \\cos \\omega t\\right)\\,\\mathbf{j} + \\left(a^2\\omega^3 \\sin^2 \\omega t + a^2\\omega^3 \\cos^2 \\omega t\\right)\\,\\mathbf{k}$$
+Taking its norm, we get
+
+$$\\displaylines{\\|\\mathbf{v} \\times \\mathbf{a}\\| = \\left(a^2b^2\\omega^6 + a^4\\omega^6\\right)^{1/2}\\\\ = a\\omega^3\\sqrt{a^2 + b^2}}$$
+Combining this result with $\\|\\mathbf{v}\\|^3 = \\omega^3\\left(a^2 + b^2\\right)^{3/2}$, we find that 
+
+$$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$`,
                   date: "2024-01-27"
                 },
                 {
                   id: 9,
                   number: "14.7.9",
                   content: `Referring to Exercise 7, let $\\mathbf{u}(t)$ denote the unit vector $\\mathbf{u}(t) = \\sin \\omega t\\mathbf{i} - \\cos \\omega t\\mathbf{j}$. Prove that there are constants $A$ and $B$ such that $\\mathbf{v} \\times \\mathbf{a} = A\\mathbf{u}(t) + B\\,\\mathbf{k}$, and express $A$ and $B$ in terms of $a$, $b$, and $\\omega$.`,
-                  hint: `Recall from exercise 8:$$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\,\\mathbf{i} - \\left(ab\\omega^3 \\cos \\omega t\\right)\\,\\mathbf{j} + a^2\\omega^3\\left(\\sin^2 \\omega t + \\cos^2 \\omega t\\right)\\,\\mathbf{k}$$`,
+                  hint: `Recall from exercise 8:
+                  
+$$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\,\\mathbf{i} - \\left(ab\\omega^3 \\cos \\omega t\\right)\\,\\mathbf{j} + a^2\\omega^3\\left(\\sin^2 \\omega t + \\cos^2 \\omega t\\right)\\,\\mathbf{k}$$`,
                   solution: `We can express the cross product $\\mathbf{v} \\times \\mathbf{a}$ as the linear combination $A\\mathbf{u}(t) + B\\mathbf{k}$, where $$A = ab\\omega^3, \\quad B = a^2\\omega^3$$`,
                   date: "2024-01-27"
                 },
@@ -545,9 +573,26 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                 {
                   id: 11,
                   number: "14.7.11",
-                  content: `Let $c$ be a fixed unit vector. A particle moves in space in such a way that its position vector $\\textbf{r}(t)$ satisfies the equation $\\textbf{r}(t) \\cdot c = e^{2t}$ for all $t$, and its velocity vector $\\textbf{v}(t)$ makes a constant angle $\\theta$ with $c$, where $0 < \\theta ≤ 1$.\n\n(a) Prove that the speed at time $t$ is $2e^{2t}/\\cos \\theta$.\n(b) Compute the dot product $\\textbf{a}(t) \\cdot \\textbf{v}(t)$ in terms of $t$ and $\\theta$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `Let $\\mathbf{c}$ be a fixed unit vector. A particle moves in space in such a way that its position vector $\\textbf{r}(t)$ satisfies the equation $\\textbf{r}(t) \\cdot \\mathbf{c} = e^{2t}$ for all $t$, and its velocity vector $\\textbf{v}(t)$ makes a constant angle $\\theta$ with $\\mathbf{c}$, where $0 < \\theta < \\frac{\\pi}{2}$.\n\n(a) Prove that the speed at time $t$ is $2e^{2t}/\\cos \\theta$.\n(b) Compute the dot product $\\textbf{a}(t) \\cdot \\textbf{v}(t)$ in terms of $t$ and $\\theta$.`,
+                  hint: `(a) Note that speed is the norm of the velocity vector, and that 
+
+$$\\cos \\theta = \\frac{\\mathbf{v}(t) \\cdot \\mathbf{c}}{\\|\\mathbf{v}(t)\\|\\|\\mathbf{c}\\|}$$
+(b) Note that if we differentiate the dot product $\\mathbf{v} \\cdot \\mathbf{v}$ we get: $$\\displaylines{\\left(\\mathbf{v} \\cdot \\mathbf{v}\\right)' = \\mathbf{v}' \\cdot \\mathbf{v} + \\mathbf{v} \\cdot \\mathbf{v}'\\\\ = 2\\ \\mathbf{a} \\cdot \\mathbf{v}}$$`,
+                  solution: `(a) Differentiating both sides of the equation $\\mathbf{r}(t) \\cdot \\mathbf{c} = e^{2t}$, we get: 
+
+$$\\mathbf{v}(t) \\cdot \\mathbf{c} = 2\\ e^{2t}$$
+Written another way,
+
+$$\\|\\mathbf{v}(t)\\|\\|\\mathbf{c}\\|\\cos \\theta = 2\\ e^{2t}$$
+And since we know $\\mathbf{c}$ is of unit length, speed $\\|\\mathbf{v}(t)\\|$ is 
+
+$$\\|\\mathbf{v}(t)\\| = \\frac{2e^{2t}}{\\cos \\theta}$$
+
+(b) First, we note that $\\|\\mathbf{v}(t)\\|^2 = \\mathbf{v}(t) \\cdot \\mathbf{v}(t) = \\frac{4e^{4t}}{\\cos^2 t}$. Then, differentiating with respect to $t$ gives us: 
+
+$$\\displaylines{2\\,\\mathbf{a}(t) \\cdot \\mathbf{v}(t) = \\frac{16\\,e^{4t}}{\\cos^2 \\theta}}$$
+Or in other words: 
+$$\\displaylines{\\mathbf{a}(t) \\cdot \\mathbf{v}(t) = \\frac{8\\,e^{4t}}{\\cos^2 \\theta}}$$`,
                   date: "2024-01-27"
                 },
                 {
@@ -555,15 +600,29 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.12",
                   content: `The identity $\\cosh^2 \\theta - \\sinh^2 \\theta = 1$ for hyperbolic functions suggests that the hyperbola $x^2/a^2 - y^2/b^2 = 1$ may be represented by the parametric equations $x = a\\cosh \\theta$, $y = b\\sinh \\theta$, or what amounts to the same thing, by the vector equation $r = a\\cosh \\theta\\mathbf{i} + b\\sinh \\theta\\mathbf{j}$. When $a = b = 1$, the parameter $\\theta$ may be given a geometric interpretation analogous to that which holds between $\\theta$, $\\sin \\theta$, and $\\cos \\theta$ in the unit circle shown in Figure 14.7(a). Figure 14.7(b) shows one branch of the hyperbola $x^2 - y^2 = 1$. If the point $P$ has coordinates $x = \\cosh \\theta$ and $y = \\sinh \\theta$, prove that $\\theta$ equals twice the area of the sector $OAP$ shaded in the figure.\n[Hint: Let $A(\\theta)$ denote the area of sector $OAP$. Show that $$A(\\theta) = \\frac{1}{2}\\cosh \\theta \\sinh \\theta - \\int_1^{\\cosh \\theta} \\sqrt{x^2 - 1}\\,dx$$Differentiate to get $A'(\\theta) = \\frac{1}{2}$.]`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Since the curve in question is a hyperbola, we know that each $P$ on the curve can be written as $(x, y) = \\left(\\cosh \\theta, \\sinh \\theta \\right)$. As such, the area of the right triangle with vertices $O, P, (x, 0)$ is $\\frac{1}{2}bh = \\frac{1}{2} \\cosh \\theta \\sinh \\theta$. Now, to find the area of the sector $OAP$, we must subtract from the right triangle $O, P, (x, 0)$ the area under the curve $y = \\sqrt{x^2 - 1}$ from $x = A$ to $x = \\cosh \\theta$. But $A$ is a point on the hyperbola desctibed by $x^2 - y^2 = 1$, since $A$ touches the $x$-axis, thus $A$ must be $(1, 0)$. This difference, written as a function of $\\theta$ is 
+
+$$A(\\theta) = \\frac{1}{2} \\cosh \\theta \\sinh \\theta - \\int_1^{\\cosh \\theta} \\sqrt{x^2 - 1}\\, dx$$
+Taking the derivative with respect to $\\theta$ gives us: 
+
+$$\\displaylines{A'(\\theta) = \\frac{1}{2}\\left(\\sinh^2 \\theta + \\cosh^2 \\theta\\right) - \\left(\\sinh \\theta \\sqrt{\\cosh^2 \\theta - 1}\\right)\\\\ = \\frac{1}{2}\\left(\\sinh^2 \\theta + \\cosh^2 \\theta\\right) - \\left(\\sinh \\theta \\sqrt{\\sinh^2 \\theta}\\right)\\\\ = \\frac{1}{2}\\left(\\cosh^2 \\theta- \\sinh^2 \\theta\\right)\\\\ = \\frac{1}{2}}$$
+This implies, however, that the area $A(\\theta)$ is 
+
+$$A(\\theta) = \\int_0^{\\theta}\\frac{1}{2}\\,dt = \\frac{\\theta}{2}$$
+Or in other words, that the angle $\\theta$ is twice the area $A(\\theta)$ of the sector $OAP$. This completes the proof.`,
                   date: "2024-01-27"
                 },
                 {
                   id: 13,
                   number: "14.7.13",
-                  content: `A particle moves along a hyperbola according to the equation $\\textbf{r}(t) = a\\cosh \\omega t\\mathbf{i} + b\\sinh \\omega t\\mathbf{j}$, where $\\omega$ is a constant. Prove that the acceleration is centrifugal.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `A particle moves along a hyperbola according to the equation 
+
+$$\\textbf{r}(t) = a\\cosh \\omega t\\,\\mathbf{i} + b\\sinh \\omega t\\,\\mathbf{j}$$
+where $\\omega$ is a constant. Prove that the acceleration is centrifugal.`,
+                  hint: `By definition, acceleration is centrifugal if the position vector and acceleration vector have the same direction (ie, away from the center of the hyperbola at the origin).`,
+                  solution: `We wish to show that for some positive scalar $c$, that $\\mathbf{a} = c\\,\\mathbf{r}$. Differentiating with respect to $t$, we get 
+
+$$\\displaylines{\\mathbf{v}(t) = \\omega a\\,\\sinh \\omega t\\,\\mathbf{i} + \\omega b\\,\\cosh \\omega t\\,\\mathbf{j} \\\\\\mathbf{a}(t) = \\omega^2 a\\,\\cosh \\omega t\\,\\mathbf{i} + \\omega^2 b\\,\\sinh \\omega t\\,\\mathbf{j}\\\\ = \\omega^2\\, \\mathbf{r}{(t)}}$$`,
                   date: "2024-01-27"
                 },
                 {
@@ -571,7 +630,30 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   number: "14.7.14",
                   content: `Prove that the tangent line at a point $X$ of a parabola bisects the angle between the line joining $X$ to the focus and the line through $X$ parallel to the axis. This gives the reflection property of the parabola. (See Figure 14.3.)`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Let the focus $F = 0$, then $X - F = X$. If $\\mathbf{u}$ is a unit vector with the same direction as $X$, then we can define $X$ as $d\\mathbf{u}$ where $d = \\|X\\|$. Now, let $P$ be a point on the vertical directrix line $L$, with $X - P$ parallel to the axis of the parabola (i.e., the $x$-axis). By definition, $\\|X - P\\|$ must be $d$. In other words, we can rewrite
+$$
+X = P + d\\,\\mathbf{i},
+$$
+Taking the derivative of $X$ with respect to $t$ using both definitions, we get
+
+$$
+X' = d'\\,\\mathbf{u} + d\\,\\mathbf{u}'; \\quad
+X' = P' + d'\\,\\mathbf{i},
+$$(since $\\mathbf{i}' = 0)$. 
+
+Taking the dot products with $\\mathbf{u}$ and $\\mathbf{i}$, respectively, and recalling that $\\mathbf{u}'\\cdot\\mathbf{u} = 0$ and $\\mathbf{i}'\\cdot\\mathbf{i} = 0$ (since $\\mathbf{u}$ and $\\mathbf{i}$ are of constant length), we get:
+
+$$
+X'\\cdot \\mathbf{u} = d'; \\quad X'\\cdot \\mathbf{i} = P'\\cdot \\mathbf{i} + d'.
+$$
+But $P'$ must be perpendicular to $\\mathbf{i}$ since $P$ can only ever move vertically. Thus, $P'\\cdot\\, \\mathbf{i} = 0$, so that
+$$
+X'\\cdot \\mathbf{u} = X'\\cdot \\mathbf{i} = d'.
+$$
+Assuming that the directrix line is to the left of the parabola, this means that the angles between $X$ and $\\mathbf{i}$, $X'$ and $\\mathbf{i}$, and $X'$ and $\\mathbf{u}$ are all such that $0 < \\theta < \\frac{\\pi}{2}$. Thus, the cosines determined by the above dot products are unique.
+
+And since $\\mathbf{u} \\neq \\mathbf{i}$, it follows that the tangent line (with direction $X'$) bisects the angle between the line segment from the focus to $X$ (which has direction $\\mathbf{u}$) and the horizontal line through $X$ (which has direction $\\mathbf{i}$), thus proving the reflection property of the parabola.`
+,
                   date: "2024-01-27"
                 },
                 {
