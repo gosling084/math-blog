@@ -660,24 +660,100 @@ And since $\\mathbf{u} \\neq \\mathbf{i}$, it follows that the tangent line (wit
                   id: 15,
                   number: "14.7.15",
                   content: `A particle of mass 1 moves in a plane according to the equation $\\textbf{r}(t) = x(t)\\mathbf{i} + y(t)\\mathbf{j}$. It is attracted toward the origin by a force whose magnitude is four times its distance from the origin. At time $t = 0$, the initial position is $r(0) = 4\\mathbf{i}$ and the initial velocity is $v(0) = 6\\mathbf{j}$.\n\n(a) Determine the components $x(t)$ and $y(t)$ explicitly in terms of $t$.\n(b) The path of the particle is a conic section. Find a Cartesian equation for this conic, sketch the conic, and indicate the direction of motion along the curve.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `(a) Since the particle is of unit mass, force can be simplified as  $F = m\\,\\mathbf{a} = \\mathbf{a}$. If the particle is attracted towards the origin with magnitude four times its distance from the origin, then it must be the case that
+
+$$\\mathbf{a}(t) = -4\\,\\mathbf{r}(t)$$
+(b) Set $(x, y)$ as the horizontal and vertical components of the motion.`,
+                  solution: `(a) We know that $F = m\\mathbf{a}$, and since $m = 1$, we have $F = \\mathbf{a}$. And since we know that $F$ is towards the origin with four times the magnitude of the position vector, we have 
+
+$$F(t) = \\mathbf{a}(t) = -4 \\mathbf{r}(t)$$
+At time $t = 0$, we have $\\mathbf{r}(t) = 4\\mathbf{i}$ and $\\mathbf{v}(t) = 6\\mathbf{j}$. If we write write position parametrically
+
+$$\\mathbf{r}(t) = x(t)\\,\\mathbf{i} + y(t)\\,\\mathbf{j}$$
+We see that 
+
+$$\\displaylines{x(0) = 4,\\quad y(0) = 0\\\\ x'(0) = 0,\\quad y'(0) = 6\\\\ x''(0) = -16,\\quad y''(0) = 0}$$
+
+These values, and the condition $\\mathbf{a}(t) = -4\\mathbf{r}(t)$ can be satisfied by the components 
+
+$$x(t) = 4\\cos(2t), \\quad y(t) = 3\\sin(2t)$$
+
+(b) We wish to find values $a^2$ and $b^2$ such that:
+
+$$\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$$ 
+Let $a = 4$, $b = 3$, then we have
+
+$$\\frac{x^2}{16} + \\frac{y^2}{9} = 1$$
+`,
                   date: "2024-01-27"
                 },
                 {
                   id: 16,
                   number: "14.7.16",
                   content: `A particle moves along the parabola $x^2 + c(y - x) = 0$ in such a way that the horizontal and vertical components of the acceleration vector are equal. If it takes $T$ units of time to go from the point $(c, 0)$ to the point $(0, 0)$, how much time will it require to go from $(c, 0)$ to the halfway point $(c/2, c/4)$?`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Note that $(x')^2 + xx'' = (xx')'$. What does it mean if $(xx')' = 0?$`,
+                  solution: `We start by differentiating the equation of the parabola with respect to the parameter $t$, recalling that $x'' = y''$.
+
+$$\\frac{d}{dt}\\left[x^2 + c\\left(y - x\\right)\\right] = 2x\\frac{dx}{dt} + c\\frac{dy}{dt} - c\\frac{dx}{dt} = 0$$
+Differentiating once more with respect to $t$, recalling that $x'' = y''$:
+
+$$
+\\begin{align*}
+\\frac{d}{dt}\\left[2x\\frac{dx}{dt} + c\\frac{dy}{dt} - c\\frac{dx}{dt}\\right] &= \\frac{d}{dt}\\left[2x\\frac{dx}{dt}\\right] + \\frac{d}{dt}\\left[c\\frac{dy}{dt} - c\\frac{dx}{dt}\\right]\\\\
+&= 2\\left(\\frac{dx}{dt}\\right)^2 + 2x\\frac{d^2x}{dt^2}\\\\ 
+&= 0
+\\end{align*}
+$$
+But the above result implies that
+
+$$
+\\begin{align*}
+\\frac{d}{dt}\\left[x\\frac{dx}{dt}\\right] &= 0
+\\end{align*}
+$$
+which would imply that $x\\frac{dx}{dt} = k$ for some real $k$. If we separate variables and integrate both sides, using our initial condition that it takes $T$ time units for $x$ to move from $c$ to $0$ then:
+
+$$
+\\begin{align*}
+\\int_c^0x\\,dx = \\int_0^T k\\,dt
+\\end{align*}
+$$
+Or in other words,
+$$
+k = \\frac{-c^2}{2T}
+$$
+Using this, we now calculate
+
+$$
+\\begin{align*}
+\\int_c^{c/2}x\\,dx = \\int_0^{T_0} k\\,dt
+\\end{align*}
+$$
+Which gives us:
+$$
+\\begin{align*}
+\\frac{c^2}{2} - \\frac{c^2}{8} = \\frac{c^2}{2T}T_0
+\\end{align*}
+$$
+or in other words, that $T_0 = \\frac{3}{4}T$`,
                   date: "2024-01-27"
                 },
                 {
                   id: 17,
                   number: "14.7.17",
-                  content: `Suppose a curve $C$ is described by two equivalent functions $X$ and $Y$, where $Y(t) = X[\\varphi(t)]$. Prove that at each point of $C$ the velocity vectors associated with $X$ and $Y$ are parallel, but that the corresponding acceleration vectors need not be parallel.`,
+                  content: `Suppose a curve $C$ is described by two equivalent functions $X$ and $Y$, where $Y(t) = X[u(t)]$. Prove that at each point of $C$ the velocity vectors associated with $X$ and $Y$ are parallel, but that the corresponding acceleration vectors need not be parallel.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Assuming that $u'(t)$ is never zero on the interval where $C$ is defined, and if $X'[u(t)]$ is also nonzero on the same interval, then $Y'(t)$ is parallel to $X'[u(t)]$ with 
+$$
+Y'(t) = X'[u(t)]u'(t)
+$$
+But, if we integrate again, we get
+
+$$
+Y''(t) = X''[u(t)](u'(t))^2 + X'[u(t)]u''(t)
+$$
+Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for all $t$ in $I$.
+`,
                   date: "2024-01-27"
                 }
               ]
