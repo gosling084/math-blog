@@ -42,6 +42,7 @@ export const MathContent = ({ content, className = '' }: MathContentProps) => {
             mathElements.forEach(element => {
               (element as HTMLElement).style.maxWidth = '100%';
               (element as HTMLElement).style.overflowX = 'auto';
+              (element as HTMLElement).style.overflowY = 'clip'; // Fixes vertical scrolling issue for individual display equations
             });
           }
         });
@@ -52,8 +53,8 @@ export const MathContent = ({ content, className = '' }: MathContentProps) => {
     <div 
       ref={containerRef} 
       className={cn(
-        "math-content prose max-w-none",
-        "overflow-x-auto", // Only handle horizontal overflow
+        "math-content prose",
+        "overflow-y-clip", // Fixes the vertical scrolling issue in MathJax containers
         className
       )}
     >
