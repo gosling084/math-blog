@@ -758,6 +758,323 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                 }
               ]
             },
+            {
+              id: 9,
+              title: "14.9 Exercises",
+              description: "Exercises on the unit tangent, principal normal, and osculating plane of a curve",
+              problems: [
+                {
+                  id: 1,
+                  number: "14.9.1",
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 2$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 2,
+                  number: "14.9.2",
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\pi$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 3,
+                  number: "14.9.3",
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 0$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 4,
+                  number: "14.9.4",
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\pi$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 5,
+                  number: "14.9.5",
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 1$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 6,
+                  number: "14.9.6",
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\frac{\\pi}{2}$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 7,
+                  number: "14.9.7",
+                  content: `Prove that if the acceleration vector is always zero, the motion is linear.`,
+                  hint: ``,
+                  solution: `If $\\mathbf{a}(t) = 0$ for all $t$, then this means that $\\mathbf{v}(t)$ is constant for all $t$. This means that the speed v(t) is also constant, making v'(t) = 0, thus making the formula for acceleration
+$$
+\\begin{align*}
+\\mathbf{a}(t) &= v(t)T'(t)\\\\
+&= O
+\\end{align*}
+$$
+In the trivial case where $v(t) =0$ for all $t$, then there is no motion. If acceleration is zero for all $t$ with nonzero speed, then $T'(t)$ must be zero for all $t.$ And since $T'(t)$ is the measure of change in direction of $T(t)$, this means that there is no change in direction at any time $t$, thus the motion must be linear.
+`,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 8,
+                  number: "14.9.8",
+                  content: `Prove that the normal component of the acceleration vector is $\\|\\mathbf{v} \\times \\mathbf{a}\\|/\\|\\mathbf{v}\\|$.`,
+                  hint: `Use Lagrange's identity for the norm of a cross product
+                  
+$$
+\\|A \\times B\\|^2 = \\|A\\|^2\\|B\\|^2 - \\left(A \\cdot B\\right)^2
+$$`,
+                  solution: `Recall that by Lagrange's identity for the norm of a cross product,
+
+$$
+\\|\\mathbf{v} \\times \\mathbf{a}\\|^2 = \\|\\mathbf{v}\\|^2 \\|\\mathbf{a}\\|^2 - \\left(\\mathbf{v} \\cdot \\mathbf{a}\\right)^2
+$$
+Dividing both sides by $\\|\\mathbf{v}\\|^2$ and taking the square root, we get:
+$$
+\\begin{align*}
+\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|} &= \\left(\\|\\mathbf{a}\\|^2 - \\left(\\mathbf{a} \\cdot T\\right)^2\\right)^{1/2} \\\\
+\\end{align*}
+$$
+Where $T$ is the unit tangent $\\mathbf{v}/\\|\\mathbf{v}\\|$
+
+Thus, we wish to show that the normal component of the acceleration vector is equal to  
+$$
+\\left(\\mathbf{a} \\cdot \\mathbf{a} - \\left(\\mathbf{a} \\cdot T\\right)^2\\right)^{1/2}
+$$
+First, we recall that component-wise, acceleration is defined as
+$$
+\\mathbf{a}(t) = v'(t)T(t) + v(t)\\|T'(t)\\|N(t)
+$$
+where $N(t) = T'(t)/\\|T'(t)\\|$ is the principal normal vector.
+
+The normal component of the acceleration vector (ie, the coefficient of the principal normal) is:
+$$
+\\begin{align*}
+v\\|T'\\| &= v\\left\\Vert\\left(\\frac{\\mathbf{v}}{v}\\right)'\\right\\Vert\\\\
+&= v\\left\\Vert\\frac{\\mathbf{v}'}{v} - \\frac{v'}{v^2}\\mathbf{v}\\right\\Vert\\\\
+&= \\|\\mathbf{a} - v'T\\|
+\\end{align*}
+$$
+But we know by definition that $T$ and $N$ are perpendicular. If we take the dot product $\\mathbf{a} \\cdot T,$ noting that $T$ has a length of 1, we get:
+
+$$
+\\begin{align*}
+\\mathbf{a} \\cdot T &= v'(T \\cdot T) + v(N \\cdot T)\\\\
+&= v'
+\\end{align*}
+$$
+This means that we can rewrite $\\|\\mathbf{a} - v'T\\|$ as:
+
+$$
+\\begin{align*}
+\\|\\mathbf{a} - v'T\\| = \\|\\mathbf{a} - (\\mathbf{a} \\cdot T) T\\|
+\\end{align*}
+$$
+Now, we expand the right-hand side of the above equation, recalling that $T \\cdot T = 1,$ to give us:
+
+$$
+\\begin{align*}
+\\|\\mathbf{a} - (\\mathbf{a} \\cdot T) T\\| &= \\left(\\left(\\mathbf{a} - \\left(\\mathbf{a} \\cdot T\\right)T\\right) \\cdot \\left(\\mathbf{a} - \\left(\\mathbf{a} \\cdot T\\right)T\\right)\\right)^{1/2} \\\\
+&= \\left(\\mathbf{a} \\cdot \\mathbf{a} - 2\\left(\\mathbf{a} \\cdot T\\right)^2 + \\left(\\mathbf{a} \\cdot T\\right)^2 (T \\cdot T)\\right)^{1/2} \\\\
+&= \\left(\\mathbf{a} \\cdot \\mathbf{a} - \\left(\\mathbf{a} \\cdot T\\right)^2\\right)^{1/2}
+\\end{align*}
+$$
+Thus, we have proven that 
+
+$$
+v\\|T'\\| = \\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|}
+$$
+`,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 9,
+                  number: "14.9.9",
+                  content: `For each of the following statements about a curve traced out by a particle moving in 3-space, either give a proof or exhibit a counter example.\n(a) If the velocity is constant, the curve lies in a plane.\n(b) If the speed is constant, the curve lies in a plane.\n(c) If the acceleration is constant, the curve lies in a plane.\n(d) If the velocity is perpendicular to the acceleration, the curve lies in a plane.`,
+                  hint: ``,
+                  solution: `(a) Proof. If velocity is constant, then position $\\mathbf{r}(t)$ can be described as the integral of $\\mathbf{v}(x)$ from $x = 0$ to $x = t$. Let $\\mathbf{v}(x) = A$, where $A$ is a constant vector, and let $\\mathbf{r}(0) = P$. Then $\\mathbf{r}(t)$ is defined as:
+
+$$
+\\begin{align*}
+\\mathbf{r}(t) &= \\int_0^t A\\,dx + \\mathbf{r}(0)\\\\
+&= P + At
+\\end{align*}
+$$
+
+for $t > 0$. Thus, we have shown that if velocity is constant, not only does the curve lie in a plane, but the curve is in fact a line.
+
+(b) Counterexample. Take, for example, helical motion, whose velocity is
+
+$$
+-\\omega a \\sin\\, \\omega t\\, \\mathbf{i} + \\omega a \\cos\\, \\omega t\\, \\mathbf{j} + \\omega b\\, \\mathbf{k}
+$$
+and whose speed is a constant $\|\\omega\|\\sqrt{a^2 + b^2}$, but whose curve does not lie in a plane.
+
+(c) Proof. Let $\\mathbf{a}(t) = A$ for all $t$, then $\\mathbf{v}(t) = At + \\mathbf{v}(0)$ and $\\mathbf{r}(t) = \\frac{t^2}{2}A + tB + C$ where $B = \\mathbf{v}(0)$ and $C = \\mathbf{r}(0)$. But every point on $\\mathbf{r}(t)$ is a member of some set:
+
+$$
+\\{C + uB + vA \\mid u, v\\ \\text{real}\\}
+$$
+which is, by definition, a plane. 
+
+(d) Counterexample. Consider again helical motion, whose velocity is 
+
+$$
+\\mathbf{v}(t) = -\\omega a \\sin\\, \\omega t\\, \\mathbf{i} + \\omega a \\cos\\, \\omega t\\, \\mathbf{j} + \\omega b\\, \\mathbf{k}
+$$
+and whose acceleration is
+
+$$
+\\mathbf{a}(t) = -\\omega^2 a \\cos\\, \\omega t\\, \\mathbf{i} - \\omega^2 a \\sin\\, \\omega t\\, \\mathbf{j}
+$$
+The dot product $\\mathbf{v} \\cdot \\mathbf{a}$ is zero, but the motion does not lie within a plane.
+`,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 10,
+                  number: "14.9.10",
+                  content: `A particle of unit mass with position vector $\\mathbf{r}(t)$ at time $t$ is moving in space under the actions of certain forces.
+
+(a) Prove that $\\mathbf{r} \\times \\mathbf{r}'' = 0$ implies $\\mathbf{r} \\times \\mathbf{r}' = \\mathbf{c}$, where $\\mathbf{c}$ is a constant vector.
+(b) If $\\mathbf{r} \\times \\mathbf{r}' = \\mathbf{c}$, where $\\mathbf{c}$ is a constant vector, prove that the motion takes place in a plane. Consider both $\\mathbf{c} \\neq 0$ and $\\mathbf{c} = 0$.
+(c) If the net force acting on the particle is always directed toward the origin, prove that the particle moves in a plane.
+(d) Is $\\mathbf{r} \\times \\mathbf{r}'$ necessarily constant if a particle moves in a plane?`,
+                  hint: `(a) Recall the solution of 14.4.15 where we showed that $(F \\times F')' = F \\times F''$
+
+(b) Recall from Theorem (13.12.g) that for two vectors $A$ and $B$, $A \\times B = O$ if and only if $A$ and $B$ are linearly dependent.
+
+(c) If force is always directed towards the origin, then this implies that acceleration and position are linearly dependent.
+`,
+                  solution: `(a) We have shown previously that for some vector-valued function $F,$
+
+$$
+(F \\times F')' = F \\times F''
+$$
+Thus, if $\\mathbf{r} \\times \\mathbf{r}'' = 0,$ then $(\\mathbf{r} \\times \\mathbf{r}')' = 0$ and $\\mathbf{r} \\times \\mathbf{r}'$ is constant.
+
+(b) If $\\mathbf{c} = 0$, then $\\mathbf{r}$ and $\\mathbf{r}'$ are linearly dependent (Theorem 13.12). This means that the velocity vector is a scalar multiple of the position vector, implying that motion is linear, and thus in a plane.
+
+If $\\mathbf{c} \\neq 0$, then $\\mathbf{r}(t) \\times \\mathbf{v}(t)$ is constant for all $t$, meaning that all motion is perpendicular to $\\mathbf{c}$. Thus, the motion defined by $\\mathbf{r}$ and $\\mathbf{v}$ must lie within a plane $($perpendicular to $\\mathbf{c})$.
+
+(c) If the force is always directed towards the origin, then with unit mass, this implies that $\\mathbf{a}(t) = -k\\mathbf{r}(t)$ for some scalar $k$. But this means that $\\mathbf{a}$ and $\\mathbf{r}$ are linearly dependent, and we know from before that this means $\\mathbf{r} \\times \\mathbf{a} = O$. But recall from part (a) that this implies that $\\mathbf{r} \\times \\mathbf{v} = \\mathbf{c}$ where $\\mathbf{c}$ is constant, which means that the motion lies within a plane as shown in part (b).
+
+(d) The direction of the vector normal to the plane will remain constant but can be scaled by some real constant, thus $\\mathbf{r} \\times \\mathbf{v}$ need not be constant.
+`,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 11,
+                  number: "14.9.11",
+                  content: `A particle moves along a curve in such a way that the velocity vector makes a constant angle with a given unit vector $\\mathbf{c}$.\n(a) If the curve lies in a plane containing $\\mathbf{c}$, prove that the acceleration vector is either zero or parallel to the velocity.\n(b) Give an example of such a curve (not a plane curve) for which the acceleration vector is never zero nor parallel to the velocity.`,
+                  hint: `(a) Break down acceleration into its tangential and normal components
+$$
+\\mathbf{a}(t) = v'(t)T(t) + v(t)\\|T'(t)\\|N(t)
+$$
+If the velocity vector makes a constant angle with $\\mathbf{c}$, what does this imply about $T$ and $T'?$`,
+                  solution: `(a) If the velocity vector makes a constant angle with $\\mathbf{c}$, then this implies that $T$ is constant. But that means that $T'$ must be zero, thus making the normal component of acceleration zero. Then, acceleration is
+$$
+\\mathbf{a}(t) = v'(t)T(t)
+$$
+If $v'(t) = 0$, then $\\mathbf{a}(t) = 0$. Otherwise, acceleration is a scalar multiple of $T$, making it parallel to velocity.
+`,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 12,
+                  number: "14.9.12",
+                  content: `A particle moves along the ellipse $3x^2 + y^2 = 1$ with position vector
+$$
+\\mathbf{r}(t) = f(t)\\mathbf{i} + g(t)\\mathbf{j}
+$$The motion is such that the horizontal component of the velocity vector at time $t$ is $-g(t)$.
+
+(a) Does the particle move around the ellipse in a clockwise or counterclockwise direction?
+(b) Prove that the vertical component of the velocity vector at time $t$ is proportional to $f(t)$ and find the factor of proportionality.\n(c) How much time is required for the particle to go once around the ellipse?`,
+                  hint: `(a) Horizontal velocity is negative when vertical position is positive. What does this mean about the direction of the motion?
+
+(b) Differentiate the ellipse equation with respect to the parameter $t$.
+
+(c) We can express the components of an ellipse as $x = a\\cos \\omega t$ and $y = b\\sin \\omega t$ for some real $a$, $b.$ What property of the sine and cosine can we use to deduce the time taken to complete a revolution?
+                  `,
+                  solution: `(a) If horizontal component of velocity is the negative of the vertical component of position, then the particle moves left when $y > 0$ and right when $y < 0$, making the motion counter-clockwise. 
+
+(b) Taking the derivative of the ellipse equation with respect to $t$:
+
+$$
+\\begin{align*}
+\\frac{d}{dt}\\left(3x^2 + y^2\\right) &= 6x\\frac{dx}{dt} + 2y\\frac{dy}{dt} \\\\
+&= 0
+\\end{align*}
+$$
+Substituting the component functions $x = f(t)$ and $y = g(t)$, and recalling that $\\frac{dx}{dt} = -g(t)$, the above equation becomes:
+
+$$
+\\begin{align*}
+-6f(t)g(t) + 2g(t)\\frac{dy}{dt} &= 0
+\\end{align*}
+$$
+Or in other words,
+$$
+\\frac{dy}{dt} = 3f(t)
+$$
+
+(c) We know that the parametric component functions for $x$ and $y$ are such that $f'(t) = -g(t)$, $g'(t) = 3f(t)$, and that $3f(t)^2 + g(t)^2 = 1$. These conditions are satisfied by:
+$$
+\\begin{align*}
+f(t) &= \\frac{\\sqrt{3}}{3}\\cos \\sqrt{3}\\,t \\\\
+g(t) &= \\sin \\sqrt{3}\\,t 
+\\end{align*}
+$$
+And to complete a full revolution, $\\sqrt{3}\\,t$ must be $2\\pi$, or $t = \\frac{2\\pi}{\\sqrt{3}}$
+`,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 13,
+                  number: "14.9.13",
+                  content: `A plane curve $C$ in the first quadrant has a negative slope at each of its points and passes through the point $(\\frac{1}{2}, 1)$. The position vector $\\mathbf{r}$ from the origin to any point $(x,y)$ on $C$ makes an angle $\\theta$ with $\\mathbf{i}$, and the velocity vector makes an angle $\\phi$ with $\\mathbf{i}$, where $0 < \\theta < \\frac{\\pi}{2}$, and $0 < \\phi < \\frac{\\pi}{2}$. If $3 \\tan \\phi = 4 \\cot \\theta$ at each point of $C$, find a Cartesian equation for $C$ and sketch the curve.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 14,
+                  number: "14.9.14",
+                  content: `A line perpendicular to the tangent line of a plane curve is called a normal line. If the normal line and a vertical line are drawn at any point of a certain plane curve $C$, they cut off a segment of length 2 on the x-axis. Find a Cartesian equation for this curve if it passes through the point $(1,2)$. Two solutions are possible.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 15,
+                  number: "14.9.15",
+                  content: `Given two fixed nonzero vectors $\\mathbf{A}$ and $\\mathbf{B}$ making an angle $\\theta$ with each other, where $0 < \\theta < \\pi$. A motion with position vector $\\mathbf{r}(t)$ at time $t$ satisfies the differential equation $\\mathbf{r}'(t) = \\mathbf{A} \\times \\mathbf{r}(t)$ and the initial condition $\\mathbf{r}(0) = \\mathbf{B}$.\n(a) Prove that the acceleration $\\mathbf{a}(t)$ is orthogonal to $\\mathbf{A}$.\n(b) Prove that the speed is constant and compute this speed in terms of $\\mathbf{A}$, $\\mathbf{B}$, and $\\theta$.\n(c) Make a sketch of the curve, showing its relation to the vectors $\\mathbf{A}$ and $\\mathbf{B}$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                },
+                {
+                  id: 16,
+                  number: "14.9.16",
+                  content: `This exercise describes how the unit tangent and the principal normal are affected by a change of parameter. Suppose a curve $C$ is described by two equivalent functions $X$ and $Y$, where $Y(t) = X[\\varphi(t)]$. Denote the unit tangent for $X$ by $\\mathbf{T}_X$ and that for $Y$ by $\\mathbf{T}_Y$.\n(a) Prove that at each point of $C$ we have $\\mathbf{T}_Y(t) = \\mathbf{T}_X[\\varphi(t)]$ if $\\varphi$ is strictly increasing, but that $\\mathbf{T}_Y(t) = -\\mathbf{T}_X[\\varphi(t)]$ if $\\varphi$ is strictly decreasing. In the first case, $\\varphi$ is said to preserve orientation; in the second case, $\\varphi$ is said to reverse orientation.\n(b) Prove that the corresponding principal normal vectors $\\mathbf{N}_X$ and $\\mathbf{N}_Y$ satisfy $\\mathbf{N}_Y(t) = \\mathbf{N}_X[\\varphi(t)]$ at each point of $C$. Deduce that the osculating plane is invariant under a change of parameter.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2024-02-08"
+                }
+              ]
+            }
           ]
         },
       ]
