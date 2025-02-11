@@ -54,6 +54,7 @@ export const MathContent = ({ content, className = '' }: MathContentProps) => {
       ref={containerRef} 
       className={cn(
         "math-content prose",
+        "overflow-x-clip",
         "overflow-y-clip", // Fixes the vertical scrolling issue in MathJax containers
         className
       )}

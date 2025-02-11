@@ -269,7 +269,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = (t, t^2, t^3, t^4)$`,
                   hint: ``,
                   solution: `Using the power rule of derivatives: $$\\displaylines{F'(t) &= (1, 2t, 3t^2, 4t^3)\\\\F''(t) &= (0, 2, 6t, 12t^2)}$$Note: the back-of-book solution has a typo which says $$F'(t) = (1, 2t, 3t^2 + 4t^3)$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 2,
@@ -277,7 +277,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = (\\cos t, \\sin^2 t, \\sin 2t, \\tan t)$`,
                   hint: `Recall from section 2.5 that: $2\\ \\text{sin}(t)\\text{cos}(t) = \\text{sin}(2t)$.`,
                   solution: `$$\\displaylines{F'(t) &= (-\\text{sin}(t), 2\\ \\text{sin}(t)\\text{cos}(t), 2\\ \\text{cos}(2t), \\text{sec}^2(t)) \\\\ &= (-\\text{sin}(t), \\text{sin}(2t), 2\\ \\text{cos}(2t), \\text{sec}^2(t))}$$ $$\\displaylines{F''(t) &= (-\\text{cos}(t), 2\\text{cos}(2t), -4\\text{sin}(2t), 2\\text{sec}^2(t)\\text{tan}(t))}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 3,
@@ -285,7 +285,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = (\\arcsin t, \\arccos t)$`,
                   hint: `Recall from section 6.20 that: $$D(\\text{arcsin}(t)) = \\frac{1}{\\sqrt{1 - t^2}}$$if $-1 < t < 1$, and $$D(\\text{arccos}(t)) = \\frac{-1}{\\sqrt{1 - t^2}}$$if $-1 < t < 1$`,
                   solution: `$$F'(t) = \\left(\\frac{1}{\\sqrt{1 - t^2}}, \\frac{-1}{\\sqrt{1 - t^2}}\\right)$$ $$F''(t) = \\left(\\frac{t}{(1 - t^2)^{3/2}}, \\frac{-t}{(1 - t^2)^{3/2}}\\right)$$Note: the back-of-book solution has a typo which says that $$F''(t) = \\left(\\frac{t}{(1 + t^2)^{3/2}}, \\frac{-t}{(1 + t^2)^{3/2}}\\right)$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 4,
@@ -293,7 +293,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = 2e^t \\mathbf{i} + 3e^t \\mathbf{j}$`,
                   hint: ``,
                   solution: `Since we know that $D(e^t) = e^t$, we have: $$F'(t) = F''(t) = F(t) = 2e^t \\mathbf{i} + 3e^t \\mathbf{j}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 5,
@@ -301,7 +301,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\cosh t\\mathbf{i} + \\sinh 2t\\mathbf{j} + e^{-3t}\\,\\mathbf{k}$`,
                   hint: `Recall from section 6.18 that $$\\text{sinh}(t) = \\frac{e^t - e^{-t}}{2};\\quad \\text{cosh}(t) = \\frac{e^t + e^{-t}}{2}$$This means that $$F(t) = \\left(\\frac{e^t + e^{-t}}{2}, \\frac{e^{2t} - e^{-2t}}{2}, e^{-3t}\\right)$$`,
                   solution: `$$F(t) = \\left(\\frac{e^t + e^{-t}}{2}, \\frac{e^{2t} - e^{-2t}}{2}, e^{-3t}\\right)$$$$\\displaylines{F'(t) &= \\left(\\frac{e^t - e^{-t}}{2}, e^{2t} + e^{-2t}, -3e^{-3t}\\right)\\\\ &=\\left(\\text{sinh}(t), 2\\text{cosh}(t), -3e^{-3t}\\right)}$$$$\\displaylines{F''(t) &= \\left(\\frac{e^t + e^{-t}}{2}, 2e^{2t} - 2e^{-2t}, 9e^{-3t}\\right)\\\\ &= \\left(\\text{cosh}(t), 4\\text{sinh}(2t), 9e^{-3t}\\right)}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 6,
@@ -309,7 +309,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the derivatives $F'(t)$ and $F''(t)$ for: $F(t) = \\log(1 + t^2)\\mathbf{i} + \\arctan t\\mathbf{j} + \\frac{1}{1+t^2}\\,\\mathbf{k}$`,
                   hint: `Recall from section 6.20 that $$D(\\text{arctan}(t)) = \\frac{1}{1 + t^2}$$for all real $t$`,
                   solution: `$$F'(t) = \\left(\\frac{2t}{1 + t^2}, \\frac{1}{1 + t^2}, \\frac{-2t}{(1 + t^2)^2}\\right)$$$$F''(t) = \\left(\\frac{(2 - 2t^2)}{(1 + t^2)^2}, \\frac{-2t}{(1 + t^2)^2}, \\frac{6t^2 - 2}{(1 + t^2)^3}\\right)$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 7,
@@ -317,7 +317,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Let $F$ be the vector-valued function given by: $$F(t) = \\frac{2t}{1+t^2}\\mathbf{i} + \\frac{1-t^2}{1+t^2}\\mathbf{j} + \\mathbf{k}$$Prove that the angle between $F(t)$ and $F'(t)$ is constant, that is, independent of $t$.`,
                   hint: `Recall from section 12.9 that the cosine of the angle between two vectors can be expressed in terms of their dot product and their norms: $$\\text{cos}\\ \\theta = \\frac{A \\cdot B}{\\|A\\|\\|B\\|}$$Then, if the cosine of the angle between the two vectors is constant, this imples that the angle itself is constant.`,
                   solution: `First, we calculate $F'(t)$:$$F'(t) = \\left(\\frac{2 - 2t^2}{(1 + t^2)^2}, \\frac{-4t}{(1 + t^2)^2}, 0\\right)$$Then, we calculate the dot product $F(t) \\cdot F'(t)$:$$F(t) \\cdot F'(t) = \\frac{4t(1 - t^2)}{(1 + t^2)^3} - \\frac{4t(1 - t^2)}{(1 + t^2)^3} = 0$$But this means that the cosine of the angle between $F(t)$ and $F'(t)$ is constant. Thus, the angle between the two vectors must be constant, that is, independent of $t. \\ \\blacksquare$ `,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 8,
@@ -325,7 +325,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the vector-valued integral:$$\\int_0^1 (t, \\sqrt{t}, e^t)\\,dt$$`,
                   hint: ``,
                   solution: `Evaluating the integrals component-wise, we get: $$\\left(\\frac{t^2}{2},\\  \\frac{2}{3}t^{3/2},\\ e^t\\right)\\Biggr|_0^1 = \\left(\\frac{1}{2},\\ \\frac{3}{2},\\ e - 1\\right)$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 9,
@@ -333,7 +333,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the vector-valued integral:$$\\int_0^{\\pi/4} (\\sin t, \\cos t, \\tan t)\\,dt$$`,
                   hint: ``,
                   solution: `Evaluating the integrals component-wise, we get:$$\\displaylines{\\left(-\\text{cos}\\,t,\\  \\text{sin}\\,t,-\\text{log}\\,\\text{cos}\\,t\\right)\\,\\Biggr|_0^{\\pi/4} &= \\left(1 - \\frac{\\sqrt{2}}{2},\\ \\frac{\\sqrt{2}}{2},\\  -\\text{log}\\,\\frac{\\sqrt{2}}{2}\\right)\\\\ &= \\left(1 - \\frac{\\sqrt{2}}{2},\\ \\frac{\\sqrt{2}}{2},\\ \\frac{\\text{log}\\,{2}}{2}\\right)}$$Note: the back-of-book solution contains a typo for the rightmost element, which says $\\text{log}\\,\\frac{\\sqrt{2}}{2}$ instead of $-\\text{log}\\,\\frac{\\sqrt{2}}{2}$ or $\\frac{\\text{log}\\,{2}}{2}$.`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 10,
@@ -341,7 +341,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the vector-valued integral:$$\\int_0^1 \\left(\\frac{e^t}{1+e^t}\\mathbf{i} + \\frac{1}{1+e^t}\\mathbf{j}\\right)\\,dt$$`,
                   hint: `Use a $u$ substitution where $u(t) = 1 + e^t$ and $du = e^t\\, dt$. Then, rewrite $\\frac{1}{1 + e^t} = 1 - \\frac{e^t}{1 + e^t}$`,
                   solution: `Evaluating the integral, we get:$$\\displaylines{\\int_0^1 \\left(\\frac{e^t}{1+e^t}\\mathbf{i} + \\frac{1}{1+e^t}\\mathbf{j}\\right)\\,dt &= \\text{log}\\,(1 + e^t)\\mathbf{i} + t - \\log(1 + e^t)\\,\\mathbf{j}\\,\\Biggr|_0^1\\\\ &= \\text{log}\\frac{1 + e}{2}\\mathbf{i} + \\left(1 - \\text{log}\\frac{1 + e}{2}\\right)\\mathbf{j}}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 11,
@@ -349,7 +349,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute the vector-valued integral:$$\\int_0^1 (te^t\\mathbf{i} + t^2e^t\\mathbf{j} + te^{-t}\\,\\mathbf{k})\\,dt$$`,
                   hint: `Use integration by parts with $u = t^n$ and $dv = e^t\\, dt$`,
                   solution: `Using integration by parts on each component, we get:$$\\left(te^t - e^t\\right)\\Biggr|_0^1\\textbf{i}\\ + \\left(t^2e^t - 2(te^t - e^t)\\right)\\Biggr|_0^1\\textbf{j}\\ + \\left(-te^{-t} - e^{-t}\\right)\\Biggr|_0^1\\textbf{k}$$Evaluating over the limits of integration, we get:$$\\left(1,\\ e-2,\\ 1 - \\frac{2}{e}\\right)$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 12,
@@ -357,7 +357,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Compute $A \\cdot B$, where $A = 2\\,\\mathbf{i} - 4\\,\\mathbf{j} + \\mathbf{k}$ and $B = \\int_0^2 (te^{2t}\\,\\mathbf{i} + t\\cosh 2t\\,\\mathbf{j} + 2te^{-t}\\,\\mathbf{k})\\,dt$`,
                   hint: `Recall from section 6.18 that $$\\text{sinh}\\,t = \\frac{e^t - e^{-t}}{2};\\quad \\text{cosh}\\,t = \\frac{e^t + e^{-t}}{2}$$`,
                   solution: `Note that $\\text{cosh}\\,2t = \\frac{e^{2t} + e^{-2t}}{2}$, then:$$B = \\int_0^2 (te^{2t}\\,\\mathbf{i} + \\frac{te^{2t} + te^{-2t}}{2}\\,\\mathbf{j} + 2te^{-2t}\\,\\mathbf{k})\\,dt$$Taking the dot product $A \\cdot B$, we get: $$A \\cdot B = \\int_0^2 2te^{2t} - 2te^{2t} - 2te^{-2t} + 2te^{-2t}\\, dt$$But the terms of the integrand simplify to $0$, thus $A \\cdot B = 0$.`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 13,
@@ -365,7 +365,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Given a nonzero vector $B$ and a vector-valued function $F$ such that $F(t) \\cdot B = t$ for all $t$, and such that the angle between $F'(t)$ and $B$ is constant (independent of $t$). Prove that $F''(t)$ is orthogonal to $F'(t)$.`,
                   hint: `Recall the dot product identity from Theorem 14.1:$$\\left(F \\cdot G \\right)' = F' \\cdot G + F \\cdot G'$$If the angle between $F'$ and $B$ is constant, then the cosine of this angle is also constant. What does this imply about $F' \\cdot B$?`,
                   solution: `We know from the dot product identity in Theorem 14.1 that $$\\left(F \\cdot B \\right)' = F' \\cdot B + F \\cdot B'$$But $B$ is a vector of constants, so $B' = O$, and $F \\cdot B = t$, so $(F \\cdot B)' = 1$. Combining this with the above, we get $$\\left(F \\cdot B\\right)' = F' \\cdot B = 1$$Taking the derivative of $(F' \\cdot B)$, we see that $$F'' \\cdot B = 0$$But by definition, $B$ is nonzero, thus $F''(t)$ must be the zero vector, meaning that $F'' \\cdot F = 0$ for any $t$. Put another way, $F''(t)$ is orthogonal to $F'(t)$ for all $t. \\quad \\blacksquare$ `,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 14,
@@ -373,7 +373,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Given fixed nonzero vectors $A$ and $B$, let $F(t) = e^{2t}A + e^{-2t}B$. Prove that $F''(t)$ has the same direction as $F(t)$.`,
                   hint: `For two vectors $A$ and $B$ to have the same direction, then for some positive scalar $c$, $A$ = $cB$`,
                   solution: `It will suffice to show that for some positive scalar $c$, that $F''(t) = cF(t)$. Taking the second derivative of of $F(t)$: $$\\displaylines{F'(t) &= 2e^{2t}A - 2e^{-2t}B}$$$$\\displaylines{F''(t) &= 4e^{2t}A + 4e^{-2t}B\\\\ &= 4F(t) \\quad \\blacksquare}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 15,
@@ -381,7 +381,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `If $G = F \\times F'$, compute $G'$ in terms of $F$ and derivatives of $F$.`,
                   hint: `Use the cross product identity from Theorem 14.1:$$(F \\times G)' = F' \\times G + F \\times G'$$and recall from section 13.9 that $A \\times B = O$ if and only if $A$ and $B$ are linearly dependent.`,
                   solution: `Using the cross product identity from theorem 14.1: $$(F \\times F')' = F' \\times F' + F \\times F''$$And since F' is linearly dependent to itself, $F' \\times F' = O$, giving us $$G' = F \\times F''$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 16,
@@ -389,7 +389,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `If $G = F \\cdot F' \\times F''$, prove that $G' = F \\cdot F' \\times F'''$.`,
                   hint: `Recall from section 13.9 that the cross product of two vectors is orthogonal to those two vectors.`,
                   solution: `Taking the dot product first, we get: $$F \\cdot \\left(F' \\times F''\\right) = F' \\cdot \\left(F ' \\times F''\\right) + F \\cdot \\left(F ' \\times F''\\right)'$$But since the cross product of two vectors is orthogonal to those two vectors, $F' \\cdot \\left(F' \\times F''\\right) = O$\n\nUsing this and extending the result of problem (15) to $\\left(F' \\times F''\\right)'$, we see that $$G' = F \\cdot \\left(F' \\times F'''\\right) \\quad \\blacksquare$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 17,
@@ -397,7 +397,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Prove that $\\lim_{t\\to p} F(t) = A$ if and only if $\\lim_{t\\to p} \\|F(t) - A\\| = 0$.`,
                   hint: `If $\\lim_{t \\to\\ p}\\|F(t) - A\\| = 0$, then it must be the case that $\\lim_{t \\to\\ p}\\|F(t) - A\\|^2 = 0$`,
                   solution: `If $\\lim_{t \\to\\ p}F(t) = A$, then it follows that $\\lim_{t \\to\\ p}\\|F(t) - A\\| = 0$. Now, suppose that $\\lim_{t \\to\\ p}\\|F(t) - A\\| = 0$, this means that $\\lim_{t \\to\\ p}\\|F(t) - A\\|^2 = 0$, or in other words: $$\\lim_{t \\to\\ p}\\left[F(t) - A\\right] \\cdot \\left[F(t) - A\\right] = 0$$But this implies that $C = \\left[F(t) - A\\right] \\to 0$ as $t \\to p$. In other words, $$\\lim_{t \\to \\ p} F(t) = A$$Thus, we have shown that $\\lim_{t\\to p} F(t) = A$ if and only if $\\lim_{t\\to p} \\|F(t) - A\\| = 0. \\quad \\blacksquare$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 18,
@@ -405,7 +405,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Prove that a vector-valued function $F$ is differentiable on an open interval $I$ if and only if for each $t$ in $I$ we have:$$F'(t) = \\lim_{h\\to 0} \\frac{1}{h}[F(t + h) - F(t)]$$`,
                   hint: ``,
                   solution: `By definition, a vector-valued function is differentiable on an open interval $I$ if and only if every component is differentiable on that open interval. In other words, for each component $f$ of $F$, $$f'(t) = \\lim_{h \\to 0}\\frac{1}{h}\\left[f(t + h) - f(t)\\right]$$for all $t$ in the open interval $I$.`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 19,
@@ -413,7 +413,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Prove the zero-derivative theorem for vector-valued functions. If $F'(t) = O$ for each $t$ in an open interval $I$, then there is a vector $C$ such that $F(t) = C$ for all $t$ in $I$.`,
                   hint: ``,
                   solution: `In problem (18), we showed that a vector-valued function is differentiable if and only if for every $t$ in an open interval $I$, and for every component $f_i$ of $F$, $$f_i'(t) = \\lim_{h \\to 0}\\frac{1}{h}\\left[f_i(t + h) - f_i(t)\\right]$$Now, suppose that for every $t$ in the open interval $I$, $f_i'(t) = 0$. Then, the above limit can be rewritten as $$\\lim_{h \\to 0}\\frac{1}{h}\\,f_i(t + h) = f_i(t)$$But this implies that there is some real scalar $c_i$ such that for every $t$ in $I$, $f_i(t) = c_i$. But if this is true for each $f_i$ of $F$, then the vector-valued function $F(t) = C$ on the open interval $I$, where $C = (c_1, ..., c_n)$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 20,
@@ -421,7 +421,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Given fixed vectors $A$ and $B$ and a vector-valued function $F$ such that $F''(t) = tA + B$, determine $F(t)$ if $F(0) = D$ and $F'(0) = C$.`,
                   hint: ``,
                   solution: `Using the definition of an integral for a vector-valued function along with the second fundamental theorem, we have: $$\\displaylines{F'(t) = \\int_0^tF''(t)\\,dt + F'(0)\\\\ =\\frac{t^{2}}{2}A + Bt + C}$$Integrating and applying the second fundamental theorem again: $$\\displaylines{F(t) = \\int_0^t F'(t)\\, dt + F(0)\\\\ = \\frac{t^3}{6}A + \\frac{t^2}{2}B + Ct + D}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 21,
@@ -429,7 +429,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `A differential equation of the form $Y'(x) + p(x)Y(x) = Q(x)$, where $p$ is a given real-valued function, $Q$ a given vector-valued function, and $Y$ an unknown vector-valued function, is called a first-order linear vector differential equation. Prove that if $p$ and $Q$ are continuous on an interval $I$, then for each $a$ in $I$ and each vector $B$ there is one and only one solution $Y$ which satisfies the initial condition $Y(a) = B$, and that this solution is given by the formula:\n$Y(t) = Be^{-q(t)} + e^{-q(t)}\\int_a^t Q(x)e^{q(x)}\\,dx$\nwhere $q(x) = \\int_a^x p(t)\\,dt$.`,
                   hint: ``,
                   solution: `We can apply the result of Theorem 8.3 component-wise to achieve this result for a vector-valued function.`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 22,
@@ -437,7 +437,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `A vector-valued function $F$ satisfies the equation $tF'(t) = F(t) + tA$ for each $t \\geq 0$, where $A$ is a fixed vector. Compute $F''(1)$ and $F(3)$ in terms of $A$, if $F(1) = 2A$.`,
                   hint: `To apply the second fundamental theorem, use the given value for $F(1)$ and calculate $F'(1)$ using the given equation.`,
                   solution: `Taking the derivative of the given equation, we get $$tF''(t) = A$$Thus, $F''(1) = A$. Now, to find $F(3)$, consider that by rearranging the given equation, we can express $F(t)$ as $$F(t) = tF'(t) - tA$$But since $F(1) = 2A$, this means that $F'(1) = F(1) + A = 3A$.\n\nRewriting $F''(t) = \\frac{A}{t}$ for $t > 0$ with $F'(1) = 3A$ we can integrate $F''(t)$ giving us: $$F'(t) - F'(1) = \\int_1^t \\frac{A}{x}\\,dx$$Evaluating the integral gives us $$F'(t) = A\\text{log}\\,t + 3A$$Integrating again with $F(1) = 2A$, we find that $$F(t) = \\int_1^t A\\text{log}\\,x + 3A\\,dx + 2A$$Evaluating the integral for $t = 3$, we get $$\\displaylines{F(3) &= Ax\\text{log}\\,x + 2Ax\\,\\Biggr|_1^3 + 2A\\\\&= (6 + 3\\text{log}\\,3)A \\quad \\blacksquare}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 23,
@@ -445,7 +445,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `Find a vector-valued function $F$, continuous on the interval $(0, +\\infty)$, such that:$$F(x) = xe^xA + \\frac{1}{x}\\int_1^x F(t)\\,dt$$for all $x > 0$, where $A$ is a fixed nonzero vector.`,
                   hint: `Multiply both sides by $x$ before differentiating.`,
                   solution: `Multiplying both sides by $x$, we get$$xF(x) = x^2e^xA + \\int_1^x F(t)\\,dt$$Taking the derivative with respect to $x$, we get $$F(x) + xF'(x) = 2xe^xA + F(x)$$Simplifying terms gives us $F'(x) = 2e^xA + xe^xA.$Integrating both sides using the second fundamental theorem with $F(1) = eA$, we get$$\\displaylines{F(x) &= eA + \\int_1^x 2e^tA + te^tA\\,dt\\\\ &= 2e^tA\\,\\Biggr|_1^x + \\int_1^x te^tA\\,dt + eA\\\\&= e^tA + te^tA\\,\\Biggr|_1^x + eA \\\\&= e^x(x + 1)A - eA \\quad \\blacksquare}$$`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 },
                 {
                   id: 24,
@@ -453,7 +453,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `A vector-valued function $F$, which is never zero and has a continuous derivative $F'(t)$ for all $t$, is always parallel to its derivative. Prove that there is a constant vector $A$ and a positive real-valued function $u$ such that $F(t) = u(t)A$ for all $t$.`,
                   hint: `By definition, two vectors $A$ and $B$ are parallel if for some nonzero scalar $c$, $B = cA$.`,
                   solution: `If we set $u(t) = e^{ct}$ for some nonzero $c$, then it follows that $u$ is positive for all $t$, $F(t)$ is never zero, and $F'(t)$ is parallel to $F(t)$ for all $t$.`,
-                  date: "2024-01-02"
+                  date: "2025-01-02"
                 }
               ]
             },
@@ -468,7 +468,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = (3t - t^3)\\,\\mathbf{i} + 3t^3\\,\\mathbf{j} + (3t + t^3)\\,\\mathbf{k}$$`,
                   hint: ``,
                   solution: `$$\\displaylines{\\textbf{v}(t) = (3 - 3t^2)\\,\\textbf{i} + 6t\\,\\textbf{j} + (3 + 3t^2)\\textbf{k}\\\\ \\textbf{a}(t) = -6t\\,\\textbf{i} + 6\\,\\textbf{j} + 6t\\,\\textbf{k}\\\\ v(t) = 3\\sqrt{2}(1 + t^2)}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 2,
@@ -476,7 +476,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = \\cos t\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + e^t\\,\\mathbf{k}$$`,
                   hint: ``,
                   solution: `$$\\displaylines{\\textbf{v}(t) = -\\text{sin}\\,t\\,\\textbf{i} + \\text{cos}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k}\\\\ \\textbf{a}(t) = -\\text{cos}\\,t\\,\\textbf{i} - \\text{sin}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k} \\\\ v(t) = \\left(1 + e^{2t}\\right)^{1/2}}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 3,
@@ -484,7 +484,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t\\cos t\\mathbf{i} + 3t\\sin t\\mathbf{j} + 4t\\,\\mathbf{k}$$`,
                   hint: ``,
                   solution: `$$\\displaylines{\\mathbf{v}(t) = (3\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\, \\mathbf{i} + (3\\,\\text{sin}\\,t + 3t\\,\\text{cos}\\,t)\\,\\mathbf{j} + 4\\,\\textbf{k}\\\\ \\mathbf{a}(t) = (-6\\,\\text{sin}\\,t - 3t\\,\\text{cos}\\,t)\\,\\mathbf{i} + (6\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\,\\mathbf{j}\\\\ v(t) = \\sqrt{9t^2 + 25}}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 4,
@@ -492,7 +492,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n$$\\textbf{r}(t) = (t - \\sin t)\\mathbf{i} + (1 - \\cos t)\\mathbf{j} + 4\\sin \\frac{t}{2}\\mathbf{k}$$`,
                   hint: ``,
                   solution: `$$\\displaylines{\\textbf{v}(t) = (1 - \\cos t)\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + 2\\cos \\frac{t}{2}\\,\\mathbf{k}\\\\ \\textbf{a}(t) = \\sin t\\,\\mathbf{i} + \\cos t\\,\\mathbf{j} - \\sin \\frac{t}{2}\\,\\mathbf{k}\\\\ v(t) = \\left(1 - 2 \\cos t  + \\cos^2 t + \\sin^2 t + 4 \\cos^2 \\frac{t}{2}\\right)^{1/2}\\\\ = 2}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 5,
@@ -500,7 +500,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t^2\\mathbf{i} + 2t^3\\mathbf{j}$$`,
                   hint: ``,
                   solution: `$$\\displaylines{\\mathbf{v}(t) = 6t\\,\\mathbf{i} + 6t^2\\,\\mathbf{j} +3\\,\\mathbf{k}\\\\ \\mathbf{a} = 6\\,\\mathbf{i} + 12t\\,\\mathbf{j}\\\\ v(t) = 3 + 6t^2}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 6,
@@ -508,7 +508,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                   content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = t\\mathbf{i} + \\sin t\\mathbf{j} + (1 - \\cos t)\\,\\mathbf{k}$$`,
                   hint: ``,
                   solution: `$$\\displaylines{\\mathbf{v}(t) = \\mathbf{i} + \\cos t\\,\\mathbf{j} + \\sin t \\,\\mathbf{k}\\\\ \\mathbf{a}(t) = -\\sin t\\,\\mathbf{j} + \\cos t\\,\\mathbf{k}\\\\ v(t) = \\sqrt{2}}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 7,
@@ -524,7 +524,7 @@ $$b\\,\\omega = \\|\\mathbf{v}(t)\\|\\,\\|\\mathbf{k}\\|\\cos \\theta$$
 Where $\\theta$ is the angle between $\\mathbf{v}$ and $\\mathbf{k}$. Evaluating the norm of $\\mathbf{v}(t)$ gives us $\\omega\\,\\left(a^2 + b^2\\right)^{1/2}$, and of course the norm of the unit vector $\\mathbf{k}$ is 1. Combining these terms, we show that the angle $\\theta$ is constant, with 
 
 $$\\cos \\theta = \\frac{b}{\\sqrt{a^2 + b^2}}$$ `,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 8,
@@ -550,7 +550,7 @@ $$\\displaylines{\\|\\mathbf{v} \\times \\mathbf{a}\\| = \\left(a^2b^2\\omega^6 
 Combining this result with $\\|\\mathbf{v}\\|^3 = \\omega^3\\left(a^2 + b^2\\right)^{3/2}$, we find that 
 
 $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}{a^2 + b^2}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 9,
@@ -560,7 +560,7 @@ $$\\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|^3} = \\frac{a}
                   
 $$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\,\\mathbf{i} - \\left(ab\\omega^3 \\cos \\omega t\\right)\\,\\mathbf{j} + a^2\\omega^3\\left(\\sin^2 \\omega t + \\cos^2 \\omega t\\right)\\,\\mathbf{k}$$`,
                   solution: `We can express the cross product $\\mathbf{v} \\times \\mathbf{a}$ as the linear combination $A\\mathbf{u}(t) + B\\mathbf{k}$, where $$A = ab\\omega^3, \\quad B = a^2\\omega^3$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 10,
@@ -568,7 +568,7 @@ $$\\mathbf{v} \\times \\mathbf{a} = \\left(ab\\omega^3 \\sin \\omega t\\right)\\
                   content: `Prove that for any motion the dot product of the velocity and acceleration is half the derivative of the square of the speed:\n$$\\textbf{v}(t) \\cdot \\textbf{a}(t) = \\frac{1}{2}\\frac{d}{dt}v^2(t)$$`,
                   hint: `Recall that $v^2(t) = \\mathbf{v}(t) \\cdot \\mathbf{v}(t)$. Then, apply the dot product rule for vector derivatives.`,
                   solution: `$$\\displaylines{\\mathbf{v}(t) \\cdot \\mathbf{a}(t)\\ = \\frac{1}{2}\\left(\\mathbf{v}(t) \\cdot \\mathbf{v}(t)\\right)'\\\\ = \\frac{1}{2}\\frac{d}{dt}v^2(t) \\quad \\blacksquare}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 11,
@@ -593,7 +593,7 @@ $$\\|\\mathbf{v}(t)\\| = \\frac{2e^{2t}}{\\cos \\theta}$$
 $$\\displaylines{2\\,\\mathbf{a}(t) \\cdot \\mathbf{v}(t) = \\frac{16\\,e^{4t}}{\\cos^2 \\theta}}$$
 Or in other words: 
 $$\\displaylines{\\mathbf{a}(t) \\cdot \\mathbf{v}(t) = \\frac{8\\,e^{4t}}{\\cos^2 \\theta}}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 12,
@@ -610,7 +610,7 @@ This implies, however, that the area $A(\\theta)$ is
 
 $$A(\\theta) = \\int_0^{\\theta}\\frac{1}{2}\\,dt = \\frac{\\theta}{2}$$
 Or in other words, that the angle $\\theta$ is twice the area $A(\\theta)$ of the sector $OAP$. This completes the proof.`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 13,
@@ -623,7 +623,7 @@ where $\\omega$ is a constant. Prove that the acceleration is centrifugal.`,
                   solution: `We wish to show that for some positive scalar $c$, that $\\mathbf{a} = c\\,\\mathbf{r}$. Differentiating with respect to $t$, we get 
 
 $$\\displaylines{\\mathbf{v}(t) = \\omega a\\,\\sinh \\omega t\\,\\mathbf{i} + \\omega b\\,\\cosh \\omega t\\,\\mathbf{j} \\\\\\mathbf{a}(t) = \\omega^2 a\\,\\cosh \\omega t\\,\\mathbf{i} + \\omega^2 b\\,\\sinh \\omega t\\,\\mathbf{j}\\\\ = \\omega^2\\, \\mathbf{r}{(t)}}$$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 14,
@@ -654,7 +654,7 @@ Assuming that the directrix line is to the left of the parabola, this means that
 
 And since $\\mathbf{u} \\neq \\mathbf{i}$, it follows that the tangent line (with direction $X'$) bisects the angle between the line segment from the focus to $X$ (which has direction $\\mathbf{u}$) and the horizontal line through $X$ (which has direction $\\mathbf{i}$), thus proving the reflection property of the parabola.`
 ,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 15,
@@ -685,7 +685,7 @@ Let $a = 4$, $b = 3$, then we have
 
 $$\\frac{x^2}{16} + \\frac{y^2}{9} = 1$$
 `,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 16,
@@ -736,7 +736,7 @@ $$
 \\end{align*}
 $$
 or in other words, that $T_0 = \\frac{3}{4}T$`,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 },
                 {
                   id: 17,
@@ -754,7 +754,7 @@ Y''(t) = X''[u(t)](u'(t))^2 + X'[u(t)]u''(t)
 $$
 Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for all $t$ in $I$.
 `,
-                  date: "2024-01-27"
+                  date: "2025-01-27"
                 }
               ]
             },
@@ -769,7 +769,7 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 2$$`,
                   hint: ``,
                   solution: ``,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 2,
@@ -777,7 +777,7 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\pi$$`,
                   hint: ``,
                   solution: ``,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 3,
@@ -785,7 +785,7 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 0$$`,
                   hint: ``,
                   solution: ``,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 4,
@@ -793,7 +793,7 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\pi$$`,
                   hint: ``,
                   solution: ``,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 5,
@@ -801,7 +801,7 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 1$$`,
                   hint: ``,
                   solution: ``,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 6,
@@ -809,7 +809,7 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\frac{\\pi}{2}$$`,
                   hint: ``,
                   solution: ``,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 7,
@@ -825,7 +825,7 @@ $$
 $$
 In the trivial case where $v(t) =0$ for all $t$, then there is no motion. If acceleration is zero for all $t$ with nonzero speed, then $T'(t)$ must be zero for all $t.$ And since $T'(t)$ is the measure of change in direction of $T(t)$, this means that there is no change in direction at any time $t$, thus the motion must be linear.
 `,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 8,
@@ -897,7 +897,7 @@ $$
 v\\|T'\\| = \\frac{\\|\\mathbf{v} \\times \\mathbf{a}\\|}{\\|\\mathbf{v}\\|}
 $$
 `,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 9,
@@ -941,7 +941,7 @@ $$
 $$
 The dot product $\\mathbf{v} \\cdot \\mathbf{a}$ is zero, but the motion does not lie within a plane.
 `,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 10,
@@ -973,7 +973,7 @@ If $\\mathbf{c} \\neq 0$, then $\\mathbf{r}(t) \\times \\mathbf{v}(t)$ is consta
 
 (d) The direction of the vector normal to the plane will remain constant but can be scaled by some real constant, thus $\\mathbf{r} \\times \\mathbf{v}$ need not be constant.
 `,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 11,
@@ -990,7 +990,7 @@ $$
 $$
 If $v'(t) = 0$, then $\\mathbf{a}(t) = 0$. Otherwise, acceleration is a scalar multiple of $T$, making it parallel to velocity.
 `,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 12,
@@ -1039,39 +1039,211 @@ g(t) &= \\sin \\sqrt{3}\\,t
 $$
 And to complete a full revolution, $\\sqrt{3}\\,t$ must be $2\\pi$, or $t = \\frac{2\\pi}{\\sqrt{3}}$
 `,
-                  date: "2024-02-08"
+                  date: "2025-02-08"
                 },
                 {
                   id: 13,
                   number: "14.9.13",
-                  content: `A plane curve $C$ in the first quadrant has a negative slope at each of its points and passes through the point $(\\frac{1}{2}, 1)$. The position vector $\\mathbf{r}$ from the origin to any point $(x,y)$ on $C$ makes an angle $\\theta$ with $\\mathbf{i}$, and the velocity vector makes an angle $\\phi$ with $\\mathbf{i}$, where $0 < \\theta < \\frac{\\pi}{2}$, and $0 < \\phi < \\frac{\\pi}{2}$. If $3 \\tan \\phi = 4 \\cot \\theta$ at each point of $C$, find a Cartesian equation for $C$ and sketch the curve.`,
-                  hint: ``,
-                  solution: ``,
-                  date: "2024-02-08"
+                  content: `A plane curve $C$ in the first quadrant has a negative slope at each of its points and passes through the point $(\\frac{3}{2}, 1)$. The position vector $\\mathbf{r}$ from the origin to any point $(x,y)$ on $C$ makes an angle $\\theta$ with $\\mathbf{i}$, and the velocity vector makes an angle $\\phi$ with $\\mathbf{i}$, where $0 < \\theta < \\frac{\\pi}{2}$, and $0 < \\phi < \\frac{\\pi}{2}$. If $3 \\tan \\phi = 4 \\cot \\theta$ at each point of $C$, find a Cartesian equation for $C$ and sketch the curve.`,
+                  hint: `The position vector $\\mathbf{r}$ is $(x, y)$ and the velocity vector $\\mathbf{v}$ is $\\left(\\frac{dx}{dt}, \\frac{dy}{dt}\\right)$. And since velocity is always negative, we instead have 
+$$
+\\begin{align*}
+-3\\tan\\,\\phi = 4\\cot\\,\\theta
+\\end{align*}
+$$
+where $\\phi$ and $\\theta$ are between $0$ and $\\pi/2$.`,
+                  solution: `The position vector $\\mathbf{r} = (x, y)$ makes an angle $\\theta$ with $\\mathbf{i}$, thus $\\cos\\,\\theta$ must be $\\frac{x}{\\|\\mathbf{r}\\|}$, implying also that $\\sin\\,\\theta = \\frac{y}{\\|\\mathbf{r}\\|}$ since $\\|\\mathbf{r}\\| = \\sqrt{x^2 + y^2}$. Similarly, the velocity vector $\\mathbf{v} = \\left(\\frac{dx}{dt}, \\frac{dy}{dt}\\right)$ is such that $\\cos\\,\\phi = \\frac{dx}{dt}\\frac{1}{\\|\\mathbf{v}\\|}$, but since we know that $\\frac{dy}{dt} < 0$ for all $t$, for $0 < \\phi < \\pi/2$, it must be the case that $\\sin\\,\\phi = -\\frac{dy}{dt}\\frac{1}{\\|v\\|}$, or in other words,
+
+$$
+\\begin{align*}
+-3\\tan\\,\\phi = 4\\cot\\,\\theta
+\\end{align*}
+$$
+Rewriting the above equation with the values derived for sine and cosine of $\\phi$ and $\\theta$, we get:
+
+$$
+\\begin{align*}
+-3\\frac{dy/dt}{dx/dt} = 4\\frac{x}{y}
+\\end{align*}
+$$
+Cancelling out the $dt$ factors, we get:
+
+$$
+\\begin{align*}
+-3\\frac{dy}{dx} = 4\\frac{x}{y}
+\\end{align*}
+$$
+As we can see, this is a separable differential equation. Separating variables and integrating, we get:
+$$
+\\begin{align*}
+3\\int y\\,dy\\ +\\ 4\\int x\\,dx &= \\frac{3}{2}y^2 + 2x^2\\\\
+&= C
+\\end{align*}
+$$
+To solve for the constant $C$, recall that when $x = 3/2$, $y = 1$, giving us $4x^2 + 3y^2 = 12.$ Putting this into standard form, we get the Cartesian equation
+
+$$
+\\frac{x^{2}}{3} + \\frac{y^2}{4} = 1
+$$
+`,
+                  date: "2025-02-08"
                 },
                 {
                   id: 14,
                   number: "14.9.14",
-                  content: `A line perpendicular to the tangent line of a plane curve is called a normal line. If the normal line and a vertical line are drawn at any point of a certain plane curve $C$, they cut off a segment of length 2 on the x-axis. Find a Cartesian equation for this curve if it passes through the point $(1,2)$. Two solutions are possible.`,
-                  hint: ``,
-                  solution: ``,
-                  date: "2024-02-08"
+                  content: `A line perpendicular to the tangent line of a plane curve is called a normal line. If the normal line and a vertical line are drawn at any point of a certain plane curve $C$, they cut off a segment of length 2 on the x-axis. Find a Cartesian equation for this curve if it passes through the point $(1,2).$ Two solutions are possible.`,
+                  hint: `The normal line has slope $m = -\\frac{dx}{dy}$. If the normal line for a given point $(x, y)$ always moves $y$ units vertically for every two units moved horizontally (left or right), this implies that the normal line through $(x, y)$ has one of two point-slope forms:
+$$
+\\begin{align*}
+(y - 0) = m[x - (x - 2)] \\quad \\text{or} \\quad (y - 0) = m[x - (x + 2)]
+\\end{align*}
+$$
+Use this with $m = -\\frac{dx}{dy}$ to find the relation between position and slope.
+                  `,
+                  solution: `By definition, the slope of the normal line must be $-\\frac{dx}{dy}$. And since we know that the change in vertical position is $y$ units for every two units of horizontal position changed (left or right), this means that the normal line is described by one of two possible point-slope equations $($since the normal line could intercept the $x-$axis at either $x + 2$ or $x - 2):$
+
+$$
+\\begin{align*}
+(y - 0) = m[x - (x - 2)] \\quad \\text{or} \\quad (y - 0) = m[x - (x + 2)]
+\\end{align*}
+$$
+Plugging in our value for $m$ and simplifying terms, we get
+
+$$
+\\begin{align*}
+y = 2\\frac{dx}{dy} \\quad \\text{or} \\quad y = -2\\frac{dx}{dy}
+\\end{align*}
+$$
+As we can see, these are both separable differential equations. Separating terms and integrating, we get:
+
+$$
+\\begin{align*}
+\\frac{1}{2}\\int y\\,dy &= \\int dx \\quad \\text{or} \\quad -\\frac{1}{2}\\int y\\,dy = \\int dx\\\\
+\\end{align*}
+$$
+$$
+\\begin{align*}
+\\frac{y^2}{4} - x = C_0 \\quad \\text{or} \\quad \\frac{y^2}{4} + x = C_1
+\\end{align*}
+$$
+Plugging in our initial value $(x, y) = (1, 2)$, we find that $C_0 = 0$ and $C_1 = 2$, giving us the two Cartesian equations:
+
+$$
+y^2 = 4x \\quad \\text{or} \\quad y^2 + 4x = 8
+$$
+`,
+                  date: "2025-02-08"
                 },
                 {
                   id: 15,
                   number: "14.9.15",
-                  content: `Given two fixed nonzero vectors $\\mathbf{A}$ and $\\mathbf{B}$ making an angle $\\theta$ with each other, where $0 < \\theta < \\pi$. A motion with position vector $\\mathbf{r}(t)$ at time $t$ satisfies the differential equation $\\mathbf{r}'(t) = \\mathbf{A} \\times \\mathbf{r}(t)$ and the initial condition $\\mathbf{r}(0) = \\mathbf{B}$.\n(a) Prove that the acceleration $\\mathbf{a}(t)$ is orthogonal to $\\mathbf{A}$.\n(b) Prove that the speed is constant and compute this speed in terms of $\\mathbf{A}$, $\\mathbf{B}$, and $\\theta$.\n(c) Make a sketch of the curve, showing its relation to the vectors $\\mathbf{A}$ and $\\mathbf{B}$.`,
-                  hint: ``,
-                  solution: ``,
-                  date: "2024-02-08"
+                  content: `Given two fixed nonzero vectors $A$ and $B$ making an angle $\\theta$ with each other, where $0 < \\theta < \\pi$. A motion with position vector $\\mathbf{r}(t)$ at time $t$ satisfies the differential equation $\\mathbf{r}'(t) = A \\times \\mathbf{r}(t)$ and the initial condition $\\mathbf{r}(0) = B$.
+(a) Prove that the acceleration $\\mathbf{a}(t)$ is orthogonal to $A$.
+(b) Prove that the speed is constant and compute this speed in terms of $A$, $B$, and $\\theta$.
+(c) Make a sketch of the curve, showing its relation to the vectors $A$ and $B.$`,
+                  hint: `(a) What is the derivative of $\\mathbf{r}'(t)?$ What do we know about the dot product of a cross product with its components $(\\text{ie},$ what is $A \\cdot (A \\times B))?$
+
+(b) Use the result of part (a) using the velocity vector $\\mathbf{r}'(t)$ with the component definition of acceleration:
+
+$$
+\\mathbf{a}(t) = v'(t)T(t) + v(t)T'(t)
+$$
+recalling that $T(t) = \\mathbf{v}(t)/v(t).$`,
+                  solution: `(a) We know that the derivative of the cross product of two vectors $F,$ $G$ is:
+
+$$
+(F \\times G)' = F' \\times G + F \\times G'
+$$
+Applying this to $\\mathbf{r}'(t) = A \\times \\mathbf{r}(t)$, noting that $A$ is a constant vector, we get
+
+$$
+\\begin{align*}
+\\mathbf{a}(t) &= A' \\times \\mathbf{r}(t) + A \\times \\mathbf{r}'(t) \\\\
+&= A \\times \\mathbf{r}'(t)
+\\end{align*}
+$$
+But we know from Theorem 13.12 that the cross product of two vectors is orthogonal to those same two vectors, thus $A$ and $\\mathbf{a}(t)$ are orthogonal for all $t.$
+
+(b) From part (a), we know that $\\mathbf{a}(t) = A \\times \\mathbf{r}'(t)$. Now, we write $\\mathbf{a}(t)$ as the linear combination of its components:
+
+$$
+\\mathbf{a}(t) = r''(t)T(t) + r'(t)T'(t)
+$$
+where $r'(t) = \\|\\mathbf{r}'(t)\\|$ is the speed and $r''(t) = (r'(t))'$ is the derivative of the speed.
+
+Using the result of part (a), we know that $\\mathbf{a}(t) \\cdot \\mathbf{r}'(t) = 0.$ Applying this to the above equation for acceleration, we get:
+
+$$
+\\begin{align*}
+\\mathbf{a}(t) \\cdot \\mathbf{r}'(t) &= r''(t)T(t)\\cdot \\mathbf{r}'(t) + r'(t)T'(t) \\cdot \\mathbf{r}'(t) \\\\
+&= 0
+\\end{align*}
+$$
+But we know that the unit tangent $T(t) = \\mathbf{r}'(t)/\\|\\mathbf{r}'(t)\\|$, and that $T'(t) \\cdot \\mathbf{r}'(t) = 0$ since the principal normal is orthogonal to any scalar multiple of the unit tangent vector. As such, the above dot product simplifies to:
+
+$$
+r''(t)r'(t) = 0
+$$
+for all $t$. Then, two possible cases arise.
+
+(1) $r'(t) = 0$ for all $t$, in which case position is constant, with $A$ and $B$ being linearly dependent.
+(2) $r'(t) \\neq 0 $ for all $t$, in which case $r''(t) = 0$, implying that speed is constant for all $t,$ with 
+$$
+\\begin{align*}
+r'(t) &= \\|\\mathbf{r}'(t)\\| \\\\
+&= \\|A \\times \\mathbf{r}(t)\\| \\\\
+&= \\|A\\|\\|\\mathbf{r}(t)\\|\\sin \\theta_t \\\\
+&= k
+\\end{align*}
+$$
+where $\\theta_t$ is the angle between $A$ and $\\mathbf{r}(t)$ at time $t,$ and where $k$ is some real constant. But if $r'(t)$ is constant for all $t,$ then for any given $t$, $r'(t) = r'(0),$ or 
+$$
+r'(t) = \\|A\\|\\|B\\|\\sin \\theta
+$$ 
+for all $t.$
+`,
+                  date: "2025-02-08"
                 },
                 {
                   id: 16,
                   number: "14.9.16",
-                  content: `This exercise describes how the unit tangent and the principal normal are affected by a change of parameter. Suppose a curve $C$ is described by two equivalent functions $X$ and $Y$, where $Y(t) = X[\\varphi(t)]$. Denote the unit tangent for $X$ by $\\mathbf{T}_X$ and that for $Y$ by $\\mathbf{T}_Y$.\n(a) Prove that at each point of $C$ we have $\\mathbf{T}_Y(t) = \\mathbf{T}_X[\\varphi(t)]$ if $\\varphi$ is strictly increasing, but that $\\mathbf{T}_Y(t) = -\\mathbf{T}_X[\\varphi(t)]$ if $\\varphi$ is strictly decreasing. In the first case, $\\varphi$ is said to preserve orientation; in the second case, $\\varphi$ is said to reverse orientation.\n(b) Prove that the corresponding principal normal vectors $\\mathbf{N}_X$ and $\\mathbf{N}_Y$ satisfy $\\mathbf{N}_Y(t) = \\mathbf{N}_X[\\varphi(t)]$ at each point of $C$. Deduce that the osculating plane is invariant under a change of parameter.`,
+                  content: `This exercise describes how the unit tangent and the principal normal are affected by a change of parameter. Suppose a curve $C$ is described by two equivalent functions $X$ and $Y$, where $Y(t) = X[u(t)]$. Denote the unit tangent for $X$ by $T_X$ and that for $Y$ by $T_Y$.
+
+(a) Prove that at each point of $C$ we have $T_Y(t) = T_X[u(t)]$ if $u$ is strictly increasing, but that $T_Y(t) = -T_X[u(t)]$ if $u$ is strictly decreasing. In the first case, $u$ is said to preserve orientation; in the second case, $u$ is said to reverse orientation.
+
+(b) Prove that the corresponding principal normal vectors $N_X$ and $N_Y$ satisfy $N_Y(t) = N_X[u(t)]$ at each point of $C$. Deduce that the osculating plane is invariant under a change of parameter.`,
                   hint: ``,
-                  solution: ``,
-                  date: "2024-02-08"
+                  solution: `(a) We have 
+$$
+T_X(u) = \\frac{X'(u)}{\\|X'(u)\\|} \\quad \\text{and} \\quad T_Y(t) = \\frac{u'(t)}{\|u'(t)\|}\\frac{X'[u(t)]}{\\|X'[u(t)]\\|}
+$$
+so it follows that if $u$ is strictly increasing, then $u'(t)/\|u'(t)\| = 1$ and $T_Y(t) = T_X[u(t)]$ and if $u$ is strictly decreasing, then $u'(t)/\|u'(t)\| = -1$ and $T_Y(t) = -T_X[u(t)]$
+
+(b) Taking the derivative of $T_X$ with respect to $u$, we get:
+
+$$
+\\frac{d}{du}T_X(u) = T'_X(u)
+$$
+and the principal normal $N_X$ is
+$$
+N_X = \\frac{T'_X(u)}{\\|T'_X(u)\\|}
+$$
+Taking the derivative of $T_Y$ with respect to $t$, we get:
+
+$$
+\\frac{d}{dt} T_Y = u'(t)\\frac{u'(t)}{\|u'(t)\|}T'_X[u(t)]
+$$
+And thus the principal normal $N_Y$ is
+$$
+\\begin{align*}
+N_Y &= \\frac{u'(t)^2}{u'(t)^2} \\frac{T'_X[u(t)]}{\\|T'_X[u(t)]\\|} \\\\
+&= \\frac{T'_X[u(t)]}{\\|T'_X[u(t)]\\|}\\\\
+&= N_X
+\\end{align*} 
+$$
+This demonstrates that the osculating plane is invariant under a change of parameter because the linear span of $T_X$ and $N_X$ is the same as that of $T_Y$ and $N_Y.$ Moreover, the cross products $T_X \\times N_X$ and $T_Y \\times N_Y$ only differ (potentially) by sign. 
+`,
+                  date: "2025-02-08"
                 }
               ]
             }
