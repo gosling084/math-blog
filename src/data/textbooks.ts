@@ -1246,6 +1246,189 @@ This demonstrates that the osculating plane is invariant under a change of param
                   date: "2025-02-08"
                 }
               ]
+            },
+            {
+              id: 13,
+              title: "14.13 Exercises",
+              description: "Exercises on arc length.",
+              problems: [
+                {
+                  id: 1,
+                  number: "14.13.1",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a(1 - \\cos t)\\mathbf{i} + a(t - \\sin t)\\mathbf{j}, \\quad 0 \\leq t \\leq 2\\pi, \\quad a > 0$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 2,
+                  number: "14.13.2",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = e^t\\cos t\\mathbf{i} + e^t\\sin t\\mathbf{j}, \\quad 0 \\leq t \\leq 2$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 3,
+                  number: "14.13.3",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a(\\cos t + t\\sin t)\\mathbf{i} + a(\\sin t - t\\cos t)\\mathbf{j}, \\quad 0 \\leq t \\leq 2\\pi, \\quad a > 0$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 4,
+                  number: "14.13.4",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = \\frac{c^2}{a}\\cos^3 t\\mathbf{i} + \\frac{c^2}{a}\\sin^3 t\\mathbf{j}, \\quad 0 \\leq t \\leq 2\\pi, \\quad c^2 = a^2 - b^2, \\quad 0 < b < a$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 5,
+                  number: "14.13.5",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a(\\sinh t - t)\\mathbf{i} + a(\\cosh t - 1)\\mathbf{j}, \\quad 0 \\leq t \\leq T, \\quad a > 0$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 6,
+                  number: "14.13.6",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = \\sin t\\mathbf{i} + t\\mathbf{j} + (1 - \\cos t)\\mathbf{k}, \\quad 0 \\leq t \\leq 2\\pi$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 7,
+                  number: "14.13.7",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = t\\mathbf{i} + 3t^2\\mathbf{j} + 6t^2\\mathbf{k}, \\quad 0 \\leq t \\leq 2$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 8,
+                  number: "14.13.8",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = t\\mathbf{i} + \\log(\\sec t)\\mathbf{j} + \\log(\\sec t + \\tan t)\\mathbf{k}, \\quad 0 \\leq t \\leq \\frac{1}{4}\\pi$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 9,
+                  number: "14.13.9",
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a\\cos \\omega t\\mathbf{i} + a\\sin \\omega t\\mathbf{j} + b\\omega t\\mathbf{k}, \\quad t_0 \\leq t \\leq t_1$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 10,
+                  number: "14.13.10",
+                  content: `Find an integral similar to that in (14.18) for the length of the graph of an equation of the form $x = g(y)$, where $g$ has a continuous derivative on an interval $[c, d]$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 11,
+                  number: "14.13.11",
+                  content: `A curve has the equation $y^2 = x^3$. Find the length of the arc joining $(1, -1)$ to $(1, 1)$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 12,
+                  number: "14.13.12",
+                  content: `Two points $A$ and $B$ on a unit circle with center at $O$ determine a circular sector $AOB$. Prove that the arc $AB$ has a length equal to twice the area of the sector.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 13,
+                  number: "14.13.13",
+                  content: `Set up integrals for the lengths of the curves whose equations are:\n(a) $y = e^x$, $0 \\leq x \\leq 1$\n(b) $x = t + \\log t$, $y = t - \\log t$, $1 \\leq t \\leq e$\nShow that the second length is $\\sqrt{2}$ times the first one.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 14,
+                  number: "14.13.14",
+                  content: `(a) Set up the integral which gives the length of the curve $y = c\\cosh(x/c)$ from $x = 0$ to $x = a$ $(a > 0, c > 0)$.\n(b) Show that $c$ times the length of this curve is equal to the area of the region bounded by $y = c\\cosh(x/c)$, the $x$-axis, the $y$-axis, and the line $x = a$.\n(c) Evaluate this integral and find the length of the curve when $a = 2$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 15,
+                  number: "14.13.15",
+                  content: `Show that the length of the curve $y = \\cosh x$ joining the points $(0, 1)$ and $(x, \\cosh x)$ is $\\sinh x$ if $x > 0$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 16,
+                  number: "14.13.16",
+                  content: `A nonnegative function $f$ has the property that its ordinate set over an arbitrary interval has an area proportional to the arc length of the graph above the interval. Find $f$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 17,
+                  number: "14.13.17",
+                  content: `Use the vector equation $\\mathbf{r}(t) = a\\sin t\\mathbf{i} + b\\cos t\\mathbf{j}$, where $0 < b < a$, to show that the circumference $L$ of an ellipse is given by the integral:\n\n$$L = 4a\\int_0^{\\pi/2}\\sqrt{1 - e^2\\sin^2 t}\\,dt$$\n\nwhere $e = \\sqrt{a^2 - b^2}/a$ (The number $e$ is the eccentricity of the ellipse.) This is a special case of an integral of the form:\n\n$$E(k) = \\int_0^{\\pi/2}\\sqrt{1 - k^2\\sin^2 t}\\,dt$$\n\ncalled an elliptic integral of the second kind, where $0 \\leq k < 1$. The numbers $E(k)$ have been tabulated for various values of $k$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 18,
+                  number: "14.13.18",
+                  content: `If $0 < b < 4a$, let $\\mathbf{r}(t) = a(t - \\sin t)\\mathbf{i} + a(1 - \\cos t)\\mathbf{j} + b\\sin \\frac{t}{2}\\mathbf{k}$. Show that the length of the path traced out from $t = 0$ to $t = 2\\pi$ is $8aE(k)$, where $E(k)$ has the meaning given in Exercise 17 and $k^2 = 1 - (b/4a)^2$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 19,
+                  number: "14.13.19",
+                  content: `A particle moves with position vector\n\n$$\\mathbf{r}(t) = t\\mathbf{A} + t^2\\mathbf{B} + 2(\\frac{t}{3})^{3/2}\\mathbf{A} \\times \\mathbf{B}$$\n\nwhere $\\mathbf{A}$ and $\\mathbf{B}$ are two fixed unit vectors making an angle of $\\pi/3$ radians with each other. Compute the speed of the particle at time $t$ and find how long it takes for it to move a distance of 12 units of arc length from the initial position $\\mathbf{r}(0)$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 20,
+                  number: "14.13.20",
+                  content: `(a) When a circle rolls (without slipping) along a straight line, a point on the circumference traces out a curve called a cycloid. If the fixed line is the x-axis and if the tracing point $(x,y)$ is originally at the origin, show that when the circle rolls through an angle $\\theta$ we have\n\n$$x = a(\\theta - \\sin \\theta), \\quad y = a(1 - \\cos \\theta)$$\n\nwhere $a$ is the radius of the circle. These serve as parametric equations for the cycloid.\n(b) Referring to part (a), show that $dy/dx = \\cot \\frac{1}{2}\\theta$ and deduce that the tangent line of the cycloid at $(x,y)$ makes an angle $\\frac{1}{2}(\\pi - \\theta)$ with the x-axis. Make a sketch and show that the tangent line passes through the highest point on the circle.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 21,
+                  number: "14.13.21",
+                  content: `Let $C$ be a curve described by two equivalent functions $X$ and $Y$, where $Y(t) = X[u(t)]$ for $c \\leq t \\leq d$. If the function $u$ which defines the change of parameter has a continuous derivative in $[c,d]$ prove that\n\n$$\\int_{u(c)}^{u(d)} \\|X'(u)\\|\\,du = \\int_c^d \\|Y'(t)\\|\\,dt$$\n\nand deduce that the arc length of $C$ is invariant under such a change of parameter.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                },
+                {
+                  id: 22,
+                  number: "14.13.22",
+                  content: `Consider the plane curve whose vector equation is $\\mathbf{r}(t) = t\\mathbf{i} + f(t)\\mathbf{j}$, where\n\n$$f(t) = t\\cos\\left(\\frac{\\pi}{2t}\\right) \\text{ if } t \\neq 0, \\quad f(0) = 0$$\n\nConsider the following partition of the interval $[0,1]$:\n\n$$P = \\left\\{0, \\frac{1}{2n}, \\frac{1}{2n-1}, \\ldots, \\frac{1}{3}, \\frac{1}{2}, 1\\right\\}$$\n\nShow that the corresponding inscribed polygon $\\pi(P)$ has length\n\n$$|\\pi(P)| > 1 + \\frac{1}{2} + \\frac{1}{3} + \\cdots + \\frac{1}{2n}$$\n\nand deduce that this curve is nonrectifiable.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-12"
+                }
+              ]
             }
           ]
         },
