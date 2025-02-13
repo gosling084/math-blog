@@ -1257,7 +1257,39 @@ This demonstrates that the osculating plane is invariant under a change of param
                   number: "14.13.1",
                   content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a(1 - \\cos t)\\mathbf{i} + a(t - \\sin t)\\mathbf{j}, \\quad 0 \\leq t \\leq 2\\pi, \\quad a > 0$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= a \\sin t\\,\\mathbf{i} + a(1 - \\cos t)\\,\\mathbf{j}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is
+$$
+\\begin{align*}
+v(t) &= [a^2 \\sin^2 t + a^2(1 - \\cos t)^2]^{1/2}
+\\\\
+&= [a^2 (\\sin^2 t + 1 - 2\\cos t + \\cos^2 t]^{1/2}
+\\\\
+&= [a^2 (2 - 2\\cos t)]^{1/2}
+\\\\
+&= \\left[a^2 \\left(2 - 2 + 4\\sin^2 \\frac{t}{2}\\right)\\right]^{1/2}
+\\\\
+&= 2a \\sin \\frac{t}{2}
+\\end{align*}
+$$
+Arc length $s$ is
+$$
+\\begin{align*}
+s &= \\int_0^{2\\pi}v(t)\\,dt
+\\\\
+&= 2a \\int_0^{2\\pi}\\sin \\frac{t}{2}\\,dt
+\\\\
+&= -4a \\cos \\frac{t}{2}\\Biggr|_0^{2\\pi}
+\\\\
+&= 8a \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
@@ -1265,7 +1297,37 @@ This demonstrates that the osculating plane is invariant under a change of param
                   number: "14.13.2",
                   content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = e^t\\cos t\\mathbf{i} + e^t\\sin t\\mathbf{j}, \\quad 0 \\leq t \\leq 2$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= \\left(e^t \\cos t - e^t \\sin t\\right)\\mathbf{i} + \\left(e^t \\sin t + e^t \\cos t\\right)\\mathbf{j}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is
+$$
+\\begin{align*}
+v(t) &= \\left[
+e^{2t}\\left(\\cos^2 t -\\sin t \\cos t + \\sin^2 t\\right) + 
+e^{2t}\\left(\\sin^2 t +\\sin t \\cos t + \\cos^2 t\\right)
+\\right]
+\\\\
+&= \\left(2e^{2t}\\right)
+\\\\
+&= \\sqrt{2}e^t
+\\end{align*}
+$$
+Arc length $s$ is
+$$
+\\begin{align*}
+s &= \\int_0^{2}v(t)\\,dt
+\\\\
+&= \\sqrt{2}\\int_0^2 e^t\\,dt
+\\\\
+&= \\sqrt{2}e^t\\,\\Biggr|_0^2
+\\\\
+&= \\sqrt{2}\\left(e^2 - 1\\right) \\quad \\blacksquare
+\\end{align*}
+$$`,
                   date: "2025-02-12"
                 },
                 {
@@ -1273,7 +1335,32 @@ This demonstrates that the osculating plane is invariant under a change of param
                   number: "14.13.3",
                   content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a(\\cos t + t\\sin t)\\mathbf{i} + a(\\sin t - t\\cos t)\\mathbf{j}, \\quad 0 \\leq t \\leq 2\\pi, \\quad a > 0$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= a\\left(t \\cos t \\right)\\,\\mathbf{i} + a\\left(t \\sin t\\right)\\,\\mathbf{j}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is
+$$
+\\begin{align*}
+v(t) &= \\left[a^2 t^2\\left(\\cos^2 t + \\sin^2 t\\right)\\right]
+\\\\
+&= at
+\\end{align*}
+$$
+Arc length $s$ is
+$$
+\\begin{align*}
+s &= \\int_0^{2\\pi}v(t)\\,dt
+\\\\
+&= \\int_0^{2\\pi} at\\,dt
+\\\\
+&= \\frac{a}{2}t^2\\,\\Biggr|_0^{2\\pi}
+\\\\
+&= 2a\\pi^2\\quad \\blacksquare
+\\end{align*}
+$$`,
                   date: "2025-02-12"
                 },
                 {
