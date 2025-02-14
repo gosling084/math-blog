@@ -1658,16 +1658,106 @@ $$
                   id: 11,
                   number: "14.13.11",
                   content: `A curve has the equation $y^2 = x^3$. Find the length of the arc joining $(1, -1)$ to $(1, 1)$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Let position be a function of $t,$ what happens to $\\mathbf{v}(t)$ and $v(t)$ when we differentiate $y^2 = x^3$ with respect to $t\\,?$`,
+                  solution: `Define the position vector $\\mathbf{r}(t) = (x, y)$ as a function of $t.$ In other words:
+
+$$
+\\begin{align*}
+\\mathbf{r}(t) &= x(t)\\,\\mathbf{i} + y(t)\\,\\mathbf{j}
+\\\\
+\\\\
+\\mathbf{v}(t) &= \\frac{dx}{dt}\\,\\mathbf{i} + \\frac{dy}{dt}\\,\\mathbf{j}
+\\end{align*}
+$$
+But we know that the graph of $\\mathbf{r}(t)$ is confined by the equation $y^2 = x^3,$ so its velocity $\\mathbf{v}(t)$ must be confined by:
+
+$$
+2y\\frac{dy}{dt} = 3x^2\\frac{dx}{dt}
+$$
+We can rewrite velocity as
+$$
+\\mathbf{v}(t) = \\frac{dx}{dt}\\,\\mathbf{i} + \\frac{3x^2}{2y}\\frac{dx}{dt}\\,\\mathbf{j}
+$$
+Recalling that $y^2 = x^3$, speed $v(t)$ is:
+
+$$
+\\begin{align*}
+v(t) &= \\sqrt{\\left(\\frac{dx}{dt}\\right)^2\\left(1 + \\frac{9x^4}{4y^2}\\right)}
+\\\\
+&= \\left|\\frac{dx}{dt}\\right|\\sqrt{1 + \\frac{9}{4}x}
+\\end{align*}
+$$
+If we assume that $x$ and $y$ are real-valued functions, and $x$ increases monotonically, then $x \\geq 0$ and $\\frac{dx}{dt} \\geq 0$ for all $t.$ Thus, $\\left|\\frac{dx}{dt}\\right| = \\frac{dx}{dt}$ for all $t.$
+
+To find the arc length from $(1, -1)$ to $(1, 1)$, we first note that $y^2 = x^3,$ equivalent to $\|y\| = x^{3/2}$ $(x \\geq 0),$ is in fact two functions of $x$, symmetric about the $x$-axis. Thus, assuming $x(t_0) = 0$ and $x(t_1) = 1$, the arc length $s$ can be expressed as:
+$$
+\\begin{align*}
+s &= 2\\int_{t_0}^{t_1}v(t)\\,dt
+\\\\
+&= 2\\int_{t_0}^{t_1}\\sqrt{1 + \\frac{9}{4}x}\\, \\frac{dx}{dt}\\,dt
+\\\\
+&=2\\int_0^1\\sqrt{1 + \\frac{9}{4}x}\\,dx
+\\\\
+&=\\frac{16}{27}\\left(1 + \\frac{9}{4}x\\right)^{3/2}\\,\\Biggr|_0^1
+\\\\
+&= \\frac{26\\sqrt{13} - 16}{27} \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
                   id: 12,
                   number: "14.13.12",
                   content: `Two points $A$ and $B$ on a unit circle with center at $O$ determine a circular sector $AOB$. Prove that the arc $AB$ has a length equal to twice the area of the sector.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from section 2.10 that for a polar function with radius $r = f(\\theta)$, the area of the sector $R$ from $0$ to $\\theta_0,\\, (0 \\leq \\theta_0 \\leq 2\\pi)$ is 
+$$
+a(R) = \\frac{1}{2}\\int_0^{\\theta_0}f^2(\\theta)\\,d\\theta
+$$`,
+                  solution: `Since the curve is a circle of radius $1$ centered at the origin, we can write position $\\mathbf{r}$ as a parameter of angle $\\theta:$
+
+$$
+\\mathbf{r}(\\theta) = \\cos \\theta\\,\\mathbf{i} + \\sin \\theta\\,\\mathbf{j}
+$$
+Then, velocity $\\mathbf{v}(\\theta)$ and speed $v(\\theta)$ are:
+
+$$
+\\begin{align*}
+\\mathbf{v}(\\theta) &= -\\sin \\theta\\,\\mathbf{i} + \\cos \\theta\\,\\mathbf{j}
+\\\\
+\\\\
+v(\\theta) &= \\sqrt{\\sin^2 \\theta + \\cos^2 \\theta}
+\\\\
+&= 1
+\\end{align*}
+$$
+Arc length $s$ for angle $\\theta = \\theta_0$ is
+$$
+\\begin{align*}
+s &= \\int_0^{\\theta_0}v(\\theta)\\,d\\theta
+\\\\
+&= \\int_0^{\\theta_0}d\\theta
+\\\\
+&= \\theta_0
+\\end{align*}
+$$
+
+Now, we recall the formula for the area of a region $R$ from $\\theta = 0$ to $\\theta = \\theta_0$ of a polar function with radius $r(\\theta):$
+$$
+\\begin{align*}
+a(R) &= \\frac{1}{2}\\int_0^{\\theta_0}r^2(\\theta)\\,d\\theta
+\\end{align*}
+$$
+But for a circle with radius $1$ centered at the origin, $r(\\theta) = 1$ for all $\\theta$, thus for the sector drawn from $\\theta = 0$ to $\\theta = \\theta_0$, its area a(R) is:
+$$
+\\begin{align*}
+a(R) &= \\frac{1}{2}\\int_0^{\\theta_0}\\,d\\theta
+\\\\
+&= \\frac{1}{2}\\theta_0
+\\end{align*}
+$$
+But this is half of the arc length $s$. This completes the proof.
+`,
                   date: "2025-02-12"
                 },
                 {
@@ -1675,7 +1765,67 @@ $$
                   number: "14.13.13",
                   content: `Set up integrals for the lengths of the curves whose equations are:\n(a) $y = e^x$, $0 \\leq x \\leq 1$\n(b) $x = t + \\log t$, $y = t - \\log t$, $1 \\leq t \\leq e$\nShow that the second length is $\\sqrt{2}$ times the first one.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `(a) We define the position vector $\\mathbf{r}(x)$ and velocity $\\mathbf{v}(x)$ as:
+
+$$
+\\begin{align*}
+\\mathbf{r}(x) &= x\\,\\mathbf{i} + e^{x}\\,\\mathbf{j}
+\\\\
+\\\\
+\\mathbf{v}(x) &= \\mathbf{i} + e^{x}\\,\\mathbf{j}
+\\end{align*}
+$$
+Thus, the arc length $s_x$ from $x = 0$ to $x = 1$ is:
+
+$$
+\\begin{align*}
+s_x &= \\int_0^1 v(x) \\,dx
+\\\\
+&= \\int_0^1 \\sqrt{1 + e^{2x}} \\,dx \\quad \\blacksquare
+\\end{align*}
+$$
+
+(b) We define the position vector $\\mathbf{r}(t)$ and velocity vector $\\mathbf{v}(t)$ as:
+
+$$
+\\begin{align*}
+\\mathbf{r}(t) &= (t + \\log t)\\mathbf{i} + (t - \\log t)\\mathbf{j}
+\\\\
+\\\\
+\\mathbf{v}(t) &= \\left(1 + \\frac{1}{t}\\right)\\mathbf{i} + \\left(1 - \\frac{1}{t}\\right)\\mathbf{j}
+\\end{align*}
+$$
+Speed $v(t)$ is then defined as:
+
+$$
+\\begin{align*}
+v(t) &= \\sqrt{\\left(1 + \\frac{2}{t} + \\frac{1}{t^2}\\right) + \\left(1 - \\frac{2}{t} + \\frac{1}{t^2}\\right)}
+\\\\
+&= \\sqrt{2 + \\frac{2}{t^2}}
+\\end{align*}
+$$
+With arc length $s_t$:
+$$
+\\begin{align*}
+s_t &= \\int_1^e v(t)\\,dt
+\\\\
+&= \\sqrt{2}\\int_1^e \\sqrt{1 + \\frac{1}{t^2}}\\,dt \\quad \\blacksquare
+\\end{align*}
+$$
+
+To prove that $s_t$ is $\\sqrt{2}$ times $s_x$, we first note that by using the substitution $t = e^x$ and $\\frac{dt}{dx} = e^x,$ the value $dt$ becomes $e^x\\,dx$, the limits of integration change from $t = e^{0}$ and $t = e^{1}$ to $x = 0$ and $x = 1$, and the integral $s_t$ becomes:
+$$
+\\begin{align*}
+s_t &= \\sqrt{2}\\int_0^1\\sqrt{1 + \\frac{1}{e^{2x}}}\\,e^x\\,dx
+\\\\
+&= \\sqrt{2}\\int_0^1\\sqrt{e^{2x}\\left(1 + \\frac{1}{e^{2x}}\\right)}\\,dx
+\\\\
+&= \\sqrt{2}\\int_0^1\\sqrt{1 + e^{2x}}\\,dx
+\\\\
+&= \\sqrt{2}s_x \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
