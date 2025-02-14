@@ -261,7 +261,7 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
             {
               id: 4,
               title: "14.4 Exercises",
-              description: "Exercises on limits, derivatives, and integrals of vector-valued functions",
+              description: "Exercises on limits, derivatives, and integrals of vector-valued functions.",
               problems: [
                 {
                   id: 1,
@@ -761,7 +761,7 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
             {
               id: 9,
               title: "14.9 Exercises",
-              description: "Exercises on the unit tangent, principal normal, and osculating plane of a curve",
+              description: "Exercises on the unit tangent, principal normal, and osculating plane of a curve.",
               problems: [
                 {
                   id: 1,
@@ -1264,6 +1264,7 @@ $$
 \\end{align*}
 $$
 Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is
+
 $$
 \\begin{align*}
 v(t) &= [a^2 \\sin^2 t + a^2(1 - \\cos t)^2]^{1/2}
@@ -1278,6 +1279,7 @@ v(t) &= [a^2 \\sin^2 t + a^2(1 - \\cos t)^2]^{1/2}
 \\end{align*}
 $$
 Arc length $s$ is
+
 $$
 \\begin{align*}
 s &= \\int_0^{2\\pi}v(t)\\,dt
@@ -1304,6 +1306,7 @@ $$
 \\end{align*}
 $$
 Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is
+
 $$
 \\begin{align*}
 v(t) &= \\left[
@@ -1317,6 +1320,7 @@ e^{2t}\\left(\\sin^2 t +\\sin t \\cos t + \\cos^2 t\\right)
 \\end{align*}
 $$
 Arc length $s$ is
+
 $$
 \\begin{align*}
 s &= \\int_0^{2}v(t)\\,dt
@@ -1342,6 +1346,7 @@ $$
 \\end{align*}
 $$
 Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is
+
 $$
 \\begin{align*}
 v(t) &= \\left[a^2 t^2\\left(\\cos^2 t + \\sin^2 t\\right)\\right]
@@ -1350,6 +1355,7 @@ v(t) &= \\left[a^2 t^2\\left(\\cos^2 t + \\sin^2 t\\right)\\right]
 \\end{align*}
 $$
 Arc length $s$ is
+
 $$
 \\begin{align*}
 s &= \\int_0^{2\\pi}v(t)\\,dt
@@ -1366,9 +1372,48 @@ $$`,
                 {
                   id: 4,
                   number: "14.13.4",
-                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = \\frac{c^2}{a}\\cos^3 t\\mathbf{i} + \\frac{c^2}{a}\\sin^3 t\\mathbf{j}, \\quad 0 \\leq t \\leq 2\\pi, \\quad c^2 = a^2 - b^2, \\quad 0 < b < a$$`,
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = \\frac{c^2}{a}\\cos^3 t\\mathbf{i} + \\frac{c^2}{b}\\sin^3 t\\mathbf{j}, \\quad 0 \\leq t \\leq 2\\pi, \\quad c^2 = a^2 - b^2, \\quad 0 < b < a$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= \\frac{c^2}{a}\\left(-3 \\cos^2 t \\sin t\\right)\\mathbf{i} + \\frac{c^2}{b}\\left(3 \\sin^2 t \\cos t\\right)\\mathbf{j}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is
+
+$$
+\\begin{align*}
+v(t) &= \\left[\\frac{c^4}{a^2}\\left(9 \\cos^4 t \\sin^2 t \\right) + \\frac{c^4}{b^2}\\left(9 \\sin^4 t \\cos ^2 t \\right)\\right]^{1/2}
+\\\\
+&= \\frac{3c^2}{ab}\\left[\\sin^2 t \\cos^2 t\\left(b^2 \\cos^2 t + a^2 \\sin^2 t\\right)\\right]^{1/2}
+\\\\
+&= \\frac{3c^2}{ab}\\left[\\sin^2 t \\cos^2 t\\left(b^2 + c^2 \\sin^2 t\\right)\\right]^{1/2}
+\\\\
+&= \\frac{3c^2}{ab}\\left[\\sin^2 t \\cos^2 t\\left(b^2 + \\left(a^2 - b^2\\right) \\sin^2 t\\right)\\right]^{1/2}
+\\end{align*}
+$$
+Making the substitution $u = \\sin t,\\ \\frac{du}{dt} = \\cos t,\\ (0 \\leq t \\leq \\pi/2)$, and noting that the arc traced out over $0 \\leq t \\leq 2\\pi$ is the same length as four times the arc traced out over $0 \\leq t \\leq \\pi/2,$ we get:
+
+$$
+\\begin{align*}
+v(t) &= \\frac{3c^2}{ab}u\\,\\frac{du}{dt}\\left[b^2 + \\left(a^2 - b^2\\right)u^2\\right]^{1/2}
+\\end{align*}
+$$
+Arc length $s$ is
+$$
+\\begin{align*}
+s &= \\int_0^{2\\pi}v(t)\\,dt
+\\\\
+&= 4\\int_0^1 u\\left[b^2 + \\left(a^2 - b^2\\right)u^2\\right]^{1/2}\\,du
+\\\\
+&= 4\\frac{c^2}{(a^2 - b^2)ab}\\left[b^2 + \\left(a^2 - b^2\\right)u^2\\right]^{3/2}\\Biggr|_0^{1}
+\\\\
+&= \\frac{4}{ab}\\left[\\left(a^2\\right)^{3/2} -\\left(b^2\\right)^{3/2}\\right]
+\\\\
+&= \\frac{4}{ab}\\left(a^3 - b^3\\right) \\quad \\blacksquare
+\\end{align*}
+$$`,
                   date: "2025-02-12"
                 },
                 {
@@ -1376,7 +1421,29 @@ $$`,
                   number: "14.13.5",
                   content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a(\\sinh t - t)\\mathbf{i} + a(\\cosh t - 1)\\mathbf{j}, \\quad 0 \\leq t \\leq T, \\quad a > 0$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+a\\left(\\cosh t -1\\right) \\mathbf{i} + a\\left(\\sinh t\\right)\\mathbf{j}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is 
+
+$$
+\\begin{align*}
+a\\left(\\cosh^2 t + \\sinh^2 t + 1 - 2 \\cosh t\\right)^{1/2}
+\\end{align*}
+$$
+Arc length $s$ is
+
+$$
+\\begin{align*}
+s &= \\int_0^{T}v(t)\\,dt
+\\\\
+&= \\int_0^T a\\left(\\cosh^2 t + \\sinh^2 t + 1 - 2 \\cosh t\\right)^{1/2}\\, dt
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
@@ -1384,15 +1451,71 @@ $$`,
                   number: "14.13.6",
                   content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = \\sin t\\mathbf{i} + t\\mathbf{j} + (1 - \\cos t)\\mathbf{k}, \\quad 0 \\leq t \\leq 2\\pi$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= \\cos t\\,\\mathbf{i} + \\mathbf{j} + \\sin t \\,\\mathbf{k}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is 
+
+$$
+\\begin{align*}
+v(t) &= \\sqrt{\\cos^2 t + \\sin^2 t + 1}
+\\\\
+&= \\sqrt{2}
+\\end{align*}
+$$
+Arc length $s$ is
+
+$$
+\\begin{align*}
+s &= \\sqrt{2}\\int_0^{2\\pi}\\,dt 
+\\\\
+&= \\sqrt{2}\\,t\\,\\Biggr|_0^{2\\pi}
+\\\\
+&= 2\\sqrt{2}\\,\\pi \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
                   id: 7,
                   number: "14.13.7",
-                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = t\\mathbf{i} + 3t^2\\mathbf{j} + 6t^2\\mathbf{k}, \\quad 0 \\leq t \\leq 2$$`,
+                  content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = t\\mathbf{i} + 3t^2\\mathbf{j} + 6t^3\\mathbf{k}, \\quad 0 \\leq t \\leq 2$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= \\mathbf{i} + 6t\\mathbf{j} + 18t^2\\mathbf{k}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is 
+
+$$
+\\begin{align*}
+v(t) &= \\sqrt{1 + 36t^2 + 18^2t^4}
+\\\\
+&= \\sqrt{\\left(1 + 18t^2\\right)^2}
+\\\\
+&= 1 + 18t^2
+\\end{align*}
+$$
+Arc length $s$ is
+
+$$
+\\begin{align*}
+s &= \\int_0^2 v(t)\\, dt
+\\\\
+&= \\int_0^2 1 + 18t^2\\, dt
+\\\\
+&= t + 6t^3\\, \\Biggr|_0^2
+\\\\
+&= 50 \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
@@ -1400,7 +1523,38 @@ $$`,
                   number: "14.13.8",
                   content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = t\\mathbf{i} + \\log(\\sec t)\\mathbf{j} + \\log(\\sec t + \\tan t)\\mathbf{k}, \\quad 0 \\leq t \\leq \\frac{1}{4}\\pi$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= \\mathbf{i} + \\tan t\\,\\mathbf{j} + \\sec t \\,\\mathbf{k}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is 
+
+$$
+\\begin{align*}
+v(t) &= \\sqrt{1 + \\tan^2 t + \\sec^2 t}
+\\\\
+&= \\sqrt{\\frac{\\cos^2 t + \\sin^2 t + 1}{\\cos^2 t}}
+\\\\
+&= \\sqrt{2}\\sec t
+\\end{align*}
+$$
+Note: From our calculation of velocity, we saw that $\\frac{d}{dt}\\log (\\tan t + \\sec t) = \\sec t.$ 
+Arc length $s$ is:
+
+$$
+\\begin{align*}
+s &= \\int_0^{\\pi/4} v(t)\\, dt
+\\\\
+&= \\sqrt{2}\\int_0^{\\pi/4}\\sec t\\, dt
+\\\\
+&= \\sqrt{2}\\log\\left(\\tan t + \\sec t\\right)\\,\\Biggr|_0^{\\pi/4}
+\\\\
+&= \\sqrt{2}\\log\\left(1 + \\sqrt{2}\\right) \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
@@ -1408,15 +1562,96 @@ $$`,
                   number: "14.13.9",
                   content: `Find the length of the path traced out by a particle moving on a curve according to the given equation during the time interval specified:\n\n$$\\mathbf{r}(t) = a\\cos \\omega t\\mathbf{i} + a\\sin \\omega t\\mathbf{j} + b\\omega t\\mathbf{k}, \\quad t_0 \\leq t \\leq t_1$$`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Velocity $\\mathbf{v}(t)$ is
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= -a \\omega \\sin \\omega t\\,\\mathbf{i} + a \\omega \\cos \\omega t \\,\\mathbf{j} + b\\omega \\mathbf{k}
+\\end{align*}
+$$
+Speed $v(t) = \\|\\mathbf{v}(t)\\|$ is 
+
+$$
+\\begin{align*}
+v(t) &= \\sqrt{a^2\\omega^2 + b^2\\omega^2}
+\\\\
+&= \|\\omega\|\\sqrt{a^2 + b^2}
+\\end{align*}
+$$
+Arc length $s$ is
+
+$$
+\\begin{align*}
+s &= \\int_{t_0}^{t_1}v(t)\\,dt
+\\\\
+&= \|\\omega\|\\sqrt{a^2 + b^2}\\int_{t_0}^{t_1}\\,dt
+\\\\
+&= \|\\omega\|\\sqrt{a^2 + b^2}\\,(t_1 - t_0) \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
                   id: 10,
                   number: "14.13.10",
                   content: `Find an integral similar to that in (14.18) for the length of the graph of an equation of the form $x = g(y)$, where $g$ has a continuous derivative on an interval $[c, d]$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall the setup to equation $(14.18):$
+
+Let the graph of a real-valued function $f,$ defined on $[a, b]$ be described by the position vector $\\mathbf{r}(t):$
+
+$$
+\\mathbf{r}(t) = t\\,\\mathbf{i} + f(t)\\,\\mathbf{j}
+$$
+Then, its corresponding velocity vector $\\mathbf{v}(t)$ and speed $v(t)$ are given by:
+
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= \\mathbf{i} + f'(t)\\,\\mathbf{j}
+\\\\
+\\\\
+v(t) &= \\|\\mathbf{v}(t)\\|
+\\\\
+&= \\sqrt{1 + \\left[f'(t)\\right]^2}\\,.
+\\end{align*}
+$$
+Therefore, the arc length of the graph of $f$ over a subinterval $[a, x]$ of $[a, b]$ is given by the integral:
+$$
+\\begin{align*}
+s(x) &= \\int_a^x v(t)\\,dt
+\\\\
+&= \\int_a^x \\sqrt{1 + \\left[f'(t)\\right]^2}\\,dt \\tag{14.18}
+\\end{align*}
+$$`,
+                  solution: `If the graph is of the form $x = g(y),$ where $y$ is a function of $t$, then the position vector takes the form $\\mathbf{r}(t):$
+
+$$
+\\mathbf{r}(t) = g(y)\\,\\mathbf{i} + y(t)\\,\\mathbf{j}
+$$
+Its corresponding velocity $\\mathbf{v}(t)$ and speed $v(t)$ are:
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= g'(y)\\frac{dy}{dt}\\,\\mathbf{i} + \\frac{dy}{dt}\\,\\mathbf{j}
+\\\\
+\\\\
+v(t) &= \\sqrt{\\left(g'(y)\\frac{dy}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2}
+\\end{align*}
+$$
+
+Its arc length $s,$ given that $c < d,$ is given by:
+
+$$
+\\begin{align*}
+s &= \\int_{t_0}^{t_1}v(t)\\,dt
+\\\\
+&= \\int_{t_0}^{t_1}\\sqrt{\\left(g'(y)\\frac{dy}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2}\\,dt
+\\\\
+&= \\int_{t_0}^{t_1}\\sqrt{1 + \\left[g'(y)\\right]^2}\\frac{dy}{dt}\\,dt
+\\\\
+&= \\int_c^d \\sqrt{1 + \\left[g'(y)\\right]^2}\\,dy \\quad \\blacksquare
+\\end{align*}
+$$
+(Note: if $t_0 < t_1,$ then it must be the case that $\\frac{dy}{dt} > 0$ since $c < d.$ Thus, $\\left|\\frac{dy}{dt}\\right| = \\frac{dy}{dt}$ in the above calculation.)
+`,
                   date: "2025-02-12"
                 },
                 {
