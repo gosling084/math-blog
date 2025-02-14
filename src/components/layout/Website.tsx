@@ -214,12 +214,10 @@ const Website = () => {
                         chapter={router.activeContent.chapter}
                         problemSet={router.activeContent.problemSet}
                         problem={router.activeContent.problem}
-                        onBack={() => router.actions.navigateToProblemSet(
-                          router.activeContent.textbook!, 
-                          router.activeContent.chapter!, 
-                          router.activeContent.problemSet!
+                        onNavigateToHome={router.actions.navigateToHome}
+                        onNavigateToTextbook={() => router.actions.navigateToTextbook(
+                          router.activeContent.textbook!
                         )}
-                        onNavigateToTextbook={router.actions.navigateToHome}
                         onNavigateToChapter={() => router.actions.navigateToChapter(
                           router.activeContent.textbook!, 
                           router.activeContent.chapter!

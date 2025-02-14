@@ -15,7 +15,7 @@ interface ProblemViewProps {
   chapter: Chapter;
   problemSet: ProblemSet;
   problem: Problem;
-  onBack: () => void;
+  onNavigateToHome: () => void;
   onNavigateToTextbook: () => void;
   onNavigateToChapter: () => void;
   onNavigateToProblemSet: () => void;
@@ -73,7 +73,7 @@ export const ProblemView = ({
   chapter,
   problemSet,
   problem,
-  onBack,
+  onNavigateToHome,
   onNavigateToTextbook,
   onNavigateToChapter,
   onNavigateToProblemSet,
@@ -90,10 +90,10 @@ export const ProblemView = ({
       <div className="mb-4 sm:mb-8 overflow-x-auto">
         <Breadcrumb
           items={[
-            { label: "Books", onClick: onNavigateToTextbook, type: 'home' },
-            { label: textbook.title, onClick: onNavigateToChapter, type: 'textbook' },
-            { label: chapter.title, onClick: onNavigateToProblemSet, type: 'chapter' },
-            { label: problemSet.title, onClick: onBack, type: 'problem-set' },
+            { label: "Books", onClick: onNavigateToHome, type: 'home' },
+            { label: textbook.title, onClick: onNavigateToTextbook, type: 'textbook' },
+            { label: chapter.title, onClick: onNavigateToChapter, type: 'chapter' },
+            { label: problemSet.title, onClick: onNavigateToProblemSet, type: 'problem-set' },
             { label: `Problem ${problem.number}`, onClick: () => {}, type: 'problem' }
           ]}
         />
