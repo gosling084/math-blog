@@ -85,19 +85,43 @@ export const ProblemView = ({
   const [showSolution, setShowSolution] = useState(false);
   
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
-      {/* Breadcrumb navigation */}
-      <div className="mb-4 sm:mb-8 overflow-x-auto">
-        <Breadcrumb
-          items={[
-            { label: "Books", onClick: onNavigateToHome, type: 'home' },
-            { label: textbook.title, onClick: onNavigateToTextbook, type: 'textbook' },
-            { label: chapter.title, onClick: onNavigateToChapter, type: 'chapter' },
-            { label: problemSet.title, onClick: onNavigateToProblemSet, type: 'problem-set' },
-            { label: `Problem ${problem.number}`, onClick: () => {}, type: 'problem' }
-          ]}
-        />
+    <div className="max-w-4xl mx-auto p-8">
+      {/* Navigation: Breadcrumb for larger screens, Back button for mobile */}
+      <div className="mb-4 sm:mb-8">
+        {/* Back button - visible only on mobile */}
+        <button
+          onClick={onNavigateToProblemSet}
+          className="sm:hidden flex items-center text-primary hover:text-primary/80 mb-4"
+        >
+          <ChevronRight className="w-4 h-4 mr-1 rotate-180" />
+          Back to problems
+        </button>
+
+        {/* Breadcrumb - hidden on mobile, visible on larger screens */}
+        <div className="hidden sm:block overflow-x-auto">
+          <Breadcrumb
+            items={[
+              { label: "Books", onClick: onNavigateToHome, type: 'home' },
+              { label: textbook.title, onClick: onNavigateToTextbook, type: 'textbook' },
+              { label: chapter.title, onClick: onNavigateToChapter, type: 'chapter' },
+              { label: problemSet.title, onClick: onNavigateToProblemSet, type: 'problem-set' },
+              { label: `Problem ${problem.number}`, onClick: () => {}, type: 'problem' }
+            ]}
+          />
+        </div>
       </div>
+
+      {/* Problem Set header with view toggle */}
+      <div className="space-y-4 mb-8">
+          <div className="flex justify-between items-center">
+            <h1 className="text-3xl font-bold text-card-foreground">
+              {problemSet.title}
+            </h1>
+          </div>
+          <p className="text-muted-foreground">
+            {problemSet.description}
+          </p>
+        </div>
 
       <Card className="bg-card text-card-foreground overflow-hidden">
         <CardHeader className="space-y-1">
@@ -134,13 +158,14 @@ export const ProblemView = ({
             <Button 
               variant="outline"
               onClick={() => setShowSolution(!showSolution)}
+              disabled={problem.solution === ""}
               className={cn(
                 "bg-card text-card-foreground w-full sm:w-auto",
                 "hover:bg-transparent",
                 "text-muted-foreground"
               )}
             >
-              {showSolution ? 'Hide Solution' : 'Show Solution'}
+              {showSolution && problem.solution !== "" ? 'Hide Solution' : 'Show Solution'}
             </Button>
           </div>
 
