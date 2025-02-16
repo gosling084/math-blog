@@ -1832,8 +1832,53 @@ $$
                   id: 14,
                   number: "14.13.14",
                   content: `(a) Set up the integral which gives the length of the curve $y = c\\cosh(x/c)$ from $x = 0$ to $x = a$ $(a > 0, c > 0)$.\n(b) Show that $c$ times the length of this curve is equal to the area of the region bounded by $y = c\\cosh(x/c)$, the $x$-axis, the $y$-axis, and the line $x = a$.\n(c) Evaluate this integral and find the length of the curve when $a = 2$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `For (a), use the identity $\\sinh^2 x = \\cosh^2 x - 1.$`,
+                  solution: `(a) If the curve is described by the equation $y = c\\cosh(x/c)$ then we can define its position $\\mathbf{r}(x)$ as:
+$$
+\\mathbf{r}(x) = x\\,\\mathbf{i} + c\\cosh\\frac{x}{c}\\mathbf{j}
+$$
+With velocity $\\mathbf{v}(x)$ and speed $v(x):$
+
+$$
+\\begin{align*}
+\\mathbf{v}(x) &= \\mathbf{i} + \\sinh\\frac{x}{c}\\mathbf{j}
+\\\\
+\\\\
+v(x) &= \\sqrt{1 + \\sinh^2(x/c)}
+\\\\
+&= \\sqrt{1 + \\cosh^2(x/c) - 1}
+\\\\
+&= \\sqrt{\\cosh^2(x/c)}
+\\end{align*}
+$$
+And since the hyperbolic cosine is positive for all real $x,$
+
+$$
+v(x) = \\cosh\\frac{x}{c}
+$$
+Then, the arc length $s$ from $x = 0$ to $x = a$ is:
+$$
+\\begin{align*}
+s &= \\int_0^a \\cosh\\frac{x}{c}\\,dx \\quad \\blacksquare
+\\end{align*}
+$$
+(b) The area bounded by the curve $y = c\\cosh(x/c)$, the $x$-axis, the $y$-axis, and the vertical line $x=a$ is defined by the integral:
+$$
+A = c\\int_0^a \\cosh\\frac{x}{c}\\,dx
+$$
+which is $c$ times the length $s.\\quad \\blacksquare$
+
+(c) Evaluating the integral from (a) where $a = 2,$ we get:
+$$
+\\begin{align*}
+s_2 &= \\int_0^2 \\cosh\\frac{x}{c}\\,dx
+\\\\
+&= c\\sinh\\frac{x}{c}\\,\\Biggr|_0^2
+\\\\
+&= c\\sinh\\frac{2}{c} \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
@@ -1841,15 +1886,28 @@ $$
                   number: "14.13.15",
                   content: `Show that the length of the curve $y = \\cosh x$ joining the points $(0, 1)$ and $(x, \\cosh x)$ is $\\sinh x$ if $x > 0$.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `We saw in exercise 14 that the length of the curve $y = \\cosh \\frac{x}{c}$ from $x = 0$ to $x = a$ for some $a>0$ is:
+$$
+s = c\\sinh\\frac{a}{c}
+$$
+Setting $c = 1,$ we see that the arc length of the curve $y = \\cosh t$ from $t = 0$ to $t = x,$ is $s = \\sinh x. \\quad \\blacksquare$`,
                   date: "2025-02-12"
                 },
                 {
                   id: 16,
                   number: "14.13.16",
                   content: `A nonnegative function $f$ has the property that its ordinate set over an arbitrary interval has an area proportional to the arc length of the graph above the interval. Find $f$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `The problem statement asks for a function $f(x)$ with speed $v(x)$, such that over an arbitrary interval $[a,b]$ and for some constant $k > 0:$
+
+$$
+\\int_a^b f(x)\\,dx = k\\int_a^b v(x)\\,dx
+$$`,
+                  solution: `We want to find a function $f$, whose curve is described by the position vector $\\mathbf{r}(x) = x\\,\\mathbf{i} + f(x)\\,\\mathbf{j}$, with velocity $\\mathbf{v}(t) = \\mathbf{i} + f'(x)\\,\\mathbf{j}$ and speed $v(x) = \\sqrt{1 + [f'(x)]^2}$ such that:
+
+$$
+\\int_a^b f(x)\\,dx = k\\int_a^b v(x)\\,dx
+$$
+Extending the results of 14 and 15, we see that for an arbitrary constant $C,$ $f(x) = k\\cosh\\left(\\frac{x}{k} + C\\right)$ satisfies this condition. Additionally, noting that the derivative of a constant function is $0,$ we see that the function $f(x) = k$ also satisfies this conditon.`,
                   date: "2025-02-12"
                 },
                 {
@@ -1857,15 +1915,111 @@ $$
                   number: "14.13.17",
                   content: `Use the vector equation $\\mathbf{r}(t) = a\\sin t\\mathbf{i} + b\\cos t\\mathbf{j}$, where $0 < b < a$, to show that the circumference $L$ of an ellipse is given by the integral:\n\n$$L = 4a\\int_0^{\\pi/2}\\sqrt{1 - e^2\\sin^2 t}\\,dt$$\n\nwhere $e = \\sqrt{a^2 - b^2}/a$ (The number $e$ is the eccentricity of the ellipse.) This is a special case of an integral of the form:\n\n$$E(k) = \\int_0^{\\pi/2}\\sqrt{1 - k^2\\sin^2 t}\\,dt$$\n\ncalled an elliptic integral of the second kind, where $0 \\leq k < 1$. The numbers $E(k)$ have been tabulated for various values of $k$.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Noting that $0 < b < a,$ we have:
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= a \\cos t\\,\\mathbf{i} - b \\sin t\\,\\mathbf{j}
+\\\\
+\\\\
+v(t) &= \\sqrt{a^2 \\cos^2 t + b^2\\sin^2 t}
+\\\\
+&= \\sqrt{a^2 - (a^2-b^2)\\sin^2t}
+\\\\
+&= a\\sqrt{1 - e^2 \\sin^2 t}
+\\end{align*}
+$$
+where $e = \\sqrt{a^2 - b^2}/a$
+
+Now, the circumference of the ellipse $C_e$ is the arc length traced by $f(t)$ from $t = 0$ to $t = 2\\pi.$ But this value is equal to four times the arc length traced by $f$ from $t = 0$ to $t = \\pi/2$. In other words:
+$$
+\\begin{align*}
+C_e &= \\int_0^{2\\pi} v(t)\\,dt
+\\\\
+&= 4\\int_0^{\\pi/2} v(t)\\,dt
+\\\\
+&= 4a\\int_0^{\\pi/2} \\sqrt{1 - e^2 \\sin^2 t}\\,dt
+\\end{align*} 
+$$
+where $e = \\sqrt{a^2 - b^2}/a.$ This completes the proof.
+`,
                   date: "2025-02-12"
                 },
                 {
                   id: 18,
                   number: "14.13.18",
                   content: `If $0 < b < 4a$, let $\\mathbf{r}(t) = a(t - \\sin t)\\mathbf{i} + a(1 - \\cos t)\\mathbf{j} + b\\sin \\frac{t}{2}\\mathbf{k}$. Show that the length of the path traced out from $t = 0$ to $t = 2\\pi$ is $8aE(k)$, where $E(k)$ has the meaning given in Exercise 17 and $k^2 = 1 - (b/4a)^2$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall the definition of $E(k)$ from exercise 17:
+
+$$E(k) = \\int_0^{\\pi/2}\\sqrt{1 - k^2\\sin^2 t}\\,dt$$
+This is known as an elliptic integral of the second kind, where $0 \\leq k < 1.$
+
+To turn the equation for arc length into a multiple of $E(k)$, use Theorem 1.7 (Invariance under translation)
+$$
+\\int_{a}^{b}f(x)\\,dx = \\int_{a + c}^{b + c}f(x - c)\\,dx
+$$
+Theorem 1.8 (Expansion or contraction of the interval of integration):
+$$
+\\int_{ka}^{kb}f\\left(\\frac{x}{k}\\right)\\,dx = k\\int_{a}^{b}f(x)\\,dx
+$$
+and the trigonometric identity $\\sin(x) = \\cos(x - \\frac{\\pi}{2}).$
+`,
+                  solution: `We have velocity:
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= a\\left(1 - \\cos t\\right)\\mathbf{i} + a\\left(\\sin t\\right)\\mathbf{j} + \\frac{b}{2}\\cos\\frac{t}{2}\\mathbf{k}
+\\end{align*}
+$$
+and speed
+$$
+\\begin{align*}
+v(t) &= \\sqrt{a^2(1 - \\cos t)^2 + a^2\\sin^2 t + \\frac{b^2}{4}\\cos^2\\frac{t}{2}}
+\\\\
+&= \\sqrt{a^2(2 - 2\\cos t) + \\frac{b^2}{4}\\cos^2\\frac{t}{2}}
+\\\\
+&= \\sqrt{a^2\\left[2 - 2\\left(1 - \\sin^2 \\frac{t}{2}\\right)\\right] + \\frac{b^2}{4}\\cos^2\\frac{t}{2}}
+\\\\
+&= \\sqrt{4a^2\\sin^2\\frac{t}{2} + \\frac{b^2}{4}\\cos^2 \\frac{t}{2}}
+\\\\
+&= 2a\\sqrt{\\sin^2\\frac{t}{2} + \\frac{b^2}{16a^2}\\cos^2 \\frac{t}{2}}
+\\\\
+&= 2a\\sqrt{1 -\\left(1 - \\frac{b^2}{16a^2}\\right)\\cos^2 \\frac{t}{2}}
+\\\\
+&= 2a\\sqrt{1 - k^2\\cos^2 \\frac{t}{2}}
+\\end{align*}
+$$
+where $k^2 = 1 - (b/4a)^2$
+
+Then, the arc length traced out by $f$ from $t = 0$ to $t = 2\\pi$ is:
+
+$$
+\\begin{align*}
+s &= 2a\\int_0^{2\\pi}\\sqrt{1 - k^2\\cos^2\\frac{t}{2}}\\,dt
+\\end{align*}
+$$
+We can use Theorem 1.8 (Expansion or contraction of the interval of integration) to turn the above integral into:
+
+$$
+s = 4a\\int_0^\\pi \\sqrt{1 - k^2\\cos^2 t}\\,dt
+$$
+Then, we use Theorem 1.7 (Integral invariance under translation) with $c = \\pi/2$ to give us:
+
+$$
+s = 4a\\int_{-\\pi/2}^{\\pi/2} \\sqrt{1 - k^2\\cos^2\\left(t - \\frac{\\pi}{2}\\right)}\\,dt
+$$
+By trigonometric identity, $\\cos(t - \\frac{\\pi}{2}) = \\sin(t)$, giving us
+
+$$
+s = 4a\\int_{-\\pi/2}^{\\pi/2} \\sqrt{1 - k^2\\sin^2t}\\,dt
+$$
+Using Theorem 1.8 once more with $k = -1$ and noting that $\\sin^2(-t) = \\sin^2(t)$ for all $t,$ we see that the integral from $t = -\\pi/2$ to $t = 0$ is equal the integral from $t = 0$ to $t = \\pi/2,$ giving us:
+$$
+\\begin{align*}
+s &= 8a\\int_{0}^{\\pi/2} \\sqrt{1 - k^2\\sin^2t}\\,dt
+\\\\
+&= 8aE(k) \\quad \\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-12"
                 },
                 {
