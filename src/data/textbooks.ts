@@ -2025,9 +2025,55 @@ $$
                 {
                   id: 19,
                   number: "14.13.19",
-                  content: `A particle moves with position vector\n\n$$\\mathbf{r}(t) = t\\mathbf{A} + t^2\\mathbf{B} + 2(\\frac{t}{3})^{3/2}\\mathbf{A} \\times \\mathbf{B}$$\n\nwhere $\\mathbf{A}$ and $\\mathbf{B}$ are two fixed unit vectors making an angle of $\\pi/3$ radians with each other. Compute the speed of the particle at time $t$ and find how long it takes for it to move a distance of 12 units of arc length from the initial position $\\mathbf{r}(0)$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `A particle moves with position vector
+                  
+$$\\mathbf{r}(t) = t\\mathbf{A} + t^2\\mathbf{B} + 2\\left(\\frac{2}{3}t\\right)^{3/2}\\mathbf{A} \\times \\mathbf{B}$$
+where $\\mathbf{A}$ and $\\mathbf{B}$ are two fixed unit vectors making an angle of $\\pi/3$ radians with each other. Compute the speed of the particle at time $t$ and find how long it takes for it to move a distance of 12 units of arc length from the initial position $\\mathbf{r}(0)$.`,
+                  hint: `In the calculation of $v(t)$, remember that $A \\cdot A = 1,$ $B \\cdot B = 1$, $A \\cdot (A \\times B) = O,$ and $B \\cdot (A \\times B) = O.$ You can also use Lagrange's identity for the norm of a cross product:
+$$
+\\|A \\times B \\|^2 = \\|A\\|^2\\|B\\|^2 - (A \\cdot B)^2
+$$`,
+                  solution: `Taking the derivative of $\\mathbf{r}$ with respect to $t,$ we get:
+
+$$
+\\begin{align*}
+\\mathbf{v}(t) &= A + 2tB + 3\\left(\\frac{2}{3}\\right)^{3/2}\\sqrt{t}\\,(A \\times B)
+\\end{align*}
+$$
+Speed $v(t)$ is then:
+
+$$
+\\begin{align*}
+v(t) &= \\left\\|A + 2tB + 3\\left(\\frac{2}{3}\\right)^{3/2}\\sqrt{t}\\,(A \\times B)\\right\\|
+\\\\
+&= \\left[\\left(A \\cdot A + 2t A\\cdot B\\right) + \\left(2t B \\cdot A + 4t^2 B \\cdot B\\right) + \\frac{8}{3}t\\,\\|A \\times B\\|^2 \\right]^{1/2}
+\\\\
+&= \\left[1 + 4t(A\\cdot B) + 4t^2 + \\frac{8}{3}t\\left[1 - \\left(A \\cdot B\\right)^2\\right]\\right]^{1/2}
+\\\\
+\\end{align*}
+$$
+Noting that the angle between $A$ and $B$ is $\\pi/3$, and that the lengths of $A$ and $B$ are both $1:$
+
+$$
+\\begin{align*}
+v(t) &= \\left[1 + 4t\\cos\\frac{\\pi}{3} + 4t^2 + \\frac{8}{3}t\\left(1 - \\cos^2\\frac{\\pi}{3}\\right)\\right]^{1/2}
+\\\\
+&= \\left[1 + 2t + 4t^2 + \\frac{8}{3}t\\left(1 - \\frac{1}{4}\\right)\\right]^{1/2}
+\\\\
+&= \\sqrt{1 + 4t + 4t^2}
+\\\\
+&= 1 + 2t
+\\end{align*}
+$$
+To find how long it takes for the particle to move 12 units of distance from the initial position $\\mathbf{r}(0)$, we find $t_0$ such that the arc length traced out by $t_0$ has length $12.$ In other words, we wish to find $t_0$ such that:
+
+$$
+\\begin{align*}
+\\int_0^{t_0} 1 + 2t\\,dt= 12
+\\end{align*}
+$$
+Evaluating the integral, we see that $t_0 + t_0^2 = 12,$ which is satisfied by $t_0 = 3$ and $t_0 = -4.$ Assuming we do not travel backwards in time, this means that it takes $3$ units of time for the particle to move $12$ units of length from its initial position. $\\quad \\blacksquare$ 
+`,
                   date: "2025-02-12"
                 },
                 {
