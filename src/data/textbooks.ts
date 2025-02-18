@@ -2081,7 +2081,86 @@ Evaluating the integral, we see that $t_0 + t_0^2 = 12,$ which is satisfied by $
                   number: "14.13.20",
                   content: `(a) When a circle rolls (without slipping) along a straight line, a point on the circumference traces out a curve called a cycloid. If the fixed line is the x-axis and if the tracing point $(x,y)$ is originally at the origin, show that when the circle rolls through an angle $\\theta$ we have\n\n$$x = a(\\theta - \\sin \\theta), \\quad y = a(1 - \\cos \\theta)$$\n\nwhere $a$ is the radius of the circle. These serve as parametric equations for the cycloid.\n(b) Referring to part (a), show that $dy/dx = \\cot \\frac{1}{2}\\theta$ and deduce that the tangent line of the cycloid at $(x,y)$ makes an angle $\\frac{1}{2}(\\pi - \\theta)$ with the x-axis. Make a sketch and show that the tangent line passes through the highest point on the circle.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `(a) To show that the position of the point is defined by the components
+
+$$x = a(\\theta - \\sin \\theta), \\quad y = a(1 - \\cos \\theta)$$
+let us first consider the position of the point as the circle rotates in place. The circle has a radius of length $a$ centered at $(0, a).$ As the circle rotates clockwise, the angle $\\theta$ swept out by the radius can be described as the angle between $A = (0, -a)$ and $B = (-x, -a + y),$ whose cosine is defined as:
+$$
+\\cos\\theta = \\frac{A \\cdot B}{\\|A\\|\\|B\\|}
+$$
+But $A$ and $B$ are both points on the circle, so their norms are both $a$, giving us:
+
+$$
+\\cos\\theta = \\frac{a^2 - ay}{a^2}
+$$
+In other words, we can parameterize $y$ as a function of $\\theta:$
+
+$$
+y = a(1 - \\cos\\theta)
+$$
+To express $x$ as a function of $\\theta$, we note once again that $B$ is a point on the circle with radius $a$. Substituting the above equation for $y$, we get
+
+$$
+\\begin{align*}
+\\|B\\|^2 &= a^2
+\\\\
+&= x^2 + \\left[-a + (a - a\\cos\\theta)\\right]^2
+\\\\
+&= x^2 + a^2\\cos^2\\theta
+\\end{align*}
+$$
+Which means that $x^2 = a^2(1 - \\cos^2\\theta) = \\sin^2\\theta$ or that $\|x\| = a\\sin\\theta.$ But we know from before that $B = (-x, y - a),$ which implies that $a\\sin\\theta = -x,$ hence
+
+$$x = -a\\sin\\theta$$
+Now, suppose the circle rolls along the positive $x$-axis. This simply means that the circle's horizontal position is displaced by $a\\theta$ units of length as it rotates $\\theta$ radians. Thus, our $x$-component is displaced by $a\\theta,$ which gives us the parametric equations for position:
+
+$$x = a(\\theta - \\sin \\theta), \\quad y = a(1 - \\cos \\theta)$$
+as requested. $\\blacksquare$
+
+
+(b) To show that $dy/dx = \\cot(\\theta/2)$, we first take the derivative of our positional components with respect to $\\theta$:
+
+$$
+\\frac{dx}{d\\theta} = a(1 - \\cos\\theta), \\quad \\frac{dy}{d\\theta} = a\\sin\\theta
+$$
+Then, we use the double-angle identities for sine and cosine:
+
+$$
+1 - \\cos\\theta = 2\\sin^2\\frac{\\theta}{2} \\quad \\text{and} \\quad \\sin\\theta = 2\\sin\\frac{\\theta}{2}\\cos\\frac{\\theta}{2}
+$$
+giving us
+$$
+\\begin{align*}
+\\frac{dx}{d\\theta} = 2a\\sin^2\\frac{\\theta}{2}; \\quad \\frac{dy}{d\\theta} = 2a\\sin\\frac{\\theta}{2}\\cos\\frac{\\theta}{2}
+\\end{align*}
+$$
+Then, we see that
+$$
+\\begin{align*}
+\\frac{dy}{dx} &= \\frac{2a\\sin\\frac{\\theta}{2}\\cos\\frac{\\theta}{2}}{2a\\sin^2\\frac{\\theta}{2}}
+\\\\
+&= \\cot\\frac{\\theta}{2}
+\\end{align*}
+$$
+(valid for $0 < \\theta < \\pi$)
+
+Now, we note that $\\cot(\\frac{1}{2}\\theta) = \\tan(\\frac{\\pi}{2} - \\frac{\\theta}{2})$, which means the tangent line is parallel to the unit vector $\\mathbf{u}$ defined by:
+
+$$
+\\mathbf{u} = \\cos\\left(\\frac{\\pi}{2} - \\frac{\\theta}{2}\\right)\\mathbf{i} +  \\sin\\left(\\frac{\\pi}{2} - \\frac{\\theta}{2}\\right)\\mathbf{j}
+$$
+The angle $\\phi$ between $\\mathbf{u}$ and the $x$-axis satisfies:
+
+$$
+\\begin{align*}
+\\cos\\phi = \\frac{\\mathbf{u} \\cdot \\mathbf{i}}{\\|\\mathbf{u}\\|\\|\\mathbf{i}\\|}
+=\\cos\\left(\\frac{\\pi}{2} - \\frac{\\theta}{2}\\right)
+\\end{align*}
+$$
+where $0 \\leq \\phi \\leq \\pi$ 
+
+But this implies that the line tangent to the cycloid at $(x, y)$ makes an angle of $(\\frac{\\pi}{2} - \\frac{\\theta}{2})$ with the $x$-axis. $\\blacksquare$
+`,
                   date: "2025-02-12"
                 },
                 {
@@ -2089,7 +2168,34 @@ Evaluating the integral, we see that $t_0 + t_0^2 = 12,$ which is satisfied by $
                   number: "14.13.21",
                   content: `Let $C$ be a curve described by two equivalent functions $X$ and $Y$, where $Y(t) = X[u(t)]$ for $c \\leq t \\leq d$. If the function $u$ which defines the change of parameter has a continuous derivative in $[c,d]$ prove that\n\n$$\\int_{u(c)}^{u(d)} \\|X'(u)\\|\\,du = \\int_c^d \\|Y'(t)\\|\\,dt$$\n\nand deduce that the arc length of $C$ is invariant under such a change of parameter.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `Taking the derivative of $Y$ with respect to $t$ gives us:
+
+$$
+\\begin{align*}
+Y'(t) &= \\frac{d}{dt}X[u(t)]
+\\\\
+&= X'[u(t)]\\frac{du}{dt}
+\\end{align*}
+$$
+
+Integrating the norm of $Y'(t)$ from $t = c$ to $t = d,$ noting that $c \\leq t \\leq d$:
+
+$$
+\\begin{align*}
+\\int_c^d \\|Y'(t)\\|\\,dt &= \\int_c^d \\|X'[u(t)]\\left\|\\frac{du}{dt}\\right\|\\,dt
+\\\\
+&= \\int_{u(c)}^{u(d)} \\|X'[u(t)]\\|\\,\\left\|du\\right\|
+\\end{align*}
+$$
+and since $u'(t)$ is continuous (and presumed to be positive) on $[c, d]$, $\|du\| = du,$ hence:
+
+$$
+\\begin{align*}
+\\int_c^d \\|Y'(t)\\|\\,dt &= \\int_{u(c)}^{u(d)} \\|X'[u(t)]\\|\\,du
+\\end{align*}
+$$
+Thus demonstrating that the arc-length of a function is invariant under a change of parameter. $\\blacksquare$
+`,
                   date: "2025-02-12"
                 },
                 {
