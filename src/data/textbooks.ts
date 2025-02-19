@@ -2099,9 +2099,9 @@ $$
 y = a(1 - \\cos\\theta)
 $$
 To express $x$ as a function of $\\theta$, we note once again that $B$ is a point on the circle with radius $a$. Substituting the above equation for $y$, we get
-
 $$
 \\begin{align*}
+\\\\
 \\|B\\|^2 &= a^2
 \\\\
 &= x^2 + \\left[-a + (a - a\\cos\\theta)\\right]^2
@@ -2124,13 +2124,16 @@ $$
 \\frac{dx}{d\\theta} = a(1 - \\cos\\theta), \\quad \\frac{dy}{d\\theta} = a\\sin\\theta
 $$
 Then, we use the double-angle identities for sine and cosine:
-
-$$
-1 - \\cos\\theta = 2\\sin^2\\frac{\\theta}{2} \\quad \\text{and} \\quad \\sin\\theta = 2\\sin\\frac{\\theta}{2}\\cos\\frac{\\theta}{2}
-$$
-giving us
 $$
 \\begin{align*}
+\\\\
+1 - \\cos\\theta = 2\\sin^2\\frac{\\theta}{2} \\quad \\text{and} \\quad \\sin\\theta = 2\\sin\\frac{\\theta}{2}\\cos\\frac{\\theta}{2}
+\\end{align*}
+$$
+giving us:
+$$
+\\begin{align*}
+\\\\
 \\frac{dx}{d\\theta} = 2a\\sin^2\\frac{\\theta}{2}; \\quad \\frac{dy}{d\\theta} = 2a\\sin\\frac{\\theta}{2}\\cos\\frac{\\theta}{2}
 \\end{align*}
 $$
@@ -2139,7 +2142,7 @@ $$
 \\begin{align*}
 \\frac{dy}{dx} &= \\frac{2a\\sin\\frac{\\theta}{2}\\cos\\frac{\\theta}{2}}{2a\\sin^2\\frac{\\theta}{2}}
 \\\\
-&= \\cot\\frac{\\theta}{2}
+&= \\cot\\frac{1}{2}\\theta
 \\end{align*}
 $$
 (valid for $0 < \\theta < \\pi$)
@@ -2203,7 +2206,52 @@ Thus demonstrating that the arc-length of a function is invariant under a change
                   number: "14.13.22",
                   content: `Consider the plane curve whose vector equation is $\\mathbf{r}(t) = t\\mathbf{i} + f(t)\\mathbf{j}$, where\n\n$$f(t) = t\\cos\\left(\\frac{\\pi}{2t}\\right) \\text{ if } t \\neq 0, \\quad f(0) = 0$$\n\nConsider the following partition of the interval $[0,1]$:\n\n$$P = \\left\\{0, \\frac{1}{2n}, \\frac{1}{2n-1}, \\ldots, \\frac{1}{3}, \\frac{1}{2}, 1\\right\\}$$\n\nShow that the corresponding inscribed polygon $\\pi(P)$ has length\n\n$$|\\pi(P)| > 1 + \\frac{1}{2} + \\frac{1}{3} + \\cdots + \\frac{1}{2n}$$\n\nand deduce that this curve is nonrectifiable.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `The length of the inscribed polygon, $\|\\pi(P)\|$ can be expressed as the sum:
+$$
+\\begin{align*}
+\\\\
+\\left\|\\pi(P)\\right\| &= \\sum_{k = 1}^{2n + 1}\\left\\|\\mathbf{r}(t_k) - \\mathbf{r}(t_{k-1})\\right\\|
+\\\\
+&= \\left\\|\\frac{1}{2n}\\mathbf{i} + \\frac{1}{2n}\\cos(n\\pi)\\mathbf{j}\\right\\|
+\\\\
+&+\\sum_{k = 2}^{2n + 1}\\left\\|\\left(t_k - t_{k-1}\\right)\\mathbf{i} + \\left(t_k\\cos\\frac{\\pi}{2t_k} - t_{k-1}\\cos\\frac{\\pi}{2t_{k-1}}\\right)\\mathbf{j}\\right\\|
+\\end{align*}
+$$
+Looking at the right-hand side of the equation, we note that for $k \\geq 2,$ if $k$ is odd, then the denominator of $t_k$ is even $(\\text{eg}.\\ t_{3} = \\frac{1}{2n - 2},\\ t_{2} = \\frac{1}{2n - 1})$, making $\\left\|\\cos\\frac{\\pi}{2t_{k}}\\right\| = 1$ and $\\cos\\frac{\\pi}{2t_{k-1}} = 0,$ which means that
+$$
+\\begin{align*}
+\\\\
+\\left\\|\\left(t_k - t_{k-1}\\right)\\mathbf{i} + \\left(t_k\\cos\\frac{\\pi}{2t_k} - t_{k-1}\\cos\\frac{\\pi}{2t_{k-1}}\\right)\\mathbf{j}\\right\\|
+&= \\sqrt{(t_k - t_{k-1})^2 + t_k^2}
+
+\\\\
+&> \|t_{k}\|
+\\end{align*}
+$$
+(Note: in the partition as ordered above, $\|t_k\| > \|t_{k - 1}\|$ for all $k.$)
+
+If $k$ is even, then the denominator of $t_k$ is odd, making $\\cos\\frac{\\pi}{2t_{k}} = 0$ and $\\left\|\\cos\\frac{\\pi}{2t_{k-1}}\\right\| = 1,$ which means that
+$$
+\\begin{align*}
+\\\\
+\\left\\|\\left(t_k - t_{k-1}\\right)\\mathbf{i} + \\left(t_k\\cos\\frac{\\pi}{2t_k} - t_{k-1}\\cos\\frac{\\pi}{2t_{k-1}}\\right)\\mathbf{j}\\right\\| &= \\sqrt{(t_k - t_{k-1})^2 + t_{k-1}^2}
+\\\\
+& > \|t_{k-1}\|
+\\end{align*}
+$$
+
+But if $\\left\\|\\mathbf{r}(t_k) - \\mathbf{r}(t_{k-1})\\right\\| \\geq \|t_{k - 1}\|$ for $1 < k \\leq 2n + 1,$ then the length of the inscribed polygon $\|\\pi(P)\|$ is such that
+
+$$
+|\\pi(P)| > t_0 + t_1 + \\cdots + t_{2n - 1} + t_{2n} 
+$$
+Which, after a reordering, is equivalent to
+
+$$
+|\\pi(P)| > 1 + \\frac{1}{2} + \\frac{1}{3} + \\cdots + \\frac{1}{2n}
+$$
+But as $n \\rightarrow \\infty$, the sum $\\sum_{k=1}^n 1/k$ diverges, which means that the length of the curve is nonrectifiable. $\\quad \\blacksquare$
+`,
                   date: "2025-02-12"
                 }
               ]
