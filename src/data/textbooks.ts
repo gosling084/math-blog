@@ -465,49 +465,147 @@ Then, we find the points on the parabola where $x = c$, giving us $(c, 2c)$ and 
                 {
                   id: 1,
                   number: "14.7.1",
-                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = (3t - t^3)\\,\\mathbf{i} + 3t^3\\,\\mathbf{j} + (3t + t^3)\\,\\mathbf{k}$$`,
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) = (3t - t^3)\\,\\mathbf{i} + 3t^3\\,\\mathbf{j} + (3t + t^3)\\,\\mathbf{k}
+\\end{align*}
+$$`,
                   hint: ``,
-                  solution: `$$\\displaylines{\\textbf{v}(t) = (3 - 3t^2)\\,\\textbf{i} + 6t\\,\\textbf{j} + (3 + 3t^2)\\textbf{k}\\\\ \\textbf{a}(t) = -6t\\,\\textbf{i} + 6\\,\\textbf{j} + 6t\\,\\textbf{k}\\\\ v(t) = 3\\sqrt{2}(1 + t^2)}$$`,
+                  solution: `$$
+\\begin{align*}
+\\textbf{v}(t) &= (3 - 3t^2)\\,\\textbf{i} + 6t\\,\\textbf{j} + (3 + 3t^2)\\textbf{k}
+\\\\
+\\\\ 
+\\textbf{a}(t) &= -6t\\,\\textbf{i} + 6\\,\\textbf{j} + 6t\\,\\textbf{k}
+\\\\
+\\\\ 
+v(t) &= 3\\sqrt{2}(1 + t^2)
+\\end{align*}$$`,
                   date: "2025-01-27"
                 },
                 {
                   id: 2,
                   number: "14.7.2",
-                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = \\cos t\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + e^t\\,\\mathbf{k}$$`,
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) = \\cos t\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + e^t\\,\\mathbf{k}
+\\end{align*}
+$$`,
                   hint: ``,
-                  solution: `$$\\displaylines{\\textbf{v}(t) = -\\text{sin}\\,t\\,\\textbf{i} + \\text{cos}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k}\\\\ \\textbf{a}(t) = -\\text{cos}\\,t\\,\\textbf{i} - \\text{sin}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k} \\\\ v(t) = \\left(1 + e^{2t}\\right)^{1/2}}$$`,
+                  solution: `$$
+\\begin{align*}
+\\textbf{v}(t) &= -\\text{sin}\\,t\\,\\textbf{i} + \\text{cos}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k}
+\\\\
+\\\\
+\\textbf{a}(t) &= -\\text{cos}\\,t\\,\\textbf{i} - \\text{sin}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k} 
+\\\\
+\\\\ 
+v(t) &= \\left(1 + e^{2t}\\right)^{1/2}
+\\end{align*}
+$$`,
                   date: "2025-01-27"
                 },
                 {
                   id: 3,
                   number: "14.7.3",
-                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t\\cos t\\mathbf{i} + 3t\\sin t\\mathbf{j} + 4t\\,\\mathbf{k}$$`,
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) = 3t\\cos t\\mathbf{i} + 3t\\sin t\\mathbf{j} + 4t\\,\\mathbf{k}
+\\end{align*}
+$$`,
                   hint: ``,
-                  solution: `$$\\displaylines{\\mathbf{v}(t) = (3\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\, \\mathbf{i} + (3\\,\\text{sin}\\,t + 3t\\,\\text{cos}\\,t)\\,\\mathbf{j} + 4\\,\\textbf{k}\\\\ \\mathbf{a}(t) = (-6\\,\\text{sin}\\,t - 3t\\,\\text{cos}\\,t)\\,\\mathbf{i} + (6\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\,\\mathbf{j}\\\\ v(t) = \\sqrt{9t^2 + 25}}$$`,
+                  solution: `$$
+\\begin{align*}
+\\mathbf{v}(t) &= (3\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\, \\mathbf{i} + (3\\,\\text{sin}\\,t + 3t\\,\\text{cos}\\,t)\\,\\mathbf{j} + 4\\,\\textbf{k}
+\\\\ 
+\\\\
+\\mathbf{a}(t) &= (-6\\,\\text{sin}\\,t - 3t\\,\\text{cos}\\,t)\\,\\mathbf{i} + (6\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\,\\mathbf{j}
+\\\\
+\\\\
+v(t) &= \\sqrt{9t^2 + 25}
+\\end{align*}
+$$`,
                   date: "2025-01-27"
                 },
                 {
                   id: 4,
                   number: "14.7.4",
-                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n$$\\textbf{r}(t) = (t - \\sin t)\\mathbf{i} + (1 - \\cos t)\\mathbf{j} + 4\\sin \\frac{t}{2}\\mathbf{k}$$`,
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) = (t - \\sin t)\\mathbf{i} + (1 - \\cos t)\\mathbf{j} + 4\\sin \\frac{t}{2}\\mathbf{k}
+\\end{align*}
+$$`,
                   hint: ``,
-                  solution: `$$\\displaylines{\\textbf{v}(t) = (1 - \\cos t)\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + 2\\cos \\frac{t}{2}\\,\\mathbf{k}\\\\ \\textbf{a}(t) = \\sin t\\,\\mathbf{i} + \\cos t\\,\\mathbf{j} - \\sin \\frac{t}{2}\\,\\mathbf{k}\\\\ v(t) = \\left(1 - 2 \\cos t  + \\cos^2 t + \\sin^2 t + 4 \\cos^2 \\frac{t}{2}\\right)^{1/2}\\\\ = 2}$$`,
+                  solution: `$$
+\\begin{align*}
+\\textbf{v}(t) &= (1 - \\cos t)\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + 2\\cos \\frac{t}{2}\\,\\mathbf{k}
+\\\\ 
+\\\\
+\\textbf{a}(t) &= \\sin t\\,\\mathbf{i} + \\cos t\\,\\mathbf{j} - \\sin \\frac{t}{2}\\,\\mathbf{k}
+\\\\
+\\\\
+v(t) &= \\sqrt{1 - 2 \\cos t  + \\cos^2 t + \\sin^2 t + 4 \\cos^2 \\frac{t}{2}}
+\\\\
+\\\\
+&= 2
+\\end{align*}
+$$`,
                   date: "2025-01-27"
                 },
                 {
                   id: 5,
                   number: "14.7.5",
-                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = 3t^2\\mathbf{i} + 2t^3\\mathbf{j}$$`,
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) = 3t^2\\mathbf{i} + 2t^3\\mathbf{j}
+\\end{align*}
+$$`,
                   hint: ``,
-                  solution: `$$\\displaylines{\\mathbf{v}(t) = 6t\\,\\mathbf{i} + 6t^2\\,\\mathbf{j} +3\\,\\mathbf{k}\\\\ \\mathbf{a} = 6\\,\\mathbf{i} + 12t\\,\\mathbf{j}\\\\ v(t) = 3 + 6t^2}$$`,
+                  solution: `$$
+\\begin{align*}
+\\mathbf{v}(t) &= 6t\\,\\mathbf{i} + 6t^2\\,\\mathbf{j} +3\\,\\mathbf{k}
+\\\\
+\\\\ 
+\\mathbf{a}(t) &= 6\\,\\mathbf{i} + 12t\\,\\mathbf{j}
+\\\\
+\\\\ 
+v(t) &= 3 + 6t^2
+\\end{align*}
+$$`,
                   date: "2025-01-27"
                 },
                 {
                   id: 6,
                   number: "14.7.6",
-                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.\n\n$$\\textbf{r}(t) = t\\mathbf{i} + \\sin t\\mathbf{j} + (1 - \\cos t)\\,\\mathbf{k}$$`,
+                  content: `In each of Exercises 1 through 6, $\\textbf{r}(t)$ denotes the position vector at time $t$ for a particle moving on a space curve. Determine the velocity $\\textbf{v}(t)$ and acceleration $\\textbf{a}(t)$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$; also, compute the speed $v(t)$.
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) = t\\mathbf{i} + \\sin t\\mathbf{j} + (1 - \\cos t)\\,\\mathbf{k}
+\\end{align*}
+$$`,
                   hint: ``,
-                  solution: `$$\\displaylines{\\mathbf{v}(t) = \\mathbf{i} + \\cos t\\,\\mathbf{j} + \\sin t \\,\\mathbf{k}\\\\ \\mathbf{a}(t) = -\\sin t\\,\\mathbf{j} + \\cos t\\,\\mathbf{k}\\\\ v(t) = \\sqrt{2}}$$`,
+                  solution: `$$
+\\begin{align*}
+\\mathbf{v}(t) &= \\mathbf{i} + \\cos t\\,\\mathbf{j} + \\sin t \\,\\mathbf{k}
+\\\\
+\\\\ 
+\\mathbf{a}(t) &= -\\sin t\\,\\mathbf{j} + \\cos t\\,\\mathbf{k}
+\\\\
+\\\\ 
+v(t) &= \\sqrt{2}
+\\end{align*}
+$$`,
                   date: "2025-01-27"
                 },
                 {
@@ -767,16 +865,211 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   id: 1,
                   number: "14.9.1",
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 2$$`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Section 14.7 #1: $$
+\\begin{align*}
+\\textbf{v}(t) &= (3 - 3t^2)\\,\\textbf{i} + 6t\\,\\textbf{j} + (3 + 3t^2)\\textbf{k}
+\\\\
+\\\\ 
+\\textbf{a}(t) &= -6t\\,\\textbf{i} + 6\\,\\textbf{j} + 6t\\,\\textbf{k}
+\\\\
+\\\\ 
+v(t) &= 3\\sqrt{2}(1 + t^2)
+\\end{align*}$$`,
+                  solution: `(a) The unit tangent $T(t)$ is:
+$$
+\\begin{align*}
+T(t) &= \\frac{\\mathbf{v}(t)}{v(t)} \\\\
+&= \\frac{(3-3t^2)\\,\\mathbf{i} + 6t\\,\\mathbf{j} + (3+3t^2)\\,\\mathbf{k}}{3\\sqrt{2}(1+t^2)} \\\\
+&= \\frac{1}{\\sqrt{2}(1+t^2)}\\Big[(1-t^2)\\,\\mathbf{i} + 2t\\,\\mathbf{j} + (1+t^2)\\,\\mathbf{k}\\Big].
+\\end{align*}
+$$
+
+Differentiating the unit tangent with respect to $t$ gives us:
+$$
+\\begin{align*}
+T'(t) &= \\frac{d}{dt}\\left\\{\\frac{1}{\\sqrt{2}(1+t^2)}\\Big[(1-t^2)\\,\\mathbf{i} + 2t\\,\\mathbf{j} + (1+t^2)\\,\\mathbf{k}\\Big]\\right\\} \\\\
+&= \\left(-\\frac{4t}{\\sqrt{2}(1+t^2)^2}\\right)\\mathbf{i} + \\left(\\frac{2(1-t^2)}{\\sqrt{2}(1+t^2)^2}\\right)\\mathbf{j} + 0\\,\\mathbf{k}.
+\\end{align*}
+$$
+
+Whose norm is:
+$$
+\\begin{align*}
+\\|T'(t)\\| &= \\frac{\\sqrt{2}}{1+t^2}.
+\\end{align*}
+$$
+
+The principal normal $N(t)$ is then:
+$$
+\\begin{align*}
+N(t) &= \\frac{T'(t)}{\\|T'(t)\\|} \\\\
+&= \\left(-\\frac{2t}{1+t^2}\\right)\\mathbf{i} + \\left(\\frac{1-t^2}{1+t^2}\\right)\\mathbf{j} + 0\\,\\mathbf{k}.
+\\end{align*}
+$$
+
+Evaluating these at $t = 2$ we get:
+$$
+\\begin{align*}
+T(2) &= \\frac{1}{\\sqrt{2}(1+2^2)}\\Big[(1-2^2)\\,\\mathbf{i} + 2(2)\\,\\mathbf{j} + (1+2^2)\\,\\mathbf{k}\\Big] \\\\
+&= \\frac{1}{5\\sqrt{2}}\\Big[(-3)\\,\\mathbf{i} + 4\\,\\mathbf{j} + 5\\,\\mathbf{k}\\Big], \\\\
+\\\\
+N(2) &= \\left(-\\frac{2(2)}{1+2^2}\\right)\\mathbf{i} + \\left(\\frac{1-2^2}{1+2^2}\\right)\\mathbf{j} + 0\\,\\mathbf{k} \\\\
+&= -\\frac{4}{5}\\,\\mathbf{i} -\\frac{3}{5}\\,\\mathbf{j} + 0\\,\\mathbf{k} \\quad \\blacksquare.
+\\end{align*}
+$$
+
+(b) Acceleration can be written component-wise as:
+$$
+\\begin{align*}
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\end{align*}
+$$
+
+Differentiating speed $v(t)$ gives us:
+$$
+v'(t) = \\frac{d}{dt}\\Big[3\\sqrt{2}(1+t^2)\\Big] = 6\\sqrt{2}\\,t.
+$$
+
+Combining this with the results of (a), we see that acceleration is:
+$$
+\\begin{align*}
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\\\
+&=6\\sqrt{2}\\,t\\,\\left[\\frac{1}{\\sqrt{2}(1+t^2)}\\Big((1-t^2)\\,\\mathbf{i} + 2t\\,\\mathbf{j} + (1+t^2)\\,\\mathbf{k}\\Big)\\right] \\\\
+&\\quad + 3\\sqrt{2}(1+t^2)\\left[\\left(-\\frac{4t}{\\sqrt{2}(1+t^2)^2}\\right)\\mathbf{i} + \\left(\\frac{2(1-t^2)}{\\sqrt{2}(1+t^2)^2}\\right)\\mathbf{j}\\right] \\\\
+&= \\frac{6t}{(1+t^2)}\\Big[(1-t^2)\\,\\mathbf{i} + 2t\\,\\mathbf{j} + (1+t^2)\\,\\mathbf{k}\\Big] \\\\
+&\\quad + \\frac{3}{(1+t^2)}\\Big[(-4t)\\,\\mathbf{i} + 2(1-t^2)\\,\\mathbf{j}\\Big]
+\\\\
+&= 6\\sqrt{2}\\,t\\,T(t) + 6\\,N(t)
+\\\\
+&= 12\\sqrt{2}\\,T + 6\\,N \\quad \\blacksquare
+\\end{align*}
+$$
+`
+,
                   date: "2025-02-08"
                 },
                 {
                   id: 2,
                   number: "14.9.2",
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\pi$$`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Section 14.7 #2:
+$$
+\\begin{align*}
+\\textbf{v}(t) &= -\\text{sin}\\,t\\,\\textbf{i} + \\text{cos}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k}
+\\\\
+\\\\
+\\textbf{a}(t) &= -\\text{cos}\\,t\\,\\textbf{i} - \\text{sin}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k} 
+\\\\
+\\\\ 
+v(t) &= \\left(1 + e^{2t}\\right)^{1/2}
+\\end{align*}
+$$`,
+                  solution: `(a) The unit tangent $T(t)$ is:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\frac{\\mathbf{v}(t)}{v(t)}
+\\\\
+\\\\
+&= \\frac{-\\sin t\\,\\mathbf{i} + \\cos t\\,\\mathbf{j} + e^t\\,\\mathbf{k}}{\\sqrt{1 + e^{2t}}}
+\\end{align*}
+$$
+
+Differentiating the unit tangent with respect to $t$ gives us:
+$$
+\\begin{align*}
+\\\\
+T'(t) &= \\frac{\\left(1 + e^{2t}\\right)\\left[-\\cos t\\,\\mathbf{i} -\\sin t\\,\\mathbf{j} + e^t\\,\\mathbf{k}\\right]}{\\left(1 + e^{2t}\\right)^{3/2}}
+\\\\
+&- \\frac{e^{2t}\\left[-\\sin t\\,\\mathbf{i} + \\cos t \\,\\mathbf{j} + e^t\\,\\mathbf{k}\\right]}{\\left(1 + e^{2t}\\right)^{3/2}}
+\\end{align*}
+$$
+Evaluating at $t = \\pi$
+$$
+\\begin{align*}
+\\\\
+T'(\\pi) &= \\frac{\\left(1 + e^{2\\pi}\\right)\\left[\\mathbf{i} + e^{\\pi}\\,\\mathbf{k}\\right] - e^{2\\pi}\\left[-\\mathbf{j} + e^{\\pi}\\,\\mathbf{k}\\right]}{\\left(1 + e^{2\\pi}\\right)^{3/2}}
+\\\\
+\\\\
+&= \\frac{\\left(1 + e^{2\\pi}\\right)\\mathbf{i} + e^{2\\pi}\\,\\mathbf{j} + e^{\\pi}\\,\\mathbf{k}}{\\left(1 + e^{2\\pi}\\right)^{3/2}}
+\\end{align*}
+$$
+Its norm at $t = \\pi$ is then:
+$$
+\\begin{align*}
+\\\\
+\\left\\|T'(\\pi)\\right\\| &= \\frac{\\left[\\left(1 + e^{2\\pi}\\right)^2 + \\left(e^{2\\pi}\\right)^2 + e^{2\\pi}\\right]^{1/2}}{\\left(1 + e^{2\\pi}\\right)^{3/2}}
+\\\\
+\\\\
+&= \\frac{\\left[\\left(1 + e^{2\\pi}\\right)^2 + e^{2\\pi}\\left(1 + e^{2\\pi}\\right)\\right]^{1/2}}{\\left(1 + e^{2\\pi}\\right)^{3/2}}
+\\\\
+&= \\frac{\\left[\\left(1 + e^{2\\pi}\\right)\\left(1 + 2e^{2\\pi}\\right)\\right]^{1/2}}{\\left(1 + e^{2\\pi}\\right)^{3/2}}
+\\end{align*}
+$$
+The principal normal at $t = \\pi$ is then:
+$$
+\\begin{align*}
+\\\\
+N(\\pi) &= \\frac{T'(\\pi)}{\\|T'(\\pi)\\|}
+\\\\
+\\\\
+&= \\frac{\\left(1 + e^{2\\pi}\\right)\\mathbf{i} + e^{2\\pi}\\,\\mathbf{j} + e^{\\pi}\\,\\mathbf{k}}{\\left[\\left(1 + e^{2\\pi}\\right)\\left(1 + 2e^{2\\pi}\\right)\\right]^{1/2}}
+\\\\
+\\\\
+\\end{align*}
+$$
+Thus, at $t = \\pi$ we have:
+
+$$
+\\begin{align*}
+\\\\
+T(\\pi) = \\frac{-\\mathbf{j} + e^{\\pi}\\,\\mathbf{k}}{\\sqrt{1 + e^{2\\pi}}}; 
+\\quad 
+N(\\pi) = \\frac{\\left(1 + e^{2\\pi}\\right)\\mathbf{i} + e^{2\\pi}\\,\\mathbf{j} + e^{\\pi}\\,\\mathbf{k}}{\\left[\\left(1 + e^{2\\pi}\\right)\\left(1 + 2e^{2\\pi}\\right)\\right]^{1/2}}
+\\quad 
+\\blacksquare
+\\\\
+\\\\
+\\end{align*}
+$$
+
+(b) Acceleration can be written component-wise as:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\end{align*}
+$$
+Differentiating speed $v(t)$ gives us:
+$$
+\\begin{align*}
+\\\\
+v'(t) = e^{2t}\\left(1 + e^{2t}\\right)^{-1/2}
+\\end{align*}
+$$
+Evaluating $v(t)$ and $v'(t)$ at $t = \\pi$
+$$
+\\begin{align*}
+\\\\
+v(\\pi) = \\sqrt{1 + e^{2\\pi}}; \\quad v'(\\pi) = e^{2\\pi}\\left(1 + e^{2\\pi}\\right)^{-1/2}
+\\end{align*}
+$$
+Combining this with the results of (a), we see that acceleration is:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\|T'(t)\\|\\,N(t)
+\\\\
+\\\\
+&= \\left(1 + e^{2\\pi}\\right)^{-1/2}\\left[e^{2\\pi}\\,T + \\left(1 + 2e^{2\\pi}\\right)^{1/2}\\,N\\right]\\quad \\blacksquare
+\\\\
+\\\\
+\\end{align*} 
+$$
+`,
                   date: "2025-02-08"
                 },
                 {
