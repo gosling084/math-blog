@@ -567,7 +567,7 @@ $$`,
 $$
 \\begin{align*}
 \\\\
-\\textbf{r}(t) = 3t^2\\mathbf{i} + 2t^3\\mathbf{j}
+\\textbf{r}(t) = 3t^2\\mathbf{i} + 2t^3\\mathbf{j} + 3t\\mathbf{k}
 \\end{align*}
 $$`,
                   hint: ``,
@@ -867,6 +867,10 @@ Which implies that $Y''$ is parallel to $X''$ if and only if $u''(t) = 0$ for al
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 2$$`,
                   hint: `Recall from Section 14.7 #1: $$
 \\begin{align*}
+\\\\
+\\textbf{r}(t) &= (3t - t^3)\\,\\mathbf{i} + 3t^3\\,\\mathbf{j} + (3t + t^3)\\,\\mathbf{k}
+\\\\
+\\\\
 \\textbf{v}(t) &= (3 - 3t^2)\\,\\textbf{i} + 6t\\,\\textbf{j} + (3 + 3t^2)\\textbf{k}
 \\\\
 \\\\ 
@@ -956,6 +960,10 @@ $$
                   hint: `Recall from Section 14.7 #2:
 $$
 \\begin{align*}
+\\\\
+\\textbf{r}(t) &= \\cos t\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + e^t\\,\\mathbf{k}
+\\\\
+\\\\
 \\textbf{v}(t) &= -\\text{sin}\\,t\\,\\textbf{i} + \\text{cos}\\,t\\,\\textbf{j} + e^t\\,\\textbf{k}
 \\\\
 \\\\
@@ -1075,33 +1083,521 @@ $$
                 {
                   id: 3,
                   number: "14.9.3",
-                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 0$$`,
-                  hint: ``,
-                  solution: ``,
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.
+$$
+\\begin{align*}
+\\\\
+t = 0
+\\end{align*}
+$$`,
+                  hint: `Recall from Section 14.7 #3:
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) &= 3t\\cos t\\mathbf{i} + 3t\\sin t\\mathbf{j} + 4t\\,\\mathbf{k}
+\\\\
+\\\\
+\\mathbf{v}(t) &= (3\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\, \\mathbf{i} + (3\\,\\text{sin}\\,t + 3t\\,\\text{cos}\\,t)\\,\\mathbf{j} + 4\\,\\textbf{k}
+\\\\ 
+\\\\
+\\mathbf{a}(t) &= (-6\\,\\text{sin}\\,t - 3t\\,\\text{cos}\\,t)\\,\\mathbf{i} + (6\\,\\text{cos}\\,t - 3t\\,\\text{sin}\\,t)\\,\\mathbf{j}
+\\\\
+\\\\
+v(t) &= \\sqrt{9t^2 + 25}
+\\end{align*}
+$$`,
+                  solution: `(a) The unit tangent $T(t)$ is:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\frac{\\mathbf{v}(t)}{v(t)}
+\\\\
+\\\\
+&= \\frac{3(\\cos t  - t\\sin t)\\,\\mathbf{i} + 3(\\sin t + t\\cos t)\\,\\mathbf{j} + 4\\,\\mathbf{k}}{\\sqrt{9t^2 + 25}}
+\\end{align*}
+$$
+Evaluating at $t = 0$
+$$
+\\begin{align*}
+\\\\
+T(0) &= \\frac{3\\,\\mathbf{i} + 4\\,\\mathbf{k}}{5}
+\\end{align*}
+$$
+Differentiating the unit tangent with respect to $t$ gives us:
+$$
+\\begin{align*}
+\\\\
+T'(t) &= \\frac{3(-2\\sin t - t\\cos t)\\,\\mathbf{i} + 3(2\\cos t - t\\sin t)\\,\\mathbf{j}}{\\sqrt{9t^2 + 25}}
+\\\\
+&-9t(9t^2 + 25)^{-3/2}\\,\\mathbf{v}(t)
+\\end{align*}
+$$
+Evaluating at $t = 0$
+$$
+\\begin{align*}
+\\\\
+T'(0) &= \\frac{6}{5}\\,\\mathbf{j}
+\\end{align*}
+$$
+Its norm at $t = 0$ is then:
+$$
+\\begin{align*}
+\\\\
+\\left\\|T'(0)\\right\\| &= \\frac{6}{5}
+\\end{align*}
+$$
+The principal normal at $t = 0$ is then:
+$$
+\\begin{align*}
+\\\\
+N(0) &= \\frac{T'(0)}{\\|T'(0)\\|}
+\\\\
+&= \\mathbf{j}
+\\end{align*}
+$$
+Thus, at $t = 0$ we have:
+
+$$
+\\begin{align*}
+\\\\
+T(0) = \\frac{3}{5}\\,\\mathbf{i} + \\frac{4}{5}\\,\\mathbf{k};
+\\quad 
+N(0) = \\mathbf{j}
+\\quad 
+\\blacksquare
+\\\\
+\\\\
+\\end{align*}
+$$
+
+(b) Acceleration can be written component-wise as:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\end{align*}
+$$
+Differentiating speed $v(t)$ gives us:
+$$
+\\begin{align*}
+\\\\
+v'(t) = 9t(9t^2 + 25)^{-1/2}
+\\end{align*}
+$$
+Evaluating $v(t)$ and $v'(t)$ at $t = 0$
+$$
+\\begin{align*}
+\\\\
+v(0) = 5, \\quad v'(0) = 0
+\\end{align*}
+$$
+Combining this with the results of (a), we see that acceleration is:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\|T'(t)\\|\\,N(t)
+\\\\
+\\\\
+&= 6\\,N
+\\\\
+\\\\
+\\end{align*} 
+$$`,
                   date: "2025-02-08"
                 },
                 {
                   id: 4,
                   number: "14.9.4",
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\pi$$`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Section 14.7 #4:
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) &= (t - \\sin t)\\mathbf{i} + (1 - \\cos t)\\mathbf{j} + 4\\sin \\frac{t}{2}\\mathbf{k}
+\\\\
+\\\\
+\\textbf{v}(t) &= (1 - \\cos t)\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + 2\\cos \\frac{t}{2}\\,\\mathbf{k}
+\\\\ 
+\\\\
+\\textbf{a}(t) &= \\sin t\\,\\mathbf{i} + \\cos t\\,\\mathbf{j} - \\sin \\frac{t}{2}\\,\\mathbf{k}
+\\\\
+\\\\
+v(t) &= \\sqrt{1 - 2 \\cos t  + \\cos^2 t + \\sin^2 t + 4 \\cos^2 \\frac{t}{2}}
+\\\\
+\\\\
+&= 2
+\\end{align*}
+$$`,
+                  solution: `(a) The unit tangent $T(t)$ is:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\frac{\\mathbf{v}(t)}{v(t)}
+\\\\
+\\\\
+&= \\frac{(1 - \\cos t)\\,\\mathbf{i} + \\sin t\\,\\mathbf{j} + 2\\cos \\frac{t}{2}\\,\\mathbf{k}}
+{2}
+\\end{align*}
+$$
+Evaluating at $t = \\pi$
+$$
+\\begin{align*}
+\\\\
+T(\\pi) &= \\mathbf{i}
+\\end{align*}
+$$
+Differentiating the unit tangent with respect to $t,$ noting that $v'(t) = 0$ for all $t$
+$$
+\\begin{align*}
+\\\\
+T'(t) &= \\frac{\\mathbf{a}(t)}{v(t)} - \\frac{v'(t)}{v^2(t)}\\,\\mathbf{v}(t)
+\\\\
+\\\\
+&= \\frac{\\sin t\\,\\mathbf{i} + \\cos t\\,\\mathbf{j} - \\sin \\frac{t}{2}\\,\\mathbf{k}}
+{2}
+\\end{align*}
+$$
+Evaluating at $t = \\pi$
+$$
+\\begin{align*}
+\\\\
+T'(\\pi) &= \\frac{-\\mathbf{j} - \\mathbf{k}}
+{2}
+\\end{align*}
+$$
+Its norm at $t = \\pi$ is then:
+$$
+\\begin{align*}
+\\\\
+\\left\\|T'(\\pi)\\right\\| &= \\frac{\\sqrt{2}}{2}
+\\end{align*}
+$$
+The principal normal at $t = \\pi$ is then:
+$$
+\\begin{align*}
+\\\\
+N(\\pi) &= \\frac{T'(\\pi)}{\\|T'(\\pi)\\|}
+\\\\
+\\\\
+&= -\\frac{1}{2}\\sqrt{2}\\left(\\,\\mathbf{j} + \\mathbf{k}\\right)
+\\end{align*}
+$$
+Thus, at $t = \\pi$ we have:
+
+$$
+\\begin{align*}
+\\\\
+T(\\pi) = \\mathbf{i};
+\\quad 
+N(\\pi) = -\\frac{1}{2}\\sqrt{2}\\left(\\,\\mathbf{j} + \\mathbf{k}\\right)
+\\quad 
+\\blacksquare
+\\\\
+\\\\
+\\end{align*}
+$$
+
+(b) Acceleration can be written component-wise as:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\end{align*}
+$$
+Differentiating speed $v(t)$ gives us:
+$$
+\\begin{align*}
+\\\\
+v'(t) = 0
+\\end{align*}
+$$
+Evaluating $v(t)$ and $v'(t)$ at $t = \\pi$
+$$
+\\begin{align*}
+\\\\
+v(\\pi) = 2, \\quad v'(\\pi) = 0
+\\end{align*}
+$$
+Combining this with the results of (a), we see that acceleration is:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\|T'(t)\\|\\,N(t)
+\\\\
+\\\\
+&= \\sqrt{2}\\,N 
+\\quad
+\\blacksquare
+\\\\
+\\\\
+\\end{align*} 
+$$`,
                   date: "2025-02-08"
                 },
                 {
                   id: 5,
                   number: "14.9.5",
                   content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = 1$$`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Section 14.7 #5
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) &= 3t^2\\mathbf{i} + 2t^3\\mathbf{j} + 3t\\mathbf{k}
+\\\\
+\\\\
+\\mathbf{v}(t) &= 6t\\,\\mathbf{i} + 6t^2\\,\\mathbf{j} +3\\,\\mathbf{k}
+\\\\
+\\\\ 
+\\mathbf{a}(t) &= 6\\,\\mathbf{i} + 12t\\,\\mathbf{j}
+\\\\
+\\\\ 
+v(t) &= 3 + 6t^2
+\\end{align*}
+$$`,
+                  solution: `(a) The unit tangent $T(t)$ is:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\frac{\\mathbf{v}(t)}{v(t)}
+\\\\
+\\\\
+&= \\frac{6t\\,\\mathbf{i} + 6t^2\\,\\mathbf{j} +3\\,\\mathbf{k}}
+{6t^2 + 3}
+\\end{align*}
+$$
+Evaluating at $t = 1$
+$$
+\\begin{align*}
+\\\\
+T(1) &= \\frac{1}{3}\\left(2\\,\\mathbf{i} + 2\\,\\mathbf{j} + \\,\\mathbf{k}\\right)
+\\end{align*}
+$$
+Differentiating the unit tangent with respect to $t$ and evaluating at $t = 1$
+$$
+\\begin{align*}
+\\\\
+T'(t) &= \\frac{\\mathbf{a}(t)}{v(t)} - \\frac{v'(t)}{v^2(t)}\\,\\mathbf{v}(t)
+\\\\
+\\\\
+&= \\frac{6}{9}\\,\\mathbf{i} + \\frac{12}{9}\\,\\mathbf{j}
+- \\frac{4}{9}\\left(2\\,\\mathbf{i} + 2\\,\\mathbf{j} + \\,\\mathbf{k}\\right)
+\\\\
+\\\\
+&= \\frac{2}{9}\\,\\mathbf{i} + \\frac{4}{9}\\,\\mathbf{j} - \\frac{4}{9}\\,\\mathbf{k}
+\\end{align*}
+$$
+Its norm at $t = 1$ is then:
+$$
+\\begin{align*}
+\\\\
+\\left\\|T'(1)\\right\\| &= \\frac{2}{3}
+\\end{align*}
+$$
+The principal normal at $t = 1$ is then:
+$$
+\\begin{align*}
+\\\\
+N(1) &= \\frac{T'(1)}{\\|T'(1)\\|}
+\\\\
+\\\\
+&= \\frac{1}{3}\\left(-\\mathbf{i} + 2\\,\\mathbf{j} - 2\\,\\mathbf{k}\\right)
+\\end{align*}
+$$
+Thus, at $t = 1$ we have:
+
+$$
+\\begin{align*}
+\\\\
+T(1) = \\frac{1}{3}\\left(2\\,\\mathbf{i} + 2\\,\\mathbf{j} + \\,\\mathbf{k}\\right);
+\\quad 
+N(1) = \\frac{1}{3}\\left(-\\mathbf{i} + 2\\,\\mathbf{j} - 2\\,\\mathbf{k}\\right)
+\\quad 
+\\blacksquare
+\\\\
+\\\\
+\\end{align*}
+$$
+Note: The back-of-book solution contains a typo for $N,$ missing the minus-sign in front of $\\mathbf{i}.$
+
+(b) Acceleration can be written component-wise as:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\end{align*}
+$$
+Differentiating speed $v(t)$ gives us:
+$$
+\\begin{align*}
+\\\\
+v'(t) = 12t
+\\end{align*}
+$$
+Evaluating $v(t)$ $v'(t)$ and $\\|T(t)\\|$ at $t = 1$
+$$
+\\begin{align*}
+\\\\
+v(1) = 9, 
+\\quad 
+v'(1) = 12,
+\\quad
+\\|T(1)\\| = \\frac{2}{3}
+\\end{align*}
+$$
+Combining this with the results of (a), we see that acceleration is:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\|T'(t)\\|\\,N(t)
+\\\\
+\\\\
+&= 12\\,T + 6\\,N 
+\\quad
+\\blacksquare
+\\\\
+\\\\
+\\end{align*} 
+$$`,
                   date: "2025-02-08"
                 },
                 {
                   id: 6,
                   number: "14.9.6",
-                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.\n\n$$t = \\frac{\\pi}{2}$$`,
-                  hint: ``,
-                  solution: ``,
+                  content: `Exercises 1 through 6 below refer to the motions described in Exercises 1 through 6, respectively, of Section 14.7. For the value of $t$ specified:\n(a) express the unit tangent $T$ and the principal normal $N$ in terms of $\\mathbf{i}, \\mathbf{j}, \\mathbf{k}$\n(b) express the acceleration $\\mathbf{a}$ as a linear combination of $T$ and $N$.
+$$
+\\begin{align*}
+\\\\
+t = \\frac{\\pi}{4}
+\\end{align*}
+$$`,
+                  hint: `Recall from Section 14.7 #6:
+$$
+\\begin{align*}
+\\\\
+\\textbf{r}(t) &= t\\mathbf{i} + \\sin t\\mathbf{j} + (1 - \\cos t)\\,\\mathbf{k}
+\\\\
+\\\\
+\\mathbf{v}(t) &= \\mathbf{i} + \\cos t\\,\\mathbf{j} + \\sin t \\,\\mathbf{k}
+\\\\
+\\\\ 
+\\mathbf{a}(t) &= -\\sin t\\,\\mathbf{j} + \\cos t\\,\\mathbf{k}
+\\\\
+\\\\ 
+v(t) &= \\sqrt{2}
+\\end{align*}
+$$`,
+                  solution: `(a) The unit tangent $T(t)$ is:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\frac{\\mathbf{v}(t)}{v(t)}
+\\\\
+\\\\
+&= \\frac{\\mathbf{i} + \\cos t\\,\\mathbf{j} + \\sin t \\,\\mathbf{k}}
+{\\sqrt{2}}
+\\end{align*}
+$$
+Evaluating at $t = \\pi/4$
+$$
+\\begin{align*}
+\\\\
+T\\left(\\frac{\\pi}{4}\\right) 
+&= \\frac{\\sqrt{2}}{2}\\,\\mathbf{i} + \\frac{1}{2}\\,\\mathbf{j} + \\frac{1}{2}\\,\\mathbf{k}
+\\end{align*}
+$$
+Differentiating the unit tangent with respect to $t$ and evaluating at $t = \\pi/4,$ noting that $v'(t) = 0$ for all $t$
+$$
+\\begin{align*}
+\\\\
+T'(t) &= \\frac{\\mathbf{a}(t)}{v(t)} - \\frac{v'(t)}{v^2(t)}\\,\\mathbf{v}(t)
+\\\\
+\\\\
+&= \\frac{\\sqrt{2}}{2}
+\\left(-\\sin t\\,\\mathbf{j} + \\cos t\\,\\mathbf{k}\\right)
+\\\\
+\\\\
+&= -\\frac{1}{2}\\,\\mathbf{j} + \\frac{1}{2}\\,\\mathbf{k}
+\\end{align*}
+$$
+Its norm at $t = \\pi/4$ is then:
+$$
+\\begin{align*}
+\\\\
+\\left\\|T'\\left(\\frac{\\pi}{4}\\right)\\right\\| &= \\frac{\\sqrt{2}}{2}
+\\end{align*}
+$$
+The principal normal at $t = \\pi/4$ is then:
+$$
+\\begin{align*}
+\\\\
+N\\left(\\frac{\\pi}{4}\\right) &= \\frac{T'\\left(\\frac{\\pi}{4}\\right)}{\\|T'\\left(\\frac{\\pi}{4}\\right)\\|}
+\\\\
+\\\\
+&= \\frac{\\sqrt{2}}{2}\\left(-\\mathbf{j} + \\,\\mathbf{k}\\right)
+\\end{align*}
+$$
+Thus, at $t = \\pi/4$ we have:
+
+$$
+\\begin{align*}
+\\\\
+T\\left(\\frac{\\pi}{4}\\right) = \\frac{1}{2}\\sqrt{2}\\,\\mathbf{i} + \\frac{1}{2}\\,\\mathbf{j} + \\frac{1}{2}\\,\\mathbf{k};
+\\quad 
+N\\left(\\frac{\\pi}{4}\\right) = -\\frac{1}{2}\\sqrt{2}\\,\\mathbf{j} + \\frac{1}{2}\\sqrt{2}\\,\\mathbf{k}
+\\quad 
+\\blacksquare
+\\\\
+\\\\
+\\end{align*}
+$$
+
+(b) Acceleration can be written component-wise as:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\end{align*}
+$$
+Differentiating speed $v(t)$ gives us:
+$$
+\\begin{align*}
+\\\\
+v'(t) = 0
+\\end{align*}
+$$
+Evaluating $v(t)$ $v'(t)$ and $\\|T(t)\\|$ at $t = \\pi/4$
+$$
+\\begin{align*}
+\\\\
+v\\left(\\frac{\\pi}{4}\\right) = \\sqrt{2}, 
+\\quad 
+v'\\left(\\frac{\\pi}{4}\\right) = 0,
+\\quad
+\\left\\|T\\left(\\frac{\\pi}{4}\\right)\\right\\| = \\frac{1}{2}\\sqrt{2}
+\\end{align*}
+$$
+Combining this with the results of (a), we see that acceleration is:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\,T'(t)
+\\\\
+\\mathbf{a}(t) &= v'(t)\\,T(t) + v(t)\\|T'(t)\\|\\,N(t)
+\\\\
+\\\\
+&= N 
+\\quad
+\\blacksquare
+\\\\
+\\\\
+\\end{align*} 
+$$`,
                   date: "2025-02-08"
                 },
                 {
