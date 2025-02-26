@@ -3044,6 +3044,140 @@ But as $n \\rightarrow \\infty$, the sum $\\sum_{k=1}^n 1/k$ diverges, which mea
                   date: "2025-02-12"
                 }
               ]
+            },
+            {
+              id: 15,
+              title: "14.15 Exercises",
+              description: "Exercises on curvature.",
+              problems: [
+                {
+                  id: 1,
+                  number: "14.15.1",
+                  content: `Refer to the curves described in Exercises 1 through 6 of Section 14.9 and in each case determine the curvature $\\kappa(t)$ for the value of $t$ indicated.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 2,
+                  number: "14.15.2",
+                  content: `A helix is described by the position function $\\mathbf{r}(t) = a\\cos \\omega t\\,\\mathbf{i} + a\\sin \\omega t\\,\\mathbf{j} + b\\omega t\\,\\mathbf{k}$. Prove that it has constant curvature $\\kappa = a/(a^2 + b^2)$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 3,
+                  number: "14.15.3",
+                  content: `Two fixed unit vectors $A$ and $B$ make an angle $\\theta$ with each other, where $0 < \\theta < \\pi$. A particle moves on a space curve in such a way that its position vector $\\mathbf{r}(t)$ and velocity $\\mathbf{v}(t)$ are related by the equation $\\mathbf{v}(t) = A \\times \\mathbf{r}(t)$. If $\\mathbf{r}(0) = B$, prove that the curve has constant curvature and compute this curvature in terms of $\\theta$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 4,
+                  number: "14.15.4",
+                  content: `A point moves in space according to the vector equation
+$$
+\\begin{align*}
+\\\\
+\\mathbf{r}(t) &= 4\\cos t\\,\\mathbf{i} + 4\\sin t\\,\\mathbf{j} + 4\\cos t\\,\\mathbf{k}
+\\end{align*}
+$$              
+(a) Show that the path is an ellipse and find a Cartesian equation for the plane containing this ellipse.
+(b) Show that the radius of curvature is $\\rho(t) = 2\\sqrt{2}(1 + \\sin^4 t)^{3/2}$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 5,
+                  number: "14.15.5",
+                  content: `For the curve whose vector equation is $\\mathbf{r}(t) = e^t\\,\\mathbf{i} + e^{-t}\\,\\mathbf{j} + \\sqrt{2}t\\,\\mathbf{k}$, show that the curvature is $\\kappa(t) = \\sqrt{2}/(e^t + e^{-t})^2$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 6,
+                  number: "14.15.6",
+                  content: `(a) For a plane curve described by the equation $\\mathbf{r}(t) = x(t)\\,\\mathbf{i} + y(t)\\,\\mathbf{j}$, show that the curvature is given by the formula              
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{|x'(t)y''(t) - y'(t)x''(t)|}{\\{[x'(t)]^2 + [y'(t)]^2\\}^{3/2}}
+\\end{align*}
+$$
+              
+(b) If a plane curve has the Cartesian equation $y = f(x)$, show that the curvature at the point $(x, f(x))$ is
+              
+$$
+\\begin{align*}
+\\\\
+\\kappa &= \\frac{|f''(x)|}{\\{1 + [f'(x)]^2\\}^{3/2}}
+\\end{align*}
+$$`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 7,
+                  number: "14.15.7",
+                  content: `If a point moves so that the velocity and acceleration vectors always have constant lengths, prove that the curvature is constant at all points of the path. Express this constant in terms of $\\|\\mathbf{a}\\|$ and $\\|\\mathbf{v}\\|$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 8,
+                  number: "14.15.8",
+                  content: `If two plane curves with Cartesian equations $y = f(x)$ and $y = g(x)$ have the same tangent at a point $(a, b)$ and the same curvature at that point, prove that $|f''(a)| = |g''(a)|$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 9,
+                  number: "14.15.9",
+                  content: `For certain values of the constants $a$ and $b$, the two curves with Cartesian equations $y = ax(b - x)$ and $(x + 2)y = x$ intersect at only one point $P$, have a common tangent line at $P$, and have the same curvature at $P$.
+
+(a) Find all $a$ and $b$ which satisfy all these conditions.
+(b) For each possible choice of $a$ and $b$ satisfying the given conditions, make a sketch of the two curves. Show how they intersect at $P$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 10,
+                  number: "14.15.10",
+                  content: `(a) Prove that the radius of curvature of a parabola is smallest at its vertex.
+(b) Given two fixed unit vectors $A$ and $B$ making an angle $\\theta$ with each other, where $0 < \\theta < \\pi$. 
+The curve with position vector $\\mathbf{r}(t) = tA + t^2B$ is a parabola lying in the plane spanned by $A$ and $B$. Determine (in terms of $A$, $B$, and $\\theta$) the position vector of the vertex of this parabola. You may use the property of the parabola stated in part (a).`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 11,
+                  number: "14.15.11",
+                  content: `A particle moves along a plane curve with constant speed 5. It starts at the origin at time $t = 0$ with initial velocity $5\\,\\mathbf{j}$, and it never goes to the left of the $y$-axis. At every instant the curvature of the path is $\\kappa(t) = 2t$. Let $\\phi(t)$ denote the angle that the velocity vector makes with the positive $x$-axis at time $t$.
+
+(a) Determine $\\phi(t)$ explicitly as a function of $t$.
+(b) Determine the velocity $\\mathbf{v}(t)$ in terms of $\\,\\mathbf{i}$ and $\\,\\mathbf{j}$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                },
+                {
+                  id: 12,
+                  number: "14.15.12",
+                  content: `A particle moves along a plane curve with constant speed 2. The motion starts at the origin when $t = 0$ and the initial velocity $\\mathbf{v}(0)$ is $2\\,\\mathbf{i}$. At every instant it is known that the curvature $\\kappa(t) = 4t$. Find the velocity $\\mathbf{v}(t)$ when $t = \\frac{1}{4}\\sqrt{\\pi}$ if the curve never goes below the $x$-axis.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-02-25"
+                }
+              ]
             }
           ]
         },
