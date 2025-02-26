@@ -3054,16 +3054,173 @@ But as $n \\rightarrow \\infty$, the sum $\\sum_{k=1}^n 1/k$ diverges, which mea
                   id: 1,
                   number: "14.15.1",
                   content: `Refer to the curves described in Exercises 1 through 6 of Section 14.9 and in each case determine the curvature $\\kappa(t)$ for the value of $t$ indicated.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Section 14.14, (equation 14.20) that the length of the curvature vector, or the curvature $\\kappa$ of a curve is defined as:
+$$
+\\begin{align}
+\\\\
+\\kappa(t) = \\frac{\\|T'(t)\\|}{v(t)} \\tag{14.20}
+\\end{align}
+$$`,
+                  solution: `
+1.
+$$
+\\begin{align*}
+\\\\
+\\|T'(t)\\| &= \\frac{\\sqrt{2}}{1 + t^2}
+\\\\
+\\\\
+v(t) &= 3\\sqrt{2}\\left(1 + t^2\\right)
+\\\\
+\\\\
+\\kappa(t) &= \\frac{\\|T'(t)\\|}{v(t)}
+\\\\
+&= \\frac{1}{3\\left(1 + t^2\\right)^2}
+\\\\
+\\kappa(2) &= \\frac{1}{75} \\quad \\blacksquare
+\\end{align*}
+$$
+2.
+$$
+\\begin{align*}
+\\\\
+\\|T'(\\pi)\\| &= \\frac{\\left[\\left(1 + e^{2\\pi}\\right)\\left(1 + 2e^{2\\pi}\\right)\\right]^{1/2}}{\\left(1 + e^{2\\pi}\\right)^{3/2}}
+\\\\
+\\\\
+v(\\pi) &= \\sqrt{1 + e^{2\\pi}}
+\\\\
+\\\\
+\\kappa(\\pi) &= \\frac{\\left(1 + 2e^{2\\pi}\\right)^{1/2}}{\\left(1 + e^{2\\pi}\\right)^{3/2}}
+\\quad 
+\\blacksquare
+\\end{align*}
+$$
+3.
+$$
+\\begin{align*}
+\\\\
+\\|T'(0)\\| &= \\frac{6}{5}
+\\\\
+\\\\
+v(0) &= 5
+\\\\
+\\\\
+\\kappa(0) &= \\frac{6}{25}
+\\quad 
+\\blacksquare
+\\end{align*}
+$$
+4.
+$$
+\\begin{align*}
+\\\\
+\\|T'(\\pi)\\| &= \\frac{\\sqrt{2}}{2}
+\\\\
+\\\\
+v(\\pi) &= 2
+\\\\
+\\\\
+\\kappa(\\pi) &= \\frac{1}{4} \\sqrt{2}
+\\quad 
+\\blacksquare
+\\end{align*}
+$$
+5.
+$$
+\\begin{align*}
+\\\\
+\\|T'(1)\\| &= \\frac{2}{3}
+\\\\
+\\\\
+v(1) &= 9
+\\\\
+\\\\
+\\kappa(1) &= \\frac{2}{27}
+\\quad 
+\\blacksquare
+\\end{align*}
+$$
+6.
+$$
+\\begin{align*}
+\\\\
+\\left\\|T'\\left(\\frac{\\pi}{4}\\right)\\right\\| &= \\frac{\\sqrt{2}}{2}
+\\\\
+\\\\
+v\\left(\\frac{\\pi}{4}\\right) &= \\sqrt{2}
+\\\\
+\\\\
+\\kappa\\left(\\frac{\\pi}{4}\\right) &= \\frac{1}{2}
+\\quad 
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
                   id: 2,
                   number: "14.15.2",
                   content: `A helix is described by the position function $\\mathbf{r}(t) = a\\cos \\omega t\\,\\mathbf{i} + a\\sin \\omega t\\,\\mathbf{j} + b\\omega t\\,\\mathbf{k}$. Prove that it has constant curvature $\\kappa = a/(a^2 + b^2)$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Section 14.14, (equation 14.20) that the length of the curvature vector, or the curvature $\\kappa$ of a curve is defined as:
+$$
+\\begin{align}
+\\\\
+\\kappa(t) = \\frac{\\|T'(t)\\|}{v(t)} \\tag{14.20}
+\\end{align}
+$$`,
+                  solution: `If the position function is defined by
+$$
+\\begin{align*}
+\\\\
+\\mathbf{r}(t) = a\\cos \\omega t\\,\\mathbf{i} + a\\sin \\omega t\\,\\mathbf{j} + b\\omega t\\,\\mathbf{k}
+\\end{align*}
+$$
+Then its velocity $\\mathbf{v}(t)$ and speed $v(t)$ are defined by
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= -a\\omega\\sin \\omega t\\,\\mathbf{i} + a\\omega\\cos \\omega t\\,\\mathbf{j} + b\\omega\\,\\mathbf{k}
+\\\\
+\\\\
+v(t) &= \|\\omega\| \\sqrt{a^2 + b^2}
+\\end{align*}
+$$
+Then, the unit tangent $T(t)$ is:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\frac{\\mathbf{v}(t)}{v(t)}
+\\\\
+&= \\frac{-a\\omega\\sin \\omega t\\,\\mathbf{i} + a\\omega\\cos \\omega t\\,\\mathbf{j} + b\\omega\\,\\mathbf{k}}{\|\\omega\| \\sqrt{a^2 + b^2}}
+\\end{align*}
+$$
+Taking its derivative with respect to $t,$ noting that $v(t)$ is constant, we obtain
+$$
+\\begin{align*}
+\\\\
+T'(t) &= \\frac{\\mathbf{a}(t)}{v(t)}
+\\\\
+&= \\frac{-a\\omega^2\\cos \\omega t\\,\\mathbf{i} - a\\omega^2\\sin \\omega t\\,\\mathbf{j}}{\|\\omega\| \\sqrt{a^2 + b^2}}
+\\end{align*}
+$$
+Whose norm is
+$$
+\\begin{align*}
+\\\\
+\\|T'(t)\\| &= \\frac{\|a\| \\omega^2}{\|\\omega\|\\sqrt{a^2 + b^2}}
+\\end{align*}
+$$
+Then, curvature $\\kappa(t)$ is
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{\\|T'(t)\\|}{v(t)}
+\\\\
+&= \\frac{\|a\| \\omega^2}{\\omega^2(a^2 + b^2)}
+\\end{align*}
+$$
+Given that $a > 0$ for helical motion (as defined in section 14.6), we get $\\kappa = a/(a^2 + b^2). \\quad \\blacksquare$
+`,
                   date: "2025-02-25"
                 },
                 {
