@@ -3519,11 +3519,11 @@ $$
 \\begin{align*}
 \\\\
 \\kappa(t) &= \\frac{|x'(t)y''(t) - y'(t)x''(t)|}{\\{[x'(t)]^2 + [y'(t)]^2\\}^{3/2}}
+\\\\
+\\\\
 \\end{align*}
-$$
-              
-(b) If a plane curve has the Cartesian equation $y = f(x)$, show that the curvature at the point $(x, f(x))$ is
-              
+$$          
+(b) If a plane curve has the Cartesian equation $y = f(x)$, show that the curvature at the point $(x, f(x))$ is     
 $$
 \\begin{align*}
 \\\\
@@ -3537,23 +3537,222 @@ $$
 \\kappa(t) &= \\frac{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}{v^3(t)} \\tag{14.22}
 \\end{align*}
 $$`,
-                  solution: ``,
+                  solution: `(a) For the plane curve described by the position vector $\\mathbf{r}(t) = x(t)\\,\\mathbf{i} + y(t)\\,\\mathbf{j},$ velocity, speed, and acceleration are:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= x'(t)\\,\\mathbf{i} + y'(t)\\,\\mathbf{j} 
+\\\\
+\\\\
+v(t) &= \\sqrt{\\left[x'(t)\\right]^2 + \\left[y'(t)\\right]^2}
+\\\\
+\\\\
+\\mathbf{a}(t) &= x''(t)\\,\\mathbf{i} + y''(t)\\,\\mathbf{j}
+\\end{align*}
+$$
+Using equation (14.22) of Theorem 14.14, curvature is
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}{v^3(t)}
+\\end{align*}
+$$
+To find the norm $\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|$ we first calculate the cross product $\\mathbf{a}(t) \\times \\mathbf{v}(t)$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) \\times \\mathbf{v}(t) &= \\left[x''(t)y'(t) - y''(t)x'(t)\\right]\\mathbf{k}
+\\end{align*}
+$$
+Its norm is then:
+$$
+\\begin{align*}
+\\\\
+\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\| &= \\sqrt{\\left[x''(t)y'(t) - y''(t)x'(t)\\right]^2}
+\\\\
+\\\\
+&= \\left|x''(t)y'(t) - y''(t)x'(t)\\right|
+\\\\
+\\\\
+&= \\left|-\\left[x''(t)y'(t) - y''(t)x'(t)\\right]\\right|
+\\\\
+\\\\
+&= \\left|x'(t)y''(t) - y'(t)x''(t)\\right|
+\\end{align*}
+$$
+Using this and our previously calculated speed value, we see that the curvature at time $t$ is
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{\\left|x'(t)y''(t) - y'(t)x''(t)\\right|}{\\left\\{\\left[x'(t)\\right]^2 + \\left[y'(t)\\right]^2\\right\\}^{3/2}}
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+
+(b) If the plane curve is described by the Cartesian equation $y = f(x)$ then its position vector parameterized by $x$ is
+$$
+\\begin{align*}
+\\\\
+\\mathbf{r}(x) &= x\\,\\mathbf{i} + f(x)\\,\\mathbf{j}
+\\end{align*}
+$$
+Velocity, speed, and acceleration are then defined by:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(x) &= \\mathbf{i} + f'(x)\\,\\mathbf{j} 
+\\\\
+\\\\
+v(x) &= \\sqrt{1+ \\left[f'(x)\\right]^2}
+\\\\
+\\\\
+\\mathbf{a}(x) &= f''(x)\\,\\mathbf{j}
+\\end{align*}
+$$
+Referring back to equation (14.22), curvature can be written as
+$$
+\\begin{align*}
+\\\\
+\\kappa(x) &= \\frac{\\|\\mathbf{a}(x) \\times \\mathbf{v}(x)\\|}{v^3(x)}
+\\end{align*}
+$$
+To find the norm $\\|\\mathbf{a}(x) \\times \\mathbf{v}(x)\\|$ we first calculate the cross product $\\mathbf{a}(x) \\times \\mathbf{v}(x)$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(x) \\times \\mathbf{v}(x) &= -f''(x)\\,\\mathbf{k}
+\\end{align*}
+$$
+Then we can see that its norm is $\|f''(x)\|.$ Using this value along with our previously calculated speed we find that the curvature at $x$ is
+$$
+\\begin{align*}
+\\\\
+\\kappa(x) &= \\frac{\|f''(x)\|}{\\left\\{1 + \\left[f'(x)\\right]^2\\right\\}^{3/2}}
+\\end{align*}
+\\quad
+\\blacksquare
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
                   id: 7,
                   number: "14.15.7",
                   content: `If a point moves so that the velocity and acceleration vectors always have constant lengths, prove that the curvature is constant at all points of the path. Express this constant in terms of $\\|\\mathbf{a}\\|$ and $\\|\\mathbf{v}\\|$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Use the definition of acceleration from Equation 14.9. 
+
+$$
+\\mathbf{a}(t) = v'(t)T(t) + v(t)T'(t) \\tag{14.9}
+$$
+If velocity has a constant length, what does this imply about the accleration vector?`,
+                  solution: `Recall the component-wise definition of acceleration from Equation 14.9
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) = v'(t)T(t) + v(t)T'(t) \\tag{14.9}
+\\end{align*}
+$$
+Then, since velocity has a constant length, ie $v'(t) = 0,$ we can see that acceleration is a constant scalar multiple of $T'(t):$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= v(t)T'(t)
+\\\\
+\\end{align*}
+$$
+If we take the length of both sides of the equation, noting that acceleration also has a constant length, we get
+$$
+\\begin{align*}
+\\\\
+\\|\\mathbf{a}\\| &= \\|\\mathbf{v}\\|\\|T'(t)\\|
+\\\\
+\\end{align*}
+$$
+But, we know by definition that $\\kappa(t) = \\|T'(t)\\|/v(t),$ giving us
+$$
+\\begin{align*}
+\\\\
+\\|\\mathbf{a}\\| &= \\|\\mathbf{v}\\|^2\\kappa(t)
+\\\\
+\\end{align*}
+$$
+Rearranging terms, we can express curvature for all $t$ in terms of the constants $\\|\\mathbf{a}\\|$ and $\\|\\mathbf{v}\\|$
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{\\|\\mathbf{a}\\|}{\\|\\mathbf{v}\\|^2}
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
                   id: 8,
                   number: "14.15.8",
                   content: `If two plane curves with Cartesian equations $y = f(x)$ and $y = g(x)$ have the same tangent at a point $(a, b)$ and the same curvature at that point, prove that $|f''(a)| = |g''(a)|$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Use the result of Exercise 6 (b)`,
+                  solution: `Let the two plane curves be described by the positional vectors $\\mathbf{q}(x)$ and $\\mathbf{r}(x)$ where:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{q}(x) &= x\\,\\mathbf{i} + f(x)\\,\\mathbf{j}
+\\\\
+\\\\
+\\mathbf{r}(x) &= x\\,\\mathbf{i} + g(x)\\,\\mathbf{j}
+\\end{align*}
+$$
+Their respective velocity and acceleration vectors are
+$$
+\\begin{align*}
+\\\\
+\\mathbf{q}'(x) &= \\mathbf{i} + f'(x)\\,\\mathbf{j}
+\\\\
+\\mathbf{q}''(x) &= f''(x)\\,\\mathbf{j}
+\\\\
+\\\\
+\\mathbf{r}'(x) &= \\mathbf{i} + g'(x)\\,\\mathbf{j}
+\\\\
+\\mathbf{r}''(x) &= g''(x)\\,\\mathbf{j}
+\\end{align*}
+$$
+Now, recall from Exercise 6 (b) that for the above-defined Cartesian equations, their respective curvatures are
+$$
+\\begin{align*}
+\\\\
+\\kappa_q(x) &= \\frac{\|f''(x)\|}{\\left\\{1 + \\left[f'(x)\\right]^2\\right\\}^{3/2}}
+\\\\
+\\\\
+\\kappa_r(x) &= \\frac{\|g''(x)\|}{\\left\\{1 + \\left[g'(x)\\right]^2\\right\\}^{3/2}}
+\\end{align*}
+$$
+Since these two values are equal at $x = a$, we see that
+$$
+\\begin{align*}
+\|f''(a)\|\\left\\{1 + \\left[g'(a)\\right]^2\\right\\}^{3/2}&= \|g''(a)\|\\left\\{1 + \\left[f'(a)\\right]^2\\right\\}^{3/2}
+\\tag{8.1}
+\\end{align*}
+$$
+But since $f$ and $g$ have the same tangent line at $x = a,$ this means that $f'(a) = g'(a)$ and by extension,
+$$
+\\begin{align*}
+\\left\\{1 + \\left[g'(a)\\right]^2\\right\\}^{3/2}&= \\left\\{1 + \\left[f'(a)\\right]^2\\right\\}^{3/2}
+\\end{align*}
+$$
+Dividing both sides of (8.1) by $\\left\\{1 + \\left[g'(a)\\right]^2\\right\\}^{3/2}$ (since this value can never be zero for any real-valued g'(a)), we arrive at the conclusion
+$$
+\\begin{align*}
+\\\\
+\|f''(a)\| &= \|g''(a)\|
+\\quad
+\\blacksquare
+\\\\
+\\\\
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
