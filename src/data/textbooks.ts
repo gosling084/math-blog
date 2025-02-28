@@ -3227,8 +3227,71 @@ Given that $a > 0$ for helical motion (as defined in section 14.6), we get $\\ka
                   id: 3,
                   number: "14.15.3",
                   content: `Two fixed unit vectors $A$ and $B$ make an angle $\\theta$ with each other, where $0 < \\theta < \\pi$. A particle moves on a space curve in such a way that its position vector $\\mathbf{r}(t)$ and velocity $\\mathbf{v}(t)$ are related by the equation $\\mathbf{v}(t) = A \\times \\mathbf{r}(t)$. If $\\mathbf{r}(0) = B$, prove that the curve has constant curvature and compute this curvature in terms of $\\theta$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall the solution from Section 14.9 #15.`,
+                  solution: `We know from a previous solution (Section 14.9 #15) that a particle with motion satisfying the above conditions has constant speed satisfying the relation
+$$
+\\begin{align*}
+\\\\
+v(t) &= \\|A\\|\\|B\\|\\sin\\theta
+\\end{align*}
+$$
+for all $t.$ And since $A$ and $B$ both have unit length, we can write $v(t) = \\sin \\theta.$ Then, the unit tangent $T(t)$ is 
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\frac{A \\times \\mathbf{r}(t)}{\\sin \\theta}
+\\end{align*}
+$$
+Its derivative with respect to $t$ is
+$$
+\\begin{align*}
+\\\\
+T'(t) &= \\frac{A \\times \\mathbf{r}'(t)}{\\sin \\theta}
+\\\\
+\\\\
+&= \\frac{A \\times \\mathbf{v}(t)}{\\sin \\theta}
+\\end{align*}
+$$
+Noting that $\\sin \\theta > 0,$ since $0 < \\theta < \\pi$, the norm of $T'(t)$ is
+$$
+\\begin{align*}
+\\\\
+\\|T'(t)\\| &= \\frac{\\|A \\times \\mathbf{v}(t)\\|}{\\sin \\theta}
+\\\\
+\\\\
+&= \\frac{\\|A\\| \\|\\mathbf{v}(t)\\|\\sin\\phi}{\\sin \\theta}
+\\end{align*}
+$$
+where $\\phi$ is the angle between $A$ and the velocity vector $\\mathbf{v}(t)$ satisfying $0 < \\phi < \\pi,$ whose cosine is
+$$
+\\cos \\phi = \\frac{A \\cdot \\mathbf{v}(t)}{\\|A\\|\\|\\mathbf{v}(t)\\|}
+$$ 
+But we know that $\\mathbf{v}(t) = A \\times \\mathbf{r}(t)$, which means that $A \\cdot \\mathbf{v}(t) = 0$ and thus $\\cos \\phi = 0.$ But since $0 < \\phi < \\pi$ it must be the case that $\\phi = \\pi/2$ and $\\sin \\phi = 1.$ Plugging this back into our equation for the norm of $T'(t)$ we see that
+$$
+\\begin{align*}
+\\\\
+\\|T'(t)\\| &= \\frac{\\|A\\| \\|\\mathbf{v}(t)\\|\\sin\\phi}{\\sin\\theta}
+\\\\
+\\\\
+&= \\frac{\\sin\\theta}{\\sin\\theta}
+\\\\
+\\\\
+&= 1
+\\end{align*}
+$$
+Then, curvature $\\kappa(t)$ is
+$$
+\\begin{align*}
+\\kappa(t) &= \\frac{\\|T'(t)\\|}{v(t)}
+\\\\
+\\\\
+&= \\frac{1}{\\sin\\theta}
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+$($Note: The back-of-book equation says that $\\kappa(t) = \\frac{1}{\\|B\\|\\sin\\theta}$ but we know from the given information that B is of unit length, thus $\\|B\\|\\sin\\theta = \\sin \\theta.)$
+`,
                   date: "2025-02-25"
                 },
                 {
@@ -3242,17 +3305,210 @@ $$
 \\end{align*}
 $$              
 (a) Show that the path is an ellipse and find a Cartesian equation for the plane containing this ellipse.
-(b) Show that the radius of curvature is $\\rho(t) = 2\\sqrt{2}(1 + \\sin^4 t)^{3/2}$.`,
-                  hint: ``,
-                  solution: ``,
+(b) Show that the radius of curvature is $\\rho(t) = 2\\sqrt{2}(1 + \\sin^2 t)^{3/2}$.
+`,
+                  hint: `(a) First, find the Cartesian equation for the plane containing the curve. Let $X = (x, y, z)$ be a point on the curve described by $\\mathbf{r}(t)$ and let $N = (a, b, c)$ be the vector normal to the plane containing the curve. Find $N$ such that for all $t$
+$$
+X \\cdot N = 0
+$$
+Then, use the result to show that the curve describes an ellipse inside the given plane.
+
+(b) Recall that the radius of curvature $\\rho(t)$ is the reciprocal of the curvature $\\kappa(t)$ when $\\kappa \\neq 0:$
+$$
+\\begin{align*}
+\\rho(t) &= \\frac{v(t)}{\\|T'(t)\\|}
+\\end{align*}
+$$
+Theorem 14.14 allows us to express curvature in terms of the cross product of acceleration and velocity:
+$$
+\\begin{align*}
+\\kappa(t) &= \\frac{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}{v^3(t)}
+\\end{align*}
+$$
+Which in turn means that the radius of curvature is:
+$$
+\\begin{align*}
+\\\\
+\\rho(t) &= \\frac{v^3(t)}{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}
+\\end{align*}
+$$
+`,
+                  solution: `(a) To find the Cartesian equation for the plane containing this curve, we first find the normal vector $N = (a, b, c)$ such that for any given point $X = (x, y, z)$ in the plane: 
+$$
+\\begin{align*}
+\\\\
+X \\cdot N = 0
+\\end{align*}
+$$
+In other words, we wish to find scalars $a, b, c$ (not all zero) such that
+$$
+\\begin{align*}
+\\\\
+4a \\cos t + 4b \\sin t + 4c \\cos t &= 0
+\\end{align*}
+$$
+for all $t.$ This relation can be satisfied for all $t$ by the normal vector $N = (1, 0, -1)$ which gives us the following Cartesian equation for the plane containing the curve:
+$$
+\\begin{align*}
+\\\\
+x = z
+\\end{align*}
+$$
+Now, if we perform the substitution $u = x + z$ we can see that 
+$$
+\\begin{align*}
+\\\\
+u^2 + y^2 &= x^2 + 2xz + z^2 + y^2
+\\\\
+\\end{align*}
+$$
+But, we know from our previous result that the curve described by $\\mathbf{r}(t)$ lies in the plane $x = z.$ Thus, we can express the three-dimensional curve $\\mathbf{r}(t)$ as a two-dimensional curve lying in the plane $x = z$ and rewrite the above equation as:
+$$
+\\begin{align*}
+\\\\
+u^2 + y^2 &= 4x^2 + y^2
+\\\\
+&= 64\\cos^2 t + 16 \\sin^2 t
+\\end{align*}
+$$
+But, if we set $a = 8$ and $b = 4,$ we can see that this curve is an ellipse with Cartesian equation
+$$
+\\begin{align*}
+\\\\
+\\frac{u^2}{a^2} + \\frac{y^2}{b^2} &= 1
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+
+(b) To find the radius of curvature of $\\mathbf{r}(t)$ we must first find its velocity:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= -4\\sin t\\,\\mathbf{i} + 4\\cos t\\,\\mathbf{j} + -4\\sin t\\,\\mathbf{k}
+\\end{align*}
+$$
+Its speed
+$$
+\\begin{align*}
+v(t) &= 4\\sqrt{1 + \\sin^2 t}
+\\end{align*}
+$$
+And its acceleration:
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= -4\\cos t\\,\\mathbf{i} -4\\sin t\\,\\mathbf{j} -4\\cos t\\,\\mathbf{k}
+\\end{align*}
+$$
+From Theorem 14.14, we know that curvature $\\kappa(t)$ can be written as:
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}{v^3(t)}
+\\end{align*}
+$$
+And thus the radius of curvature $\\rho(t)$ can be written as:
+$$
+\\begin{align*}
+\\\\
+\\rho(t) &= \\frac{v^3(t)}{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}
+\\end{align*}
+$$
+By Lagrange's identity on the norm of a cross product, we know that
+$$
+\\begin{align*}
+\\\\
+\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|^2 &= \\|\\mathbf{a}(t)\\|^2\\|\\mathbf{v}(t)\\|^2 - \\left(\\mathbf{a}(t)\\cdot\\mathbf{v}(t)\\right)^2
+\\\\
+&= 256\\left(1 + \\cos^2 t\\right)\\left(1 + \\sin^2 t\\right) - 256\\left(\\sin^2 t \\cos^2 t\\right)
+\\\\
+&= 512
+\\end{align*}
+$$
+Thus, $\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\| = 16\\sqrt{2}$ which makes the radius of curvature:
+$$
+\\begin{align*}
+\\\\
+\\rho(t) &= \\frac{v^3(t)}{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}
+\\\\
+&= \\frac{64\\left(1 + \\sin^2 t\\right)^{3/2}}{16\\sqrt{2}}
+\\\\
+&= 2\\sqrt{2}\\left(1 + \\sin^2 t\\right)^{3/2}
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
                   id: 5,
                   number: "14.15.5",
                   content: `For the curve whose vector equation is $\\mathbf{r}(t) = e^t\\,\\mathbf{i} + e^{-t}\\,\\mathbf{j} + \\sqrt{2}t\\,\\mathbf{k}$, show that the curvature is $\\kappa(t) = \\sqrt{2}/(e^t + e^{-t})^2$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `From Theorem 14.14 we can express curvature in terms of acceleration, velocity, and speed:
+$$
+\\begin{align*}
+\\kappa(t) &= \\frac{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}{v^3(t)}
+\\end{align*}
+$$
+And we can use Lagrange's identity to express the norm of the cross product as
+$$
+\\begin{align*}
+\\\\
+\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|^2 &= \\|\\mathbf{a}(t)\\|^2\\|\\mathbf{v}(t)\\|^2 - \\left(\\mathbf{a}(t)\\cdot\\mathbf{v}(t)\\right)^2
+\\end{align*}
+$$
+`,
+                  solution: `To find the curvature of the curve described by $\\mathbf{r}(t)$ we must find its velocity, acceleration, and speed.
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= e^t\\,\\mathbf{i} - e^{-t}\\,\\mathbf{j} + \\sqrt{2}\\,\\mathbf{k}
+\\\\
+\\\\
+\\mathbf{a}(t) &= e^t\\,\\mathbf{i} + e^{-t}\\,\\mathbf{j}
+\\\\
+\\\\
+v(t) &= \\sqrt{e^{2t} + 2 + e^{-2t}}
+\\\\
+&= \\sqrt{(e^{t} + e^{-t})^2}
+\\\\
+&= e^t + e^{-t}
+\\end{align*}
+$$
+Then, we can apply Lagrange's identity to find the norm $\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|$
+$$
+\\begin{align*}
+\\\\
+\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|^2 &= \\|\\mathbf{a}(t)\\|^2\\|\\mathbf{v}(t)\\|^2 - \\left(\\mathbf{a}(t)\\cdot\\mathbf{v}(t)\\right)^2
+\\\\
+\\\\
+&= \\left(e^{2t} + e^{-2t}\\right)\\left(e^{2t} + e^{-2t} + 2\\right) - \\left(e^{2t} - e^{-2t}\\right)^2
+\\\\
+&= \\left(e^{4t} + 2 + e^{-4t} + 2e^{2t} + 2e^{-2t}\\right) 
+\\\\
+&- \\left(e^{4t} - 2 + e^{-4t}\\right)
+\\\\
+&= 2e^{2t} + 4 + 2e^{-2t}
+\\\\
+&= 2\\left(e^t + e^{-t}\\right)^2
+\\end{align*}
+$$
+Thus, $\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\| = \\sqrt{2}\\left(e^t + e^{-t}\\right).$
+
+Combining this result with our previously calculated speed function, we get:
+$$
+\\begin{align*}
+\\kappa(t) &= \\frac{\\sqrt{2}\\left(e^t + e^{-t}\\right)}{\\left(e^t + e^{-t}\\right)^3}
+\\\\
+\\\\
+&= \\frac{\\sqrt{2}}{\\left(e^t + e^{-t}\\right)^2}
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
@@ -3274,7 +3530,13 @@ $$
 \\kappa &= \\frac{|f''(x)|}{\\{1 + [f'(x)]^2\\}^{3/2}}
 \\end{align*}
 $$`,
-                  hint: ``,
+                  hint: `These are both specific applications of equation (14.22) of Theorem 14.14:
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}{v^3(t)} \\tag{14.22}
+\\end{align*}
+$$`,
                   solution: ``,
                   date: "2025-02-25"
                 },
