@@ -3762,8 +3762,28 @@ $$
 
 (a) Find all $a$ and $b$ which satisfy all these conditions.
 (b) For each possible choice of $a$ and $b$ satisfying the given conditions, make a sketch of the two curves. Show how they intersect at $P$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `What happens if we set $x = 0\\,?$ What about $y = 0\\,?$`,
+                  solution: `Setting $x = 0$ or $y = 0$, we see that both equations become zero. And since there is exactly one point $P$ at which the two curves intersect, then $P = (0, 0).$ Therefore, we wish to find $a$ and $b$ such that at $P = (0, 0)$, the derivatives of both equations with respect to $x$ are equal. Additionally, following the result of Exercise 8, we wish to find $a$ and $b$ such that the absolute values of the curves' second derivatives with respect to $x$ are also equal at $P = (0, 0)$. 
+
+In other words, we wish to find $a$ and $b$ such that when $x = 0$
+$$
+\\begin{align*}
+\\\\
+a(b - 2x) &= \\frac{1}{x + 2} + \\frac{x}{(x + 2)^2}
+\\\\
+\\\\
+\|a\| &= \\frac{x}{(x + 2)^3} - \\frac{1}{(x + 2)^2}
+\\end{align*}
+$$
+Plugging in $x = 0,$ these equations simplify to
+$$
+\\begin{align*}
+\\\\
+ab &= \\frac{1}{2}; \\quad \|a\| = \\frac{1}{4}
+\\end{align*}
+$$
+This is satisfied either when $a = -1/4$ and $b = -2$ or when $a = 1/4$ and $b = 2. \\quad \\blacksquare$
+`,
                   date: "2025-02-25"
                 },
                 {
