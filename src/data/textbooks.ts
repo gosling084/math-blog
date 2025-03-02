@@ -3793,26 +3793,309 @@ This is satisfied either when $a = -1/4$ and $b = -2$ or when $a = 1/4$ and $b =
 (b) Given two fixed unit vectors $A$ and $B$ making an angle $\\theta$ with each other, where $0 < \\theta < \\pi$. 
 The curve with position vector $\\mathbf{r}(t) = tA + t^2B$ is a parabola lying in the plane spanned by $A$ and $B$. Determine (in terms of $A$, $B$, and $\\theta$) the position vector of the vertex of this parabola. You may use the property of the parabola stated in part (a).`,
                   hint: ``,
-                  solution: ``,
+                  solution: `(a) Suppose we have a parabola described by the position vector $\\mathbf{r}$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{r}(x) &= x\\,\\mathbf{i} + cx^2\\,\\mathbf{j}
+\\end{align*}
+$$
+where $c$ is a real-valued scalar constant. Now, we find its velocity, speed, and acceleration with respect to $x$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(x) &= \\mathbf{i} + 2cx\\,\\mathbf{j}
+\\\\
+\\\\
+v(x) &= \\sqrt{1 + 4c^2x^2}
+\\\\
+\\\\
+\\mathbf{a}(x) &= 2c\\,\\mathbf{j}
+\\end{align*}
+$$
+To find the radius of curvature, we first use Equation (14.22) to calculate curvature
+$$
+\\begin{align*}
+\\\\
+\\kappa(x) &= \\frac{\\|\\mathbf{a}(x) \\times \\mathbf{v}(x)\\|}{v^3(x)} \\tag{14.22}
+\\\\
+\\\\
+&= \\frac{\\|-2c\\,\\mathbf{k}\\|}{\\left(1 + 4c^2x^2\\right)^{3/2}}
+\\\\
+\\\\
+&= \\frac{\|2c\|}{\\left(1 + 4c^2x^2\\right)^{3/2}}
+\\end{align*}
+$$
+If $c \\neq 0,$ we can take reciprocal of $\\kappa(x)$ to give:
+$$
+\\begin{align*}
+\\\\
+\\rho(x) &= \\frac{\\left(1 + 4c^2x^2\\right)^{3/2}}{\|2c\|}
+\\end{align*}
+$$
+But, since $4c^2x^2$ must be greater than or equal to zero for all real $x$ and $c,$ then $\\rho(x)$ is smallest at $x = 0.$ But when $x = 0,$ $y = cx^2 = 0,$ which is the vertex of the parabola described by $\\mathbf{r}(x). \\quad \\blacksquare$
+
+(b) Using the result of (a), we know that the vertex of a given parabola is the point at which the radius of curvature is smallest. Thus, we wish to find $t$ that minimizes $\\rho(t).$ First, we find velocity, speed, and acceleration with respect to $t$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= A + 2tB
+\\\\
+\\\\
+v(t) &= \\|A + 2tB\\|
+\\\\
+&= \\left[(A \\cdot A) + 4t(A\\cdot B\\right) + 4t^2(B\\cdot B)]^{1/2}
+\\\\
+&= \\left[1 + 4t\\cos\\theta+ 4t^2\\right]^{1/2}
+\\\\
+\\\\
+\\mathbf{a}(t) &= 2B
+\\end{align*}
+$$
+Then, we can use Equation (14.22) to obtain
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\frac{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}{v^3(t)} \\tag{14.22}
+\\end{align*}
+$$
+Calculating the cross product of acceleration and velocity, noting that $B \\times B = O$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) \\times \\mathbf{v}(t) &= 2B \\times \\left(A + 2tB\\right)
+\\\\
+&= 2B \\times A
+\\end{align*}
+$$
+Taking the norm of this product, noting that $A$ and $B$ are unit vectors, we get:
+$$
+\\begin{align*}
+\\\\
+\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\| &= 2\\|B \\times A\\|
+\\\\
+&= 2\\|B\\|\\|A\\|\\sin\\theta
+\\\\
+&=2\\sin\\theta
+\\end{align*}
+$$
+Combining this with our previously calculated speed, we can express the radius of curvature as the reciprocal of $\\kappa(t)$
+$$
+\\begin{align*}
+\\\\
+\\rho(t) &= \\frac{v^3(t)}{\\|\\mathbf{a}(t) \\times \\mathbf{v}(t)\\|}
+\\\\
+\\\\
+&= \\frac{\\left[1 + 4t\\cos\\theta + 4t^2\\right]^{3/2}}{2\\sin\\theta}
+\\end{align*}
+$$
+To find an extremum of $\\rho$, we take its derivative with respect to $t$
+$$
+\\begin{align*}
+\\\\
+\\rho'(t) &= \\frac{3}{2}\\frac{\\left[1 + 4t\\cos\\theta + 4t^2\\right]^{1/2}}{2\\sin\\theta}\\left(4\\cos\\theta+8t\\right)
+\\end{align*}
+$$
+Setting $\\rho' = 0$ and solving for $t$ we see that the radius of curvature has exactly one extremum at $t = -\\frac{1}{2}\\cos\\theta.$ 
+
+We can see that $\\rho$ is decreasing when $t < -\\frac{1}{2}\\cos\\theta$ and increasing when $t > -\\frac{1}{2}\\cos\\theta$ which must mean that this extremum is a local minimum. And since it is the only extremum, it is also the global minimum. 
+
+But we know from part (a) that the smallest radius of curvature for a parabola occurs at its vertex. Thus, the vertex of the parabola described by $\\mathbf{r}(t)$ occurs at
+$$
+\\begin{align*}
+\\\\
+-\\frac{1}{2}\\cos\\theta A + \\frac{1}{4}\\cos^2\\theta B
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
                   id: 11,
                   number: "14.15.11",
-                  content: `A particle moves along a plane curve with constant speed 5. It starts at the origin at time $t = 0$ with initial velocity $5\\,\\mathbf{j}$, and it never goes to the left of the $y$-axis. At every instant the curvature of the path is $\\kappa(t) = 2t$. Let $\\phi(t)$ denote the angle that the velocity vector makes with the positive $x$-axis at time $t$.
+                  content: `A particle moves along a plane curve with constant speed 5. It starts at the origin at time $t = 0$ with initial velocity $5\\,\\mathbf{j}$, and it never goes to the left of the $y$-axis. At every instant the curvature of the path is $\\kappa(t) = 2t$. Let $\\alpha(t)$ denote the angle that the velocity vector makes with the positive $x$-axis at time $t$.
 
-(a) Determine $\\phi(t)$ explicitly as a function of $t$.
+(a) Determine $\\alpha(t)$ explicitly as a function of $t$.
 (b) Determine the velocity $\\mathbf{v}(t)$ in terms of $\\,\\mathbf{i}$ and $\\,\\mathbf{j}$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `(a) Refer to Example 2 of Section 14.14, "Curvature of a plane curve", to review the relation between curvature $\\kappa(t)$ and the angle $\\alpha(t)$ between the velocity vector and the positive $x$-axis.
+
+(b) Recall from Section 14.8 that the unit tangent $T(t)$ can be expressed in terms of the angle of inclination as follows:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\cos\\alpha(t)\\mathbf{i} + \\sin\\alpha(t)\\mathbf{j}
+\\end{align*}
+$$
+Then, we can multiply the unit tangent by the speed to obtain the velocity in terms of $\\mathbf{i}$ and $\\mathbf{j}.$
+`,
+                  solution: `(a) As discussed in Example 2 of Section 14.14, the angle of inclination $\\alpha(t)$ between the tangent vector and the positive $x$-axis is related to curvature as follows:
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\left\|\\frac{d\\alpha}{ds}\\right\|
+\\end{align*}
+$$
+Using the chain rule, noting that $v(t) = ds/dt$, we can deduce that
+$$
+\\begin{align*}
+\\\\
+\|\\alpha'(t)\| &= \\left\|\\frac{d\\alpha}{dt}\\right\|
+\\\\
+&= \\left\|\\frac{d\\alpha}{ds}\\right\|\\frac{ds}{dt}
+\\\\
+&= \\left\|\\frac{d\\alpha}{ds}\\right\|v(t)
+\\\\
+&= \\kappa(t)v(t)
+\\end{align*}
+$$
+Given that the velocity has a starting angle of $\\pi/2$ and that the particle never crosses the $y$-axis, this implies that the angle of inclination always moves towards $0.$ In other words, $\\alpha'(t) = -\\kappa(t)v(t).$
+
+Plugging in our values for speed and curvature, and noting that the starting angle is $\\pi/2,$ we can express the angle of inclination explicitly as a function of $t$ by integrating its derivative from $0$ to $t$
+$$
+\\begin{align*}
+\\\\
+\\alpha(t) &= \\int_0^t \\alpha'(u)\\,du + \\frac{\\pi}{2}
+\\\\
+\\\\
+&=\\frac{\\pi}{2} - \\int_0^t 10u\\,du
+\\\\
+\\\\
+&= \\frac{\\pi}{2} + 5u^2\\Biggr|_t^0
+\\\\
+&= \\frac{\\pi}{2} -5t^2
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+
+(b) Recall from Section 14.8 that the unit tangent $T(t)$ can be expressed in terms of the angle of inclination as follows:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\cos\\alpha(t)\\mathbf{i} + \\sin\\alpha(t)\\mathbf{j}
+\\end{align*}
+$$
+In other words:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\cos \\left(\\frac{\\pi}{2} -5t^2\\right)\\mathbf{i} + \\sin\\left(\\frac{\\pi}{2} -5t^2\\right)\\mathbf{j}
+\\end{align*}
+$$
+Applying the trigonometric identities
+$$
+\\begin{align*}
+\\\\
+\\cos\\left(x + \\frac{\\pi}{2}\\right) &= -\\sin x
+\\\\
+\\sin\\left(x + \\frac{\\pi}{2}\\right) &= \\cos x
+\\\\
+\\cos(-x) &= \\cos x
+\\\\
+\\sin(-x) &= -\\sin x
+\\end{align*}
+$$ 
+The unit tangent becomes
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\cos \\left(\\frac{\\pi}{2} -5t^2\\right)\\mathbf{i} + \\sin\\left(\\frac{\\pi}{2} -5t^2\\right)\\mathbf{j}
+\\\\
+&= -\\sin \\left(-5t^2\\right)\\mathbf{i} + \\cos\\left(-5t^2\\right)\\mathbf{j}
+\\\\
+&= \\sin \\left(5t^2\\right)\\mathbf{i} + \\cos\\left(5t^2\\right)\\mathbf{j} 
+\\end{align*}
+$$
+Multiplying by speed gives us the velocity in terms of $\\mathbf{i}$ and $\\mathbf{j}$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &=  5\\sin \\left(5t^2\\right)\\mathbf{i} + 5\\cos\\left(5t^2\\right)\\mathbf{j} 
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 },
                 {
                   id: 12,
                   number: "14.15.12",
                   content: `A particle moves along a plane curve with constant speed 2. The motion starts at the origin when $t = 0$ and the initial velocity $\\mathbf{v}(0)$ is $2\\,\\mathbf{i}$. At every instant it is known that the curvature $\\kappa(t) = 4t$. Find the velocity $\\mathbf{v}(t)$ when $t = \\frac{1}{4}\\sqrt{\\pi}$ if the curve never goes below the $x$-axis.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Use the same setup as Exercise 11, but note this time that the starting angle is $0$ and that the particle moves away from the $x$-axis. What does this imply about the angle of inclination $\\alpha(t)$ in relation to the curvature?`,
+                  solution: `As discussed in Example 2 of Section 14.14, the angle of inclination $\\alpha(t)$ between the tangent vector and the positive $x$-axis is related to curvature as follows:
+$$
+\\begin{align*}
+\\\\
+\\kappa(t) &= \\left\|\\frac{d\\alpha}{ds}\\right\|
+\\end{align*}
+$$
+Using the chain rule, noting that $v(t) = ds/dt$, we can deduce that
+$$
+\\begin{align*}
+\\\\
+\|\\alpha'(t)\| &= \\left\|\\frac{d\\alpha}{dt}\\right\|
+\\\\
+&= \\left\|\\frac{d\\alpha}{ds}\\right\|\\frac{ds}{dt}
+\\\\
+&= \\left\|\\frac{d\\alpha}{ds}\\right\|v(t)
+\\\\
+&= \\kappa(t)v(t)
+\\end{align*}
+$$
+Given that the velocity has a starting angle of $0$ and that the particle never crosses the $x$-axis, this implies that the angle of inclination always moves towards $\\pi/2.$ In other words, $\\alpha'(t) = \\kappa(t)v(t).$
+
+Plugging in our values for speed and curvature, and noting that the starting angle is $0,$ we can express the angle of inclination explicitly as a function of $t$ by integrating its derivative from $0$ to $t$
+$$
+\\begin{align*}
+\\\\
+\\alpha(t) &= \\int_0^t \\alpha'(u)\\,du
+\\\\
+\\\\
+&=\\int_0^t 8u\\,du
+\\\\
+\\\\
+&= 4u^2\\Biggr|_0^t
+\\\\
+&= 4t^2
+\\end{align*}
+$$
+
+Then, we recall from Section 14.8 that the unit tangent $T(t)$ can be expressed in terms of the angle of inclination as follows:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\cos\\alpha(t)\\mathbf{i} + \\sin\\alpha(t)\\mathbf{j}
+\\end{align*}
+$$
+In other words:
+$$
+\\begin{align*}
+\\\\
+T(t) &= \\cos \\left(4t^2\\right)\\mathbf{i} + \\sin\\left(4t^2\\right)\\mathbf{j}
+\\end{align*}
+$$
+Multiplying by speed gives us the velocity in terms of $\\mathbf{i}$ and $\\mathbf{j}$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &=  2\\cos \\left(4t^2\\right)\\mathbf{i} + 2\\sin\\left(4t^2\\right)\\mathbf{j} 
+\\end{align*}
+$$
+Evaluating at time $t = \\frac{1}{4}\\sqrt{\\pi}$
+$$
+\\begin{align*}
+\\\\
+\\mathbf{v}\\left(\\frac{1}{4}\\sqrt{\\pi}\\right) &=  2\\cos \\left(\\frac{\\pi}{4}\\right)\\mathbf{i} + 2\\sin\\left(\\frac{\\pi}{4}\\right)\\mathbf{j} 
+\\\\
+&= \\sqrt{2}\\,\\mathbf{i} + \\sqrt{2}\\,\\mathbf{j}
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-02-25"
                 }
               ]
