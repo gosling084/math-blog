@@ -1,4 +1,5 @@
 // src/types.ts
+import { CurveSketchProps } from "@/components/ui/CurveSketch";
 
 // For individual math problems
 export interface Problem {
@@ -8,6 +9,8 @@ export interface Problem {
     hint: string           // Problem hint with LaTeX
     solution: string;      // Solution with LaTeX
     date: string;         // When the solution was added/updated
+    hasVisualization?: boolean; // Flag to indicate if visualization is needed
+    visualization?: CurveSketchProps; // Configuration for the visualization
   }
   
   // For sections within chapters (like 14.1, 14.2, etc.)

@@ -9,6 +9,7 @@ import { Problem, ProblemSet, Chapter, Textbook } from "@/types/types";
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { MathContent } from '@/components/ui/MathContent';
 import { useState } from 'react';
+import { CurveSketch } from '@/components/ui/CurveSketch';
 
 interface ProblemViewProps {
   textbook: Textbook;
@@ -83,6 +84,7 @@ export const ProblemView = ({
 }: ProblemViewProps) => {
   const [showHint, setShowHint] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
+  const [showVisualization, setShowVisualization] = useState(false);
   
   return (
     <div className="max-w-4xl mx-auto p-8">
@@ -140,7 +142,7 @@ export const ProblemView = ({
             </div>
           </div>
 
-          {/* Hint and Solution Buttons */}
+          {/* Hint, Solution, and Visualization Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button 
               variant="outline"
@@ -167,6 +169,19 @@ export const ProblemView = ({
             >
               {showSolution && problem.solution !== "" ? 'Hide Solution' : 'Show Solution'}
             </Button>
+
+            <Button 
+              variant="outline"
+              onClick={() => setShowVisualization(!showVisualization)}
+              disabled={!problem.visualization}
+              className={cn(
+                "bg-card text-card-foreground w-full sm:w-auto",
+                "hover:bg-transparent",
+                "text-muted-foreground"
+              )}
+            >
+              {showVisualization && problem.hasVisualization ? 'Hide Visualization' : 'Show Visualization'}
+            </Button>
           </div>
 
           {/* Hint Content */}
@@ -189,6 +204,18 @@ export const ProblemView = ({
               </h2>
               <div className="math-content">
                 <MathContent content={problem.solution} />
+              </div>
+            </div>
+          )}
+
+          {/* Visualization Content */}
+          {showVisualization && problem.hasVisualization && problem.visualization && (
+            <div className="mt-6 overflow-x-auto">
+              <h2 className="text-xl sm:text-2xl mb-4 text-foreground bg-card">
+                Visualization
+              </h2>
+              <div className="flex justify-center">
+                <CurveSketch {...problem.visualization} />
               </div>
             </div>
           )}
