@@ -205,8 +205,8 @@ export function useAppRouter() {
       router.push(`/?id=${textbook.id}&chapter=${chapter.id}&set=${problemSet.id}`);
     },
 
-    navigateToProblem: (textbook: Textbook, chapter: Chapter, problemSet: ProblemSet, problem: Problem) => {
-      router.push(`/?id=${textbook.id}&chapter=${chapter.id}&set=${problemSet.id}&p=${problem.id}`);
+    navigateToProblem: (textbook: number, chapter: number, problemSet: number, problem: number) => {
+      router.push(`/?id=${textbook}&chapter=${chapter}&set=${problemSet}&p=${problem}`);
     }
   };
 

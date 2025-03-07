@@ -16,11 +16,6 @@ interface ProblemViewProps {
   nextProblem: Problem | null;
   previousProblem: Problem | null;
   onNavigateToProblem: (problem: Problem) => void;
-  // For cross-section navigation
-  previousSectionLastProblem: Problem | null;
-  nextSectionFirstProblem: Problem | null;
-  previousSectionTitle: string | null;
-  nextSectionTitle: string | null;
 }
 
 // Skeleton component for loading state
@@ -67,10 +62,6 @@ export const ProblemView = ({
   nextProblem,
   previousProblem,
   onNavigateToProblem,
-  previousSectionLastProblem,
-  nextSectionFirstProblem,
-  previousSectionTitle,
-  nextSectionTitle
 }: ProblemViewProps) => {
   const [showHint, setShowHint] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
@@ -117,7 +108,7 @@ export const ProblemView = ({
                 variant="outline"
                 size="icon"
                 onClick={() => previousProblem && onNavigateToProblem(previousProblem)}
-                disabled={!previousProblem && !previousSectionLastProblem}
+                disabled={!previousProblem}
                 className="h-8 w-8"
               >
                 <ArrowLeft className="h-4 w-4" />
@@ -126,7 +117,7 @@ export const ProblemView = ({
                 variant="outline"
                 size="icon"
                 onClick={() => nextProblem && onNavigateToProblem(nextProblem)}
-                disabled={!nextProblem && !nextSectionFirstProblem}
+                disabled={!nextProblem}
                 className="h-8 w-8"
               >
                 <ArrowRight className="h-4 w-4" />
@@ -249,17 +240,6 @@ export const ProblemView = ({
             <ChevronLeft className="w-4 h-4 mr-2" />
             <span>Previous Problem</span>
           </Button>
-        ) : previousSectionLastProblem ? (
-          <Button
-            onClick={() => onNavigateToProblem(previousSectionLastProblem)}
-            className="flex items-center justify-center"
-            variant="outline"
-          >
-            <ChevronLeft className="w-4 h-4 mr-2" />
-            <span>
-              Last in {formatSectionTitle(previousSectionTitle || '')}
-            </span>
-          </Button>
         ) : (
           <div /> // Empty spacer
         )}
@@ -282,17 +262,6 @@ export const ProblemView = ({
             variant="outline"
           >
             <span>Next Problem</span>
-            <ChevronRight className="w-4 h-4 ml-2" />
-          </Button>
-        ) : nextSectionFirstProblem ? (
-          <Button
-            onClick={() => onNavigateToProblem(nextSectionFirstProblem)}
-            className="flex items-center justify-center"
-            variant="outline"
-          >
-            <span>
-              First in {formatSectionTitle(nextSectionTitle || '')}
-            </span>
             <ChevronRight className="w-4 h-4 ml-2" />
           </Button>
         ) : (

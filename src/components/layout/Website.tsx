@@ -142,10 +142,10 @@ const Website = () => {
                         }}
                         onSelectProblem={(problem) => 
                           router.actions.navigateToProblem(
-                            router.activeContent.textbook!, 
-                            router.activeContent.chapter!, 
-                            router.activeContent.problemSet!, 
-                            problem
+                            router.activeContent.textbook!.id, 
+                            router.activeContent.chapter!.id, 
+                            router.activeContent.problemSet!.id, 
+                            problem.id
                           )}
                         onBackToContents={() => 
                           router.actions.navigateToTextbook(router.activeContent.textbook!)
@@ -169,31 +169,20 @@ const Website = () => {
                             router.activeContent.chapter!, 
                             router.activeContent.problemSet!
                           )}
-                        nextProblem={getProblemNavigation(router.activeContent.problemSet!, router.activeContent.problem!, 'next')}
-                        previousProblem={getProblemNavigation(router.activeContent.problemSet!, router.activeContent.problem!, 'previous')}
+                        nextProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'next')}
+                        previousProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
                         onNavigateToProblem={(problem) => {
                           // Find the containing problem set and chapter if this might be a cross-section problem
-                          const { chapter, problemSet } = findContainingProblemSet(
-                            router.activeContent.textbook!, 
-                            problem
-                          ) || {
-                            chapter: router.activeContent.chapter!,
-                            problemSet: router.activeContent.problemSet!
-                          };
+                          const [chapterNumber, problemSetNumber, problemNumber]: number[] = problem.number.split(".").map(id => Number(id))
                           
                           router.actions.navigateToProblem(
-                            router.activeContent.textbook!,
-                            chapter,
-                            problemSet,
-                            problem
+                            router.activeContent.textbook!.id,
+                            chapterNumber,
+                            problemSetNumber,
+                            problemNumber
                           );
                         }}
-                        // Cross-section navigation props
-                        previousSectionLastProblem={router.activeContent.previousSectionLastProblem || null}
-                        nextSectionFirstProblem={router.activeContent.nextSectionFirstProblem || null}
-                        previousSectionTitle={router.activeContent.previousSectionTitle || null}
-                        nextSectionTitle={router.activeContent.nextSectionTitle || null}
-                      />
+                        />
                     </Suspense>
                   )}
                 </>
@@ -217,26 +206,51 @@ const Website = () => {
 };
 
 // Helper function to get next or previous problem
-const getProblemNavigation = (problemSet: ProblemSet, currentProblem: Problem, direction: 'next' | 'previous'): Problem | null => {
-  const index = problemSet.problems.findIndex(p => p.id === currentProblem.id);
-  if (direction === 'previous') {
-    return index > 0 ? problemSet.problems[index - 1] : null;
-  } else {
-    return index < problemSet.problems.length - 1 ? problemSet.problems[index + 1] : null;
-  }
-};
+const getProblemNavigation = (textbook: Textbook, currentProblem: Problem, direction: 'next' | 'previous'): Problem | null => {
+  const [chapter, section, problem]: number[] = currentProblem.number.split(".").map(num => Number(num));
+  
+  const chapterIndex: number = textbook.chapters.findIndex((ch: Chapter) => ch.id === chapter);
+  const sectionIndex: number = textbook.chapters[chapterIndex].problemSets.findIndex((sec: ProblemSet) => sec.id === section);
+  const problemIndex: number = textbook.chapters[chapterIndex].problemSets[sectionIndex].problems.findIndex((p: Problem) => p.id === problem);
+  
+  const problemsLength: number = textbook.chapters[chapterIndex].problemSets[sectionIndex].problems.length;
+  const sectionsLength: number = textbook.chapters[chapterIndex].problemSets.length;
+  const chaptersLength: number = textbook.chapters.length;
 
-// Helper function to find which chapter and problem set contains a given problem
-// Used for cross-section navigation
-const findContainingProblemSet = (textbook: Textbook, problem: Problem): { chapter: Chapter, problemSet: ProblemSet } | null => {
-  for (const chapter of textbook.chapters) {
-    for (const problemSet of chapter.problemSets) {
-      if (problemSet.problems.some(p => p.id === problem.id)) {
-        return { chapter, problemSet };
+  if (direction === "next") {
+    if (problemIndex === (problemsLength - 1)) {
+      if (sectionIndex === (sectionsLength - 1)) {
+        if (chapterIndex === (chaptersLength - 1)) {
+          return null;
+        } else {
+          return textbook.chapters[chapterIndex + 1].problemSets[0].problems[0];
+        }
+      } else {
+        return textbook.chapters[chapterIndex].problemSets[sectionIndex + 1].problems[0];
       }
+    } else {
+      return textbook.chapters[chapterIndex].problemSets[sectionIndex].problems[problemIndex + 1];
     }
+  } else if (direction === "previous") {
+    if (problemIndex === 0) {
+      if (sectionIndex === 0) {
+        if (chapterIndex === 0) {
+          return null;
+        } else {
+          const prevChapterLength: number = textbook.chapters[chapterIndex - 1].problemSets.length;
+          const prevProblemSetLength: number = textbook.chapters[chapterIndex - 1].problemSets[prevChapterLength - 1].problems.length;
+          return textbook.chapters[chapterIndex - 1].problemSets[prevChapterLength - 1].problems[prevProblemSetLength - 1];
+        }
+      } else {
+        const prevProblemSetLength: number = textbook.chapters[chapterIndex].problemSets.length;
+        return textbook.chapters[chapterIndex].problemSets[prevProblemSetLength - 1].problems[prevProblemSetLength - 1];
+      }
+    } else {
+      return textbook.chapters[chapterIndex].problemSets[sectionIndex].problems[problemIndex - 1];
+    }
+  } else {
+    return null;
   }
-  return null;
 };
 
 export default Website;
