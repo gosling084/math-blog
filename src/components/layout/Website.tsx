@@ -242,8 +242,8 @@ const getProblemNavigation = (textbook: Textbook, currentProblem: Problem, direc
           return textbook.chapters[chapterIndex - 1].problemSets[prevChapterLength - 1].problems[prevProblemSetLength - 1];
         }
       } else {
-        const prevProblemSetLength: number = textbook.chapters[chapterIndex].problemSets.length;
-        return textbook.chapters[chapterIndex].problemSets[prevProblemSetLength - 1].problems[prevProblemSetLength - 1];
+        const prevProblemSetLength: number = textbook.chapters[chapterIndex].problemSets[sectionIndex - 1].problems.length;
+        return textbook.chapters[chapterIndex].problemSets[sectionIndex - 1].problems[prevProblemSetLength - 1];
       }
     } else {
       return textbook.chapters[chapterIndex].problemSets[sectionIndex].problems[problemIndex - 1];
