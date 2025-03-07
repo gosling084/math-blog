@@ -1,67 +1,58 @@
-// src/components/ProblemView.tsx
+// src/components/pages/ProblemView.tsx
 "use client";
-import React from 'react';
-import { ChevronRight } from 'lucide-react';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight, BookOpen, ArrowLeft, ArrowRight, Lightbulb, PenTool } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Problem, ProblemSet, Chapter, Textbook } from "@/types/types";
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { Problem, ProblemSet } from "@/types/types";
 import { MathContent } from '@/components/ui/MathContent';
-import { useState } from 'react';
 import { CurveSketch } from '@/components/ui/CurveSketch';
 
 interface ProblemViewProps {
-  textbook: Textbook;
-  chapter: Chapter;
   problemSet: ProblemSet;
   problem: Problem;
-  onNavigateToHome: () => void;
-  onNavigateToTextbook: () => void;
-  onNavigateToChapter: () => void;
   onNavigateToProblemSet: () => void;
   nextProblem: Problem | null;
   previousProblem: Problem | null;
   onNavigateToProblem: (problem: Problem) => void;
+  // For cross-section navigation
+  previousSectionLastProblem: Problem | null;
+  nextSectionFirstProblem: Problem | null;
+  previousSectionTitle: string | null;
+  nextSectionTitle: string | null;
 }
 
 // Skeleton component for loading state
 export const ProblemViewSkeleton = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
-      {/* Breadcrumb skeleton */}
-      <div className="mb-4 sm:mb-8 flex gap-2 items-center overflow-x-auto">
-        {[1, 2, 3, 4, 5].map((i) => (
-          <React.Fragment key={i}>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-20 flex-shrink-0" />
-            {i < 5 && <div className="h-4 w-4 flex-shrink-0" />}
-          </React.Fragment>
-        ))}
+    <div className="max-w-4xl mx-auto px-8">
+      {/* Navigation skeleton */}
+      <div className="flex justify-between mb-8">
+        <div className="h-10 w-40 bg-gray-200 rounded animate-pulse" />
+        <div className="h-10 w-40 bg-gray-200 rounded animate-pulse" />
       </div>
 
       <Card className="bg-card text-card-foreground">
-        <CardHeader className="space-y-1">
-          <div className="h-8 bg-gray-200 rounded-lg w-48 animate-pulse" />
-          <div className="h-5 bg-gray-200 rounded w-36 animate-pulse" />
-        </CardHeader>
-        <CardContent className="space-y-6 sm:space-y-8">
+        <CardContent className="p-6 space-y-6">
+          {/* Problem Header */}
+          <div className="flex flex-col gap-2">
+            <div className="h-8 bg-gray-200 rounded-lg w-48 animate-pulse" />
+            <div className="h-5 bg-gray-200 rounded w-36 animate-pulse" />
+          </div>
+
           {/* Problem Statement skeleton */}
-          <div className="space-y-4">
+          <div className="space-y-4 py-4 border-b border-t border-border">
             {[1, 2, 3].map((i) => (
               <div key={i} className="h-6 bg-gray-200 rounded animate-pulse" />
             ))}
           </div>
 
-          {/* Hint and Solution Buttons skeleton */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <div className="h-10 w-full sm:w-24 bg-gray-200 rounded animate-pulse" />
-            <div className="h-10 w-full sm:w-24 bg-gray-200 rounded animate-pulse" />
-          </div>
-
-          {/* Navigation buttons skeleton */}
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-0">
-            <div className="h-10 w-full sm:w-32 bg-gray-200 rounded animate-pulse" />
-            <div className="h-10 w-full sm:w-32 bg-gray-200 rounded animate-pulse" />
+          {/* Buttons skeleton */}
+          <div className="flex gap-3">
+            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
+            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
+            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
           </div>
         </CardContent>
       </Card>
@@ -70,91 +61,99 @@ export const ProblemViewSkeleton = () => {
 };
 
 export const ProblemView = ({
-  textbook,
-  chapter,
   problemSet,
   problem,
-  onNavigateToHome,
-  onNavigateToTextbook,
-  onNavigateToChapter,
   onNavigateToProblemSet,
   nextProblem,
   previousProblem,
-  onNavigateToProblem
+  onNavigateToProblem,
+  previousSectionLastProblem,
+  nextSectionFirstProblem,
+  previousSectionTitle,
+  nextSectionTitle
 }: ProblemViewProps) => {
   const [showHint, setShowHint] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
   const [showVisualization, setShowVisualization] = useState(false);
+
+  // Function to format the section title
+  const formatSectionTitle = (title: string) => {
+    const sectionMatch = title.match(/^(\d+\.\d+)/);
+    return sectionMatch ? sectionMatch[1] : title;
+  };
   
   return (
-    <div className="max-w-4xl mx-auto p-8">
-      {/* Navigation: Breadcrumb for larger screens, Back button for mobile */}
-      <div className="mb-4 sm:mb-8">
-        {/* Back button - visible only on mobile */}
-        <button
+    <div className="max-w-4xl mx-auto px-8">
+      {/* Top Navigation Bar */}
+      <div className="flex justify-between items-center mb-6">
+        {/* Left side - Back to section */}
+        <Button
+          variant="link"
+          className="flex items-center space-x-2"
           onClick={onNavigateToProblemSet}
-          className="sm:hidden flex items-center text-primary hover:text-primary/80 mb-4"
         >
-          <ChevronRight className="w-4 h-4 mr-1 rotate-180" />
-          Back to problems
-        </button>
-
-        {/* Breadcrumb - hidden on mobile, visible on larger screens */}
-        <div className="hidden sm:block overflow-x-auto">
-          <Breadcrumb
-            items={[
-              { label: "Books", onClick: onNavigateToHome, type: 'home' },
-              { label: textbook.title, onClick: onNavigateToTextbook, type: 'textbook' },
-              { label: chapter.title, onClick: onNavigateToChapter, type: 'chapter' },
-              { label: problemSet.title, onClick: onNavigateToProblemSet, type: 'problem-set' },
-              { label: `Problem ${problem.number}`, onClick: () => {}, type: 'problem' }
-            ]}
-          />
-        </div>
+          <ChevronLeft className="h-4 w-4" />
+          <span>Back to {formatSectionTitle(problemSet.title)}</span>
+        </Button>
       </div>
 
-      {/* Problem Set header with view toggle */}
-      <div className="space-y-4 mb-8">
+      {/* Main Problem Card */}
+      <Card className="bg-card text-card-foreground mb-6">
+        <CardContent className="p-6 space-y-6">
+          {/* Problem Header */}
           <div className="flex justify-between items-center">
-            <h1 className="text-3xl font-bold text-card-foreground">
-              {problemSet.title}
-            </h1>
+            <div>
+              <h1 className="text-2xl font-bold text-foreground">
+                Problem {problem.number}
+              </h1>
+              <p className="text-sm text-muted-foreground">
+                Added {new Date(problem.date).toLocaleDateString()}
+              </p>
+            </div>
+            
+            {/* Problem navigation mini-controls */}
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => previousProblem && onNavigateToProblem(previousProblem)}
+                disabled={!previousProblem && !previousSectionLastProblem}
+                className="h-8 w-8"
+              >
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => nextProblem && onNavigateToProblem(nextProblem)}
+                disabled={!nextProblem && !nextSectionFirstProblem}
+                className="h-8 w-8"
+              >
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
-          <p className="text-muted-foreground">
-            {problemSet.description}
-          </p>
-        </div>
 
-      <Card className="bg-card text-card-foreground overflow-hidden">
-        <CardHeader className="space-y-1">
-          <CardTitle className="text-xl sm:text-2xl text-foreground bg-card">
-            Problem {problem.number}
-          </CardTitle>
-          <p className="text-sm sm:text-base text-muted-foreground">
-            Added {new Date(problem.date).toLocaleDateString()}
-          </p>
-        </CardHeader>
-        <CardContent className="space-y-6 sm:space-y-8">
-          {/* Problem Statement */}
-          <div className="overflow-x-auto">
+          {/* Problem Statement - Styled like a textbook */}
+          <div className="py-6 border-y border-border">
             <div className="math-content">
               <MathContent content={problem.content} />
             </div>
           </div>
 
-          {/* Hint, Solution, and Visualization Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          {/* Action Buttons - with improved icons and styling */}
+          <div className="flex flex-wrap gap-3">
             <Button 
               variant="outline"
               onClick={() => setShowHint(!showHint)}
               disabled={problem.hint === ""}
               className={cn(
-                "bg-card text-card-foreground w-full sm:w-auto",
-                "hover:bg-transparent",
-                "text-muted-foreground"
+                "bg-card flex items-center gap-2",
+                showHint && problem.hint !== "" && "ring-2 ring-primary/30"
               )}
             >
-              {showHint && problem.hint !== "" ? 'Hide Hint' : 'Show Hint'}
+              <Lightbulb className="h-4 w-4" />
+              <span>{showHint && problem.hint !== "" ? 'Hide Hint' : 'Show Hint'}</span>
             </Button>
             
             <Button 
@@ -162,105 +161,144 @@ export const ProblemView = ({
               onClick={() => setShowSolution(!showSolution)}
               disabled={problem.solution === ""}
               className={cn(
-                "bg-card text-card-foreground w-full sm:w-auto",
-                "hover:bg-transparent",
-                "text-muted-foreground"
+                "bg-card flex items-center gap-2",
+                showSolution && problem.solution !== "" && "ring-2 ring-primary/30"
               )}
             >
-              {showSolution && problem.solution !== "" ? 'Hide Solution' : 'Show Solution'}
+              <PenTool className="h-4 w-4" />
+              <span>{showSolution && problem.solution !== "" ? 'Hide Solution' : 'Show Solution'}</span>
             </Button>
 
-            <Button 
-              variant="outline"
-              onClick={() => setShowVisualization(!showVisualization)}
-              disabled={!problem.visualization}
-              className={cn(
-                "bg-card text-card-foreground w-full sm:w-auto",
-                "hover:bg-transparent",
-                "text-muted-foreground"
-              )}
-            >
-              {showVisualization && problem.hasVisualization ? 'Hide Visualization' : 'Show Visualization'}
-            </Button>
-          </div>
-
-          {/* Hint Content */}
-          {showHint && problem.hint !== "" && (
-            <div className="overflow-x-auto">
-              <h2 className="text-xl sm:text-2xl mb-4 text-foreground bg-card">
-                Hint
-              </h2>
-              <div className="math-content">
-                <MathContent content={problem.hint} />
-              </div>
-            </div>
-          )}
-
-          {/* Solution Content */}
-          {showSolution && (
-            <div className="overflow-x-auto">
-              <h2 className="text-xl sm:text-2xl mb-4 text-foreground bg-card">
-                Solution
-              </h2>
-              <div className="math-content">
-                <MathContent content={problem.solution} />
-              </div>
-            </div>
-          )}
-
-          {/* Visualization Content */}
-          {showVisualization && problem.hasVisualization && problem.visualization && (
-            <div className="mt-6 overflow-x-auto">
-              <h2 className="text-xl sm:text-2xl mb-4 text-foreground bg-card">
-                Visualization
-              </h2>
-              <div className="flex justify-center">
-                <CurveSketch {...problem.visualization} />
-              </div>
-            </div>
-          )}
-
-          {/* Navigation buttons */}
-          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 sm:gap-0">
-            {previousProblem ? (
-              <Button
-                onClick={() => onNavigateToProblem(previousProblem)}
-                className={cn(
-                  "flex items-center justify-center",
-                  "bg-card text-card-foreground",
-                  "hover:bg-transparent",
-                  "text-muted-foreground",
-                  "w-full sm:w-auto"
-                )}
+            {problem.hasVisualization && problem.visualization && (
+              <Button 
                 variant="outline"
-              >
-                <ChevronRight className="w-4 h-4 mr-2 rotate-180 text-muted-foreground" />
-                <span className="whitespace-nowrap">Previous Problem</span>
-              </Button>
-            ) : (
-              <div className="sm:flex-1" />
-            )}
-            {nextProblem ? (
-              <Button
-                onClick={() => onNavigateToProblem(nextProblem)}
+                onClick={() => setShowVisualization(!showVisualization)}
                 className={cn(
-                  "flex items-center justify-center",
-                  "bg-card text-card-foreground",
-                  "hover:bg-transparent",
-                  "text-muted-foreground",
-                  "w-full sm:w-auto"
+                  "bg-card flex items-center gap-2",
+                  showVisualization && problem.hasVisualization && "ring-2 ring-primary/30"
                 )}
-                variant="outline"
               >
-                <span className="whitespace-nowrap">Next Problem</span>
-                <ChevronRight className="w-4 h-4 ml-2 text-muted-foreground" />
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M3 15s2-3 4-3 4 3 6 3 4-3 6-3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                <span>{showVisualization ? 'Hide Visualization' : 'Show Visualization'}</span>
               </Button>
-            ) : (
-              <div className="sm:flex-1" />
             )}
           </div>
         </CardContent>
       </Card>
+
+      {/* Hint Content Panel */}
+      {showHint && problem.hint !== "" && (
+        <Card className="mb-6 bg-card border-primary/20">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-medium mb-4 flex items-center text-foreground">
+              <Lightbulb className="h-5 w-5 mr-2 text-primary" />
+              Hint
+            </h2>
+            <div className="math-content pl-7">
+              <MathContent content={problem.hint} />
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Solution Content Panel */}
+      {showSolution && (
+        <Card className="mb-6 bg-card border-primary/20">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-medium mb-4 flex items-center text-foreground">
+              <PenTool className="h-5 w-5 mr-2 text-primary" />
+              Solution
+            </h2>
+            <div className="math-content pl-7">
+              <MathContent content={problem.solution} />
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Visualization Panel */}
+      {showVisualization && problem.hasVisualization && problem.visualization && (
+        <Card className="mb-6 bg-card border-primary/20">
+          <CardContent className="p-6">
+            <h2 className="text-xl font-medium mb-4 flex items-center text-foreground">
+              <svg className="h-5 w-5 mr-2 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 15s2-3 4-3 4 3 6 3 4-3 6-3" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              Visualization
+            </h2>
+            <div className="flex justify-center">
+              <CurveSketch {...problem.visualization} />
+            </div>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Bottom Navigation - Full width buttons for large screens, stacked for mobile */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-8">
+        {/* Previous Problem Button - including previous section's last problem if needed */}
+        {previousProblem ? (
+          <Button
+            onClick={() => onNavigateToProblem(previousProblem)}
+            className="flex items-center justify-center"
+            variant="outline"
+          >
+            <ChevronLeft className="w-4 h-4 mr-2" />
+            <span>Previous Problem</span>
+          </Button>
+        ) : previousSectionLastProblem ? (
+          <Button
+            onClick={() => onNavigateToProblem(previousSectionLastProblem)}
+            className="flex items-center justify-center"
+            variant="outline"
+          >
+            <ChevronLeft className="w-4 h-4 mr-2" />
+            <span>
+              Last in {formatSectionTitle(previousSectionTitle || '')}
+            </span>
+          </Button>
+        ) : (
+          <div /> // Empty spacer
+        )}
+
+        {/* Back to Section - Center Button */}
+        <Button
+          variant="outline"
+          onClick={onNavigateToProblemSet}
+          className="flex items-center justify-center"
+        >
+          <BookOpen className="w-4 h-4 mr-2" />
+          <span>Problem Set</span>
+        </Button>
+
+        {/* Next Problem Button - including next section's first problem if needed */}
+        {nextProblem ? (
+          <Button
+            onClick={() => onNavigateToProblem(nextProblem)}
+            className="flex items-center justify-center"
+            variant="outline"
+          >
+            <span>Next Problem</span>
+            <ChevronRight className="w-4 h-4 ml-2" />
+          </Button>
+        ) : nextSectionFirstProblem ? (
+          <Button
+            onClick={() => onNavigateToProblem(nextSectionFirstProblem)}
+            className="flex items-center justify-center"
+            variant="outline"
+          >
+            <span>
+              First in {formatSectionTitle(nextSectionTitle || '')}
+            </span>
+            <ChevronRight className="w-4 h-4 ml-2" />
+          </Button>
+        ) : (
+          <div /> // Empty spacer
+        )}
+      </div>
     </div>
   );
 };

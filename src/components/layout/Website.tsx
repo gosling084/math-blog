@@ -3,14 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import { Home, Info, Mail } from 'lucide-react';
 import { cn } from "@/lib/utils";
-import { ProblemSet, Problem, ViewType } from "@/types/types";
-import { TextbookView, TextbookViewSkeleton } from '@/components/pages/TextbookView';
+import { ProblemSet, Problem, Textbook, Chapter} from "@/types/types";
+import { TextbookTableOfContents, TextbookTableOfContentsSkeleton } from '@/components/pages/TextbookTableofContents';
 import { HomePage, HomePageSkeleton } from '@/components/pages/HomePage';
-import { ChapterView, ChapterViewSkeleton } from '@/components/pages/ChapterView';
 import { ProblemSetView, ProblemSetViewSkeleton } from '@/components/pages/ProblemSetView';
 import { ProblemView, ProblemViewSkeleton } from '@/components/pages/ProblemView';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { useLocalStorage } from '@/hooks/useLocalStorage';
 import { FontToggle } from '@/components/ui/FontToggle';
 import { FontProvider } from '@/providers/font-provider';
 import { About } from '@/components/pages/About';
@@ -21,31 +19,10 @@ import { AppRouterProvider } from '@/providers/AppRouterProvider';
 const Website = () => {
   // All hooks must be called before any conditional returns
   const [mounted, setMounted] = useState(false);
-  
-  // Local storage hook
-  const [viewPreferences, setViewPreferences] = useLocalStorage<{
-    textbook: ViewType;
-    chapter: ViewType;
-    problemSet: ViewType;
-  }>('viewPreferences', {
-    textbook: 'card',
-    chapter: 'card',
-    problemSet: 'card'
-  });
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const getPreviousProblem = (problemSet: ProblemSet, currentProblem: Problem): Problem | null => {
-    const index = problemSet.problems.findIndex(p => p.id === currentProblem.id);
-    return index > 0 ? problemSet.problems[index - 1] : null;
-  };
-  
-  const getNextProblem = (problemSet: ProblemSet, currentProblem: Problem): Problem | null => {
-    const index = problemSet.problems.findIndex(p => p.id === currentProblem.id);
-    return index < problemSet.problems.length - 1 ? problemSet.problems[index + 1] : null;
-  };
 
   if (!mounted) {
     return null;
@@ -125,45 +102,16 @@ const Website = () => {
                     </Suspense>
                   )}
 
-                  {/* Textbook view */}
-                  {router.params.bookId && !router.params.chapterId && router.activeContent.textbook && (
-                    <Suspense fallback={<TextbookViewSkeleton />}>
-                      <TextbookView 
+                  {/* TextbookTableOfContents view (replaces both TextbookView and ChapterView) */}
+                  {router.params.bookId && !router.params.setId && router.activeContent.textbook && (
+                    <Suspense fallback={<TextbookTableOfContentsSkeleton />}>
+                      <TextbookTableOfContents 
                         textbook={router.activeContent.textbook}
-                        defaultView={viewPreferences.textbook}
-                        onViewChange={(view) => {
-                          setViewPreferences({
-                            ...viewPreferences,
-                            textbook: view
-                          });
-                        }}
                         onBack={router.actions.navigateToHome}
-                        onSelectChapter={(chapter) => 
-                          router.actions.navigateToChapter(router.activeContent.textbook!, chapter)}
-                      />
-                    </Suspense>
-                  )}
-
-                  {/* Chapter view */}
-                  {router.params.bookId && router.params.chapterId && !router.params.setId && 
-                  router.activeContent.textbook && router.activeContent.chapter && (
-                    <Suspense fallback={<ChapterViewSkeleton />}>
-                      <ChapterView
-                        textbook={router.activeContent.textbook}
-                        chapter={router.activeContent.chapter}
-                        defaultView={viewPreferences.chapter}
-                        onViewChange={(view) => {
-                          setViewPreferences({
-                            ...viewPreferences,
-                            chapter: view
-                          });
-                        }}
-                        onBack={() => router.actions.navigateToTextbook(router.activeContent.textbook!)}
-                        onNavigateToTextbook={router.actions.navigateToHome}
-                        onSelectProblemSet={(problemSet) => 
-                          router.actions.navigateToProblemSet(
+                        onSelectProblemSet={(chapter, problemSet) => 
+                          router.actions.navigateFromTableOfContents(
                             router.activeContent.textbook!, 
-                            router.activeContent.chapter!, 
+                            chapter, 
                             problemSet
                           )}
                       />
@@ -176,22 +124,22 @@ const Website = () => {
                   router.activeContent.chapter && router.activeContent.problemSet && (
                     <Suspense fallback={<ProblemSetViewSkeleton />}>
                       <ProblemSetView
-                        textbook={router.activeContent.textbook}
-                        chapter={router.activeContent.chapter}
                         problemSet={router.activeContent.problemSet}
-                        defaultView={viewPreferences.problemSet}
-                        onViewChange={(view) => {
-                          setViewPreferences({
-                            ...viewPreferences,
-                            problemSet: view
-                          });
+                        previousProblemSet={router.activeContent.previousProblemSet || null}
+                        nextProblemSet={router.activeContent.nextProblemSet || null}
+                        onNavigateToProblemSet={(problemSet) => {
+                          // Find the chapter for this problem set
+                          const chapter = router.activeContent.textbook!.chapters.find(c =>
+                            c.problemSets.some(ps => ps.id === problemSet.id)
+                          );
+                          if (chapter) {
+                            router.actions.navigateToProblemSet(
+                              router.activeContent.textbook!,
+                              chapter,
+                              problemSet
+                            );
+                          }
                         }}
-                        onBack={() => router.actions.navigateToChapter(
-                          router.activeContent.textbook!, 
-                          router.activeContent.chapter!
-                        )}
-                        onNavigateToTextbook={router.actions.navigateToHome}
-                        onNavigateToChapter={() => router.actions.navigateToTextbook(router.activeContent.textbook!)}
                         onSelectProblem={(problem) => 
                           router.actions.navigateToProblem(
                             router.activeContent.textbook!, 
@@ -199,6 +147,9 @@ const Website = () => {
                             router.activeContent.problemSet!, 
                             problem
                           )}
+                        onBackToContents={() => 
+                          router.actions.navigateToTextbook(router.activeContent.textbook!)
+                        }
                       />
                     </Suspense>
                   )}
@@ -210,33 +161,38 @@ const Website = () => {
                   router.activeContent.problem && (
                     <Suspense fallback={<ProblemViewSkeleton />}>
                       <ProblemView
-                        textbook={router.activeContent.textbook}
-                        chapter={router.activeContent.chapter}
                         problemSet={router.activeContent.problemSet}
                         problem={router.activeContent.problem}
-                        onNavigateToHome={router.actions.navigateToHome}
-                        onNavigateToTextbook={() => router.actions.navigateToTextbook(
-                          router.activeContent.textbook!
-                        )}
-                        onNavigateToChapter={() => router.actions.navigateToChapter(
-                          router.activeContent.textbook!, 
-                          router.activeContent.chapter!
-                        )}
                         onNavigateToProblemSet={() => 
                           router.actions.navigateToProblemSet(
                             router.activeContent.textbook!, 
                             router.activeContent.chapter!, 
                             router.activeContent.problemSet!
                           )}
-                        nextProblem={getNextProblem(router.activeContent.problemSet!, router.activeContent.problem!)}
-                        previousProblem={getPreviousProblem(router.activeContent.problemSet!, router.activeContent.problem!)}
-                        onNavigateToProblem={(problem) => 
-                          router.actions.navigateToProblem(
+                        nextProblem={getProblemNavigation(router.activeContent.problemSet!, router.activeContent.problem!, 'next')}
+                        previousProblem={getProblemNavigation(router.activeContent.problemSet!, router.activeContent.problem!, 'previous')}
+                        onNavigateToProblem={(problem) => {
+                          // Find the containing problem set and chapter if this might be a cross-section problem
+                          const { chapter, problemSet } = findContainingProblemSet(
                             router.activeContent.textbook!, 
-                            router.activeContent.chapter!, 
-                            router.activeContent.problemSet!, 
                             problem
-                          )}
+                          ) || {
+                            chapter: router.activeContent.chapter!,
+                            problemSet: router.activeContent.problemSet!
+                          };
+                          
+                          router.actions.navigateToProblem(
+                            router.activeContent.textbook!,
+                            chapter,
+                            problemSet,
+                            problem
+                          );
+                        }}
+                        // Cross-section navigation props
+                        previousSectionLastProblem={router.activeContent.previousSectionLastProblem || null}
+                        nextSectionFirstProblem={router.activeContent.nextSectionFirstProblem || null}
+                        previousSectionTitle={router.activeContent.previousSectionTitle || null}
+                        nextSectionTitle={router.activeContent.nextSectionTitle || null}
                       />
                     </Suspense>
                   )}
@@ -258,6 +214,29 @@ const Website = () => {
     </div>
     </FontProvider>
   );
+};
+
+// Helper function to get next or previous problem
+const getProblemNavigation = (problemSet: ProblemSet, currentProblem: Problem, direction: 'next' | 'previous'): Problem | null => {
+  const index = problemSet.problems.findIndex(p => p.id === currentProblem.id);
+  if (direction === 'previous') {
+    return index > 0 ? problemSet.problems[index - 1] : null;
+  } else {
+    return index < problemSet.problems.length - 1 ? problemSet.problems[index + 1] : null;
+  }
+};
+
+// Helper function to find which chapter and problem set contains a given problem
+// Used for cross-section navigation
+const findContainingProblemSet = (textbook: Textbook, problem: Problem): { chapter: Chapter, problemSet: ProblemSet } | null => {
+  for (const chapter of textbook.chapters) {
+    for (const problemSet of chapter.problemSets) {
+      if (problemSet.problems.some(p => p.id === problem.id)) {
+        return { chapter, problemSet };
+      }
+    }
+  }
+  return null;
 };
 
 export default Website;

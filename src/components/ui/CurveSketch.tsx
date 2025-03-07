@@ -283,7 +283,7 @@ export const CurveSketch: React.FC<CurveSketchProps> = ({
 
         // Draw points if requested
         if (showPoints) {
-          points.forEach((point, i) => {
+          points.forEach((point) => {
             const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             circle.setAttribute('cx', mapX(point.x).toString());
             circle.setAttribute('cy', mapY(point.y).toString());

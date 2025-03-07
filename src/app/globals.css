@@ -306,5 +306,14 @@
     .dark &, .midnight &, .forest &, .coffee & {
       @apply prose-invert text-muted-foreground;
     }
+
+  }
+
+  /* Color change MathContent prose to text-primary on hover */
+  /* Hover effect should only happen in ProblemSetView */
+  .problem-content-container .math-content:hover,
+  .problem-content-container .math-content:hover .MathJax,
+  .problem-content-container .math-content:hover .MathJax_Display {
+    color: hsl(var(--primary));
   }
 }
