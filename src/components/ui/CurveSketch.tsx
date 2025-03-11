@@ -295,15 +295,59 @@ export const CurveSketch: React.FC<CurveSketchProps> = ({
 
         // Add label if provided
         if (options.label) {
-          // Use the middle point for label placement
-          const middlePoint = points[Math.floor(points.length / 2)];
+          // Position the label based on curve type for optimal visibility
+          let labelPoint;
+          
+          // For spirals (detecting based on polar equation containing "theta")
+          if (curve.polarEquation && curve.polarEquation.includes('theta')) {
+            // For spirals, use a point about 1/4 of the way through the curve
+            // This places the label in a more readable inner section
+            labelPoint = points[Math.floor(points.length / 4)];
+          } 
+          // For polar functions that might extend to boundaries
+          else if (curve.polarEquation || curve.polarPoints) {
+            // Use point at approximately 1/3 of the way
+            labelPoint = points[Math.floor(points.length / 3)];
+          }
+          // For standard cartesian functions
+          else {
+            // Use the middle point for most curves
+            labelPoint = points[Math.floor(points.length / 2)];
+          }
+          
+          // Calculate label position, ensuring it stays within bounds
+          const labelX = Math.min(Math.max(mapX(labelPoint.x), 80), width - 80); // Keep 80px from edges
+          const labelY = Math.min(Math.max(mapY(labelPoint.y) - 15, 20), height - 10); // Keep from top/bottom
+          
+          // Calculate text width based on label length and font size
+          const fontSize = options.label.length > 30 ? 12 : 14;
+          const charWidth = fontSize * 0.6; // Approximate character width
+          const textWidth = options.label.length * charWidth;
+          const textHeight = fontSize + 4;
+          
+          // Create a semi-transparent background for the text (improves readability)
+          const textBackground = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          textBackground.setAttribute('x', (labelX - textWidth/2).toString());
+          textBackground.setAttribute('y', (labelY - textHeight).toString());
+          textBackground.setAttribute('width', textWidth.toString());
+          textBackground.setAttribute('height', textHeight.toString());
+          textBackground.setAttribute('fill', 'rgba(255, 255, 255, 0.8)');
+          textBackground.setAttribute('rx', '3');
+          textBackground.setAttribute('stroke', strokeColor);
+          textBackground.setAttribute('stroke-width', '0.5');
+          
+          // Create the label text
           const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-          label.setAttribute('x', mapX(middlePoint.x).toString());
-          label.setAttribute('y', (mapY(middlePoint.y) - 10).toString());
+          label.setAttribute('x', labelX.toString());
+          label.setAttribute('y', (labelY - 4).toString()); // Adjust for better vertical centering
           label.setAttribute('text-anchor', 'middle');
-          label.setAttribute('font-size', '14');
+          label.setAttribute('font-size', fontSize.toString());
           label.setAttribute('fill', strokeColor);
+          label.setAttribute('font-weight', 'medium');
           label.textContent = options.label;
+          
+          // Add elements to the curve group
+          curveGroup.appendChild(textBackground);
           curveGroup.appendChild(label);
         }
       }

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Problem, ProblemSet } from "@/types/types";
 import { MathContent } from '@/components/ui/MathContent';
-import { CurveSketch } from '@/components/ui/CurveSketch';
+import { CurveSketchInteractive } from '@/components/ui/CurveSketchInteractive';
 
 interface ProblemViewProps {
   problemSet: ProblemSet;
@@ -89,7 +89,7 @@ export const ProblemView = ({
       </div>
 
       {/* Main Problem Card */}
-      <Card className="bg-card text-card-foreground mb-6">
+      <Card className="bg-card text-card-foreground mb-6 border-primary/20">
         <CardContent className="p-6 space-y-6">
           {/* Problem Header */}
           <div className="flex justify-between items-center">
@@ -221,9 +221,15 @@ export const ProblemView = ({
               </svg>
               Visualization
             </h2>
-            <div className="flex justify-center">
-              <CurveSketch {...problem.visualization} />
-            </div>
+            <CurveSketchInteractive 
+              initialCurves={problem.visualization.curves}
+              initialRange={{
+                xRange: problem.visualization.xRange,
+                yRange: problem.visualization.yRange
+              }}
+              width={problem.visualization.width || 600}
+              height={problem.visualization.height || 400}
+            />
           </CardContent>
         </Card>
       )}
