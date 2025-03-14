@@ -196,7 +196,7 @@ export const ProblemView = ({
       )}
 
       {/* Solution Content Panel */}
-      {showSolution && (
+      {showSolution && problem.solution !== "" && (
         <Card className="mb-6 bg-card border-primary/20">
           <CardContent className="p-6">
             <h2 className="text-xl font-medium mb-4 flex items-center text-foreground">
