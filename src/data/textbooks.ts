@@ -4794,8 +4794,197 @@ $$
 
 (a) Find the area of region enclosed by one loop of the curve.
 (b) Compute the length of one loop of the curve.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `The first loop is drawn out by the radius from $\\theta = 0$ to $\\theta = \\pi$ where $r = 0.$ The second loop is drawn likewise from $\\theta = \\pi$ to $\\theta = 2\\pi.$
+
+(a) The area of the radial set from $\\theta = a$ to $\\theta = b$ is:
+$$
+\\begin{align*}
+\\\\
+a(R) &= \\frac{1}{2}\\int_a^b f^2(\\theta)\\,d\\theta.
+\\end{align*}
+$$
+
+(b) The arc length $s$ of the curve described by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+$$
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+$$
+Then, use the double-angle identities of the sine and cosine 
+$$
+\\begin{align*}
+\\\\
+\\sin 2\\theta &= 2\\sin\\theta\\cos\\theta
+\\\\
+\\\\
+\\cos 2\\theta &= 1 - 2\\sin^2\\theta
+\\end{align*}
+$$
+to get the integrand into the form $\\sqrt{u^2 + 1}\\,du$ from which point you can apply the tangent substitution $u = \\tan t$ and $du = \\sec^2 t\\,dt$ as shown in Section 6.24 Example 2. 
+`,
+                  solution: `(a) The area $a(R)$ swept out by the radius $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b$ is
+$$
+\\begin{align*}
+\\\\
+a(R) &= \\frac{1}{2}\\int_a^b f^2(\\theta)\\,d\\theta.
+\\end{align*}
+$$
+Setting $a = 0$ and $b = \\pi,$ using the double-angle identities for the sine and cosine 
+$$
+\\begin{align*}
+\\\\
+\\sin 2\\theta &= 2\\sin\\theta\\cos\\theta
+\\\\
+\\\\
+\\cos 2\\theta &= 1 - 2\\sin^2\\theta
+\\end{align*}
+$$
+we get:
+$$
+\\begin{align*}
+\\\\
+a(R) &= \\frac{1}{2}\\int_0^\\pi \\sin^4\\theta\\,d\\theta
+\\\\
+\\\\
+&= \\frac{1}{8}\\int_0^\\pi (1 - \\cos 2\\theta)^2\\,d\\theta
+\\\\
+\\\\
+&= \\frac{\\pi}{8} + \\frac{1}{8}\\int_0^\\pi \\cos^2 2\\theta - 2\\cos 2\\theta\\,d\\theta
+\\\\
+\\\\
+&= \\frac{\\pi}{8} + \\frac{1}{8}\\int_0^\\pi \\cos^2 2\\theta\\,d\\theta
+\\end{align*}
+$$
+Integration by parts with
+$$
+\\begin{align*}
+\\\\
+u &= \\cos2\\theta, \\quad dv = \\cos2\\theta
+\\\\
+v &= \\frac{1}{2}\\sin2\\theta, \\quad du = -2\\sin2\\theta
+\\end{align*}
+$$
+gives us:
+$$
+\\begin{align*}
+\\\\
+\\int_0^\\pi \\cos^2 2\\theta\\,d\\theta &= \\frac{1}{2}\\sin2\\theta\\cos2\\theta\\,\\Biggr\|_0^{\\pi} + \\int_0^{\\pi}\\sin^2 2\\theta
+\\\\
+\\\\
+&= \\frac{1}{2}\\int_0^{\\pi}(1 - \\cos4\\theta)\\,d\\theta
+\\\\
+\\\\
+&= \\frac{\\pi}{2} - \\frac{1}{8}\\sin4\\theta\\,\\Biggr\|_0^{\\pi}
+\\\\
+\\\\
+&= \\frac{\\pi}{2}.
+\\end{align*}
+$$
+Plugging this back into our previous equation for $a(R)$ gives us:
+$$
+\\begin{align*}
+\\\\
+a(R) &= \\frac{\\pi}{8} + \\frac{1}{8}\\int_0^\\pi \\cos^2 2\\theta\\,d\\theta
+\\\\
+\\\\
+&= \\frac{\\pi}{8} + \\frac{\\pi}{16}
+\\\\
+\\\\
+&= \\frac{3\\pi}{16}
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+(b) We know from Exercise 4 that the arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+$$
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+$$
+Evaluating for $r = \\sin^2\\theta$ over the interval $[0, \\pi]$ we get:
+$$
+\\begin{align*}
+\\\\
+s &= \\int_0^\\pi \\sqrt{\\sin^4\\theta + \\left(2\\sin\\theta \\cos\\theta\\right)^2}\\,d\\theta
+\\\\
+\\\\
+&= \\int_0^\\pi \\sin\\theta \\sqrt{\\sin^2\\theta + 4\\cos^2\\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\int_0^\\pi \\sin\\theta \\sqrt{1 + 3\\cos^2\\theta}\\,d\\theta.
+\\end{align*}
+$$
+Using the substitution $u = -\\sqrt{3}\\cos\\theta$ and $du = \\sqrt{3}\\sin\\theta$, noting that cosine is an even function $($ie, the integral from -$\\sqrt{3}$ to $0$ is equal to that from $0$ to $\\sqrt{3})$ the above becomes:
+$$
+\\begin{align*}
+\\\\
+s &= \\frac{1}{\\sqrt{3}} \\int_{-\\sqrt{3}}^{\\sqrt{3}} \\sqrt{u^2 + 1}\\,du
+\\\\
+\\\\
+&= \\frac{2}{\\sqrt{3}} \\int_{0}^{\\sqrt{3}} \\sqrt{u^2 + 1}\\,du.
+\\end{align*}
+$$
+Now, recall from Section 6.25 that integrals of the form
+$$
+\\begin{align*}
+\\\\
+\\int R\\left(x, \\sqrt{a^2 + (cx + d)^2}\\right)\\,dx
+\\end{align*}
+$$
+can be handled using the substitution $cx + d = a\\tan t$ and $dx = a\\sec^2 t\\,dt.$ Accordingly, we perform the substitution $u = \\tan t$ and $du = \\sec^2 t\\,dt$ to give us:
+$$
+\\begin{align*}
+\\\\
+s &= \\frac{2}{\\sqrt{3}} \\int_{0}^{\\pi/3} \\sec^2 t\\sqrt{1 + \\tan^2 t}\\,dt
+\\\\
+\\\\
+&= \\frac{2}{\\sqrt{3}} \\int_{0}^{\\pi/3} \\sec^3 t\\,dt.
+\\end{align*}
+$$
+Using integration by parts, with
+$$
+\\begin{align*}
+\\\\
+x &= \\sec t, \\quad dy = \\sec^2 t\\,dt
+\\\\
+y &= \\tan t, \\quad dx = \\tan t \\sec t\\,dt 
+\\end{align*}
+$$
+the integral becomes:
+$$
+\\begin{align*}
+\\\\
+\\frac{2}{\\sqrt{3}} \\int_{0}^{\\pi/3} \\sec^3 t\\,dt &= \\frac{2}{\\sqrt{3}} \\sec t \\tan t\\,\\Biggr\|_{0}^{\\pi/3} -  \\frac{2}{\\sqrt{3}} \\int_{0}^{\\pi/3} \\tan^2 t \\sec t\\,dt
+\\\\
+\\\\
+&= 4 - \\frac{2}{\\sqrt{3}}\\int_{0}^{\\pi/3} \\sec^3 t -  \\sec t\\,dt.
+\\end{align*}
+$$
+Then, noting that we have the integral term $\\int_{0}^{\\pi/3} \\sec^3 t\\,dt$ on both sides, we can rearrange the above to get
+$$
+\\begin{align*}
+\\\\
+\\frac{2}{\\sqrt{3}} \\int_{0}^{\\pi/3} \\sec^3 t\\,dt &= 2 + \\frac{1}{\\sqrt{3}}\\int_{0}^{\\pi/3} \\sec t\\,dt.
+\\end{align*}
+$$
+Recall from Section 14.13, Exercise 8 that $\\int \\sec t\\,dt = \\log(\\sec t + \\tan t) + C.$ As such, we obtain
+$$
+\\begin{align*}
+\\\\
+s &= \\frac{2}{\\sqrt{3}} \\int_{0}^{\\pi/3} \\sec^3 t\\,dt 
+\\\\
+\\\\
+&= 2 + \\frac{1}{\\sqrt{3}}\\log(\\sec t + \\tan t )\\,\\Biggr\|_0^{\\pi/3}
+\\\\
+\\\\
+&= 2 + \\frac{1}{3}\\sqrt{3}\\log(2 + \\sqrt{3})
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
@@ -4822,11 +5011,73 @@ $$
                 {
                   id: 8,
                   number: "14.19.8",
-                  content: `In each of Exercises 8 through 11, make a sketch of the plane curve having the given polar equation and compute its arc length.
-              
-              $r = \\theta$, $0 \\leq \\theta \\leq 2\\pi$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `In each of Exercises 8 through 11, make a sketch of the plane curve having the given polar equation and compute its arc length.      
+$$
+\\begin{align*}
+r = \\theta, 
+\\quad
+0 \\leq \\theta \\leq \\pi.
+\\end{align*}
+$$`,
+                  hint: `We know from Exercise 4 that the arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+$$
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+$$
+For integrals of the form
+$$
+\\begin{align*}
+\\\\
+\\int R\\left(\\theta, \\sqrt{a^2 + (c\\theta + d)^2}\\right)\\,d\\theta,
+\\end{align*}
+$$
+we can use the trigonometric substitution $c\\theta + d = a\\tan x$ and $d\\theta = a\\sec^2 x\\,dx.$`,
+                  solution: `The arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+$$
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+$$
+As such, for $r = \\theta,$ from $\\theta = 0$ to $\\theta = \\pi,$ we get
+$$
+s = \\int_0^{\\pi}\\sqrt{1 + \\theta^2}\\,d\\theta.
+$$
+Now, we saw in Exercise 7 that integrals of the form
+$$
+\\begin{align*}
+\\\\
+\\int R\\left(\\theta, \\sqrt{a^2 + (c\\theta + d)^2}\\right)\\,d\\theta
+\\end{align*}
+$$
+can be evaluated using the trigonometric substitution $c\\theta + d = a\\tan x$ and $d\\theta = a\\sec^2 x\\,dx$ to give us
+$$
+\\begin{align*}
+\\\\
+s &= \\int_{\\arctan 0}^{\\arctan{\\pi}}\\sec^2 t\\sqrt{1 + \\tan^2 t}\\,dt
+\\\\
+\\\\
+&= \\int_{\\arctan 0}^{\\arctan{\\pi}}\\sec^3 t\\,dt
+\\\\
+\\\\
+&= \\frac{1}{2}\\Big[\\sec t \\tan t + \\log(\\sec t + \\tan t )\\Big]_{\\arctan 0}^{\\arctan \\pi}
+\\end{align*}
+$$
+Using the identity $\\sec^2 t = 1 + \\tan^2 t,$ we can deduce that for $0 \\leq t < \\pi/2,$ $\\sec t = \\sqrt{1 + \\tan^2 t}$ giving us $\\sec(\\arctan \\pi) = \\sqrt{1 + \\pi^2}$ and:
+$$
+\\begin{align*}
+\\\\
+s &= \\frac{1}{2}\\Big[\\sec t \\tan t + \\log(\\sec t + \\tan t )\\Big]_{\\arctan 0}^{\\arctan \\pi}
+\\\\
+\\\\
+&= \\frac{1}{2}\\pi (\\pi^2 + 1)^{1/2} + \\frac{1}{2}\\,\\log\\left(\\pi + \\sqrt{\\pi^2 + 1}\\right)
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
@@ -4853,15 +5104,44 @@ $$
                 {
                   id: 9,
                   number: "14.19.9",
-                  content: `$r = e^\\theta$, $0 \\leq \\theta \\leq \\pi$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `In each of Exercises 8 through 11, make a sketch of the plane curve having the given polar equation and compute its arc length.
+$$r = e^\\theta,\\quad 0 \\leq \\theta \\leq \\pi.$$`,
+                  hint: `We know from Exercise 4 that the arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+$$
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+$$`,
+                  solution: `The arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+$$
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+$$
+This means that the arc length of the polar function with radius $r = e^{\\theta}$ from $\\theta = 0$ to $\\theta = \\pi$ is
+$$
+\\begin{align*}
+\\\\
+s &= \\int_0^{\\pi} \\sqrt{2e^{2\\theta}}\\,d\\theta
+\\\\
+\\\\
+&= \\sqrt{2}\\int_0^{\\pi} e^{\\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\sqrt{2}\\left(e^{\\pi} - 1\\right).
+\\quad
+\\blacksquare
+\\end{align*}
+$$
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
                     width: 400,
                     height: 400,
-                    xRange: [-5, 30],
+                    xRange: [-35, 5],
                     yRange: [-15, 15],
                     showGrid: true,
                     showAxes: true,
@@ -4869,7 +5149,7 @@ $$
                       {
                         polarEquation: "Math.exp(theta)",
                         thetaRange: [0, Math.PI],
-                        numPoints: 200,
+                        numPoints: 300,
                         options: {
                           strokeColor: '#ec4899', // Pink
                           strokeWidth: 2,
@@ -4882,9 +5162,53 @@ $$
                 {
                   id: 10,
                   number: "14.19.10",
-                  content: `$r = 1 + \\cos \\theta$, $0 \\leq \\theta \\leq \\pi$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `In each of Exercises 8 through 11, make a sketch of the plane curve having the given polar equation and compute its arc length.
+$$r = 1 + \\cos \\theta,\\quad 0 \\leq \\theta \\leq \\pi.$$`,
+                  hint: `We know from Exercise 4 that the arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+Refer to the solution of Exercise 5 for integrals of the form $\\int \\sqrt{1 + \\cos\\theta}\\,d\\theta`,
+                  solution: `The arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+This means that the arc length of the polar function with radius $r = 1 + \\cos \\theta$ from $\\theta = 0$ to $\\theta = \\pi$ is
+\\begin{align*}
+\\\\
+s &= \\int_0^{\\pi} \\sqrt{(1 + \\cos \\theta)^2 + \\sin^2 \\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\int_0^{\\pi} \\sqrt{1 + 2\\cos \\theta + \\cos^2 \\theta + \\sin^2 \\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\sqrt{2}\\int_0^{\\pi} \\sqrt{1 + \\cos \\theta}\\,d\\theta
+\\end{align*}
+Using the double-angle identity of the cosine $(\\cos \\theta = 1 - 2\\sin^2\\frac{\\theta}{2}),$ and noting that the sine function is non-negative on the interval $[0, \\pi],$ we get:
+\\begin{align*}
+\\\\
+s &= \\sqrt{2}\\int_0^{\\pi} \\sqrt{1 + \\cos \\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\sqrt{2}\\int_0^{\\pi} \\sqrt{2 - 2\\sin^2 \\left(\\frac{\\theta}{2}\\right)}\\,d\\theta
+\\\\
+\\\\
+&= 2\\int_0^{\\pi} \\sqrt{\\cos^2 \\left(\\frac{\\theta}{2}\\right)}\\,d\\theta
+\\\\
+\\\\
+&= 2\\int_0^{\\pi} \\cos \\left(\\frac{\\theta}{2}\\right)\\,d\\theta
+\\\\
+\\\\
+&= 4\\sin\\left(\\frac{\\theta}{2}\\right)\\Biggr\|_0^{\\pi}
+\\\\
+\\\\
+&= 4.
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
@@ -4911,9 +5235,54 @@ $$
                 {
                   id: 11,
                   number: "14.19.11",
-                  content: `$r = 1 - \\cos \\theta$, $0 \\leq \\theta \\leq 2\\pi$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `In each of Exercises 8 through 11, make a sketch of the plane curve having the given polar equation and compute its arc length.
+$$r = 1 - \\cos \\theta,\\quad 0 \\leq \\theta \\leq 2\\pi.$$`,
+                  hint: `We know from Exercise 4 that the arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+`,
+                  solution: `The arc length $s$ of the curve given by the polar equation $r = f(\\theta)$ from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi$ is:
+\\begin{align*}
+\\\\
+s &= \\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta.
+\\end{align*}
+This means that the arc length of the polar function with radius $r = 1 - \\cos \\theta$ from $\\theta = 0$ to $\\theta = \\pi$ is
+
+\\begin{align*}
+\\\\
+s &= \\int_0^{2\\pi}\\sqrt{(1 - \\cos\\theta)^2 + \\sin^2\\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\int_0^{2\\pi}\\sqrt{2 - 2\\cos\\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\sqrt{2}\\int_0^{2\\pi}\\sqrt{1 - \\cos\\theta}\\,d\\theta
+\\end{align*}
+Using the double-angle identity of the cosine $(\\cos \\theta = 1 - 2\\sin^2\\frac{\\theta}{2}),$ and noting that the sine function is non-negative on the interval $[0, \\pi]$, the above integral then becomes
+\\begin{align*}
+\\\\
+s &= \\sqrt{2}\\int_0^{2\\pi}\\sqrt{1 - \\cos\\theta}\\,d\\theta
+\\\\
+\\\\
+&= \\sqrt{2}\\int_0^{2\\pi}\\sqrt{1 - \\left[1 - 2\\sin^2\\left(\\frac{\\theta}{2}\\right)\\right]}\\,d\\theta
+\\\\
+\\\\
+&= \\sqrt{2}\\int_0^{2\\pi}\\sqrt{2\\sin^2\\left(\\frac{\\theta}{2}\\right)}\\,d\\theta
+\\\\
+\\\\
+&= 2\\int_0^{2\\pi}\\sin\\left(\\frac{\\theta}{2}\\right)\\,d\\theta
+\\\\
+\\\\
+&= 4\\cos\\left(\\frac{\\theta}{2}\\right)\\Biggr\|_{2\\pi}^0
+\\\\
+\\\\
+&= 8.
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
@@ -4940,7 +5309,12 @@ $$
                 {
                   id: 12,
                   number: "14.19.12",
-                  content: `If a curve has the polar equation $r = f(\\theta)$, show that its radius of curvature $\\rho$ is given by the formula $\\rho = (r^2 + r'^2)^{3/2}/|r^2 + 2r'^2 - rr''|$, where $r' = f'(\\theta)$ and $r'' = f''(\\theta)$.`,
+                  content: `If a curve has the polar equation $r = f(\\theta)$, show that its radius of curvature $\\rho$ is given by the formula 
+\\begin{align*}
+\\\\
+\\rho = \\frac{(r^2 + r'^2)^{3/2}}{|r^2 + 2r'^2 - rr''|},
+\\end{align*}
+where $r' = f'(\\theta)$ and $r'' = f''(\\theta)$.`,
                   hint: ``,
                   solution: ``,
                   date: "2025-03-05"
