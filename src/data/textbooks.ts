@@ -5315,28 +5315,210 @@ s &= \\sqrt{2}\\int_0^{2\\pi}\\sqrt{1 - \\cos\\theta}\\,d\\theta
 \\rho = \\frac{(r^2 + r'^2)^{3/2}}{|r^2 + 2r'^2 - rr''|},
 \\end{align*}
 where $r' = f'(\\theta)$ and $r'' = f''(\\theta)$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Refer to Section 14.16 where velocity, speed, and acceleration are simplified in the case where $t = \\theta$ and $r = f(\\theta).$
+
+When calculating the cross product $\\mathbf{a} \\times \\mathbf{v},$ you can handle the unit vectors $\\mathbf{u}_r$ and $\\mathbf{u}_{\\theta}$ in the same way as $\\mathbf{i}$ and $\\mathbf{j}$ since they are perpendicular to eachother and to the unit vector $\\mathbf{k}.$
+`,
+                  solution: `When $t = \\theta,$ we can express velocity and acceleration in terms of their radial and transverse components as follows:
+\\begin{align*}
+\\\\
+\\mathbf{v} &= \\frac{dr}{d\\theta}\\mathbf{u}_r + r\\mathbf{u}_{\\theta}
+\\\\
+\\\\
+&= r'\\mathbf{u}_r + r\\mathbf{u}_{\\theta}
+\\\\
+\\\\
+\\mathbf{a} &= \\left(\\frac{d^2r}{d\\theta^2} - r\\right)\\mathbf{u}_r + 2\\frac{dr}{d\\theta}\\mathbf{u}_{\\theta}
+\\\\
+\\\\
+&= \\left(r'' - r\\right)\\mathbf{u}_r + 2r'\\mathbf{u}_{\\theta}.
+\\end{align*}
+And as we saw in Exercise 4, we can express speed $v$ in terms of $f(\\theta)$ as:
+\\begin{align*}
+\\\\
+v &= \\sqrt{\\left(\\frac{dr}{d\\theta}\\right)^2 + r^2}
+\\\\
+\\\\
+&= \\sqrt{\\left(r'\\right)^2 + r^2}.
+\\end{align*}
+We can use Equation 14.22 to express curvature in terms of $\\|\\mathbf{a} \\times \\mathbf{v}\\|$ and $v:$
+\\begin{align*}
+\\\\
+\\kappa &= \\frac{\\|\\mathbf{a} \\times \\mathbf{v}\\|}{v^3}
+\\\\
+\\\\
+&= \\frac{\\|\\left(r''r - r^2 - 2r'^2\\right)\\mathbf{k}\\|}{\\left(r^2 + r'^{2}\\right)^{3/2}}
+\\\\
+\\\\
+&= \\frac{\\left\|r''r - r^2 - 2r'^2\\right\|}{\\left(r^2 + r'^{2}\\right)^{3/2}}
+\\\\
+\\\\
+&= \\frac{\\left\|-\\left(r^2 + 2r'^2 - rr''\\right)\\right\|}{\\left(r^2 + r'^{2}\\right)^{3/2}}
+\\\\
+\\\\
+&= \\frac{\\left\|r^2 + 2r'^2 - rr''\\right\|}{\\left(r^2 + r'^{2}\\right)^{3/2}}.
+\\end{align*}
+By definition, for $\\|\\mathbf{a} \\times \\mathbf{v}\\| \\neq 0,$ the radius of curvature $\\rho$ is the reciprocal of curvature $\\kappa,$ thus:
+\\begin{align*}
+\\\\
+\\rho &= \\frac{\\left(r^2 + r'^{2}\\right)^{3/2}}{\\left\|r^2 + 2r'^2 - rr''\\right\|}.
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-03-05"
                 },
                 {
                   id: 13,
                   number: "14.19.13",
                   content: `For each of the curves in Exercises 8 through 11, compute the radius of curvature for the value of $\\theta$ indicated.
-              (a) Arbitrary $\\theta$ in Exercise 8.
-              (b) Arbitrary $\\theta$ in Exercise 9.
-              (c) $\\theta = \\frac{1}{4}\\pi$ in Exercise 10.
-              (d) $\\theta = \\frac{1}{4}\\pi$ in Exercise 11.`,
-                  hint: ``,
-                  solution: ``,
+
+(a) Arbitrary $\\theta$ in Exercise 8.                      (b) Arbitrary $\\theta$ in Exercise 9.      
+(c) $\\theta = \\frac{1}{4}\\pi$ in Exercise 10.                          (d) $\\theta = \\frac{1}{4}\\pi$ in Exercise 11.`,
+                  hint: `In Exercise 12, we proved that for a curve with polar equation $r = f(\\theta),$ its radius of curvature $\\rho$ is
+\\begin{align*}
+\\\\
+\\rho &= \\frac{\\left(r^2 + r'^{2}\\right)^{3/2}}{\\left\|r^2 + 2r'^2 - rr''\\right\|}.
+\\end{align*}`,
+                  solution: `(a) Recall from Exercise 8 that $r = \\theta$ where $0\\leq \\theta \\leq \\pi.$ This gives us $r' = 1$ and $r'' = 0$ for all $\\theta$ in the given interval. The radius of curvature is then:
+\\begin{align*}
+\\\\
+\\rho &= \\frac{\\left(r^2 + r'^{2}\\right)^{3/2}}{\\left\|r^2 + 2r'^2 - rr''\\right\|}
+\\\\
+\\\\
+&= \\frac{\\left(\\theta^2 + 1\\right)^{3/2}}{\\theta^2 + 2}.
+\\quad
+\\blacksquare
+\\end{align*}
+
+(b) Recall from Exercise 9 that $r = e^{\\theta},$ where $0 \\leq \\theta \\leq \\pi.$ The radius of curvature is then:
+\\begin{align*}
+\\\\
+\\rho &= \\frac{\\left(r^2 + r'^{2}\\right)^{3/2}}{\\left\|r^2 + 2r'^2 - rr''\\right\|}
+\\\\
+\\\\
+&= \\frac{\\left(2e^{2\\theta}\\right)^{3/2}}{2e^{2\\theta}}
+\\\\
+\\\\
+&= \\sqrt{2}\\,e^\\theta.
+\\quad
+\\blacksquare
+\\end{align*}
+
+(c) Recall from Exercise 10 that $r = 1 + \\cos \\theta,$ where $0 \\leq \\theta \\leq \\pi.$ The radius of curvature at $\\theta = \\pi/4$ is then:
+\\begin{align*}
+\\\\
+\\rho &= \\frac{\\left(r^2 + r'^{2}\\right)^{3/2}}{\\left\|r^2 + 2r'^2 - rr''\\right\|}
+\\\\
+\\\\
+&= \\frac{\\left[\\left(1 + \\cos\\frac{\\pi}{4}\\right)^2 + \\sin^2\\frac{\\pi}{4}\\right]^{3/2}}{\\left\|\\left(1 + \\cos\\frac{\\pi}{4}\\right)^2 + 2\\sin^2\\frac{\\pi}{4} + \\left(1 + \\cos\\frac{\\pi}{4}\\right)\\cos\\frac{\\pi}{4}\\right\|}
+\\\\
+\\\\
+&= \\frac{\\left[\\left(1 + \\frac{\\sqrt{2}}{2}\\right)^2 + \\frac{1}{2}\\right]^{3/2}}{\\left\|\\left(1 + \\frac{\\sqrt{2}}{2}\\right)^2 + 1 + \\left(1 + \\frac{\\sqrt{2}}{2}\\right)\\frac{\\sqrt{2}}{2}\\right\|}
+\\\\
+\\\\
+&= \\frac{\\left(2 + \\sqrt{2}\\right)^{3/2}}{(1 + \\sqrt{2} + \\frac{1}{2}) + (1 + \\frac{\\sqrt{2}}{2} + \\frac{1}{2})}
+\\\\
+\\\\
+&= \\frac{\\left(2 + \\sqrt{2}\\right)^{3/2}}{\\frac{3}{2}(2 + \\sqrt{2})}
+\\\\
+\\\\
+&= \\frac{2}{3}\\sqrt{2 + \\sqrt{2}}\\,.
+\\quad
+\\blacksquare
+\\end{align*}
+
+(d) Recall from Exercise 11 that $r = 1 - \\cos \\theta,$ where $0\\leq \\theta \\leq 2\\pi.$ The radius of curvature at $\\theta = \\pi/2$ is then:
+\\begin{align*}
+\\\\
+\\rho &= \\frac{\\left(r^2 + r'^{2}\\right)^{3/2}}{\\left\|r^2 + 2r'^2 - rr''\\right\|}
+\\\\
+\\\\
+&= \\frac{\\left[\\left(1 - \\cos\\frac{\\pi}{2}\\right)^2 + \\sin^2\\frac{\\pi}{2}\\right]^{3/2}}{\\left\|\\left(1 - \\cos\\frac{\\pi}{2}\\right)^2 + 2\\sin^2\\frac{\\pi}{2} - \\left(1 - \\cos\\frac{\\pi}{2}\\right)\\cos\\frac{\\pi}{2}\\right\|}
+\\\\
+\\\\
+&= \\frac{\\left(1^2 + 1^2\\right)^{3/2}}{\\left\|1^2 + 2(1^2)\\right\|}
+\\\\
+\\\\
+&= \\frac{2^{3/2}}{3}
+\\\\
+\\\\
+&= \\frac{2}{3}\\sqrt{2}\\,.
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-03-05"
                 },
                 {
                   id: 14,
                   number: "14.19.14",
-                  content: `Let $\\phi$ denote the angle, $0 \\leq \\phi \\leq \\pi$, between the position vector and the velocity vector of a curve. If the curve is expressed in polar coordinates, prove that $v \\sin \\phi = r$ and $v \\cos \\phi = rd\\theta/dt$, where $v$ is the speed.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `Let $\\phi$ denote the angle, $0 \\leq \\phi \\leq \\pi$, between the position vector and the velocity vector of a curve. If the curve is expressed in polar coordinates, prove that $v \\sin \\phi = r$ and $v \\cos \\phi = dr/d\\theta$, where $v$ is the speed.`,
+                  hint: `If $\\phi$ denotes the angle between the position vector and velocity vector, then $\\sin \\phi$ and $\\cos\\phi$ can be expressed as:
+\\begin{align*}
+\\\\
+\\sin \\phi &= \\frac{\\|\\mathbf{r}\\times\\mathbf{v}\\|}{\\|\\mathbf{r}\\|\\|\\mathbf{v}\\|}
+\\\\
+\\\\
+\\cos \\phi &= \\frac{\\mathbf{r}\\cdot\\mathbf{v}}{\\|\\mathbf{r}\\|\\|\\mathbf{v}\\|}
+\\end{align*}
+
+If the curve is expressed in polar coordinates, this means that $r = f(\\theta)$ where $\\theta = t.$ What does this imply about $d\\theta/dt$ and $dr/dt?$`,
+                  solution: `If $\\phi$ denotes the angle between the position vector and velocity vector, then $\\sin \\phi$ and $\\cos\\phi$ can be expressed as:
+\\begin{align*}
+\\\\
+\\sin \\phi &= \\frac{\\|\\mathbf{r}\\times\\mathbf{v}\\|}{\\|\\mathbf{r}\\|\\|\\mathbf{v}\\|}
+\\\\
+\\\\
+\\cos \\phi &= \\frac{\\mathbf{r}\\cdot\\mathbf{v}}{\\|\\mathbf{r}\\|\\|\\mathbf{v}\\|}
+\\end{align*}
+Expressing position and velocity in terms of their radial and transverse components, noting that $\\|\\mathbf{r}\\| = r$ and $\\|\\mathbf{v}\\| = v,$ we get:
+\\begin{align*}
+\\\\
+\\mathbf{r} &= r\\mathbf{u}_r
+\\\\
+\\\\
+\\mathbf{v} &= \\frac{dr}{dt}\\mathbf{u}_r + r\\frac{d\\theta}{dt}\\mathbf{u}_{\\theta}.
+\\end{align*}
+Then, we can use Lagrange's identity to express $\\|\\mathbf{r}\\times\\mathbf{v}\\|$ in terms of these components to give us:
+\\begin{align*}
+\\\\
+\\sin \\phi &= \\frac{\\|\\mathbf{r}\\times\\mathbf{v}\\|}{\\|\\mathbf{r}\\|\\|\\mathbf{v}\\|}
+\\\\
+\\\\
+&= \\frac{\\sqrt{r^2\\left[\\left(\\frac{dr}{dt}\\right)^2 + r^2\\left(\\frac{d\\theta}{dt}\\right)^2\\right] - r^2\\left(\\frac{dr}{dt}\\right)^2}}{rv}
+\\\\
+\\\\
+&= \\frac{r}{v}\\frac{d\\theta}{dt}.
+\\\\
+\\\\
+\\cos \\phi &= \\frac{\\mathbf{r}\\cdot\\mathbf{v}}{\\|\\mathbf{r}\\|\\|\\mathbf{v}\\|}
+\\\\
+\\\\
+&= \\frac{r\\frac{dr}{dt}}{rv}
+\\\\
+\\\\
+&= \\frac{dr}{dt}\\frac{1}{v}.
+\\end{align*}
+Multiplying both sides by v gives us
+\\begin{align*}
+\\\\
+v\\sin\\phi &= r\\frac{d\\theta}{dt}
+\\\\
+\\\\
+v\\cos\\phi &= \\frac{dr}{dt}.
+\\end{align*}
+But, the curve is expressed in polar coordinates, which means $r = f(\\theta),$ where $\\theta(t) = t.$ By application of the chain rule, with $d\\theta/dt = 1,$ the above equations become
+\\begin{align*}
+\\\\
+v\\sin\\phi &= r\\frac{d\\theta}{dt} = r
+\\\\
+\\\\
+v\\cos\\phi &= \\frac{dr}{dt} = \\frac{dr}{d\\theta}\\frac{d\\theta}{dt}= \\frac{dr}{d\\theta}.
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-03-05"
                 },
                 {
@@ -5355,16 +5537,6 @@ where $r' = f'(\\theta)$ and $r'' = f''(\\theta)$.`,
                     showGrid: true,
                     showAxes: true,
                     curves: [
-                      // Target at origin
-                      {
-                        points: [{ x: 0, y: 0 }],
-                        options: {
-                          strokeColor: '#ef4444', // Red
-                          showPoints: true,
-                          pointRadius: 5,
-                          label: 'Target'
-                        }
-                      },
                       // α = π/6 (30°)
                       {
                         polarEquation: "5 * Math.exp(-theta / Math.tan(Math.PI/6))",
@@ -5396,6 +5568,28 @@ where $r' = f'(\\theta)$ and $r'' = f''(\\theta)$.`,
                           strokeColor: '#f59e0b', // Amber
                           strokeWidth: 2,
                           label: 'α = π/3'
+                        }
+                      },
+                      // α = 2π/5 (72°)
+                      {
+                        polarEquation: "5 * Math.exp(-theta / Math.tan(2*Math.PI/5))",
+                        thetaRange: [0, 10],
+                        numPoints: 200,
+                        options: {
+                          strokeColor: 'pink',
+                          strokeWidth: 2,
+                          label: 'α = 2π/5'
+                        }
+                      },
+                      // α = π/2 (90°)
+                      {
+                        polarEquation: "5 * Math.exp(-theta / Math.tan(Math.PI/2))",
+                        thetaRange: [0, 10],
+                        numPoints: 200,
+                        options: {
+                          strokeColor: 'purple', // Blue
+                          strokeWidth: 2,
+                          label: 'α = π/2'
                         }
                       }
                     ]
