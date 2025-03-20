@@ -5525,29 +5525,45 @@ v\\cos\\phi &= \\frac{dr}{dt} = \\frac{dr}{d\\theta}\\frac{d\\theta}{dt}= \\frac
                   id: 15,
                   number: "14.19.15",
                   content: `A missile is designed to move directly toward its target. Due to mechanical failure, its direction in actual flight makes a fixed angle $\\alpha \\neq 0$ with the line from the missile to the target. Find the path if it is fired at a fixed target. Discuss how the path varies with $\\alpha$. Does the missile ever reach the target? (Assume the motion takes place in a plane.)`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `If the direction of the missile makes a fixed angle $\\alpha \\neq 0$ with the target, then it implies that $\\alpha$ is the angle between $\\mathbf{v}(t)$ and $-\\mathbf{r}(t)$. Use this along with the result of Exercise 14 to yield a separable differential equation in $r$ and $\\theta.$`,
+                  solution: `Suppose the target is at the origin, and the missile is fired from starting position $(r_0, 0)$. Then, if the direction of the missile makes a fixed angle $\\alpha \\neq 0$ with the target, this implies that $\\alpha$ is in fact the angle between $\\mathbf{v}(t)$ and $-\\mathbf{r}(t)$. Recall from Exercise 14 that if $\\alpha$ is the angle between the position vector and velocity vector, where the curve is expressed in polar coordinates, then $r = v\\sin\\alpha$ and $\\frac{dr}{d\\theta} = -v\\cos\\alpha$ where $r = \\|\\mathbf{r}\\|$ and $v = \\|\\mathbf{v}\\|.$ This gives us the following separable differential equation:
+\\begin{align*}
+\\\\
+\\frac{1}{r}\\frac{dr}{d\\theta} &= -\\cot\\alpha
+\\end{align*}
+The above equation can then be rearranged into a separable differential equation in $r$ and $\\theta$: 
+\\begin{align*}
+\\\\
+\\frac{dr}{r} &= -\\cot\\alpha\\,d\\theta
+\\end{align*}
+Integrating from $x = 0$ to $x = \\theta,$ applying the second fundamental theorem, we get:
+\\begin{align*}
+\\\\
+\\int_{r_0}^{r}\\frac{du}{u} &= -\\cot\\alpha\\int_{0}^{\\theta}dx
+\\\\
+\\\\
+\\log\\,r - \\log\\,r_0 &= -\\theta\\cot\\alpha
+\\end{align*}
+Rearranging terms and exponentiating both sides, we get
+\\begin{align*}
+\\
+r &= r_0e^{-\\theta\\cot\\alpha}
+\\end{align*}
+The path of the missile can be described in three possible cases dependent on $\\alpha:$
+1. If $0 < \\alpha < \\frac{\\pi}{2},$ then $-\\cot\\alpha < 0$ and the path of the missile is a spiral whose radius approaches $0$ as $\\theta$ grows indefinitely. 
+2. If $\\alpha = \\frac{\\pi}{2},$ then $-\\cot\\alpha = 0$ and the path of the missile is a circle centered about the target with radius $r_0.$
+3. If $\\frac{\\pi}{2} < \\alpha < \\pi,$ then $-\\cot\\alpha > 0$ and the path of the missile is a spiral whose radius grows without bound as $\\theta$ grows indefinitely. $\\blacksquare$
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
                     width: 500,
                     height: 500,
-                    xRange: [-5, 5],
-                    yRange: [-5, 5],
+                    xRange: [-10, 10],
+                    yRange: [-10, 10],
                     showGrid: true,
                     showAxes: true,
                     curves: [
-                      // α = π/6 (30°)
-                      {
-                        polarEquation: "5 * Math.exp(-theta / Math.tan(Math.PI/6))",
-                        thetaRange: [0, 10],
-                        numPoints: 200,
-                        options: {
-                          strokeColor: '#3b82f6', // Blue
-                          strokeWidth: 2,
-                          label: 'α = π/6'
-                        }
-                      },
                       // α = π/4 (45°)
                       {
                         polarEquation: "5 * Math.exp(-theta / Math.tan(Math.PI/4))",
@@ -5556,29 +5572,18 @@ v\\cos\\phi &= \\frac{dr}{dt} = \\frac{dr}{d\\theta}\\frac{d\\theta}{dt}= \\frac
                         options: {
                           strokeColor: '#10b981', // Green
                           strokeWidth: 2,
-                          label: 'α = π/4'
+                          label: 'α = π/4 (45°)'
                         }
                       },
-                      // α = π/3 (60°)
+                      // α = 2π/3 (120°)
                       {
-                        polarEquation: "5 * Math.exp(-theta / Math.tan(Math.PI/3))",
+                        polarEquation: "5 * Math.exp(-theta / Math.tan(2*Math.PI/3))",
                         thetaRange: [0, 10],
                         numPoints: 200,
                         options: {
                           strokeColor: '#f59e0b', // Amber
                           strokeWidth: 2,
-                          label: 'α = π/3'
-                        }
-                      },
-                      // α = 2π/5 (72°)
-                      {
-                        polarEquation: "5 * Math.exp(-theta / Math.tan(2*Math.PI/5))",
-                        thetaRange: [0, 10],
-                        numPoints: 200,
-                        options: {
-                          strokeColor: 'pink',
-                          strokeWidth: 2,
-                          label: 'α = 2π/5'
+                          label: 'α = 2π/3 (120°)'
                         }
                       },
                       // α = π/2 (90°)
@@ -5587,9 +5592,9 @@ v\\cos\\phi &= \\frac{dr}{dt} = \\frac{dr}{d\\theta}\\frac{d\\theta}{dt}= \\frac
                         thetaRange: [0, 10],
                         numPoints: 200,
                         options: {
-                          strokeColor: 'purple', // Blue
+                          strokeColor: 'blue', 
                           strokeWidth: 2,
-                          label: 'α = π/2'
+                          label: 'α = π/2 (90°)'
                         }
                       }
                     ]
