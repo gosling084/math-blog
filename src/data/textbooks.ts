@@ -5531,7 +5531,7 @@ v\\cos\\phi &= \\frac{dr}{dt} = \\frac{dr}{d\\theta}\\frac{d\\theta}{dt}= \\frac
 \\\\
 \\frac{1}{r}\\frac{dr}{d\\theta} &= -\\cot\\alpha
 \\end{align*}
-The above equation can then be rearranged into a separable differential equation in $r$ and $\\theta$: 
+Separating terms by $r$ and $\\theta$ gives us: 
 \\begin{align*}
 \\\\
 \\frac{dr}{r} &= -\\cot\\alpha\\,d\\theta
@@ -5613,7 +5613,89 @@ The path of the missile can be described in three possible cases dependent on $\
                   number: "14.19.17",
                   content: `Prove that if a homogeneous first-order differential equation of the form $y' = f(x, y)$ is rewritten in polar coordinates, it reduces to a separable equation. Use this method to solve $y' = (y - x)/(y + x)$.`,
                   hint: ``,
-                  solution: ``,
+                  solution: `To rewrite the equation in polar coordinates, we must first find $r$ and $\\theta$ in terms of $x$ and $y:$
+\\begin{align*}
+\\\\
+r &= \\sqrt{x^2 + y^2},
+\\quad
+\\theta = \\arctan\\frac{y}{x}
+\\end{align*}
+Then, we can rewrite $(x, y)$ in polar coordinates with $x = r\\cos\\theta$ and $y = r\\sin\\theta$, where $r$ and $\\theta$ are parameterized by $t,$ with $\\theta = t$ and $\\frac{d\\theta}{dt} = 1.$ We then have: 
+\\begin{align*}
+\\\\
+\\frac{dy}{dt} &= \\frac{dr}{dt}\\sin t + r\\cos t
+\\\\
+\\\\
+\\frac{dx}{dt} &= \\frac{dr}{dt}\\cos t - r\\sin t
+\\end{align*}
+Then, we use the chain rule to show that
+\\begin{align*}
+\\\\
+\\frac{dy}{dt} &= \\frac{dy}{dx}\\frac{dx}{dt}
+\\\\
+\\\\
+&= y'\\frac{dx}{dt}
+\\end{align*}
+In other words, for $\\frac{dx}{dt} \\neq 0,$ the equation for $y'$ becomes:
+\\begin{align*}
+\\\\
+y' &= \\frac{dy/dt}{dx/dt}
+\\\\
+\\\\
+&= \\frac{r'\\sin t + r\\cos t}{r'\\cos t - r\\sin t}
+\\\\
+\\\\
+&= f(r\\cos t,r\\sin t)
+\\end{align*}
+Rearranging terms we find that
+\\begin{align*}
+\\\\
+y'\\left(r'\\cos t - r\\sin t\\right) &= r'\\sin t + r\\cos t
+\\\\
+\\\\
+r'\\left(y'\\cos t - \\sin t\\right) &= r\\left(y'\\sin t + \\cos t\\right)
+\\\\
+\\\\
+\\frac{r'}{r} &= \\frac{y'\\sin t + \\cos t}{y'\\cos t - \\sin t}
+\\end{align*}
+If we denote the right-hand side as $Q(t),$ then we can see that this is a separable equation in terms of $r$ and $Q.$ Now, to solve $y' = (y - x)/(y + x),$ we write $y'$ in terms of polar coordinates:
+\\begin{align*}
+\\\\
+y' &= \\frac{r'\\sin t + r\\cos t}{r'\\cos t - r\\sin t}
+\\end{align*}
+Setting $x = r\\cos t$ and $y = r\\sin t,$ the given equation for $y'$ becomes:
+\\begin{align*}
+\\\\
+y' &= \\frac{y - x}{y + x}
+\\\\
+\\\\
+&= \\frac{r\\sin t - r \\cos t}{r \\sin t + r \\cos t}
+\\\\
+\\\\
+&= \\frac{\\sin t - \\cos t}{\\sin t + \\cos t}
+\\end{align*}
+Now, we can plug this into our separable equation in $r:$
+\\begin{align*}
+\\\\
+\\frac{r'}{r} &= \\frac{\\frac{\\sin t - \\cos t}{\\sin t + \\cos t}\\sin t + \\cos t}{\\frac{\\sin t - \\cos t}{\\sin t + \\cos t}\\cos t - \\sin t}
+\\\\
+\\\\
+&= \\frac{\\left(\\sin t - \\cos t\\right)\\sin t + \\left(\\sin t + \\cos t\\right)\\cos t}{\\left(\\sin t - \\cos t\\right)\\cos t - \\left(\\sin t + \\cos t\\right)\\sin t}
+\\\\
+\\\\
+&= -1
+\\end{align*}
+Integrating both sides, we get $\\log r + t = C.$ But since $r = \\sqrt{x^2 + y^2}$ and $t = \\theta = \\arctan \\frac{y}{x},$ we reach the conclusion:
+\\begin{align*}
+\\\\
+\\\\
+\\log \\sqrt{x^2 + y^2} + \\arctan \\left(\\frac{y}{x}\\right) &= C
+\\quad
+\\blacksquare
+\\\\
+\\\\
+\\end{align*}
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
