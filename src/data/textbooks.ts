@@ -5742,8 +5742,50 @@ Integrating both sides, we get $\\log r + t = C.$ But since $r = \\sqrt{x^2 + y^
                   id: 18,
                   number: "14.19.18",
                   content: `A particle (moving in space) has velocity vector $\\mathbf{v} = \\omega\\,\\mathbf{k} \\times \\mathbf{r}$, where $\\omega$ is a positive constant and $\\mathbf{r}$ is the position vector. Prove that the particle moves along a circle with constant angular speed $\\omega$. (The angular speed is defined to be $|d\\theta/dt|$, where $\\theta$ is the polar angle at time $t$.)`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `If the particle moves along a circle with constant angular speed $\\omega,$ then the radial component of velocity will be zero (since the radius will be constant) and the transverse component will be a constant $r\\omega.$`,
+                  solution: `It will suffice to show that the radial component of velocity is zero and the transverse component is $r\\omega,$ as this describes motion along a polar curve with a radius of fixed length (ie. a circle of radius $r$) with constant angular velocity $\\omega.$ 
+                  
+Let $\\mathbf{r} = r\\mathbf{u}_r,$ where $\\mathbf{u}_r$ is the unit vector defined by:
+\\begin{align*}
+\\\\
+\\mathbf{u}_r &= \\cos \\theta\\,\\mathbf{i} + \\sin \\theta\\,\\mathbf{j}
+\\end{align*}
+where $\\theta$ is the polar angle at time $t.$ Then, $\\mathbf{v} = \\mathbf{r}'$ is given by:
+\\begin{align*}
+\\\\
+\\mathbf{v} &= \\left(r\\mathbf{u}_r\\right)'
+\\\\
+\\\\
+&= \\frac{dr}{dt}\\mathbf{u}_r + r\\frac{d\\mathbf{u}_r}{dt}.
+\\end{align*}
+We can use the chain rule to find $\\frac{d\\mathbf{u}_r}{dt}:$
+\\begin{align*}
+\\\\
+\\frac{d\\mathbf{u}_r}{dt} &= \\frac{d\\mathbf{u}_r}{d\\theta}\\frac{d\\theta}{dt}
+\\\\
+\\\\
+&= \\mathbf{u}_{\\theta}\\frac{d\\theta}{dt}
+\\end{align*}
+where $\\mathbf{u}_{\\theta} = -\\sin\\theta\\,\\mathbf{i} + \\cos\\theta\\,\\mathbf{j}$ is the unit vector perpendicular to $\\mathbf{u}_r.$ Thus, we can express velocity in terms of the perpendicular unit vectors $\\mathbf{u}_r$ and $\\mathbf{u}_{\\theta}$
+\\begin{align*}
+\\\\
+\\mathbf{v} &= \\frac{dr}{dt}\\mathbf{u}_r + r\\frac{d\\theta}{dt}\\mathbf{u}_{\\theta}
+\\end{align*}
+where the scalar factors $dr/dt$ and $r\\,d\\theta/dt$ are called the radial and transverse components of velocity, respectively.
+
+Now, we use our previous definition of $\\mathbf{r}$ to find $\\mathbf{v} = \\omega\\mathbf{k} \\times \\mathbf{r}$
+\\begin{align*}
+\\\\
+\\mathbf{v} &= \\omega \\mathbf{k} \\times \\mathbf{r}
+\\\\
+\\\\
+&= -r\\omega \\sin\\theta\\,\\mathbf{i} + r\\omega \\cos \\theta\\,\\mathbf{j}
+\\\\
+\\\\
+&= r\\omega \\mathbf{u}_{\\theta}
+\\end{align*}
+But this means that the radial component of velocity $dr/dt = 0,$ and the transverse component of velocity $r\\,d\\theta/dt = r\\omega.$ Thus, the particle must be moving on a circle of radius $r$ with angular speed $\\omega. \\quad \\blacksquare$
+`,
                   date: "2025-03-05",
                   hasVisualization: true,
                   visualization: {
