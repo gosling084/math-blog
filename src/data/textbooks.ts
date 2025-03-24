@@ -5620,72 +5620,72 @@ r &= \\sqrt{x^2 + y^2},
 \\quad
 \\theta = \\arctan\\frac{y}{x}
 \\end{align*}
-Then, we can rewrite $(x, y)$ in polar coordinates with $x = r\\cos\\theta$ and $y = r\\sin\\theta$, where $r$ and $\\theta$ are parameterized by $t,$ with $\\theta = t$ and $\\frac{d\\theta}{dt} = 1.$ We then have: 
+Then, we can rewrite $(x, y)$ in polar coordinates with $x = r\\cos\\theta$ and $y = r\\sin\\theta$, where $r$ is a function of $\\theta,$ giving us: 
 \\begin{align*}
 \\\\
-\\frac{dy}{dt} &= \\frac{dr}{dt}\\sin t + r\\cos t
+\\frac{dy}{d\\theta} &= \\frac{dr}{d\\theta}\\sin\\theta + r\\cos\\theta
 \\\\
 \\\\
-\\frac{dx}{dt} &= \\frac{dr}{dt}\\cos t - r\\sin t
+\\frac{dx}{d\\theta} &= \\frac{dr}{d\\theta}\\cos\\theta - r\\sin\\theta
 \\end{align*}
 Then, we use the chain rule to show that
 \\begin{align*}
 \\\\
-\\frac{dy}{dt} &= \\frac{dy}{dx}\\frac{dx}{dt}
+\\frac{dy}{d\\theta} &= \\frac{dy}{dx}\\frac{dx}{d\\theta}
 \\\\
 \\\\
-&= y'\\frac{dx}{dt}
+&= y'\\frac{dx}{d\\theta}
 \\end{align*}
-In other words, for $\\frac{dx}{dt} \\neq 0,$ the equation for $y'$ becomes:
+In other words, for $\\frac{dx}{d\\theta} \\neq 0,$ the equation for $y'$ becomes:
 \\begin{align*}
 \\\\
-y' &= \\frac{dy/dt}{dx/dt}
+y' &= \\frac{dy/d\\theta}{dx/d\\theta}
 \\\\
 \\\\
-&= \\frac{r'\\sin t + r\\cos t}{r'\\cos t - r\\sin t}
+&= \\frac{r'\\sin\\theta + r\\cos\\theta}{r'\\cos\\theta - r\\sin\\theta}
 \\\\
 \\\\
-&= f(r\\cos t,r\\sin t)
+&= f(r\\cos\\theta,r\\sin\\theta)
 \\end{align*}
 Rearranging terms we find that
 \\begin{align*}
 \\\\
-y'\\left(r'\\cos t - r\\sin t\\right) &= r'\\sin t + r\\cos t
+y'\\left(r'\\cos\\theta - r\\sin\\theta\\right) &= r'\\sin\\theta + r\\cos\\theta
 \\\\
 \\\\
-r'\\left(y'\\cos t - \\sin t\\right) &= r\\left(y'\\sin t + \\cos t\\right)
+r'\\left(y'\\cos\\theta - \\sin\\theta\\right) &= r\\left(y'\\sin\\theta + \\cos\\theta\\right)
 \\\\
 \\\\
-\\frac{r'}{r} &= \\frac{y'\\sin t + \\cos t}{y'\\cos t - \\sin t}
+\\frac{r'}{r} &= \\frac{y'\\sin\\theta + \\cos\\theta}{y'\\cos\\theta - \\sin\\theta}
 \\end{align*}
-If we denote the right-hand side as $Q(t),$ then we can see that this is a separable equation in terms of $r$ and $Q.$ Now, to solve $y' = (y - x)/(y + x),$ we write $y'$ in terms of polar coordinates:
+If we denote the right-hand side as $Q(\\theta),$ then we can see that this is a separable equation in terms of $r$ and $Q.$ Now, to solve $y' = (y - x)/(y + x),$ we write $y'$ in terms of polar coordinates:
 \\begin{align*}
 \\\\
-y' &= \\frac{r'\\sin t + r\\cos t}{r'\\cos t - r\\sin t}
+y' &= \\frac{r'\\sin\\theta + r\\cos\\theta}{r'\\cos\\theta - r\\sin\\theta}
 \\end{align*}
-Setting $x = r\\cos t$ and $y = r\\sin t,$ the given equation for $y'$ becomes:
+Setting $x = r\\cos\\theta$ and $y = r\\sin\\theta,$ the given equation for $y'$ becomes:
 \\begin{align*}
 \\\\
 y' &= \\frac{y - x}{y + x}
 \\\\
 \\\\
-&= \\frac{r\\sin t - r \\cos t}{r \\sin t + r \\cos t}
+&= \\frac{r\\sin\\theta - r \\cos\\theta}{r \\sin\\theta + r \\cos\\theta}
 \\\\
 \\\\
-&= \\frac{\\sin t - \\cos t}{\\sin t + \\cos t}
+&= \\frac{\\sin\\theta - \\cos\\theta}{\\sin\\theta + \\cos\\theta}
 \\end{align*}
 Now, we can plug this into our separable equation in $r:$
 \\begin{align*}
 \\\\
-\\frac{r'}{r} &= \\frac{\\frac{\\sin t - \\cos t}{\\sin t + \\cos t}\\sin t + \\cos t}{\\frac{\\sin t - \\cos t}{\\sin t + \\cos t}\\cos t - \\sin t}
+\\frac{r'}{r} &= \\frac{\\frac{\\sin\\theta - \\cos\\theta}{\\sin\\theta + \\cos\\theta}\\sin\\theta + \\cos\\theta}{\\frac{\\sin\\theta - \\cos\\theta}{\\sin\\theta + \\cos\\theta}\\cos\\theta - \\sin\\theta}
 \\\\
 \\\\
-&= \\frac{\\left(\\sin t - \\cos t\\right)\\sin t + \\left(\\sin t + \\cos t\\right)\\cos t}{\\left(\\sin t - \\cos t\\right)\\cos t - \\left(\\sin t + \\cos t\\right)\\sin t}
+&= \\frac{\\left(\\sin\\theta - \\cos\\theta\\right)\\sin\\theta + \\left(\\sin\\theta + \\cos\\theta\\right)\\cos\\theta}{\\left(\\sin\\theta - \\cos\\theta\\right)\\cos\\theta - \\left(\\sin\\theta + \\cos\\theta\\right)\\sin\\theta}
 \\\\
 \\\\
 &= -1
 \\end{align*}
-Integrating both sides, we get $\\log r + t = C.$ But since $r = \\sqrt{x^2 + y^2}$ and $t = \\theta = \\arctan \\frac{y}{x},$ we reach the conclusion:
+Integrating both sides, we get $\\log r +\\theta = C.$ But since $r = \\sqrt{x^2 + y^2}$ and $\\theta = \\arctan \\frac{y}{x},$ we reach the conclusion:
 \\begin{align*}
 \\\\
 \\\\
@@ -5787,80 +5787,117 @@ Now, we use our previous definition of $\\mathbf{r}$ to find $\\mathbf{v} = \\om
 But this means that the radial component of velocity $dr/dt = 0,$ and the transverse component of velocity $r\\,d\\theta/dt = r\\omega.$ Thus, the particle must be moving on a circle of radius $r$ with angular speed $\\omega. \\quad \\blacksquare$
 `,
                   date: "2025-03-05",
-                  hasVisualization: true,
-                  visualization: {
-                    width: 400,
-                    height: 400,
-                    xRange: [-5, 5],
-                    yRange: [-5, 5],
-                    showGrid: true,
-                    showAxes: true,
-                    curves: [
-                      // Circular path
-                      {
-                        polarEquation: "3", // Constant radius
-                        thetaRange: [0, 2 * Math.PI],
-                        numPoints: 100,
-                        options: {
-                          strokeColor: '#3b82f6', // Blue
-                          strokeWidth: 2,
-                          label: 'Circular path'
-                        }
-                      },
-                      // Tangential velocity vectors at different points
-                      {
-                        points: [
-                          { x: 3, y: 0 },
-                          { x: 3, y: 0 + 1 } // Tangent vector at (3,0)
-                        ],
-                        options: {
-                          strokeColor: '#ef4444', // Red
-                          strokeWidth: 2,
-                          showPoints: true
-                        }
-                      },
-                      {
-                        points: [
-                          { x: 0, y: 3 },
-                          { x: -1, y: 3 } // Tangent vector at (0,3)
-                        ],
-                        options: {
-                          strokeColor: '#ef4444', // Red
-                          strokeWidth: 2,
-                          showPoints: true
-                        }
-                      },
-                      {
-                        points: [
-                          { x: -3, y: 0 },
-                          { x: -3, y: -1 } // Tangent vector at (-3,0)
-                        ],
-                        options: {
-                          strokeColor: '#ef4444', // Red
-                          strokeWidth: 2,
-                          showPoints: true
-                        }
-                      },
-                      {
-                        points: [
-                          { x: 0, y: -3 },
-                          { x: 1, y: -3 } // Tangent vector at (0,-3)
-                        ],
-                        options: {
-                          strokeColor: '#ef4444', // Red
-                          strokeWidth: 2,
-                          showPoints: true
-                        }
-                      }
-                    ]
-                  }
+                  hasVisualization: false
                 },
                 {
                   id: 19,
                   number: "14.19.19",
-                  content: `A particle moves in a plane perpendicular to the z-axis. The motion takes place along a circle with center on this axis.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `A particle moves in a plane perpendicular to the z-axis. The motion takes place along a circle with center on this axis.
+
+(a) Show that there is a vector $\\boldsymbol{\\omega}(t)$ parallel to the $z$-axis such that
+
+$$
+\\mathbf{v}(t) = \\boldsymbol{\\omega}(t) \\times \\mathbf{r}(t)
+$$
+where $\\mathbf{r}(t)$ and $\\mathbf{v}(t)$ denote the position and velocity vectors at times $t.$ The vector $\\boldsymbol{\\omega}(t)$ is called the angular velocity vector and its magnitude $\\omega(t) = \\|\\boldsymbol{\\omega}(t)\\|$ is called the angular speed.
+
+(b) The vector $\\boldsymbol{\\alpha}(t) = \\boldsymbol{\\omega}'(t)$ is called the angular acceleration vector. Show that the acceleration vector $\\mathbf{a}(t) = \\mathbf{v}'(t)$ is given by the formula
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) = \\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) - \\omega^2(t)\\mathbf{r}(t) + \\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)
+\\end{align*}
+
+(c) If the particle lies in the $xy$-plane and if the angular speed $\\omega(t)$ is constant, say $\\omega(t) = \\omega,$ prove that the acceleration vector $\\mathbf{a}(t)$ is centripetal and that, in fact, $\\mathbf{a}(t) = -\\omega^2\\mathbf{r}(t).$`,
+                  hint: `(a) Recall that for circular motion, the radial component of velocity is zero and the transverse component is $r\\frac{d\\theta}{dt}$ where $\\left\|\\frac{d\\theta}{dt}\\right\|$ is the angular speed. Refer to the solution of Exercise 18 to derive $\\boldsymbol{\\omega}(t).$
+
+(b) Recall that for two vector-valued functions $F$ and $G,$ $\\left(F \\times G\\right)' = \\left(F' \\times G\\right) + \\left(G' \\times F\\right).$
+
+(c) If the motion lies in the $xy$-plane, what does this imply about the term $\\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t)$ in the equation for acceleration? If angular velocity $\\omega = \\frac{d\\theta}{dt}$ is constant, what does this imply about $\\boldsymbol{\\alpha}(t)?$ 
+`,
+                  solution: `(a) For circular motion with center on the $z$-axis, we have the following relations between the rectangular coordinates $(x, y)$ and the polar coordinates $r$ and $\\theta.$ Let $r = \\|\\mathbf{r}\\|,$ then 
+\\begin{align*}
+\\\\
+x &= r\\cos\\theta,
+\\quad
+y = r\\sin\\theta.
+\\end{align*}                  
+We now define two perpendicular unit vectors $\\mathbf{u}_r$ and $\\mathbf{u}_{\\theta}:$
+\\begin{align*}
+\\\\
+\\mathbf{u}_r &= \\cos\\theta\\,\\mathbf{i} + \\sin\\theta\\,\\mathbf{j}
+\\\\
+\\\\
+\\mathbf{u}_{\\theta} &= \\frac{d\\mathbf{u}_r}{d\\theta}
+\\\\
+\\\\
+&= -\\sin\\theta\\,\\mathbf{i} + \\cos\\theta\\,\\mathbf{j}
+\\end{align*}
+Then, we can rewrite position as $\\mathbf{r}(t) = r\\mathbf{u}_r.$ As such, the equation for velocity becomes:
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= \\frac{d\\left(r\\mathbf{u}_r\\right)}{dt}
+\\\\
+\\\\
+&= \\frac{dr}{dt}\\mathbf{u}_r + r\\frac{d\\mathbf{u}_r}{dt}
+\\end{align*}
+Applying the chain rule, with $\\frac{d\\mathbf{u}_r}{dt} = \\frac{d\\mathbf{u}_r}{d\\theta}\\frac{d\\theta}{dt},$ we can express velocity as a linear combination of the component vectors $\\mathbf{u}_r$ and $\\mathbf{u}_{\\theta}:$
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= \\frac{dr}{dt}\\mathbf{u}_r + r\\frac{d\\theta}{dt}\\mathbf{u}_{\\theta} 
+\\end{align*}
+where the scalar factors $\\frac{dr}{dt}$ and $r\\frac{d\\theta}{dt},$ respectively, are called the radial and transverse components of velocity.
+
+For a particle moving along a circle, we know that the radius remains constant, thus the radial component of velocity is zero. Rewriting $\\mathbf{v}(t)$ in terms of the component vectors $\\mathbf{i}$ and $\\mathbf{j},$ we get:
+\\begin{align*}
+\\\\
+\\mathbf{v}(t) &= r\\frac{d\\theta}{dt}\\mathbf{u}_{\\theta}
+\\\\
+\\\\
+&= \\frac{d\\theta}{dt}\\left(-r\\sin\\theta\\,\\mathbf{i} + r\\cos\\theta\\,\\mathbf{j}\\right)
+\\end{align*}
+But as we saw in Exercise 18, this linear combination is equal to the cross product $\\omega\\mathbf{k} \\times \\mathbf{r},$ where $\\omega = \\frac{d\\theta}{dt}.$ Thus, we have shown that there exists a vector $\\boldsymbol{\\omega}(t)$ parallel to the $z$-axis satisfying $\\mathbf{v}(t) = \\boldsymbol{\\omega}(t) \\times \\mathbf{r}(t)$ for circular motion with center on the $z\\text{-axis.}\\quad \\blacksquare$
+
+(b) Calculating $\\mathbf{a}(t) = \\mathbf{v}'(t),$ we get:
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= \\left[\\boldsymbol{\\omega}(t) \\times \\mathbf{r}(t)\\right]'
+\\\\
+\\\\
+&= \\left[\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)\\right] + \\left[\\boldsymbol{\\omega}(t) \\times \\mathbf{v}(t)\\right]
+\\end{align*}
+Expanding the rightmost term, we get:
+\\begin{align*}
+\\\\
+\\boldsymbol{\\omega}(t) \\times \\mathbf{v}(t) &= -\\omega^2r\\cos\\theta\\,\\mathbf{i} - \\omega^2r\\sin\\theta\\,\\mathbf{j}
+\\\\
+\\\\
+&= -\\omega^2\\mathbf{r}(t)
+\\end{align*}
+where $\\omega = \\frac{d\\theta}{dt}$ is the angular velocity. Then, we note that $\\boldsymbol{\\omega}(t)$ is parallel to $\\mathbf{k}$ and thus perpendicular to $\\mathbf{r},$ making the term $\\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) = 0.$ As such, the equation for acceleration becomes
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= \\left[\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)\\right] + \\left[\\boldsymbol{\\omega}(t) \\times \\mathbf{v}(t)\\right]
+\\\\
+\\\\
+&= -\\omega^2\\mathbf{r}(t) + \\left[\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)\\right]
+\\\\
+\\\\
+&= \\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) -\\omega^2\\mathbf{r}(t) + \\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)
+\\quad
+\\blacksquare
+\\end{align*}
+
+(c) If the particle lies in the $xy$-plane, then the position vector is perpendicular to the $z$-axis, and thus $\\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) = O.$ Additionally, if the angular velocity $\\omega = \\frac{d\\theta}{dt}$ is constant for all $t,$ then $\\frac{d^2\\theta}{dt^2} = 0.$ But $\\boldsymbol{\\alpha}(t) = \\boldsymbol{\\omega}'(t) = \\frac{d^2\\theta}{dt^2}\\mathbf{k},$ thus $\\boldsymbol{\\alpha}(t) = O,$ making $\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t) = O.$ This leaves us with
+\\begin{align*}
+\\\\
+\\mathbf{a}(t) &= \\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) -\\omega^2\\mathbf{r}(t) + \\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)
+\\\\
+\\\\
+&= -\\omega^2\\mathbf{r}(t)
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-03-05"
                 },
                 {
