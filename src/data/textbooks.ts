@@ -5794,25 +5794,25 @@ But this means that the radial component of velocity $dr/dt = 0,$ and the transv
                   number: "14.19.19",
                   content: `A particle moves in a plane perpendicular to the z-axis. The motion takes place along a circle with center on this axis.
 
-(a) Show that there is a vector $\\boldsymbol{\\omega}(t)$ parallel to the $z$-axis such that
+(a) Show that there is a vector $\\pmb{\\omega}(t)$ parallel to the $z$-axis such that
 
 $$
-\\mathbf{v}(t) = \\boldsymbol{\\omega}(t) \\times \\mathbf{r}(t)
+\\mathbf{v}(t) = \\pmb{\\omega}(t) \\times \\mathbf{r}(t)
 $$
-where $\\mathbf{r}(t)$ and $\\mathbf{v}(t)$ denote the position and velocity vectors at times $t.$ The vector $\\boldsymbol{\\omega}(t)$ is called the angular velocity vector and its magnitude $\\omega(t) = \\|\\boldsymbol{\\omega}(t)\\|$ is called the angular speed.
+where $\\mathbf{r}(t)$ and $\\mathbf{v}(t)$ denote the position and velocity vectors at times $t.$ The vector $\\pmb{\\omega}(t)$ is called the angular velocity vector and its magnitude $\\omega(t) = \\|\\pmb{\\omega}(t)\\|$ is called the angular speed.
 
-(b) The vector $\\boldsymbol{\\alpha}(t) = \\boldsymbol{\\omega}'(t)$ is called the angular acceleration vector. Show that the acceleration vector $\\mathbf{a}(t) = \\mathbf{v}'(t)$ is given by the formula
+(b) The vector $\\pmb{\\alpha}(t) = \\pmb{\\omega}'(t)$ is called the angular acceleration vector. Show that the acceleration vector $\\mathbf{a}(t) = \\mathbf{v}'(t)$ is given by the formula
 \\begin{align*}
 \\\\
-\\mathbf{a}(t) = \\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) - \\omega^2(t)\\mathbf{r}(t) + \\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)
+\\mathbf{a}(t) = \\left[\\pmb{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\pmb{\\omega}(t) - \\omega^2(t)\\mathbf{r}(t) + \\pmb{\\alpha}(t) \\times \\mathbf{r}(t)
 \\end{align*}
 
 (c) If the particle lies in the $xy$-plane and if the angular speed $\\omega(t)$ is constant, say $\\omega(t) = \\omega,$ prove that the acceleration vector $\\mathbf{a}(t)$ is centripetal and that, in fact, $\\mathbf{a}(t) = -\\omega^2\\mathbf{r}(t).$`,
-                  hint: `(a) Recall that for circular motion, the radial component of velocity is zero and the transverse component is $r\\frac{d\\theta}{dt}$ where $\\left\|\\frac{d\\theta}{dt}\\right\|$ is the angular speed. Refer to the solution of Exercise 18 to derive $\\boldsymbol{\\omega}(t).$
+                  hint: `(a) Recall that for circular motion, the radial component of velocity is zero and the transverse component is $r\\frac{d\\theta}{dt}$ where $\\left\|\\frac{d\\theta}{dt}\\right\|$ is the angular speed. Refer to the solution of Exercise 18 to derive $\\pmb{\\omega}(t).$
 
 (b) Recall that for two vector-valued functions $F$ and $G,$ $\\left(F \\times G\\right)' = \\left(F' \\times G\\right) + \\left(G' \\times F\\right).$
 
-(c) If the motion lies in the $xy$-plane, what does this imply about the term $\\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t)$ in the equation for acceleration? If angular velocity $\\omega = \\frac{d\\theta}{dt}$ is constant, what does this imply about $\\boldsymbol{\\alpha}(t)?$ 
+(c) If the motion lies in the $xy$-plane, what does this imply about the term $\\left[\\pmb{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\pmb{\\omega}(t)$ in the equation for acceleration? If angular velocity $\\omega = \\frac{d\\theta}{dt}$ is constant, what does this imply about $\\pmb{\\alpha}(t)?$ 
 `,
                   solution: `(a) For circular motion with center on the $z$-axis, we have the following relations between the rectangular coordinates $(x, y)$ and the polar coordinates $r$ and $\\theta.$ Let $r = \\|\\mathbf{r}\\|,$ then 
 \\begin{align*}
@@ -5855,42 +5855,42 @@ For a particle moving along a circle, we know that the radius remains constant, 
 \\\\
 &= \\frac{d\\theta}{dt}\\left(-r\\sin\\theta\\,\\mathbf{i} + r\\cos\\theta\\,\\mathbf{j}\\right)
 \\end{align*}
-But as we saw in Exercise 18, this linear combination is equal to the cross product $\\omega\\mathbf{k} \\times \\mathbf{r},$ where $\\omega = \\frac{d\\theta}{dt}.$ Thus, we have shown that there exists a vector $\\boldsymbol{\\omega}(t)$ parallel to the $z$-axis satisfying $\\mathbf{v}(t) = \\boldsymbol{\\omega}(t) \\times \\mathbf{r}(t)$ for circular motion with center on the $z\\text{-axis.}\\quad \\blacksquare$
+But as we saw in Exercise 18, this linear combination is equal to the cross product $\\omega\\mathbf{k} \\times \\mathbf{r},$ where $\\omega = \\frac{d\\theta}{dt}.$ Thus, we have shown that there exists a vector $\\pmb{\\omega}(t)$ parallel to the $z$-axis satisfying $\\mathbf{v}(t) = \\pmb{\\omega}(t) \\times \\mathbf{r}(t)$ for circular motion with center on the $z\\text{-axis.}\\quad \\blacksquare$
 
 (b) Calculating $\\mathbf{a}(t) = \\mathbf{v}'(t),$ we get:
 \\begin{align*}
 \\\\
-\\mathbf{a}(t) &= \\left[\\boldsymbol{\\omega}(t) \\times \\mathbf{r}(t)\\right]'
+\\mathbf{a}(t) &= \\left[\\pmb{\\omega}(t) \\times \\mathbf{r}(t)\\right]'
 \\\\
 \\\\
-&= \\left[\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)\\right] + \\left[\\boldsymbol{\\omega}(t) \\times \\mathbf{v}(t)\\right]
+&= \\left[\\pmb{\\alpha}(t) \\times \\mathbf{r}(t)\\right] + \\left[\\pmb{\\omega}(t) \\times \\mathbf{v}(t)\\right]
 \\end{align*}
 Expanding the rightmost term, we get:
 \\begin{align*}
 \\\\
-\\boldsymbol{\\omega}(t) \\times \\mathbf{v}(t) &= -\\omega^2r\\cos\\theta\\,\\mathbf{i} - \\omega^2r\\sin\\theta\\,\\mathbf{j}
+\\pmb{\\omega}(t) \\times \\mathbf{v}(t) &= -\\omega^2r\\cos\\theta\\,\\mathbf{i} - \\omega^2r\\sin\\theta\\,\\mathbf{j}
 \\\\
 \\\\
 &= -\\omega^2\\mathbf{r}(t)
 \\end{align*}
-where $\\omega = \\frac{d\\theta}{dt}$ is the angular velocity. Then, we note that $\\boldsymbol{\\omega}(t)$ is parallel to $\\mathbf{k}$ and thus perpendicular to $\\mathbf{r},$ making the term $\\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) = 0.$ As such, the equation for acceleration becomes
+where $\\omega = \\frac{d\\theta}{dt}$ is the angular velocity. Then, we note that $\\pmb{\\omega}(t)$ is parallel to $\\mathbf{k}$ and thus perpendicular to $\\mathbf{r},$ making the term $\\left[\\pmb{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\pmb{\\omega}(t) = 0.$ As such, the equation for acceleration becomes
 \\begin{align*}
 \\\\
-\\mathbf{a}(t) &= \\left[\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)\\right] + \\left[\\boldsymbol{\\omega}(t) \\times \\mathbf{v}(t)\\right]
+\\mathbf{a}(t) &= \\left[\\pmb{\\alpha}(t) \\times \\mathbf{r}(t)\\right] + \\left[\\pmb{\\omega}(t) \\times \\mathbf{v}(t)\\right]
 \\\\
 \\\\
-&= -\\omega^2\\mathbf{r}(t) + \\left[\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)\\right]
+&= -\\omega^2\\mathbf{r}(t) + \\left[\\pmb{\\alpha}(t) \\times \\mathbf{r}(t)\\right]
 \\\\
 \\\\
-&= \\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) -\\omega^2\\mathbf{r}(t) + \\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)
+&= \\left[\\pmb{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\pmb{\\omega}(t) -\\omega^2\\mathbf{r}(t) + \\pmb{\\alpha}(t) \\times \\mathbf{r}(t)
 \\quad
 \\blacksquare
 \\end{align*}
 
-(c) If the particle lies in the $xy$-plane, then the position vector is perpendicular to the $z$-axis, and thus $\\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) = O.$ Additionally, if the angular velocity $\\omega = \\frac{d\\theta}{dt}$ is constant for all $t,$ then $\\frac{d^2\\theta}{dt^2} = 0.$ But $\\boldsymbol{\\alpha}(t) = \\boldsymbol{\\omega}'(t) = \\frac{d^2\\theta}{dt^2}\\mathbf{k},$ thus $\\boldsymbol{\\alpha}(t) = O,$ making $\\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t) = O.$ This leaves us with
+(c) If the particle lies in the $xy$-plane, then the position vector is perpendicular to the $z$-axis, and thus $\\left[\\pmb{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\pmb{\\omega}(t) = O.$ Additionally, if the angular velocity $\\omega = \\frac{d\\theta}{dt}$ is constant for all $t,$ then $\\frac{d^2\\theta}{dt^2} = 0.$ But $\\pmb{\\alpha}(t) = \\pmb{\\omega}'(t) = \\frac{d^2\\theta}{dt^2}\\mathbf{k},$ thus $\\pmb{\\alpha}(t) = O,$ making $\\pmb{\\alpha}(t) \\times \\mathbf{r}(t) = O.$ This leaves us with
 \\begin{align*}
 \\\\
-\\mathbf{a}(t) &= \\left[\\boldsymbol{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\boldsymbol{\\omega}(t) -\\omega^2\\mathbf{r}(t) + \\boldsymbol{\\alpha}(t) \\times \\mathbf{r}(t)
+\\mathbf{a}(t) &= \\left[\\pmb{\\omega}(t) \\cdot \\mathbf{r}(t)\\right]\\pmb{\\omega}(t) -\\omega^2\\mathbf{r}(t) + \\pmb{\\alpha}(t) \\times \\mathbf{r}(t)
 \\\\
 \\\\
 &= -\\omega^2\\mathbf{r}(t)
@@ -5903,9 +5903,63 @@ where $\\omega = \\frac{d\\theta}{dt}$ is the angular velocity. Then, we note th
                 {
                   id: 20,
                   number: "14.19.20",
-                  content: `A body is said to undergo a rigid motion if, for every pair of particles $p$ and $q$ in the body, the distance $\\|\\mathbf{r}_p(t) - \\mathbf{r}_q(t)\\|$ is independent of $t$, where $\\mathbf{r}_p(t)$ and $\\mathbf{r}_q(t)$ denote the position vectors of $p$ and $q$ at time $t$. Prove that for a rigid motion in which each particle $p$ rotates about the $z$-axis we have $\\mathbf{v}_p(t) = \\omega(t) \\times \\mathbf{r}_p(t)$, where $\\omega(t)$ is the same for each particle, and $\\mathbf{v}_p(t)$ is the velocity of particle $p$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `A body is said to undergo a rigid motion if, for every pair of particles $p$ and $q$ in the body, the distance $\\|\\mathbf{r}_p(t) - \\mathbf{r}_q(t)\\|$ is independent of $t$, where $\\mathbf{r}_p(t)$ and $\\mathbf{r}_q(t)$ denote the position vectors of $p$ and $q$ at time $t$. Prove that for a rigid motion in which each particle $p$ rotates about the $z$-axis we have $\\mathbf{v}_p(t) = \\pmb{\\omega}(t) \\times \\mathbf{r}_p(t)$, where $\\pmb{\\omega}(t)$ is the same for each particle, and $\\mathbf{v}_p(t)$ is the velocity of particle $p$.`,
+                  hint: `Suppose particle $q$ sits at the origin, what happens to $\\|\\mathbf{r}_p(t) - \\mathbf{r}_q(t)\\|?$ What does this imply about $\\mathbf{v}_p(t)?$`,
+                  solution: `Since the body rotates about the $z$-axis, we can express the motion of any given particle in terms of polar coordinates. For any given particle $p$ in the body with position $\\mathbf{r}_p = (x, y),$ we have the transformation:
+\\begin{align*}
+\\\\
+x &= r_p\\cos\\theta,
+\\quad
+y = r_p\\sin\\theta
+\\end{align*}
+where $r_p = \\|\\mathbf{r}_p\\|$ and $\\theta$ is the polar angle at time $t.$ Then, we define two perpendicular unit vectors $\\mathbf{u}_{r}$ and $\\mathbf{u}_{\\theta}:$
+\\begin{align*}
+\\\\
+\\mathbf{u}_r &= \\cos\\theta\\,\\mathbf{i} + \\sin\\theta\\,\\mathbf{j}
+\\\\
+\\\\
+\\mathbf{u}_{\\theta} &= \\frac{d\\mathbf{u}_r}{d\\theta}
+\\\\
+\\\\
+&= -\\sin\\theta\\,\\mathbf{i} + \\cos\\theta\\,\\mathbf{j}
+\\end{align*}
+This means that we can express the position and velocity of $p$ in terms the component vectors $\\mathbf{u}_{r}$ and $\\mathbf{u}_{\\theta}:$
+\\begin{align*}
+\\\\
+\\mathbf{r}_p(t) &= r_p\\mathbf{u}_r
+\\\\
+\\\\
+\\mathbf{v}_p(t) &= \\frac{dr}{dt}\\mathbf{u}_r + r_p\\frac{d\\theta}{dt}\\mathbf{u}_{\\theta}
+\\end{align*}
+where the scalar factors $\\frac{dr}{dt}$ and $r_p\\frac{d\\theta}{dt}$ are called the radial and transverse components of velocity, respectively.
+
+But since the body is rigid, we know that for any pair of particles $p$ and $q,$ the distance $\\|\\mathbf{r}_p(t) - \\mathbf{r}_q(t)\\|$ is constant for all $t$. Suppose $q$ sits at the origin. Then, every particle $p$ inside the body undergoes circular motion about the origin, which means that the radial component of velocity $\\frac{dr}{dt} = 0,$ making $\\mathbf{v}_p(t) = r\\frac{d\\theta}{dt}\\mathbf{u}_{\\theta}.$
+
+As we showed in Exercise 19, we can express this velocity as the cross product $\\pmb{\\omega}(t) \\times \\mathbf{r}_p(t),$ where $\\pmb{\\omega}(t) = \\omega(t)\\mathbf{k}$ and $\\omega(t) = \\frac{d\\theta}{dt}:$
+\\begin{align*}
+\\\\
+\\mathbf{v}_p(t) &= r_p\\frac{d\\theta}{dt}\\mathbf{u}_{\\theta}
+\\\\
+\\\\
+&= \\frac{d\\theta}{dt}\\left(-r_p\\sin\\theta\\,\\mathbf{i} + r_p\\cos\\theta\\,\\mathbf{j}\\right)
+\\\\
+\\\\
+&= 
+\\begin{vmatrix}
+\\mathbf{i} & \\mathbf{j} & \\mathbf{k}
+\\\\
+0 & 0 & \\frac{d\\theta}{dt}
+\\\\
+r_p\\cos\\theta & r_p\\sin\\theta & 0
+\\end{vmatrix}
+\\\\
+\\\\
+&= \\omega(t)\\mathbf{k} \\times r_p\\mathbf{u}_r
+\\\\
+\\\\
+&= \\pmb{\\omega}(t) \\times \\mathbf{r}_p(t)
+\\end{align*}
+And as we can see, $\\pmb{\\omega}(t)$ is the same regardless of position. Thus, it must be the same for all particles in the body. This completes the proof.`,
                   date: "2025-03-05"
                 }
               ]
