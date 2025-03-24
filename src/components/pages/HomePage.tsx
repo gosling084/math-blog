@@ -1,40 +1,25 @@
-// src/components/HomePage.tsx
+// src/components/pages/HomePage.tsx
 "use client";
-import React from 'react';
-import { ChevronRight } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import React, { useState, useEffect } from 'react';
 import { Textbook } from "@/types/types";
 import { textbookData } from "@/data/textbooks";
 
 export const HomePageSkeleton = () => {
   return (
     <div className="content-layout">
-      {/* Header section skeleton */}
-      <div className="space-y-4 text-center mb-8">
-        <div className="h-12 bg-gray-200 rounded-lg w-2/3 mx-auto animate-pulse" />
-        <div className="h-8 bg-gray-200 rounded-lg w-1/2 mx-auto animate-pulse" />
-      </div>
-
-      {/* Section title skeleton */}
-      <div className="h-4 bg-gray-200 rounded w-48 mb-6 animate-pulse" />
-
-      {/* Cards skeleton */}
-      <div className="card-layout">
-        {[1].map((i) => (
-          <Card key={i} className="card-hover">
-            <CardHeader>
-              <div className="h-7 bg-gray-200 rounded-lg w-3/4 animate-pulse" />
-              <div className="h-5 bg-gray-200 rounded-lg w-1/2 mt-2 animate-pulse" />
-            </CardHeader>
-            <CardContent>
-              <div className="flex justify-between items-center">
-                <div className="h-5 bg-gray-200 rounded-lg w-1/3 animate-pulse" />
-                <div className="h-10 bg-gray-200 rounded-lg w-36 animate-pulse" />
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+      {/* TeX editor skeleton */}
+      <div className="font-mono text-left p-6 border border-border rounded-md bg-card">
+        <div className="h-6 bg-gray-200 rounded w-3/4 animate-pulse mb-2" />
+        <div className="h-6 bg-gray-200 rounded w-2/3 animate-pulse mb-2" />
+        <div className="h-6 bg-gray-200 rounded w-1/2 animate-pulse mb-10" />
+        
+        {/* Library skeleton */}
+        <div className="h-6 bg-gray-200 rounded w-1/4 animate-pulse mb-4" />
+        <div className="space-y-3 pl-4 border-l-2 border-muted mb-8">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="h-5 bg-gray-200 rounded-lg w-5/6 animate-pulse" />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -45,67 +30,166 @@ interface HomePageProps {
 }
 
 export const HomePage = ({ onSelectTextbook }: HomePageProps) => {
+  const [cursorVisible, setCursorVisible] = useState<boolean>(true);
+
+  // Blinking cursor effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCursorVisible(prev => !prev);
+    }, 530); // Standard cursor blink rate
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // TeX document content with line numbers
+  const documentLines = [
+    "% Mathematical Immaturity - Source Document",
+    "\\documentclass{book}",
+    "\\usepackage{amsmath}",
+    "\\usepackage{amssymb}",
+    "\\usepackage{hyperref}",
+    "",
+    "\\title{Mathematical Immaturity}",
+    "\\subtitle{Push it to the limit.}",
+    "\\author{gosling084}",
+    "",
+    "% Select a textbook to begin",
+    "\\begin{library}"
+  ];
+
+  // Calculate ending lines
+  const endingLines = ["\\end{library}"];
+  
+  // Total lines for line numbering
+  const totalLines = documentLines.length + textbookData.length + endingLines.length;
+
   return (
     <div className="content-layout">
-      {/* Header section */}
-      <div className="space-y-4 text-center mb-8">
-        <h1 className="text-4xl font-bold text-foreground">
-          Mathematical Immaturity
-        </h1>
-        <p className="text-xl text-muted-foreground">
-          Growing up, one proof at a time.
-        </p>
-      </div>
-  
-      {/* Section title */}
-      <div className="text-sm uppercase tracking-wide text-muted-foreground mb-6">
-        Problem Set Solutions
-      </div>
-  
-      {/* Cards */}
-      <div className="card-layout">
-        {textbookData.map((textbook) => (
-          <Card 
-            key={textbook.id} 
-            className="card-hover"
-          >
-            <CardHeader>
-              <CardTitle className="text-foreground">
-                {textbook.title}
-              </CardTitle>
-              <p className="text-muted-foreground">
-                {textbook.author} - {textbook.edition} ({textbook.year})
-              </p>
-            </CardHeader>
-            <CardContent>
-              <div className="flex justify-between items-center">
-                <p className="text-muted-foreground">
-                  {textbook.chapters.length}
-                  {textbook.chapters.length === 1 ? " chapter " : " chapters "}
-                  {" • "} 
-                  {textbook.chapters.reduce((total, chapter) => 
-                    total + chapter.problemSets.reduce((setTotal, set) => 
-                      setTotal + set.problems.length, 0
-                    ), 0
-                  )}
-                  {
-                    textbook.chapters.reduce((total, chapter) => 
-                      total + chapter.problemSets.reduce((setTotal, set) => 
-                        setTotal + set.problems.length, 0
-                      ), 0
-                    ) === 1 ? " problem" : " problems"
-                  }
-                </p>
-                <Button 
+      {/* TeX editor with integrated book list */}
+      <div className="font-mono text-left border border-border rounded-md bg-card shadow-md overflow-hidden">
+        {/* Editor toolbar */}
+        <div className="flex items-center justify-between px-4 py-2 bg-muted/30 border-b border-border">
+          <div className="text-sm text-muted-foreground">mathematical-immaturity.tex</div>
+          <div className="text-xs text-muted-foreground">Modified: {new Date().toLocaleDateString()}</div>
+        </div>
+        
+        {/* Editor content with line numbers */}
+        <div className="flex">
+          {/* Line numbers column */}
+          <div className="py-3 px-2 text-right bg-muted/20 border-r border-border text-muted-foreground select-none w-12">
+            {Array.from({ length: totalLines }, (_, i) => (
+              <div key={i} className="text-xs leading-6">{i + 1}</div>
+            ))}
+          </div>
+          
+          {/* Code content */}
+          <div className="p-3 overflow-x-auto flex-1">
+            {/* Document preamble */}
+            {documentLines.map((line, idx) => {
+              if (line.startsWith('%')) {
+                // Comment line
+                return (
+                  <div key={`pre-${idx}`} className="leading-6 text-muted-foreground opacity-70">
+                    {line}
+                  </div>
+                );
+              } else if (line === '') {
+                // Empty line
+                return <div key={`pre-${idx}`} className="leading-6">&nbsp;</div>;
+              } else if (line.startsWith('\\')) {
+                // Command line
+                const parts = line.split('{');
+                const command = parts[0];
+                
+                // Handle different command types
+                if (command === '\\title' || command === '\\subtitle') {
+                  const content = parts[1].replace('}', '');
+                  return (
+                    <div key={`pre-${idx}`} className="leading-6">
+                      <span className="text-primary">{command}</span>
+                      {'{'}
+                      <span className="text-foreground">{content}</span>
+                      {'}'}
+                    </div>
+                  );
+                } else if (command === '\\author') {
+                  const content = parts[1].replace('}', '');
+                  return (
+                    <div key={`pre-${idx}`} className="leading-6">
+                      <span className="text-primary">{command}</span>
+                      {'{'}
+                      <a href="https://github.com/gosling084" 
+                         target="_blank" 
+                         rel="noopener noreferrer"
+                         className="text-foreground hover:text-primary transition-colors underline decoration-dotted underline-offset-4">
+                        {content}
+                      </a>
+                      {'}'}
+                    </div>
+                  );
+                } else {
+                  // Standard command
+                  return (
+                    <div key={`pre-${idx}`} className="leading-6">
+                      <span className="text-primary">{command}</span>
+                      {'{' + parts[1]}
+                    </div>
+                  );
+                }
+              } else {
+                // Regular line
+                return <div key={`pre-${idx}`} className="leading-6">{line}</div>;
+              }
+            })}
+            
+            {/* Books as a list inside the TeX document */}
+            <div className="ml-4 space-y-0">
+              {textbookData.map((textbook, idx) => (
+                <div 
+                  key={`book-${idx}`}
                   onClick={() => onSelectTextbook(textbook)}
-                  className="flex items-center gap-2"
+                  className="group cursor-pointer leading-6 flex items-start hover:bg-secondary/20 -mx-1 px-1 rounded"
                 >
-                  View chapters <ChevronRight className="h-4 w-4" />
-                </Button>
+                  <code className="flex-1">
+                    <span className="text-primary">{'  '}\\textbook</span>
+                    {'{'}
+                    <span className="text-foreground group-hover:text-primary transition-colors">
+                      {textbook.title}
+                    </span>
+                    {'}'}
+                    {'{'}
+                    <span className="text-muted-foreground">
+                      {textbook.author}
+                    </span>
+                    {'}'}
+                    {'{'}
+                    <span className="text-muted-foreground">
+                      {textbook.edition}, {textbook.year}
+                    </span>
+                    {'}'}
+                  </code>
+                </div>
+              ))}
+            </div>
+            
+            {/* Ending lines */}
+            {endingLines.map((line, idx) => (
+              <div key={`end-${idx}`} className="leading-6">
+                <span className="text-primary">{line}</span>
+                {idx === endingLines.length - 1 && (
+                  <span className={`ml-1 inline-block w-2 bg-primary align-text-bottom ${cursorVisible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`} style={{ height: '19px' }}></span>
+                )}
               </div>
-            </CardContent>
-          </Card>
-        ))}
+            ))}
+          </div>
+        </div>
+        
+        {/* Editor status bar */}
+        <div className="px-4 py-1 bg-muted/30 border-t border-border flex justify-between text-xs text-muted-foreground">
+          <div>LaTeX</div>
+          <div>UTF-8</div>
+          <div>Ln {totalLines}, Col 14</div>
+        </div>
       </div>
     </div>
   );
