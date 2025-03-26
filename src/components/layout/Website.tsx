@@ -1,7 +1,7 @@
 // src/components/layout/Website.tsx
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Home, Info, Mail } from 'lucide-react';
+import { Home, Info, Mail, Terminal, Code, X } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { ProblemSet, Problem, Textbook, Chapter} from "@/types/types";
 import { TextbookTableOfContents, TextbookTableOfContentsSkeleton } from '@/components/pages/TextbookTableofContents';
@@ -10,23 +10,181 @@ import { ProblemSetView, ProblemSetViewSkeleton } from '@/components/pages/Probl
 import { ProblemView, ProblemViewSkeleton } from '@/components/pages/ProblemView';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { FontToggle } from '@/components/ui/FontToggle';
+import { Button } from "@/components/ui/shadcn";
 import { FontProvider } from '@/providers/font-provider';
 import { About } from '@/components/pages/About';
 import { Contact } from '@/components/pages/Contact';
 import { Suspense } from 'react';
 import { AppRouterProvider } from '@/providers/AppRouterProvider';
+import { TerminalWidget } from '@/components/ui/TerminalWidget';
+import { textbookData } from "@/data/textbooks";
 
 const Website = () => {
   // All hooks must be called before any conditional returns
   const [mounted, setMounted] = useState(false);
+  const [globalTerminalVisible, setGlobalTerminalVisible] = useState(false);
+  const [terminalHistory, setTerminalHistory] = useState<string[]>([]);
 
   useEffect(() => {
     setMounted(true);
+    
+    // Add keyboard shortcut for terminal
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Alt+T or Ctrl+` to toggle terminal
+      if ((e.altKey && e.key === 't') || (e.ctrlKey && e.key === '`')) {
+        setGlobalTerminalVisible(prev => !prev);
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   if (!mounted) {
     return null;
   }
+
+  // Handle global terminal commands
+  const handleGlobalCommand = (command: string, router: any) => {
+    const parts = command.toLowerCase().split(' ');
+    const cmd = parts[0];
+    
+    switch (cmd) {
+      case 'home':
+        router.actions.navigateToHome();
+        router.setActiveSection('home');
+        break;
+      case 'about':
+        router.setActiveSection('about');
+        break;
+      case 'contact':
+        router.setActiveSection('contact');
+        break;
+      case 'open':
+      case 'view':
+        // Attempt to open a book or section
+        if (parts.length > 1) {
+          const bookId = parts[1];
+          const bookIdNum = parseInt(bookId);
+          
+          if (!isNaN(bookIdNum)) {
+            // Try to find book by ID
+            const textbook = textbookData.find(b => b.id === bookIdNum);
+            if (textbook) {
+              router.actions.navigateToTextbook(textbook);
+            }
+          } else {
+            // Try to parse more complex commands like "open apostol chapter 1 section 2"
+            const bookNameIndex = parts.indexOf('book') > 0 ? parts.indexOf('book') + 1 : 1;
+            const bookName = parts[bookNameIndex].toLowerCase();
+            
+            // Find book by partial name match
+            const textbook = textbookData.find(b => 
+              b.title.toLowerCase().includes(bookName) || 
+              b.author.toLowerCase().includes(bookName)
+            );
+            
+            if (textbook) {
+              // Check if we need to navigate to a specific chapter or section
+              const chapterIndex = parts.indexOf('chapter');
+              const sectionIndex = parts.indexOf('section');
+              
+              if (chapterIndex > 0 && chapterIndex < parts.length - 1) {
+                const chapterId = parseInt(parts[chapterIndex + 1]);
+                
+                if (!isNaN(chapterId)) {
+                  const chapter = textbook.chapters.find(c => c.id === chapterId);
+                  
+                  if (chapter) {
+                    if (sectionIndex > 0 && sectionIndex < parts.length - 1) {
+                      const sectionId = parseInt(parts[sectionIndex + 1]);
+                      
+                      if (!isNaN(sectionId)) {
+                        const section = chapter.problemSets.find(s => s.id === sectionId);
+                        
+                        if (section) {
+                          router.actions.navigateToProblemSet(textbook, chapter, section);
+                          return;
+                        }
+                      }
+                    }
+                    
+                    // If we found chapter but not section, go to chapter
+                    router.actions.navigateToChapter(textbook, chapter);
+                    return;
+                  }
+                }
+              }
+              
+              // If we only found the book, go to the book
+              router.actions.navigateToTextbook(textbook);
+            }
+          }
+        }
+        break;
+      case 'back':
+        // Navigate backward in the hierarchy
+        if (router.params.problemId) {
+          router.actions.navigateToProblemSet(
+            router.activeContent.textbook!, 
+            router.activeContent.chapter!, 
+            router.activeContent.problemSet!
+          );
+        } else if (router.params.setId) {
+          router.actions.navigateToTextbook(router.activeContent.textbook!);
+        } else if (router.params.bookId) {
+          router.actions.navigateToHome();
+        }
+        break;
+      case 'ls':
+        // List available resources at current level
+        return ['Available commands: help, ls, cd, open, view, back, home, about, contact'];
+      case 'clear':
+        // Just return empty array to clear the terminal
+        return [];
+      case 'help':
+        // Return help text
+        return [
+          'Mathematical Immaturity Terminal v0.1',
+          'Available commands:',
+          '  help                   - Show this help message',
+          '  ls                     - List available resources',
+          '  open [book]            - Open a textbook',
+          '  view [resource]        - View a resource',
+          '  back                   - Navigate back one level',
+          '  home                   - Go to home page',
+          '  about                  - Go to about page',
+          '  contact                - Go to contact page',
+          '  clear                  - Clear the terminal',
+          '',
+          'Examples:',
+          '  open apostol           - Open Apostol\'s Calculus',
+          '  open book apostol chapter 1 section 2  - Open specific section',
+          '  view problem 1.2.3     - View specific problem'
+        ];
+      default:
+        return [`Command not found: ${cmd}. Type 'help' for available commands.`];
+    }
+  };
+
+  // Process terminal command and update history
+  const processTerminalCommand = (command: string, router: any) => {
+    // Add command to history
+    setTerminalHistory(prev => [...prev, `$ ${command}`]);
+    
+    // Process command and get response
+    const response = handleGlobalCommand(command, router);
+    
+    // If there's a response, add it to history
+    if (response && Array.isArray(response)) {
+      if (response.length === 0) {
+        // Clear command
+        setTerminalHistory([]);
+      } else {
+        setTerminalHistory(prev => [...prev, ...response]);
+      }
+    }
+  };
 
   // Main layout
   return (
@@ -74,13 +232,52 @@ const Website = () => {
                       Contact
                     </button>
                   </div>
-                  <div className="flex items-center">
+                  <div className="flex items-center gap-2">
+                    {/* Terminal toggle button */}
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 px-2"
+                      onClick={() => setGlobalTerminalVisible(!globalTerminalVisible)}
+                      title="Toggle Terminal (Alt+T)"
+                    >
+                      <Terminal className="w-4 h-4" />
+                    </Button>
                     <FontToggle />
                     <ThemeToggle />
                   </div>
                 </div>
               </div>
             </nav>
+            
+            {/* Global terminal (when visible) */}
+            {globalTerminalVisible && (
+              <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-black">
+                <div className="flex justify-between items-center px-2 py-1 bg-card/80 border-b border-border">
+                  <div className="flex items-center">
+                    <Terminal className="w-3 h-3 mr-2 text-primary" />
+                    <span className="text-xs font-mono">Mathematical Immaturity Terminal</span>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="h-6 w-6 p-0"
+                    onClick={() => setGlobalTerminalVisible(false)}
+                  >
+                    <X className="w-3 h-3" />
+                  </Button>
+                </div>
+                <div className="h-40">
+                  <TerminalWidget
+                    initialCommands={[
+                      '$ Mathematical Immaturity Terminal v0.1', 
+                      '$ Type "help" for available commands'
+                    ]}
+                    onCommandEnter={(cmd) => processTerminalCommand(cmd, router)}
+                  />
+                </div>
+              </div>
+            )}
 
             {/* Main content */}
             <main className="py-10">
@@ -102,7 +299,7 @@ const Website = () => {
                     </Suspense>
                   )}
 
-                  {/* TextbookTableOfContents view (replaces both TextbookView and ChapterView) */}
+                  {/* TextbookTableOfContents view */}
                   {router.params.bookId && !router.params.setId && router.activeContent.textbook && (
                     <Suspense fallback={<TextbookTableOfContentsSkeleton />}>
                       <TextbookTableOfContents 
@@ -173,7 +370,7 @@ const Website = () => {
                         previousProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
                         onNavigateToProblem={(problem) => {
                           // Find the containing problem set and chapter if this might be a cross-section problem
-                          const [chapterNumber, problemSetNumber, problemNumber]: number[] = problem.number.split(".").map(id => Number(id))
+                          const [chapterNumber, problemSetNumber, problemNumber] = problem.number.split(".").map(id => Number(id));
                           
                           router.actions.navigateToProblem(
                             router.activeContent.textbook!.id,
@@ -182,24 +379,38 @@ const Website = () => {
                             problemNumber
                           );
                         }}
-                        />
+                      />
                     </Suspense>
                   )}
                 </>
               )}
             </main>
+
+            {/* Footer */}
+            <footer className="border-t bg-background">
+              <div className="max-w-7xl mx-auto px-4 py-6">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                  <p className="text-muted-foreground text-sm">
+                    © 2024-{new Date().getFullYear()} Mathematical Immaturity. All rights reserved.
+                  </p>
+                  {/* Keyboard shortcut info */}
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="flex items-center">
+                      <kbd className="px-2 py-1 rounded bg-muted border border-border text-xs font-mono">Alt+T</kbd>
+                      <span className="ml-1">Toggle Terminal</span>
+                    </span>
+                    <span className="mx-1">•</span>
+                    <span className="flex items-center">
+                      <kbd className="px-2 py-1 rounded bg-muted border border-border text-xs font-mono">Esc</kbd>
+                      <span className="ml-1">Focus Editor</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </footer>
           </>
         )}
       </AppRouterProvider>
-
-      {/* Footer */}
-      <footer className="border-t bg-background">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <p className="text-center text-muted-foreground">
-            © 2024-{new Date().getFullYear()} Mathematical Immaturity. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
     </FontProvider>
   );
@@ -207,15 +418,15 @@ const Website = () => {
 
 // Helper function to get next or previous problem
 const getProblemNavigation = (textbook: Textbook, currentProblem: Problem, direction: 'next' | 'previous'): Problem | null => {
-  const [chapter, section, problem]: number[] = currentProblem.number.split(".").map(num => Number(num));
+  const [chapter, section, problem] = currentProblem.number.split(".").map(num => Number(num));
   
-  const chapterIndex: number = textbook.chapters.findIndex((ch: Chapter) => ch.id === chapter);
-  const sectionIndex: number = textbook.chapters[chapterIndex].problemSets.findIndex((sec: ProblemSet) => sec.id === section);
-  const problemIndex: number = textbook.chapters[chapterIndex].problemSets[sectionIndex].problems.findIndex((p: Problem) => p.id === problem);
+  const chapterIndex = textbook.chapters.findIndex((ch: Chapter) => ch.id === chapter);
+  const sectionIndex = textbook.chapters[chapterIndex].problemSets.findIndex((sec: ProblemSet) => sec.id === section);
+  const problemIndex = textbook.chapters[chapterIndex].problemSets[sectionIndex].problems.findIndex((p: Problem) => p.id === problem);
   
-  const problemsLength: number = textbook.chapters[chapterIndex].problemSets[sectionIndex].problems.length;
-  const sectionsLength: number = textbook.chapters[chapterIndex].problemSets.length;
-  const chaptersLength: number = textbook.chapters.length;
+  const problemsLength = textbook.chapters[chapterIndex].problemSets[sectionIndex].problems.length;
+  const sectionsLength = textbook.chapters[chapterIndex].problemSets.length;
+  const chaptersLength = textbook.chapters.length;
 
   if (direction === "next") {
     if (problemIndex === (problemsLength - 1)) {
@@ -237,12 +448,12 @@ const getProblemNavigation = (textbook: Textbook, currentProblem: Problem, direc
         if (chapterIndex === 0) {
           return null;
         } else {
-          const prevChapterLength: number = textbook.chapters[chapterIndex - 1].problemSets.length;
-          const prevProblemSetLength: number = textbook.chapters[chapterIndex - 1].problemSets[prevChapterLength - 1].problems.length;
+          const prevChapterLength = textbook.chapters[chapterIndex - 1].problemSets.length;
+          const prevProblemSetLength = textbook.chapters[chapterIndex - 1].problemSets[prevChapterLength - 1].problems.length;
           return textbook.chapters[chapterIndex - 1].problemSets[prevChapterLength - 1].problems[prevProblemSetLength - 1];
         }
       } else {
-        const prevProblemSetLength: number = textbook.chapters[chapterIndex].problemSets[sectionIndex - 1].problems.length;
+        const prevProblemSetLength = textbook.chapters[chapterIndex].problemSets[sectionIndex - 1].problems.length;
         return textbook.chapters[chapterIndex].problemSets[sectionIndex - 1].problems[prevProblemSetLength - 1];
       }
     } else {
