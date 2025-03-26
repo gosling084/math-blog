@@ -1,7 +1,7 @@
 // src/components/ui/ThemeToggle.tsx
 "use client";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/shadcn";
 import {
   DropdownMenu,
   DropdownMenuContent,

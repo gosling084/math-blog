@@ -2,8 +2,7 @@
 "use client";
 import React from 'react';
 import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { ProblemSet, Problem } from "@/types/types";
 import { MathContent } from '@/components/ui/MathContent';
 

@@ -1,7 +1,7 @@
 // src/components/pages/Contact.tsx
 "use client";
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/shadcn";
 import { GithubIcon } from '@/components/ui/icons/GithubIcon';
 import { TwitterIcon } from '../ui/icons/TwitterIcon';
 

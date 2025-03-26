@@ -1,7 +1,7 @@
 // src/components/pages/TextbookTableOfContents.tsx
 "use client";
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn";
 import { Textbook, Chapter, ProblemSet } from "@/types/types";
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 

@@ -1,7 +1,7 @@
 // src/components/ui/FontToggle.tsx
 "use client";
 import { useFont, FontFamily, FontSize } from '@/providers/font-provider';
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/shadcn";
 import {
   DropdownMenu,
   DropdownMenuContent,

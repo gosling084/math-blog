@@ -1,7 +1,7 @@
 // src/components/pages/About.tsx
 "use client";
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/shadcn";
 
 export const About = () => {
   return (

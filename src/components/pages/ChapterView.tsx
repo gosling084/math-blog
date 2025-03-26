@@ -2,7 +2,7 @@
 "use client";
 import React, { useState } from 'react';  // Add useState
 import { LayoutGrid, List } from 'lucide-react';  // Add LayoutGrid and List
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/shadcn";
 import { cn } from "@/lib/utils";
 import { Textbook, Chapter, ProblemSet, ViewType } from "@/types/types";
 import { Breadcrumb } from '@/components/ui/Breadcrumb';

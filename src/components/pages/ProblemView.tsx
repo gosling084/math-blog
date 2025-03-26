@@ -2,8 +2,7 @@
 "use client";
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, BookOpen, ArrowLeft, ArrowRight, Lightbulb, PenTool } from 'lucide-react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { cn } from "@/lib/utils";
 import { Problem, ProblemSet } from "@/types/types";
 import { MathContent } from '@/components/ui/MathContent';

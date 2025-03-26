@@ -1,3 +1,4 @@
+// src/components/ui/shadcn/accordion.tsx
 "use client"
 
 import * as React from "react"

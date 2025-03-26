@@ -1,3 +1,5 @@
+// src/components/ui/shadcn/slider.tsx
+
 "use client"
 
 import * as React from "react"

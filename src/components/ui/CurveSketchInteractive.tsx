@@ -2,20 +2,15 @@
 "use client";
 import React, { useState, useCallback } from 'react';
 import { 
-  Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { 
-  Tabs, TabsContent, TabsList, TabsTrigger 
-} from "@/components/ui/tabs";
-import { 
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue 
-} from "@/components/ui/select";
-import { 
-  Accordion, AccordionContent, AccordionItem, AccordionTrigger 
-} from "@/components/ui/accordion";
-import { Slider } from "@/components/ui/slider";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
+  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
+  Button,
+  Card, CardContent, CardHeader, CardTitle, CardDescription,
+  Input,
+  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+  Slider,
+  Switch,
+  Tabs, TabsContent, TabsList, TabsTrigger
+} from "@/components/ui/shadcn";
 import { CurveSketch, CurveConfig, CurveOptions } from './CurveSketch';
 import { Plus, Trash2, RefreshCw, EyeOff, Eye } from 'lucide-react';
 

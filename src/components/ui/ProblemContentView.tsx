@@ -1,6 +1,5 @@
 // src/components/ui/ContentView.tsx
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Button , Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn";
 import { ChevronRight } from "lucide-react";
 import { Problem, ViewType } from '@/types/types';
 import { MathContent } from "./MathContent";
