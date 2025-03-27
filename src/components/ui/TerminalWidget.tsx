@@ -1,19 +1,22 @@
 // src/components/ui/TerminalWidget.tsx
 "use client";
 import React, { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { cn } from "@/lib/utils";
 
 interface TerminalWidgetProps {
   className?: string;
   initialCommands?: string[];
   onCommandEnter?: (command: string) => void;
+  height?: number | string;
+  onQuit?: () => void; // Add onQuit prop
 }
 
 export const TerminalWidget = ({
   className,
   initialCommands = [],
-  onCommandEnter
+  onCommandEnter,
+  height = "25vh", // Default height
+  onQuit // Add onQuit handler
 }: TerminalWidgetProps) => {
   const [commands, setCommands] = useState<string[]>(initialCommands);
   const [currentCommand, setCurrentCommand] = useState<string>('');
@@ -21,7 +24,6 @@ export const TerminalWidget = ({
   const [historyIndex, setHistoryIndex] = useState<number>(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
 
   // Scroll to bottom when commands change
   useEffect(() => {
@@ -37,6 +39,7 @@ export const TerminalWidget = ({
     }
   }, []);
 
+  // Handle key events for command history and execution
   const handleCommandEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && currentCommand.trim()) {
       const command = currentCommand.trim();
@@ -62,9 +65,18 @@ export const TerminalWidget = ({
     } else if (e.key === 'ArrowDown') {
       e.preventDefault();
       navigateHistory('down');
+    } else if (e.key === 'Tab') {
+      e.preventDefault();
+      attemptAutoComplete();
+    } else if (e.key === 'Escape') {
+      // Close terminal on Escape key
+      if (onQuit) {
+        onQuit();
+      }
     }
   };
 
+  // History navigation
   const navigateHistory = (direction: 'up' | 'down') => {
     if (commandHistory.length === 0) return;
     
@@ -79,6 +91,34 @@ export const TerminalWidget = ({
     }
   };
 
+  // Basic auto-completion
+  const attemptAutoComplete = () => {
+    if (!currentCommand) return;
+    
+    // Added "quit" and "exit" to the list of base commands
+    const baseCommands = ['help', 'clear', 'ls', 'cd', 'open', 'view', 'back', 'home', 'about', 'contact', 'quit', 'exit'];
+    
+    // Try to complete a command
+    const partialCommand = currentCommand.split(' ')[0];
+    
+    const matchingCommands = baseCommands.filter(cmd => 
+      cmd.startsWith(partialCommand) && cmd !== partialCommand
+    );
+    
+    if (matchingCommands.length === 1) {
+      // If there's exactly one match, complete the command
+      setCurrentCommand(currentCommand.replace(partialCommand, matchingCommands[0]));
+    } else if (matchingCommands.length > 1) {
+      // Show options
+      setCommands(prev => [
+        ...prev, 
+        `$ ${currentCommand}`,
+        `Completions: ${matchingCommands.join(', ')}`
+      ]);
+    }
+  };
+
+  // Basic command processing
   const processCommand = (command: string) => {
     const [cmd, ...args] = command.split(' ');
     
@@ -91,8 +131,9 @@ export const TerminalWidget = ({
           '  clear - Clear the terminal',
           '  ls - List available textbooks',
           '  cd <path> - Navigate to a section',
-          '  open <book> [--chapter <num>] [--section <num>] - Open a textbook or section',
-          '  exit - Close the terminal'
+          '  open <book> [chapter <num>] [section <num>] - Open a textbook or section',
+          '  quit, exit - Close the terminal',
+          '  [Esc] - Press Escape key to close the terminal'
         ]);
         break;
         
@@ -120,23 +161,25 @@ export const TerminalWidget = ({
         
       case 'open':
         if (args.length === 0) {
-          setCommands(prev => [...prev, 'Usage: open <book> [--chapter <num>] [--section <num>]']);
+          setCommands(prev => [...prev, 'Usage: open <book> [chapter <num>] [section <num>]']);
         } else {
           const bookArg = args[0];
           setCommands(prev => [...prev, `Opening ${bookArg}...`]);
           
-          // In a real implementation, parse more complex arguments and navigate accordingly
-          if (bookArg.toLowerCase().includes('apostol')) {
-            router.push('/?id=1');
-          } else if (bookArg.toLowerCase().includes('stewart')) {
-            router.push('/?id=2');
-          }
+          // In a real implementation, we would navigate to the book
+          // This will be handled by the parent component through onCommandEnter
         }
         break;
         
+      case 'quit':
       case 'exit':
-        // In a real implementation, this would close the terminal
         setCommands(prev => [...prev, 'Terminal closed']);
+        // Call onQuit after a brief delay to show the "Terminal closed" message
+        if (onQuit) {
+          setTimeout(() => {
+            onQuit();
+          }, 300);
+        }
         break;
         
       default:
@@ -144,18 +187,44 @@ export const TerminalWidget = ({
     }
   };
 
+  // Focus when clicking anywhere in the terminal
+  const handleContainerClick = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
   return (
-    <div className={cn(
-      "border border-border rounded-md bg-black text-green-400 font-terminal p-2",
-      "min-h-[150px] max-h-[300px] overflow-auto",
-      className
-    )}
-    ref={containerRef}>
-      {commands.map((cmd, index) => (
-        <div key={index} className="text-sm mb-1">{cmd}</div>
-      ))}
+    <div 
+      className={cn(
+        "border border-border rounded-b-md bg-black text-green-400 font-mono",
+        className
+      )}
+      style={{ height }}
+      onClick={handleContainerClick}
+    >
+      <div 
+        ref={containerRef}
+        className="px-2 py-2 h-[calc(100%-28px)] overflow-y-auto"
+      >
+        {commands.map((cmd, index) => {
+          // Fixed syntax highlighting for terminal text
+          if (cmd.startsWith('$ ')) {
+            // Command line with consistent coloring
+            const commandString = cmd.substring(2); // Remove the "$ " prefix
+            
+            return (
+              <div key={index} className="text-sm mb-1">
+                <span className="text-blue-400">$</span>
+                <span className="text-green-400"> {commandString}</span>
+              </div>
+            );
+          }
+          return <div key={index} className="text-sm mb-1">{cmd}</div>;
+        })}
+      </div>
       
-      <div className="flex items-center mt-1">
+      <div className="flex items-center px-2 py-1 border-t border-border/30 h-7">
         <span className="text-blue-400 mr-1">$</span>
         <input
           ref={inputRef}
@@ -163,7 +232,9 @@ export const TerminalWidget = ({
           value={currentCommand}
           onChange={e => setCurrentCommand(e.target.value)}
           onKeyDown={handleCommandEnter}
-          className="bg-transparent border-none outline-none text-green-400 flex-1 text-sm font-terminal"
+          className="bg-transparent border-none outline-none text-green-400 flex-1 text-sm"
+          autoComplete="off"
+          spellCheck="false"
         />
       </div>
     </div>

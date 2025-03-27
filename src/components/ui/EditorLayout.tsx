@@ -1,7 +1,7 @@
 // src/components/ui/EditorLayout.tsx
 "use client";
 import React, { ReactNode, useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { cn } from "@/lib/utils";
 import { Terminal } from 'lucide-react';
 import { Button } from "@/components/ui/shadcn";
 
@@ -13,6 +13,8 @@ interface EditorLayoutProps {
   modified?: boolean;
   toolbar?: ReactNode;
   statusContent?: ReactNode;
+  height?: string | number;
+  onToggleTerminal?: () => void;
 }
 
 export const EditorLayout = ({
@@ -22,23 +24,47 @@ export const EditorLayout = ({
   readOnly = true,
   modified = false,
   toolbar,
-  statusContent
+  statusContent,
+  height = "calc(75vh - 4rem)", // Default height: 75% of viewport minus some space for nav
+  onToggleTerminal
 }: EditorLayoutProps) => {
-  const router = useRouter();
   const [lineCount, setLineCount] = useState<number>(0);
-  const [isTerminalOpen, setIsTerminalOpen] = useState<boolean>(false);
 
   // Calculate line count from children if it's a string
   useEffect(() => {
     if (typeof children === 'string') {
       setLineCount(children.split('\n').length);
+    } else {
+      // If children is a ReactNode, try to estimate line count based on content
+      // This is just a rough estimate for display purposes
+      const childrenArray = React.Children.toArray(children);
+      setLineCount(Math.max(childrenArray.length, 10));
     }
   }, [children]);
 
+  // Focus the editor when 'Esc' is pressed
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        // Focus the editor content div
+        const editorContent = document.querySelector('.editor-content-area');
+        if (editorContent) {
+          (editorContent as HTMLElement).focus();
+        }
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   return (
-    <div className="font-mono text-left border border-border rounded-md bg-card shadow-md overflow-hidden mb-4">
+    <div 
+      className="font-mono text-left border border-border rounded-md bg-card shadow-md overflow-hidden"
+      style={{ height }}
+    >
       {/* Editor toolbar */}
-      <div className="flex items-center justify-between px-4 py-2 bg-muted/30 border-b border-border">
+      <div className="flex items-center justify-between px-4 py-2 bg-muted/30 border-b border-border h-9">
         <div className="flex items-center gap-2">
           <div className="text-sm text-muted-foreground">{fileName}</div>
           {modified && <div className="w-2 h-2 rounded-full bg-primary/70"></div>}
@@ -56,51 +82,44 @@ export const EditorLayout = ({
       </div>
       
       {/* Editor content with optional line numbers */}
-      <div className="flex min-h-[200px] max-h-[80vh] overflow-auto">
+      <div className="flex h-[calc(100%-36px)]">
         {showLineNumbers && (
-          <div className="py-3 px-2 text-right bg-muted/20 border-r border-border text-muted-foreground select-none min-w-[3rem]">
-            {Array.from({ length: Math.max(lineCount, 10) }, (_, i) => (
+          <div className="py-3 px-2 text-right bg-muted/20 border-r border-border text-muted-foreground select-none min-w-[3rem] overflow-y-hidden">
+            {Array.from({ length: lineCount }, (_, i) => (
               <div key={i} className="text-xs leading-6">{i + 1}</div>
             ))}
           </div>
         )}
         
         {/* Code content */}
-        <div className="p-3 overflow-x-auto flex-1">
+        <div 
+          className="p-3 overflow-auto flex-1 editor-content-area" 
+          tabIndex={0}
+        >
           {children}
         </div>
       </div>
       
       {/* Editor status bar */}
-      <div className="px-4 py-1 bg-muted/30 border-t border-border flex justify-between text-xs text-muted-foreground">
+      <div className="px-4 py-1 bg-muted/30 border-t border-border flex justify-between text-xs text-muted-foreground h-6">
         <div className="flex items-center gap-3">
           <span>{readOnly ? "Read-only" : "Edit"}</span>
-          <Button 
-            variant="ghost" 
-            size="sm" 
-            className="h-5 px-1 py-0 text-xs"
-            onClick={() => setIsTerminalOpen(!isTerminalOpen)}
-          >
-            <Terminal className="h-3 w-3 mr-1" />
-            Terminal
-          </Button>
+          {onToggleTerminal && (
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="h-4 px-1 py-0 text-xs"
+              onClick={onToggleTerminal}
+            >
+              <Terminal className="h-3 w-3 mr-1" />
+              Terminal
+            </Button>
+          )}
         </div>
         <div>
           {statusContent || `Ln ${lineCount}, Col 1`}
         </div>
       </div>
-      
-      {/* Terminal panel (collapsed by default) */}
-      {isTerminalOpen && (
-        <div className="border-t border-border bg-black/90 text-green-400 p-2 h-32 overflow-auto font-terminal text-sm">
-          <div className="opacity-70">$ Mathematical Immaturity Terminal v0.1</div>
-          <div className="opacity-70">$ Type 'help' for available commands</div>
-          <div className="flex mt-1">
-            <span className="text-blue-400 mr-1">$</span>
-            <span className="animate-pulse">_</span>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
