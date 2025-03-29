@@ -1,7 +1,6 @@
 // src/components/ui/EditorLayout.tsx
 "use client";
 import React, { ReactNode, useState, useEffect } from 'react';
-import { cn } from "@/lib/utils";
 import { Terminal } from 'lucide-react';
 import { Button } from "@/components/ui/shadcn";
 

@@ -1,7 +1,7 @@
 // src/components/layout/Website.tsx
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Home, Info, Mail, Terminal } from 'lucide-react';
+import { Home, Info, Mail } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { ProblemSet, Problem, Textbook, Chapter} from "@/types/types";
 import { TextbookTableOfContents, TextbookTableOfContentsSkeleton } from '@/components/pages/TextbookTableofContents';
@@ -10,7 +10,6 @@ import { ProblemSetView, ProblemSetViewSkeleton } from '@/components/pages/Probl
 import { ProblemView, ProblemViewSkeleton } from '@/components/pages/ProblemView';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { FontToggle } from '@/components/ui/FontToggle';
-import { Button } from "@/components/ui/shadcn";
 import { FontProvider } from '@/providers/font-provider';
 import { About } from '@/components/pages/About';
 import { Contact } from '@/components/pages/Contact';
@@ -32,15 +31,15 @@ const Website = () => {
   // Main layout
   return (
     <FontProvider>
-    <div className='min-h-screen bg-background text-foreground'>
+    <div className='min-h-screen bg-background text-foreground flex flex-col h-screen'>
       <AppRouterProvider>
         {(router) => (
           <>
-            {/* Navigation */}
-            <nav className="border-b bg-card">
+            {/* Navigation - fixed height */}
+            <nav className="border-b bg-card flex-shrink-0">
               <div className="max-w-7xl mx-auto px-4">
                 <div className="flex justify-between h-16">
-                <div className="flex space-x-8">
+                  <div className="flex space-x-8">
                     <button 
                       onClick={() => {
                         router.actions.navigateToHome();
@@ -83,39 +82,51 @@ const Website = () => {
               </div>
             </nav>
 
-            {/* Main content */}
-            <main className="py-10">
+            {/* Main content - scrollable */}
+            <main className="py-6 flex-grow overflow-hidden">
               {/* About section */}
-              {router.activeSection === 'about' && <About />}
+              {router.activeSection === 'about' && 
+                <div className="h-full overflow-auto">
+                  <About />
+                </div>
+              }
 
               {/* Contact section */}
-              {router.activeSection === 'contact' && <Contact />}
+              {router.activeSection === 'contact' && 
+                <div className="h-full overflow-auto">
+                  <Contact />
+                </div>
+              }
 
               {/* Main content sections */}
               {router.activeSection === 'home' && (
-                <>
+                <div className="h-full">
                   {/* Home view */}
                   {!router.params.bookId && (
                     <Suspense fallback={<HomePageSkeleton />}>
-                      <HomePage
-                        onSelectTextbook={router.actions.navigateToTextbook}
-                      />
+                      <div className="h-full">
+                        <HomePage
+                          onSelectTextbook={router.actions.navigateToTextbook}
+                        />
+                      </div>
                     </Suspense>
                   )}
 
-                  {/* TextbookTableOfContents view (replaces both TextbookView and ChapterView) */}
+                  {/* TextbookTableOfContents view */}
                   {router.params.bookId && !router.params.setId && router.activeContent.textbook && (
                     <Suspense fallback={<TextbookTableOfContentsSkeleton />}>
-                      <TextbookTableOfContents 
-                        textbook={router.activeContent.textbook}
-                        onBack={router.actions.navigateToHome}
-                        onSelectProblemSet={(chapter, problemSet) => 
-                          router.actions.navigateFromTableOfContents(
-                            router.activeContent.textbook!, 
-                            chapter, 
-                            problemSet
-                          )}
-                      />
+                      <div className="h-full overflow-auto">
+                        <TextbookTableOfContents 
+                          textbook={router.activeContent.textbook}
+                          onBack={router.actions.navigateToHome}
+                          onSelectProblemSet={(chapter, problemSet) => 
+                            router.actions.navigateFromTableOfContents(
+                              router.activeContent.textbook!, 
+                              chapter, 
+                              problemSet
+                            )}
+                        />
+                      </div>
                     </Suspense>
                   )}
 
@@ -124,34 +135,36 @@ const Website = () => {
                   !router.params.problemId && router.activeContent.textbook && 
                   router.activeContent.chapter && router.activeContent.problemSet && (
                     <Suspense fallback={<ProblemSetViewSkeleton />}>
-                      <ProblemSetView
-                        problemSet={router.activeContent.problemSet}
-                        previousProblemSet={router.activeContent.previousProblemSet || null}
-                        nextProblemSet={router.activeContent.nextProblemSet || null}
-                        onNavigateToProblemSet={(problemSet) => {
-                          // Find the chapter for this problem set
-                          const chapter = router.activeContent.textbook!.chapters.find(c =>
-                            c.problemSets.some(ps => ps.id === problemSet.id)
-                          );
-                          if (chapter) {
-                            router.actions.navigateToProblemSet(
-                              router.activeContent.textbook!,
-                              chapter,
-                              problemSet
+                      <div className="h-full overflow-auto">
+                        <ProblemSetView
+                          problemSet={router.activeContent.problemSet}
+                          previousProblemSet={router.activeContent.previousProblemSet || null}
+                          nextProblemSet={router.activeContent.nextProblemSet || null}
+                          onNavigateToProblemSet={(problemSet) => {
+                            // Find the chapter for this problem set
+                            const chapter = router.activeContent.textbook!.chapters.find(c =>
+                              c.problemSets.some(ps => ps.id === problemSet.id)
                             );
+                            if (chapter) {
+                              router.actions.navigateToProblemSet(
+                                router.activeContent.textbook!,
+                                chapter,
+                                problemSet
+                              );
+                            }
+                          }}
+                          onSelectProblem={(problem) => 
+                            router.actions.navigateToProblem(
+                              router.activeContent.textbook!.id, 
+                              router.activeContent.chapter!.id, 
+                              router.activeContent.problemSet!.id, 
+                              problem.id
+                            )}
+                          onBackToContents={() => 
+                            router.actions.navigateToTextbook(router.activeContent.textbook!)
                           }
-                        }}
-                        onSelectProblem={(problem) => 
-                          router.actions.navigateToProblem(
-                            router.activeContent.textbook!.id, 
-                            router.activeContent.chapter!.id, 
-                            router.activeContent.problemSet!.id, 
-                            problem.id
-                          )}
-                        onBackToContents={() => 
-                          router.actions.navigateToTextbook(router.activeContent.textbook!)
-                        }
-                      />
+                        />
+                      </div>
                     </Suspense>
                   )}
 
@@ -161,48 +174,44 @@ const Website = () => {
                   router.activeContent.chapter && router.activeContent.problemSet && 
                   router.activeContent.problem && (
                     <Suspense fallback={<ProblemViewSkeleton />}>
-                      <ProblemView
-                        problemSet={router.activeContent.problemSet}
-                        problem={router.activeContent.problem}
-                        onNavigateToProblemSet={() => 
-                          router.actions.navigateToProblemSet(
-                            router.activeContent.textbook!, 
-                            router.activeContent.chapter!, 
-                            router.activeContent.problemSet!
-                          )}
-                        nextProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'next')}
-                        previousProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
-                        onNavigateToProblem={(problem) => {
-                          // Find the containing problem set and chapter if this might be a cross-section problem
-                          const [chapterNumber, problemSetNumber, problemNumber] = problem.number.split(".").map(id => Number(id));
-                          
-                          router.actions.navigateToProblem(
-                            router.activeContent.textbook!.id,
-                            chapterNumber,
-                            problemSetNumber,
-                            problemNumber
-                          );
-                        }}
+                      <div className="h-full overflow-auto">
+                        <ProblemView
+                          problemSet={router.activeContent.problemSet}
+                          problem={router.activeContent.problem}
+                          onNavigateToProblemSet={() => 
+                            router.actions.navigateToProblemSet(
+                              router.activeContent.textbook!, 
+                              router.activeContent.chapter!, 
+                              router.activeContent.problemSet!
+                            )}
+                          nextProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'next')}
+                          previousProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
+                          onNavigateToProblem={(problem) => {
+                            // Find the containing problem set and chapter if this might be a cross-section problem
+                            const [chapterNumber, problemSetNumber, problemNumber] = problem.number.split(".").map(id => Number(id));
+                            
+                            router.actions.navigateToProblem(
+                              router.activeContent.textbook!.id,
+                              chapterNumber,
+                              problemSetNumber,
+                              problemNumber
+                            );
+                          }}
                         />
+                      </div>
                     </Suspense>
                   )}
-                </>
+                </div>
               )}
             </main>
 
-            {/* Footer */}
-            <footer className="border-t bg-background">
-              <div className="max-w-7xl mx-auto px-4 py-6">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            {/* Footer - fixed height */}
+            <footer className="border-t bg-card flex-shrink-0">
+              <div className="max-w-7xl mx-auto px-4 py-4">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-2">
                   <p className="text-muted-foreground text-sm">
                     © 2024-{new Date().getFullYear()} Mathematical Immaturity. All rights reserved.
                   </p>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                    <span className="flex items-center">
-                      <kbd className="px-2 py-1 rounded bg-muted border border-border text-xs font-mono">Esc</kbd>
-                      <span className="ml-1">Focus Editor</span>
-                    </span>
-                  </div>
                 </div>
               </div>
             </footer>
