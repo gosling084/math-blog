@@ -1,4 +1,4 @@
-// src/components/ui/CurveSketch.tsx
+// src/components/shared/math/CurveSketch.tsx
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";

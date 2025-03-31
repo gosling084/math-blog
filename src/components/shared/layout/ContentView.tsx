@@ -1,4 +1,4 @@
-// src/components/ui/ContentView.tsx
+// src/components/shared/layout/ContentView.tsx
 import { Button, Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn";
 import { ChevronRight } from "lucide-react";
 import { ContentItem, ContentViewProps } from "@/types/types";

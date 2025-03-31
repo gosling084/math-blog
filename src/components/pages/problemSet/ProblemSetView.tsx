@@ -1,10 +1,10 @@
-// src/components/pages/ProblemSetView.tsx
+// src/components/pages/problemSet/ProblemSetView.tsx
 "use client";
 import React from 'react';
 import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { ProblemSet, Problem } from "@/types/types";
-import { MathContent } from '@/components/ui/MathContent';
+import { MathContent } from '@/components/shared/math/MathContent';
 
 export const ProblemSetViewSkeleton = () => {
   return (

@@ -1,5 +1,5 @@
 // src/types.ts
-import { CurveSketchProps } from "@/components/ui/CurveSketch";
+import { CurveSketchProps } from "@/components/shared/math/CurveSketch";
 
 // For individual math problems
 export interface Problem {

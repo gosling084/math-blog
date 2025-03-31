@@ -1,4 +1,4 @@
-// src/components/pages/HomePage.tsx
+// src/components/pages/home/HomePage.tsx
 "use client";
 import React from 'react';
 import Image from 'next/image';

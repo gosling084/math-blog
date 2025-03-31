@@ -1,4 +1,4 @@
-// src/components/Breadcrumb.tsx
+// src/components/shared/navigation/Breadcrumb.tsx
 "use client";
 import React from 'react';
 import { ChevronRight } from 'lucide-react';

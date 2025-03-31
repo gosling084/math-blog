@@ -1,4 +1,4 @@
-// src/components/ui/CurveSketchInteractive.tsx
+// src/components/shared/math/CurveSketchInteractive.tsx
 "use client";
 import React, { useState, useCallback } from 'react';
 import { 
@@ -11,7 +11,7 @@ import {
   Switch,
   Tabs, TabsContent, TabsList, TabsTrigger
 } from "@/components/ui/shadcn";
-import { CurveSketch, CurveConfig, CurveOptions } from './CurveSketch';
+import { CurveSketch, CurveConfig, CurveOptions } from '@/components/shared/math/CurveSketch';
 import { Plus, Trash2, RefreshCw, EyeOff, Eye } from 'lucide-react';
 
 // Types for equation inputs

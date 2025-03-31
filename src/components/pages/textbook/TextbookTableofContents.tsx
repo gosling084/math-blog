@@ -1,9 +1,9 @@
-// src/components/pages/TextbookTableOfContents.tsx
+// src/components/pages/textbook/TextbookTableOfContents.tsx
 "use client";
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn";
 import { Textbook, Chapter, ProblemSet } from "@/types/types";
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { Breadcrumb } from '@/components/shared/navigation/Breadcrumb';
 import Head from 'next/head';
 
 export const TextbookTableOfContentsSkeleton = () => {

@@ -1,4 +1,4 @@
-// src/components/pages/About.tsx
+// src/components/pages/static/About.tsx
 "use client";
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/shadcn";

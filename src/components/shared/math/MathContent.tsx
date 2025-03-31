@@ -1,4 +1,4 @@
-// src/components/ui/MathContent.tsx
+// src/components/shared/math/MathContent.tsx
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
 

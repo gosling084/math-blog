@@ -1,12 +1,12 @@
-// src/components/pages/ProblemView.tsx
+// src/components/pages/problem/ProblemView.tsx
 "use client";
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, BookOpen, ArrowLeft, ArrowRight, Lightbulb, PenTool } from 'lucide-react';
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { cn } from "@/lib/utils";
 import { Problem, ProblemSet } from "@/types/types";
-import { MathContent } from '@/components/ui/MathContent';
-import { CurveSketchInteractive } from '@/components/ui/CurveSketchInteractive';
+import { MathContent } from '@/components/shared/math/MathContent';
+import { CurveSketchInteractive } from '@/components/shared/math/CurveSketchInteractive';
 
 interface ProblemViewProps {
   problemSet: ProblemSet;

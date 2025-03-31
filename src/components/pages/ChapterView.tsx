@@ -5,8 +5,8 @@ import { LayoutGrid, List } from 'lucide-react';  // Add LayoutGrid and List
 import { Button } from "@/components/ui/shadcn";
 import { cn } from "@/lib/utils";
 import { Textbook, Chapter, ProblemSet, ViewType } from "@/types/types";
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { ContentView } from '../ui/ContentView';
+import { Breadcrumb } from '@/components/shared/navigation/Breadcrumb';
+import { ContentView } from '@/components/shared/layout/ContentView';
 
 export const ChapterViewSkeleton = () => {
   return (
