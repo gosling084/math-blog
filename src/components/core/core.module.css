@@ -1,0 +1,119 @@
+/* src/components/core/core.module.css */
+
+.appContainer {
+    min-height: 100vh;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .navBar {
+    border-bottom-width: 1px;
+    background-color: hsl(var(--card));
+    flex-shrink: 0;
+  }
+  
+  .navContainer {
+    max-width: 1280px; /* 7xl in tailwind */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .navContent {
+    display: flex;
+    justify-content: space-between;
+    height: 4rem; /* h-16 */
+  }
+  
+  .navButtonGroup {
+    display: flex;
+    column-gap: 2rem; /* space-x-8 */
+  }
+  
+  .navButton {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0.25rem;
+    padding-top: 0.25rem;
+    padding-right: 0.25rem;
+    border-bottom-width: 2px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .navButtonActive {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
+  }
+  
+  .navButtonInactive {
+    border-color: transparent;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .navButtonInactive:hover {
+    color: hsl(var(--foreground));
+  }
+  
+  .navIcon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .navActions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .mainContent {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  
+  .scrollableContent {
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .footer {
+    border-top-width: 1px;
+    background-color: hsl(var(--card));
+    flex-shrink: 0;
+  }
+  
+  .footerContainer {
+    max-width: 1280px; /* 7xl in tailwind */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .footerText {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.875rem;
+  }
+  
+  /* Media query for responsive layout */
+  @media (min-width: 768px) {
+    .footerContent {
+      flex-direction: row;
+    }
+  }

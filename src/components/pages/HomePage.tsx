@@ -5,11 +5,12 @@ import Image from 'next/image';
 import { Textbook } from "@/types/types";
 import { textbookData } from "@/data/textbooks";
 import { ChevronRight } from 'lucide-react';
-import { Button, Card } from "@/components/ui/shadcn";
+import { Button, Card } from "@/components/ui";
+import styles from './pages.module.css'
 
 export const HomePageSkeleton = () => {
   return (
-    <div className="max-w-6xl mx-auto px-8 flex flex-col h-full">
+    <div className={styles.widePageContainer}>
       {/* Header section skeleton */}
       <div className="space-y-4 mb-8 text-center flex-shrink-0">
         <div className="h-10 bg-gray-200 rounded-lg w-2/3 mx-auto animate-pulse" />

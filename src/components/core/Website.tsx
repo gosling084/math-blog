@@ -1,20 +1,24 @@
 // src/components/core/Website.tsx
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { Home, Info, Mail } from 'lucide-react';
 import { cn } from "@/lib/utils";
-import { TextbookTableOfContents, TextbookTableOfContentsSkeleton } from '@/components/pages/textbook/TextbookTableofContents';
-import { HomePage, HomePageSkeleton } from '@/components/pages/home/HomePage';
-import { ProblemSetView, ProblemSetViewSkeleton } from '@/components/pages/problemSet/ProblemSetView';
-import { ProblemView, ProblemViewSkeleton } from '@/components/pages/problem/ProblemView';
-import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { FontToggle } from '@/components/ui/FontToggle';
+import { 
+  TextbookTableOfContents, 
+  TextbookTableOfContentsSkeleton,
+  HomePage, 
+  HomePageSkeleton,
+  ProblemSetView, 
+  ProblemSetViewSkeleton,
+  ProblemView, 
+  ProblemViewSkeleton,
+  About,
+  Contact
+} from '@/components/pages';
+import { ThemeToggle, FontToggle } from '@/components/ui';
 import { FontProvider } from '@/providers/font-provider';
-import { About } from '@/components/pages/static/About';
-import { Contact } from '@/components/pages/static/Contact';
-import { Suspense } from 'react';
 import { AppRouterProvider } from '@/providers/AppRouterProvider';
-import { getProblemNavigation } from '@/components/core/Navigation';
+import styles from './core.module.css';
 
 const Website = () => {
   // All hooks must be called before any conditional returns
@@ -31,46 +35,46 @@ const Website = () => {
   // Main layout
   return (
     <FontProvider>
-    <div className='min-h-screen bg-background text-foreground flex flex-col h-screen'>
+    <div className={styles.appContainer}>
       <AppRouterProvider>
         {(router) => (
           <>
             {/* Navigation - fixed height */}
-            <nav className="border-b bg-card flex-shrink-0">
-              <div className="max-w-7xl mx-auto px-4">
-                <div className="flex justify-between h-16">
-                  <div className="flex space-x-8">
+            <nav className={styles.navBar}>
+              <div className={styles.navContainer}>
+                <div className={styles.navContent}>
+                  <div className={styles.navButtonGroup}>
                     <button 
                       onClick={() => {
                         router.actions.navigateToHome();
                         router.setActiveSection('home');
                       }}
                       className={cn(
-                        'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
-                        router.activeSection === 'home' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'
+                        styles.navButton,
+                        router.activeSection === 'home' ? styles.navButtonActive : styles.navButtonInactive
                       )}
                     >
-                      <Home className="w-4 h-4 mr-2" />
+                      <Home className={styles.navIcon} />
                       Home
                     </button>
                     <button 
                       onClick={() => router.setActiveSection('about')}
                       className={cn(
-                        'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
-                        router.activeSection === 'about' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'
+                        styles.navButton,
+                        router.activeSection === 'about' ? styles.navButtonActive : styles.navButtonInactive
                       )}
                     >
-                      <Info className="w-4 h-4 mr-2" />
+                      <Info className={styles.navIcon} />
                       About
                     </button>
                     <button 
                       onClick={() => router.setActiveSection('contact')}
                       className={cn(
-                        'inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium',
-                        router.activeSection === 'contact' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground hover:text-foreground'
+                        styles.navButton,
+                        router.activeSection === 'contact' ? styles.navButtonActive : styles.navButtonInactive
                       )}
                     >
-                      <Mail className="w-4 h-4 mr-2" />
+                      <Mail className={styles.navIcon} />
                       Contact
                     </button>
                   </div>
@@ -83,7 +87,7 @@ const Website = () => {
             </nav>
 
             {/* Main content - scrollable */}
-            <main className="py-6 flex-grow overflow-hidden">
+            <main className={styles.mainContent}>
               {/* About section */}
               {router.activeSection === 'about' && 
                 <div className="h-full overflow-auto">
@@ -184,8 +188,8 @@ const Website = () => {
                               router.activeContent.chapter!, 
                               router.activeContent.problemSet!
                             )}
-                          nextProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'next')}
-                          previousProblem={getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
+                          nextProblem={router.getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'next')}
+                          previousProblem={router.getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
                           onNavigateToProblem={(problem) => {
                             // Find the containing problem set and chapter if this might be a cross-section problem
                             const [chapterNumber, problemSetNumber, problemNumber] = problem.number.split(".").map(id => Number(id));
@@ -206,10 +210,10 @@ const Website = () => {
             </main>
 
             {/* Footer - fixed height */}
-            <footer className="border-t bg-card flex-shrink-0">
-              <div className="max-w-7xl mx-auto px-4 py-4">
-                <div className="flex flex-col md:flex-row justify-between items-center gap-2">
-                  <p className="text-muted-foreground text-sm">
+            <footer className={styles.footer}>
+              <div className={styles.footerContainer}>
+                <div className={styles.footerContent}>
+                  <p className={styles.footerText}>
                     © 2024-{new Date().getFullYear()} Mathematical Immaturity. All rights reserved.
                   </p>
                 </div>

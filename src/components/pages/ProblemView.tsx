@@ -5,8 +5,8 @@ import { ChevronLeft, ChevronRight, BookOpen, ArrowLeft, ArrowRight, Lightbulb, 
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { cn } from "@/lib/utils";
 import { Problem, ProblemSet } from "@/types/types";
-import { MathContent } from '@/components/shared/math/MathContent';
-import { CurveSketchInteractive } from '@/components/shared/math/CurveSketchInteractive';
+import { MathContent } from '@/components/shared/MathContent';
+import { CurveSketchInteractive } from '@/components/shared/CurveSketchInteractive';
 
 interface ProblemViewProps {
   problemSet: ProblemSet;

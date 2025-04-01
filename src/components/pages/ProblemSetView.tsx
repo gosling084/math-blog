@@ -4,7 +4,7 @@ import React from 'react';
 import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { ProblemSet, Problem } from "@/types/types";
-import { MathContent } from '@/components/shared/math/MathContent';
+import { MathContent } from '@/components/shared/MathContent';
 
 export const ProblemSetViewSkeleton = () => {
   return (

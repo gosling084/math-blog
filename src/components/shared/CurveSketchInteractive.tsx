@@ -11,7 +11,7 @@ import {
   Switch,
   Tabs, TabsContent, TabsList, TabsTrigger
 } from "@/components/ui/shadcn";
-import { CurveSketch, CurveConfig, CurveOptions } from '@/components/shared/math/CurveSketch';
+import { CurveSketch, CurveConfig, CurveOptions } from '@/components/shared/CurveSketch';
 import { Plus, Trash2, RefreshCw, EyeOff, Eye } from 'lucide-react';
 
 // Types for equation inputs

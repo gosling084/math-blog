@@ -11,7 +11,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/theme/dropdown-menu";
 import { Type } from "lucide-react";
 import { cn } from "@/lib/utils";
 
