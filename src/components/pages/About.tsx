@@ -1,24 +1,25 @@
-// src/components/pages/static/About.tsx
+// src/components/pages/About.tsx
 "use client";
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/shadcn";
+import styles from './pages.module.css';
 
 export const About = () => {
   return (
-    <div className="max-w-4xl mx-auto p-8">
-      <div className="space-y-6">
-        <h1 className="text-4xl font-bold text-card-foreground">
+    <div className={styles.pageContainer}>
+      <div className={styles.pageContent}>
+        <h1 className={styles.pageTitle}>
           About This Project
         </h1>
 
-        <Card className={"bg-card text-card-foreground"}>
-          <CardContent className="space-y-6 p-6">
-            <p className="text-muted-foreground">
+        <Card className="bg-card text-card-foreground">
+          <CardContent className={`${styles.spacingY} p-6`}>
+            <p className={styles.sectionContent}>
               This blog is a record of my self-study in mathematics, with a present focus on theoretical texts on foundational topics (eg. calculus, linear algebra). Future topics of study are yet to be decided depending on specialization.
             </p>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4 bg-card text-card-foreground">
+              <h2 className={styles.sectionTitle}>
                 Project Goals
               </h2>
               <ul className="list-disc pl-6 text-muted-foreground">
@@ -29,19 +30,19 @@ export const About = () => {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4 bg-card text-card-foreground">
+              <h2 className={styles.sectionTitle}>
                 Contributing
               </h2>
-              <p className="text-muted-foreground">
+              <p className={styles.sectionContent}>
                 Contributions and feedback are welcome. Please see the Contact page for more information.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold mb-4 bg-card text-card-foreground">
+              <h2 className={styles.sectionTitle}>
                 Acknowledgements
               </h2>
-              <p className="text-muted-foreground">
+              <p className={styles.sectionContent}>
                 Special thanks to <a href="https://stumblingrobot.com" rel="noopener noreferrer">Stumbling Robot</a>, whose solutions for &quot;Tommy 1&quot; helped pave the way for this blog.
               </p>
             </div>

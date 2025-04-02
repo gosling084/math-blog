@@ -1,7 +1,8 @@
-// src/components/shared/layout/ContentView.tsx
+// src/components/shared/ContentView.tsx
 import { Button, Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn";
 import { ChevronRight } from "lucide-react";
 import { ContentItem, ContentViewProps } from "@/types/types";
+import styles from './shared.module.css';
 
 export function ContentView<T extends ContentItem>({ 
   items, 
@@ -11,7 +12,7 @@ export function ContentView<T extends ContentItem>({
 }: ContentViewProps<T>) {
   if (viewType === 'card') {
     return (
-      <div className="grid grid-cols-1 gap-6">
+      <div className={styles.contentGrid}>
         {items.map((item) => (
           <Card 
             key={item.id}
@@ -43,18 +44,16 @@ export function ContentView<T extends ContentItem>({
   }
 
   return (
-    <div className="bg-card p-6 rounded-lg">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {items.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => onSelect(item)}
-            className="text-left p-2 rounded text-primary hover:text-primary/80"
-          >
-            {item.title}
-          </button>
-        ))}
-      </div>
+    <div className={styles.compactGrid}>
+      {items.map((item) => (
+        <button
+          key={item.id}
+          onClick={() => onSelect(item)}
+          className={styles.compactItem}
+        >
+          {item.title}
+        </button>
+      ))}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-// src/components/shared/math/CurveSketchInteractive.tsx
+// src/components/shared/CurveSketchInteractive.tsx
 "use client";
 import React, { useState, useCallback } from 'react';
 import { 
@@ -11,8 +11,9 @@ import {
   Switch,
   Tabs, TabsContent, TabsList, TabsTrigger
 } from "@/components/ui/shadcn";
-import { CurveSketch, CurveConfig, CurveOptions } from '@/components/shared/CurveSketch';
+import { CurveSketch, CurveConfig, CurveOptions } from './CurveSketch';
 import { Plus, Trash2, RefreshCw, EyeOff, Eye } from 'lucide-react';
+import styles from './shared.module.css';
 
 // Types for equation inputs
 type EquationType = 'cartesian' | 'polar' | 'parametric';
@@ -223,7 +224,7 @@ export const CurveSketchInteractive = ({
   });
 
   // State for equations
-const [equations, setEquations] = useState<EquationInputState[]>(() => {
+  const [equations, setEquations] = useState<EquationInputState[]>(() => {
     if (initialCurves && initialCurves.length > 0) {
       return initialCurves.map((curve, index) => {
         // Create an appropriate equation state based on the curve type
@@ -359,7 +360,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
   const curveConfigs = generateCurveConfigs();
   
   return (
-    <div className="w-full">
+    <div className={styles.interactiveContainer}>
       <Card className="mb-4">
         <CardHeader className="pb-3">
           <div className="flex justify-between items-center">
@@ -383,8 +384,8 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
         <CardContent>
           <div className="flex flex-col md:flex-row gap-4">
             {/* Visualization panel */}
-            <div className="flex-1">
-              <div className="bg-card border rounded-md p-4 flex justify-center items-center">
+            <div className={styles.visualizationPanel}>
+              <div className={styles.visualizationWrapper}>
                 <CurveSketch
                   width={width}
                   height={height}
@@ -400,9 +401,9 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
               </div>
               
               {/* Equations list */}
-              <div className="mt-4">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-sm font-medium">Equations</h3>
+              <div className={styles.equationsList}>
+                <div className={styles.equationsHeader}>
+                  <h3 className={styles.formLabel}>Equations</h3>
                   <Button 
                     variant="outline" 
                     size="sm"
@@ -413,26 +414,26 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                   </Button>
                 </div>
                 
-                <div className="space-y-2 max-h-36 overflow-y-auto">
+                <div className={styles.equationsScrollable}>
                   {equations.map((eq, index) => (
                     <div 
                       key={index}
-                      className={`
-                        flex items-center p-2 rounded-md cursor-pointer
-                        ${activeEquationIndex === index ? 'bg-accent' : 'hover:bg-secondary/50'}
-                        ${!eq.visible ? 'opacity-50' : ''}
-                      `}
+                      className={`${styles.equationItem} ${
+                        activeEquationIndex === index 
+                          ? styles.equationItemActive 
+                          : styles.equationItemInactive
+                      } ${!eq.visible ? styles.equationItemHidden : ''}`}
                       onClick={() => setActiveEquationIndex(index)}
                     >
                       <div 
-                        className="w-3 h-3 rounded-full mr-2" 
+                        className={styles.equationColorIndicator}
                         style={{ backgroundColor: eq.options.strokeColor }}
                       />
-                      <div className="flex-1 text-sm truncate">
+                      <div className={styles.equationLabel}>
                         {eq.options.label}
                       </div>
                       <button 
-                        className="p-1 rounded-md hover:bg-secondary"
+                        className={styles.controlButton}
                         onClick={(e) => { 
                           e.stopPropagation();
                           toggleEquationVisibility(index);
@@ -445,7 +446,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                       </button>
                       {equations.length > 1 && (
                         <button 
-                          className="p-1 rounded-md hover:bg-secondary"
+                          className={styles.controlButton}
                           onClick={(e) => { 
                             e.stopPropagation();
                             deleteEquation(index);
@@ -461,7 +462,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
             </div>
             
             {/* Controls panel */}
-            <div className="md:w-80 space-y-4">
+            <div className={styles.controlsPanel}>
               <Tabs defaultValue="equation">
                 <TabsList className="grid w-full grid-cols-2">
                   <TabsTrigger value="equation">Equation</TabsTrigger>
@@ -470,9 +471,9 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                 
                 {/* Equation Tab */}
                 <TabsContent value="equation" className="space-y-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <label className="text-sm font-medium">Equation Type</label>
+                  <div className={styles.formGroup}>
+                    <div className={styles.formRow}>
+                      <label className={styles.formLabel}>Equation Type</label>
                       <Select
                         value={activeEquation.type}
                         onValueChange={(value: EquationType) => 
@@ -502,7 +503,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                           placeholder="Enter function of x (e.g., Math.sin(x))"
                           className="mt-1"
                         />
-                        <p className="text-xs text-muted-foreground mt-1">
+                        <p className={styles.formDescription}>
                           Example: Math.sin(x), x*x, Math.sqrt(1-x*x)
                         </p>
                       </div>
@@ -519,14 +520,14 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                           placeholder="Enter function of theta (e.g., Math.sin(3*theta))"
                           className="mt-1"
                         />
-                        <p className="text-xs text-muted-foreground mt-1">
+                        <p className={styles.formDescription}>
                           Example: 2*Math.sin(3*theta), 1-Math.cos(theta)
                         </p>
                       </div>
                     )}
                     
                     {activeEquation.type === 'parametric' && (
-                      <div className="space-y-2">
+                      <div className={styles.formGroup}>
                         <div>
                           <label className="text-sm">x = </label>
                           <Input
@@ -549,7 +550,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                             className="mt-1"
                           />
                         </div>
-                        <div className="grid grid-cols-2 gap-2">
+                        <div className={styles.parameterGrid}>
                           <div>
                             <label className="text-sm">t min</label>
                             <Input
@@ -577,7 +578,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                             />
                           </div>
                         </div>
-                        <p className="text-xs text-muted-foreground">
+                        <p className={styles.formDescription}>
                           Example: x = Math.cos(t), y = Math.sin(t) (circle)
                         </p>
                       </div>
@@ -591,7 +592,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                       </AccordionTrigger>
                       <AccordionContent className="space-y-2">
                         <div>
-                          <label className="text-sm font-medium">Stroke Color</label>
+                          <label className={styles.formLabel}>Stroke Color</label>
                           <div className="flex items-center mt-1">
                             <input
                               type="color"
@@ -607,7 +608,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                         </div>
                         
                         <div>
-                          <label className="text-sm font-medium">Stroke Width</label>
+                          <label className={styles.formLabel}>Stroke Width</label>
                           <div className="flex items-center gap-2">
                             <Slider
                               defaultValue={[activeEquation.options.strokeWidth || 2]}
@@ -627,8 +628,8 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                           </div>
                         </div>
                         
-                        <div className="flex items-center justify-between">
-                          <label className="text-sm font-medium">Dashed Line</label>
+                        <div className={styles.formRow}>
+                          <label className={styles.formLabel}>Dashed Line</label>
                           <Switch
                             checked={!!activeEquation.options.strokeDashed}
                             onCheckedChange={(checked) => 
@@ -639,8 +640,8 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                           />
                         </div>
                         
-                        <div className="flex items-center justify-between">
-                          <label className="text-sm font-medium">Show Points</label>
+                        <div className={styles.formRow}>
+                          <label className={styles.formLabel}>Show Points</label>
                           <Switch
                             checked={!!activeEquation.options.showPoints}
                             onCheckedChange={(checked) => 
@@ -653,7 +654,7 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                         
                         {activeEquation.options.showPoints && (
                           <div>
-                            <label className="text-sm font-medium">Point Radius</label>
+                            <label className={styles.formLabel}>Point Radius</label>
                             <div className="flex items-center gap-2">
                               <Slider
                                 defaultValue={[activeEquation.options.pointRadius || 3]}
@@ -680,9 +681,9 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                 
                 {/* Display Tab */}
                 <TabsContent value="display" className="space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="text-sm font-medium">Coordinate Range</h3>
-                    <div className="grid grid-cols-2 gap-2">
+                  <div className={styles.formGroup}>
+                    <h3 className={styles.formLabel}>Coordinate Range</h3>
+                    <div className={styles.parameterGrid}>
                       <div>
                         <label className="text-xs">X Min</label>
                         <Input
@@ -742,22 +743,22 @@ const [equations, setEquations] = useState<EquationInputState[]>(() => {
                     </div>
                     
                     <div className="pt-3 space-y-2">
-                      <h3 className="text-sm font-medium">Display Options</h3>
-                      <div className="flex items-center justify-between">
+                      <h3 className={styles.formLabel}>Display Options</h3>
+                      <div className={styles.formRow}>
                         <label className="text-sm">Show Grid</label>
                         <Switch
                           checked={showGrid}
                           onCheckedChange={setShowGrid}
                         />
                       </div>
-                      <div className="flex items-center justify-between">
+                      <div className={styles.formRow}>
                         <label className="text-sm">Show Axes</label>
                         <Switch
                           checked={showAxes}
                           onCheckedChange={setShowAxes}
                         />
                       </div>
-                      <div className="flex items-center justify-between">
+                      <div className={styles.formRow}>
                         <label className="text-sm">Show Labels</label>
                         <Switch
                           checked={showLabels}

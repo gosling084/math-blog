@@ -1,4 +1,4 @@
-// src/components/pages/home/HomePage.tsx
+// src/components/pages/HomePage.tsx
 "use client";
 import React from 'react';
 import Image from 'next/image';
@@ -6,23 +6,23 @@ import { Textbook } from "@/types/types";
 import { textbookData } from "@/data/textbooks";
 import { ChevronRight } from 'lucide-react';
 import { Button, Card } from "@/components/ui";
-import styles from './pages.module.css'
+import styles from './pages.module.css';
 
 export const HomePageSkeleton = () => {
   return (
     <div className={styles.widePageContainer}>
       {/* Header section skeleton */}
-      <div className="space-y-4 mb-8 text-center flex-shrink-0">
-        <div className="h-10 bg-gray-200 rounded-lg w-2/3 mx-auto animate-pulse" />
-        <div className="h-5 bg-gray-200 rounded w-3/4 mx-auto animate-pulse" />
+      <div className={`${styles.pageHeader}`}>
+        <div className={`${styles.skeletonPulse} h-10 w-2/3 mx-auto rounded-lg`} />
+        <div className={`${styles.skeletonPulse} h-5 w-3/4 mx-auto rounded mt-4`} />
       </div>
 
       {/* Card grid skeleton */}
-      <div className="overflow-y-auto flex-grow">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className={styles.scrollableContent}>
+        <div className={styles.cardGrid}>
           {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-            <div key={i} className="bg-card rounded-lg shadow-sm animate-pulse relative overflow-hidden border-0" style={{ aspectRatio: '2/3' }}>
-              <div className="absolute inset-0 bg-gray-200"></div>
+            <div key={i} className={`${styles.skeletonPulse} ${styles.bookCover} border-0`}>
+              <div className="absolute inset-0"></div>
             </div>
           ))}
         </div>
@@ -37,33 +37,33 @@ interface HomePageProps {
 
 export const HomePage = ({ onSelectTextbook }: HomePageProps) => {
   return (
-    <div className="max-w-6xl mx-auto px-8 flex flex-col h-full">
+    <div className={styles.widePageContainer}>
       {/* Page header - centered and fixed */}
-      <div className="space-y-4 mb-8 text-center flex-shrink-0">
-        <h1 className="text-4xl font-bold text-foreground">
+      <div className={styles.pageHeader}>
+        <h1 className={styles.pageTitle}>
           Mathematical Immaturity
         </h1>
-        <p className="text-muted-foreground text-lg">
+        <p className={styles.pageSubtitle}>
           Push it to the limit.
         </p>
       </div>
 
       {/* Scrollable textbook grid container */}
-      <div className="overflow-y-auto flex-grow">
+      <div className={styles.scrollableContent}>
         <div className="pb-6">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className={styles.cardGrid}>
             {textbookData.map((textbook) => (
               <div 
                 key={textbook.id}
                 className="relative group"
               >
                 <Card 
-                  className="bg-card hover:shadow-lg transition-shadow overflow-hidden cursor-pointer border-0"
+                  className={`bg-card ${styles.cardHover} overflow-hidden cursor-pointer border-0`}
                   style={{ aspectRatio: '2/3' }} // Standard book aspect ratio
                   onClick={() => onSelectTextbook(textbook)}
                 >
                   {/* Book Cover Image */}
-                  <div className="relative h-full w-full">
+                  <div className={styles.bookCover}>
                     <Image
                       src={`/book-covers/book-${textbook.id}.jpg`}
                       alt={textbook.title}
@@ -72,11 +72,11 @@ export const HomePage = ({ onSelectTextbook }: HomePageProps) => {
                       priority={textbook.id <= 2} // Prioritize loading first two books
                     />
                     
-                    {/* Hover Overlay with Book Info - Simplified */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <h3 className="text-white text-base md:text-lg font-bold mb-1 line-clamp-2">{textbook.title}</h3>
-                      <p className="text-white/90 text-sm">{textbook.author}</p>
-                      <p className="text-white/80 text-xs mb-2">{textbook.year}</p>
+                    {/* Hover Overlay with Book Info */}
+                    <div className={styles.bookOverlay}>
+                      <h3 className={styles.bookTitle}>{textbook.title}</h3>
+                      <p className={styles.bookAuthor}>{textbook.author}</p>
+                      <p className={styles.bookYear}>{textbook.year}</p>
                       
                       <Button 
                         size="sm"

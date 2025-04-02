@@ -1,8 +1,9 @@
-// src/components/shared/navigation/Breadcrumb.tsx
+// src/components/shared/Breadcrumb.tsx
 "use client";
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 import { cn } from "@/lib/utils";
+import styles from './shared.module.css';
 
 // Helper function to shorten text
 const shortenText = (text: string, type: 'textbook' | 'chapter' | 'problem-set' | 'problem'): string => {
@@ -31,31 +32,27 @@ interface BreadcrumbProps {
     onClick: () => void;
     type: 'textbook' | 'chapter' | 'problem-set' | 'problem' | 'home';
   }[];
-  // getThemeClasses: {
-  //   button: string;
-  //   secondaryText: string;
-  // };
 }
 
 export const Breadcrumb = ({ items }: BreadcrumbProps) => {
   return (
-    <div className="flex items-center space-x-2">
+    <div className={styles.breadcrumb}>
       {items.map((item, index) => (
         <React.Fragment key={item.label}>
           <button
             onClick={item.onClick}
             className={cn(
-              "hover:underline",
+              styles.breadcrumbItem,
               index === items.length - 1 
-                ? "text-muted-foreground" 
-                : "text-primary hover:text-primary/80"
+                ? styles.breadcrumbActive 
+                : styles.breadcrumbInactive
             )}
             title={item.label} // Show full text on hover
           >
             {item.type === 'home' ? item.label : shortenText(item.label, item.type)}
           </button>
           {index < items.length - 1 && (
-            <ChevronRight className="w-4 h-4 text-muted-foreground" />
+            <ChevronRight className={styles.breadcrumbSeparator} />
           )}
         </React.Fragment>
       ))}

@@ -1,7 +1,8 @@
-// src/components/shared/math/CurveSketch.tsx
+// src/components/shared/CurveSketch.tsx
 "use client";
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
+import styles from './shared.module.css';
 
 // Types for curve configuration
 export interface CartesianPoint {
@@ -358,13 +359,13 @@ export const CurveSketch: React.FC<CurveSketchProps> = ({
   }, [width, height, xRange, yRange, showGrid, showAxes, showLabels, backgroundColor, curves]);
 
   return (
-    <div className={cn("curve-sketch flex justify-center items-center", className)}>
+    <div className={cn(styles.curveContainer, className)}>
       <svg
         ref={svgRef}
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
-        className="bg-card border border-border rounded-md"
+        className={styles.svgCanvas}
       />
     </div>
   );

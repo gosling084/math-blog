@@ -1,36 +1,37 @@
-// src/components/pages/problemSet/ProblemSetView.tsx
+// src/components/pages/ProblemSetView.tsx
 "use client";
 import React from 'react';
 import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { ProblemSet, Problem } from "@/types/types";
 import { MathContent } from '@/components/shared/MathContent';
+import styles from './pages.module.css';
 
 export const ProblemSetViewSkeleton = () => {
   return (
-    <div className="max-w-4xl mx-auto px-8 flex flex-col h-full">
+    <div className={styles.pageContainer}>
       {/* Top navigation skeleton - fixed */}
-      <div className="flex justify-between items-center mb-4 flex-shrink-0">
-        <div className="w-32 h-10 bg-gray-200 rounded animate-pulse" />
-        <div className="w-40 h-10 bg-gray-200 rounded animate-pulse" />
-        <div className="w-32 h-10 bg-gray-200 rounded animate-pulse" />
+      <div className={`flex justify-between items-center mb-4 ${styles.flexShrink}`}>
+        <div className={`w-32 h-10 ${styles.skeletonPulse} rounded`} />
+        <div className={`w-40 h-10 ${styles.skeletonPulse} rounded`} />
+        <div className={`w-32 h-10 ${styles.skeletonPulse} rounded`} />
       </div>
 
       {/* Header section skeleton - fixed */}
-      <div className="space-y-2 mb-4 flex-shrink-0">
-        <div className="h-9 bg-gray-200 rounded-lg w-1/3 animate-pulse" />
-        <div className="h-5 bg-gray-200 rounded w-2/3 animate-pulse" />
+      <div className={`${styles.spacingY} mb-4 ${styles.flexShrink}`}>
+        <div className={`h-9 ${styles.skeletonPulse} rounded-lg w-1/3`} />
+        <div className={`h-5 ${styles.skeletonPulse} rounded w-2/3`} />
       </div>
 
       {/* Problem list skeleton - scrollable */}
-      <div className="overflow-y-auto flex-grow">
+      <div className={styles.scrollableContent}>
         <Card className="bg-card">
           <CardContent className="py-6">
-            <div className="space-y-6">
+            <div className={styles.spacingY}>
               {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <div key={i} className="py-4 space-y-2 animate-pulse">
-                  <div className="h-6 bg-gray-200 rounded w-full" />
-                  <div className="h-4 bg-gray-200 rounded w-5/6" />
+                <div key={i} className={`py-4 ${styles.spacingY} ${styles.skeletonPulse}`}>
+                  <div className="h-6 rounded w-full" />
+                  <div className="h-4 rounded w-5/6" />
                 </div>
               ))}
             </div>
@@ -39,9 +40,9 @@ export const ProblemSetViewSkeleton = () => {
       </div>
 
       {/* Bottom navigation skeleton - fixed */}
-      <div className="flex justify-between mt-4 mb-2 flex-shrink-0">
-        <div className="h-10 w-40 bg-gray-200 rounded animate-pulse" />
-        <div className="h-10 w-40 bg-gray-200 rounded animate-pulse" />
+      <div className={`flex justify-between mt-4 mb-2 ${styles.flexShrink}`}>
+        <div className={`h-10 w-40 ${styles.skeletonPulse} rounded`} />
+        <div className={`h-10 w-40 ${styles.skeletonPulse} rounded`} />
       </div>
     </div>
   );
@@ -72,9 +73,9 @@ export const ProblemSetView = ({
   };
   
   return (
-    <div className="max-w-4xl mx-auto px-8 flex flex-col h-full">
+    <div className={`${styles.pageContainer} ${styles.flexCol}`}>
       {/* Fixed top elements */}
-      <div className="flex-shrink-0">
+      <div className={styles.flexShrink}>
         {/* Combined navigation header with consistent centering */}
         <div className="flex justify-between items-center mb-4">
           {/* Left side - Previous section button or spacer */}
@@ -122,22 +123,22 @@ export const ProblemSetView = ({
         </div>
 
         {/* Problem Set header */}
-        <div className="space-y-2 mb-4">
-          <h1 className="text-2xl font-bold text-card-foreground border-b border-border pb-2">
+        <div className={`${styles.spacingY} mb-4`}>
+          <h1 className={`text-2xl font-bold text-card-foreground ${styles.borderBottom}`}>
             {problemSet.title}
           </h1>
-          <p className="text-muted-foreground">
+          <p className={styles.sectionContent}>
             {problemSet.description}
           </p>
         </div>
       </div>
   
       {/* Scrollable content area */}
-      <div className="overflow-y-auto flex-grow">
+      <div className={styles.scrollableContent}>
         {/* Problems List - Book-like Problem Set Layout */}
         <Card className="bg-card">
           <CardContent className="py-6">
-            <div className="space-y-8">
+            <div className={styles.spacingY}>
               {problemSet.problems.map((problem) => (
                 <div 
                   key={problem.id}
@@ -161,8 +162,6 @@ export const ProblemSetView = ({
           </CardContent>
         </Card>
       </div>
-
-
     </div>
   );
 };

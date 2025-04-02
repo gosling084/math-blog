@@ -1,47 +1,48 @@
-// src/components/pages/textbook/TextbookTableOfContents.tsx
+// src/components/pages/TextbookTableOfContents.tsx
 "use client";
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/shadcn";
 import { Textbook, Chapter, ProblemSet } from "@/types/types";
 import { Breadcrumb } from '@/components/shared/Breadcrumb';
 import Head from 'next/head';
+import styles from './pages.module.css';
 
 export const TextbookTableOfContentsSkeleton = () => {
   return (
-    <div className="max-w-4xl mx-auto px-8 flex flex-col h-full">
+    <div className={styles.pageContainer}>
       {/* Breadcrumb skeleton - fixed */}
-      <div className="mb-4 flex gap-2 items-center flex-shrink-0">
+      <div className={`mb-4 flex gap-2 items-center ${styles.flexShrink}`}>
         {[1, 2].map((i) => (
           <React.Fragment key={i}>
-            <div className="h-4 bg-gray-200 rounded animate-pulse w-20" />
+            <div className={`h-4 ${styles.skeletonPulse} w-20`} />
             {i < 2 && <div className="h-4 w-4" />}
           </React.Fragment>
         ))}
       </div>
 
       {/* Header section skeleton - fixed */}
-      <div className="space-y-2 mb-4 flex-shrink-0">
-        <div className="h-9 bg-gray-200 rounded-lg w-1/3 animate-pulse" />
-        <div className="h-5 bg-gray-200 rounded w-1/2 animate-pulse" />
+      <div className={`${styles.spacingY} mb-4 ${styles.flexShrink}`}>
+        <div className={`h-9 ${styles.skeletonPulse} w-1/3 rounded-lg`} />
+        <div className={`h-5 ${styles.skeletonPulse} w-1/2 rounded`} />
       </div>
 
       {/* Table of contents skeleton - scrollable */}
-      <div className="overflow-y-auto flex-grow">
+      <div className={styles.scrollableContent}>
         <Card className="bg-card">
           <CardHeader className="sticky top-0 bg-card z-10">
             <CardTitle className="text-xl font-medium">Table of Contents</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
-            <div className="space-y-8">
+            <div className={styles.spacingY}>
               {/* Chapter skeleton */}
               {[1, 2, 3, 4, 5].map((chapter) => (
-                <div key={chapter} className="space-y-4">
-                  <div className="h-7 bg-gray-200 rounded-lg w-1/2 animate-pulse" />
+                <div key={chapter} className={styles.spacingY}>
+                  <div className={`h-7 ${styles.skeletonPulse} w-1/2 rounded-lg`} />
                   <div className="space-y-3 pl-6">
                     {[1, 2, 3, 4, 5].map((section) => (
                       <div key={section} className="flex justify-between items-center">
-                        <div className="h-5 bg-gray-200 rounded w-1/3 animate-pulse" />
-                        <div className="h-5 bg-gray-200 rounded w-16 animate-pulse" />
+                        <div className={`h-5 ${styles.skeletonPulse} w-1/3 rounded`} />
+                        <div className={`h-5 ${styles.skeletonPulse} w-16 rounded`} />
                       </div>
                     ))}
                   </div>
@@ -78,9 +79,9 @@ export const TextbookTableOfContents = ({
         <meta name="description" content={seoDescription} />
       </Head>
 
-      <div className="max-w-4xl mx-auto px-8 flex flex-col h-full">
+      <div className={styles.pageContainer}>
         {/* Fixed navigation and header */}
-        <div className="flex-shrink-0">
+        <div className={styles.flexShrink}>
           <div className="mb-4">
             <Breadcrumb
               items={[
@@ -90,11 +91,11 @@ export const TextbookTableOfContents = ({
             />
           </div>
 
-          <div className="space-y-2 mb-4">
-            <h1 className="text-3xl font-bold text-foreground">
+          <div className={`${styles.spacingY} mb-4`}>
+            <h1 className={styles.pageTitle}>
               {textbook.title}
             </h1>
-            <p className="text-muted-foreground">
+            <p className={styles.pageSubtitle}>
               {textbook.author} - {textbook.edition} ({textbook.year})
             </p>
             
@@ -106,7 +107,7 @@ export const TextbookTableOfContents = ({
         </div>
 
         {/* Scrollable content area */}
-        <div className="overflow-y-auto flex-grow">
+        <div className={styles.scrollableContent}>
           <Card className="bg-card">
             <CardHeader className="sticky top-0 bg-card z-10">
               <CardTitle className="text-xl font-medium">Table of Contents</CardTitle>
@@ -115,7 +116,7 @@ export const TextbookTableOfContents = ({
               <div className="space-y-10">
                 {textbook.chapters.map((chapter) => (
                   <div key={chapter.id} className="space-y-4">
-                    <h2 className="text-lg text-foreground border-b border-border pb-2">
+                    <h2 className={`text-lg text-foreground ${styles.borderBottom}`}>
                       {chapter.title}
                     </h2>
                     <div className="space-y-3 pl-6 pr-4">

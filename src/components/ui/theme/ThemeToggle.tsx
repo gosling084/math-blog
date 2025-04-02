@@ -1,4 +1,4 @@
-// src/components/ui/ThemeToggle.tsx
+// src/components/ui/theme/ThemeToggle.tsx
 "use client";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/shadcn";
@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/theme/dropdown-menu";
 import { Sun, Moon, Laptop, Palette } from "lucide-react";
 import { useEffect, useState } from "react";
+import styles from './theme.module.css';
+import { cn } from "@/lib/utils";
 
 export function ThemeToggle() {
   const { setTheme } = useTheme();
@@ -25,34 +27,34 @@ export function ThemeToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
-          <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-          <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+          <Sun className={cn(styles.themeIcon, styles.sunIcon)} />
+          <Moon className={cn(styles.themeIcon, styles.moonIcon)} />
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          <Sun className="mr-2 h-4 w-4" />
+          <Sun className={styles.dropdownIcon} />
           <span>Light</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          <Moon className="mr-2 h-4 w-4" />
+          <Moon className={styles.dropdownIcon} />
           <span>Dark</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("midnight")}>
-          <Palette className="mr-2 h-4 w-4" />
+          <Palette className={styles.dropdownIcon} />
           <span>Midnight</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("forest")}>
-          <Palette className="mr-2 h-4 w-4" />
+          <Palette className={styles.dropdownIcon} />
           <span>Forest</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("coffee")}>
-          <Palette className="mr-2 h-4 w-4" />
+          <Palette className={styles.dropdownIcon} />
           <span>Coffee</span>
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          <Laptop className="mr-2 h-4 w-4" />
+          <Laptop className={styles.dropdownIcon} />
           <span>System</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

@@ -1,6 +1,7 @@
-// src/components/shared/math/MathContent.tsx
+// src/components/shared/MathContent.tsx
 import React, { useEffect, useRef } from 'react';
 import { cn } from "@/lib/utils";
+import styles from './shared.module.css';
 
 declare global {
   interface Window {
@@ -54,8 +55,7 @@ export const MathContent = ({ content, className = '' }: MathContentProps) => {
       ref={containerRef} 
       className={cn(
         "math-content prose",
-        "overflow-x-clip",
-        "overflow-y-clip", // Fixes the vertical scrolling issue in MathJax containers
+        styles.mathContainer,
         className
       )}
     >

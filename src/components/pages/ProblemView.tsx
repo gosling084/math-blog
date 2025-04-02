@@ -1,4 +1,4 @@
-// src/components/pages/problem/ProblemView.tsx
+// src/components/pages/ProblemView.tsx
 "use client";
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, BookOpen, ArrowLeft, ArrowRight, Lightbulb, PenTool } from 'lucide-react';
@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Problem, ProblemSet } from "@/types/types";
 import { MathContent } from '@/components/shared/MathContent';
 import { CurveSketchInteractive } from '@/components/shared/CurveSketchInteractive';
+import styles from './pages.module.css';
 
 interface ProblemViewProps {
   problemSet: ProblemSet;
@@ -20,33 +21,33 @@ interface ProblemViewProps {
 // Skeleton component for loading state
 export const ProblemViewSkeleton = () => {
   return (
-    <div className="max-w-4xl mx-auto px-8">
+    <div className={styles.pageContainer}>
       {/* Navigation skeleton */}
       <div className="flex justify-between mb-8">
-        <div className="h-10 w-40 bg-gray-200 rounded animate-pulse" />
-        <div className="h-10 w-40 bg-gray-200 rounded animate-pulse" />
+        <div className={`h-10 w-40 ${styles.skeletonPulse} rounded`} />
+        <div className={`h-10 w-40 ${styles.skeletonPulse} rounded`} />
       </div>
 
       <Card className="bg-card text-card-foreground">
-        <CardContent className="p-6 space-y-6">
+        <CardContent className={`p-6 ${styles.spacingY}`}>
           {/* Problem Header */}
           <div className="flex flex-col gap-2">
-            <div className="h-8 bg-gray-200 rounded-lg w-48 animate-pulse" />
-            <div className="h-5 bg-gray-200 rounded w-36 animate-pulse" />
+            <div className={`h-8 ${styles.skeletonPulse} rounded-lg w-48`} />
+            <div className={`h-5 ${styles.skeletonPulse} rounded w-36`} />
           </div>
 
           {/* Problem Statement skeleton */}
-          <div className="space-y-4 py-4 border-b border-t border-border">
+          <div className={`${styles.spacingY} py-4 border-b border-t border-border`}>
             {[1, 2, 3].map((i) => (
-              <div key={i} className="h-6 bg-gray-200 rounded animate-pulse" />
+              <div key={i} className={`h-6 ${styles.skeletonPulse} rounded`} />
             ))}
           </div>
 
           {/* Buttons skeleton */}
-          <div className="flex gap-3">
-            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
-            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
-            <div className="h-10 w-32 bg-gray-200 rounded animate-pulse" />
+          <div className={styles.spacingX}>
+            <div className={`h-10 w-32 ${styles.skeletonPulse} rounded`} />
+            <div className={`h-10 w-32 ${styles.skeletonPulse} rounded`} />
+            <div className={`h-10 w-32 ${styles.skeletonPulse} rounded`} />
           </div>
         </CardContent>
       </Card>
@@ -73,7 +74,7 @@ export const ProblemView = ({
   };
   
   return (
-    <div className="max-w-4xl mx-auto px-8">
+    <div className={styles.pageContainer}>
       {/* Top Navigation Bar */}
       <div className="flex justify-between items-center mb-6">
         {/* Left side - Back to section */}
@@ -89,11 +90,11 @@ export const ProblemView = ({
 
       {/* Main Problem Card */}
       <Card className="bg-card text-card-foreground mb-6 border-primary/20">
-        <CardContent className="p-6 space-y-6">
+        <CardContent className={`p-6 ${styles.spacingY}`}>
           {/* Problem Header */}
           <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-bold text-foreground">
+              <h1 className={styles.sectionTitle}>
                 Problem {problem.number}
               </h1>
               <p className="text-sm text-muted-foreground">
@@ -102,7 +103,7 @@ export const ProblemView = ({
             </div>
             
             {/* Problem navigation mini-controls */}
-            <div className="flex gap-2">
+            <div className={styles.spacingX}>
               <Button
                 variant="outline"
                 size="icon"

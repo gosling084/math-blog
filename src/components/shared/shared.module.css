@@ -1,0 +1,217 @@
+/* src/components/shared/shared.module.css */
+
+/* Breadcrumb styles */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .breadcrumbItem {
+    transition: color 0.2s;
+  }
+  
+  .breadcrumbItem:hover {
+    text-decoration: underline;
+  }
+  
+  .breadcrumbActive {
+    color: hsl(var(--muted-foreground));
+  }
+  
+  .breadcrumbInactive {
+    color: hsl(var(--primary));
+  }
+  
+  .breadcrumbInactive:hover {
+    color: hsl(var(--primary), 0.8);
+  }
+  
+  .breadcrumbSeparator {
+    width: 1rem;
+    height: 1rem;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  /* ContentView styles */
+  .contentGrid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .compactGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    background-color: hsl(var(--card));
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .compactGrid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .compactGrid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  
+  .compactItem {
+    text-align: left;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: hsl(var(--primary));
+    transition: color 0.2s;
+  }
+  
+  .compactItem:hover {
+    color: hsl(var(--primary), 0.8);
+  }
+  
+  /* MathContent styles */
+  .mathContainer {
+    overflow-x: clip;
+    overflow-y: clip;
+  }
+  
+  /* CurveSketch styles */
+  .curveContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .svgCanvas {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.375rem;
+  }
+  
+  /* CurveSketchInteractive styles */
+  .interactiveContainer {
+    width: 100%;
+  }
+  
+  .visualizationPanel {
+    flex: 1;
+  }
+  
+  .visualizationWrapper {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.375rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .equationsList {
+    margin-top: 1rem;
+  }
+  
+  .equationsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+  
+  .equationsScrollable {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-height: 9rem;
+    overflow-y: auto;
+  }
+  
+  .equationItem {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+  
+  .equationItemActive {
+    background-color: hsl(var(--accent));
+  }
+  
+  .equationItemInactive:hover {
+    background-color: hsl(var(--secondary), 0.5);
+  }
+  
+  .equationItemHidden {
+    opacity: 0.5;
+  }
+  
+  .equationColorIndicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    margin-right: 0.5rem;
+  }
+  
+  .equationLabel {
+    flex: 1;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .controlButton {
+    padding: 0.25rem;
+    border-radius: 0.375rem;
+  }
+  
+  .controlButton:hover {
+    background-color: hsl(var(--secondary));
+  }
+  
+  .controlsPanel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .controlsPanel {
+      width: 20rem;
+    }
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .formRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .formLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .formDescription {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    margin-top: 0.25rem;
+  }
+  
+  .parameterGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }

@@ -1,4 +1,4 @@
-// src/components/ui/FontToggle.tsx
+// src/components/ui/theme/FontToggle.tsx
 "use client";
 import { useFont, FontFamily, FontSize } from '@/providers/font-provider';
 import { Button } from "@/components/ui/shadcn";
@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/theme/dropdown-menu";
 import { Type } from "lucide-react";
 import { cn } from "@/lib/utils";
+import styles from './theme.module.css';
 
 export function FontToggle() {
   const { settings, setFontFamily, setFontSize } = useFont();
@@ -38,7 +39,7 @@ export function FontToggle() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="icon">
-          <Type className="h-5 w-5" />
+          <Type className={styles.fontIcon} />
           <span className="sr-only">Toggle font settings</span>
         </Button>
       </DropdownMenuTrigger>
@@ -53,7 +54,7 @@ export function FontToggle() {
               >
                 <span className={cn(
                   font.className,
-                  settings.family === font.value && "font-bold"
+                  settings.family === font.value && styles.fontOptionActive
                 )}>
                   {font.label}
                 </span>
@@ -72,7 +73,7 @@ export function FontToggle() {
                 key={size.value}
                 onClick={() => setFontSize(size.value as FontSize)}
               >
-                <span className={settings.size === size.value ? "font-bold" : ""}>
+                <span className={settings.size === size.value ? styles.fontOptionActive : ""}>
                   {size.label}
                 </span>
               </DropdownMenuItem>
