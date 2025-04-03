@@ -94,9 +94,9 @@ export const ProblemView = ({
           {/* Problem Header */}
           <div className="flex justify-between items-center">
             <div>
-              <h1 className={styles.sectionTitle}>
+              <h2 className={styles.sectionTitle}>
                 Problem {problem.number}
-              </h1>
+              </h2>
               <p className="text-sm text-muted-foreground">
                 Added {new Date(problem.date).toLocaleDateString()}
               </p>
@@ -133,7 +133,7 @@ export const ProblemView = ({
           </div>
 
           {/* Action Buttons - with improved icons and styling */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 grid grid-cols-1 sm:grid-cols-3">
             <Button 
               variant="outline"
               onClick={() => setShowHint(!showHint)}

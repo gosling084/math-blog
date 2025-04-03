@@ -119,18 +119,16 @@ const Website = () => {
                   {/* TextbookTableOfContents view */}
                   {router.params.bookId && !router.params.setId && router.activeContent.textbook && (
                     <Suspense fallback={<TextbookTableOfContentsSkeleton />}>
-                      <div className="h-full overflow-auto">
-                        <TextbookTableOfContents 
-                          textbook={router.activeContent.textbook}
-                          onBack={router.actions.navigateToHome}
-                          onSelectProblemSet={(chapter, problemSet) => 
-                            router.actions.navigateFromTableOfContents(
-                              router.activeContent.textbook!, 
-                              chapter, 
-                              problemSet
-                            )}
-                        />
-                      </div>
+                      <TextbookTableOfContents 
+                        textbook={router.activeContent.textbook}
+                        onBack={router.actions.navigateToHome}
+                        onSelectProblemSet={(chapter, problemSet) => 
+                          router.actions.navigateFromTableOfContents(
+                            router.activeContent.textbook!, 
+                            chapter, 
+                            problemSet
+                          )}
+                      />
                     </Suspense>
                   )}
 

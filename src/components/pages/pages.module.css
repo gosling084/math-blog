@@ -6,6 +6,7 @@
   margin-left: auto;
   margin-right: auto;
   padding: 2rem;
+  padding-top: 0;
 }
 
 .widePageContainer {
@@ -49,32 +50,105 @@
   }
 }
 
-.pageTitle {
-  font-size: 1.875rem; /* text-3xl */
-  font-weight: 700;
-  color: hsl(var(--foreground));
+/* Sticky header for textbook table of contents */
+.stickyHeader {
+  position: sticky;
+  top: 4rem;
+  z-index: 30;
+  background-color: hsl(var(--background));
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid hsl(var(--border));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-@media (min-width: 640px) {
-  .pageTitle {
-      font-size: 2.25rem; /* text-4xl */
+@media (min-width: 480px) {
+  .stickyHeader {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    margin-bottom: 0.875rem;
   }
 }
 
-.pageSubtitle {
-  font-size: 1rem; /* text-base */
-  color: hsl(var(--muted-foreground));
+@media (min-width: 768px) {
+  .stickyHeader {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
-@media (min-width: 640px) {
+.breadcrumbContainer {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 480px) {
+  .breadcrumbContainer {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .breadcrumbContainer {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Update page title to be smaller on mobile */
+.pageTitle {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  line-height: 1.25;
+}
+
+@media (min-width: 480px) {
+  .pageTitle {
+    font-size: 1.5rem; /* text-2xl */
+  }
+}
+
+@media (min-width: 768px) {
+  .pageTitle {
+    font-size: 1.875rem; /* text-3xl */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageTitle {
+    font-size: 2.25rem; /* text-4xl */
+  }
+}
+
+/* Update page subtitle to be smaller on mobile */
+.pageSubtitle {
+  font-size: 0.75rem; /* text-xs */
+  color: hsl(var(--muted-foreground));
+  line-height: 1.25;
+}
+
+@media (min-width: 480px) {
   .pageSubtitle {
-      font-size: 1.125rem; /* text-lg */
+    font-size: 0.875rem; /* text-sm */
+  }
+}
+
+@media (min-width: 768px) {
+  .pageSubtitle {
+    font-size: 1rem; /* text-base */
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageSubtitle {
+    font-size: 1.125rem; /* text-lg */
   }
 }
 
 .sectionTitle {
   font-size: 1.5rem; /* text-2xl */
-  font-weight: 700;
+  font-weight: 550;
   color: hsl(var(--card-foreground));
   margin-bottom: 1rem;
 }
@@ -205,6 +279,24 @@
   opacity: 1;
 }
 
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+@media (min-width: 480px) {
+  .titleContainer {
+    gap: 0.375rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .titleContainer {
+    gap: 0.5rem;
+  }
+}
+
 .bookTitle {
   color: white;
   font-size: 0.875rem;
@@ -270,4 +362,81 @@
       font-size: 0.875rem;
       height: 2rem;
   }
+}
+
+/* Navigation grid for ProblemSetView */
+.navGrid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  width: 100%;
+  margin-bottom: 1rem;
+  justify-items: center;
+  gap: 0.75rem;
+}
+
+.navLeft {
+  justify-self: start;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.navCenter {
+  justify-self: center;
+}
+
+.navRight {
+  justify-self: end;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.navButton {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .navLeft {
+    justify-self: center;
+  }
+  
+  .navCenter {
+    justify-self: center;
+  }
+  
+  .navRight {
+    justify-self: center;
+  }
+}
+
+/* Button placeholder/spacer for ProblemSetView */
+.buttonPlaceholder {
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  height: 36px; /* Match button height */
+  padding: 0 10px; /* Match button padding */
+  min-width: 90px; /* Provide a minimum width */
+}
+
+@media (max-width: 640px) {
+  .buttonPlaceholder {
+    display: none; /* Hide placeholders on mobile to center everything */
+  }
+}
+
+.tableOfContentsPage {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.mainContent {
+  position: relative;
+  z-index: 10;
 }

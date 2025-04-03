@@ -79,73 +79,78 @@ export const TextbookTableOfContents = ({
         <meta name="description" content={seoDescription} />
       </Head>
 
-      <div className={styles.pageContainer}>
-        {/* Fixed navigation and header */}
-        <div className={styles.flexShrink}>
-          <div className="mb-4">
-            <Breadcrumb
-              items={[
-                { label: "Books", onClick: onBack, type: 'home' },
-                { label: textbook.title, onClick: () => {}, type: 'textbook' }
-              ]}
-            />
-          </div>
-
-          <div className={`${styles.spacingY} mb-4`}>
-            <h1 className={styles.pageTitle}>
-              {textbook.title}
-            </h1>
-            <p className={styles.pageSubtitle}>
-              {textbook.author} - {textbook.edition} ({textbook.year})
-            </p>
-            
-            {/* SEO-friendly heading - visually hidden but available to search engines */}
-            <h2 className="sr-only">
-              Solutions Manual for {textbook.title} by {textbook.author} - Complete problem solutions
-            </h2>
-          </div>
-        </div>
-
-        {/* Scrollable content area */}
-        <div className={styles.scrollableContent}>
-          <Card className="bg-card">
-            <CardHeader className="sticky top-0 bg-card z-10">
-              <CardTitle className="text-xl font-medium">Table of Contents</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-10">
-                {textbook.chapters.map((chapter) => (
-                  <div key={chapter.id} className="space-y-4">
-                    <h2 className={`text-lg text-foreground ${styles.borderBottom}`}>
-                      {chapter.title}
-                    </h2>
-                    <div className="space-y-3 pl-6 pr-4">
-                      {chapter.problemSets.map((problemSet) => (
-                        <div 
-                          key={problemSet.id} 
-                          className="group"
-                        >
-                          <button 
-                            onClick={() => onSelectProblemSet(chapter, problemSet)}
-                            className="text-primary hover:text-primary/80 hover:underline text-left w-full"
-                          >
-                            <div className="flex items-baseline">
-                              <span className="font-medium w-16">{`${chapter.id}.${problemSet.id}`}</span>
-                              <span className="flex-1">{problemSet.description}</span>
-                              <span className="text-muted-foreground text-sm whitespace-nowrap ml-2">
-                                ({problemSet.problems.length} {problemSet.problems.length === 1 ? 'problem' : 'problems'})
-                              </span>
-                            </div>
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+      <div className={styles.tableOfContentsPage}>
+        {/* Header section with breadcrumb and title - will stick to top */}
+          <div className={styles.stickyHeader}>
+            <div className={styles.breadcrumbContainer}>
+              { /* Breadcrumb */}
+              <div className="mb-4">
+                <Breadcrumb
+                  items={[
+                    { label: "Books", onClick: onBack, type: 'home' },
+                    { label: textbook.title, onClick: () => {}, type: 'textbook' }
+                  ]}
+                />
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+            
+
+            { /* Title section */}
+            <div className={styles.titleContainer}>
+              <h3 className={styles.pageTitle}>
+                {textbook.title}
+              </h3>
+              <p className={styles.pageSubtitle}>
+                {textbook.author} - {textbook.edition} ({textbook.year})
+              </p>
+              
+              {/* SEO-friendly heading - visually hidden but available to search engines */}
+              <h2 className="sr-only">
+                Solutions Manual for {textbook.title} by {textbook.author} - Complete problem solutions
+              </h2>
+            </div>
+          </div>
+
+          {/* Scrollable content area */}
+          <div className={styles.mainContent}>
+            <Card className="bg-card">
+              <CardHeader className="sticky top-0 bg-card z-10">
+                <CardTitle className="text-xl font-medium">Table of Contents</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-10">
+                  {textbook.chapters.map((chapter) => (
+                    <div key={chapter.id} className="space-y-4">
+                      <h3 className={`text-lg text-foreground ${styles.borderBottom}`}>
+                        {chapter.title}
+                      </h3>
+                      <div className="space-y-3 pl-6 pr-4">
+                        {chapter.problemSets.map((problemSet) => (
+                          <div 
+                            key={problemSet.id} 
+                            className="group"
+                          >
+                            <button 
+                              onClick={() => onSelectProblemSet(chapter, problemSet)}
+                              className="text-primary hover:text-primary/80 hover:underline text-left w-full"
+                            >
+                              <div className="flex items-baseline">
+                                <span className="font-medium w-16">{`${chapter.id}.${problemSet.id}`}</span>
+                                <span className="flex-1">{problemSet.description}</span>
+                                <span className="text-muted-foreground text-sm whitespace-nowrap ml-2">
+                                  ({problemSet.problems.length} {problemSet.problems.length === 1 ? 'problem' : 'problems'})
+                                </span>
+                              </div>
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
       </div>
     </>
   );

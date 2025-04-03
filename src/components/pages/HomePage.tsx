@@ -40,7 +40,7 @@ export const HomePage = ({ onSelectTextbook }: HomePageProps) => {
     <div className={styles.widePageContainer}>
       {/* Page header - centered and fixed */}
       <div className={styles.pageHeader}>
-        <h1 className={styles.pageTitle}>
+        <h1 className={`${styles.pageTitle} mb-2`}>
           Mathematical Immaturity
         </h1>
         <p className={styles.pageSubtitle}>

@@ -77,47 +77,55 @@ export const ProblemSetView = ({
       {/* Fixed top elements */}
       <div className={styles.flexShrink}>
         {/* Combined navigation header with consistent centering */}
-        <div className="flex justify-between items-center mb-4">
+        <div className={styles.navGrid}>
           {/* Left side - Previous section button or spacer */}
-          <div className="w-32 flex justify-start">
+          <div className={styles.navLeft}>
             {previousProblemSet ? (
               <Button
                 variant="link"
-                className="flex items-center space-x-2"
+                className={`flex items-center space-x-2 ${styles.navButton}`}
                 onClick={() => onNavigateToProblemSet(previousProblemSet)}
               >
-                <ChevronLeft className="h-4 w-4" />
-                <span>{formatSectionTitle(previousProblemSet)}</span>
+                <ChevronLeft className="h-4 w-4 flex-shrink-0" />
+                <span className="truncate">{formatSectionTitle(previousProblemSet)}</span>
               </Button>
             ) : (
-              <div /> /* Empty spacer */
+              <div className={styles.buttonPlaceholder}>
+                <ChevronLeft className="h-4 w-4 mr-2" />
+                <span>Previous Section</span>
+              </div>
             )}
           </div>
           
           {/* Center - Table of Contents button */}
-          <Button
-            variant="link"
-            size="lg"
-            className="flex items-center gap-2"
-            onClick={onBackToContents}
-          >
-            <BookOpen className="h-5 w-5" />
-            <span>Table of Contents</span>
-          </Button>
+          <div className={styles.navCenter}>
+            <Button
+              variant="link"
+              size="lg"
+              className={`flex items-center gap-2 ${styles.navButton}`}
+              onClick={onBackToContents}
+            >
+              <BookOpen className="h-5 w-5 flex-shrink-0" />
+              <span>Table of Contents</span>
+            </Button>
+          </div>
           
           {/* Right side - Next section button or spacer */}
-          <div className="w-32 flex justify-end">
+          <div className={styles.navRight}>
             {nextProblemSet ? (
               <Button
                 variant="link"
-                className="flex items-center space-x-2"
+                className={`flex items-center space-x-2 ${styles.navButton}`}
                 onClick={() => onNavigateToProblemSet(nextProblemSet)}
               >
-                <span>{formatSectionTitle(nextProblemSet)}</span>
-                <ChevronRight className="h-4 w-4" />
+                <span className="truncate">{formatSectionTitle(nextProblemSet)}</span>
+                <ChevronRight className="h-4 w-4 flex-shrink-0" />
               </Button>
             ) : (
-              <div /> /* Empty spacer */
+              <div className={styles.buttonPlaceholder}>
+                <span>Next Section</span>
+                <ChevronRight className="h-4 w-4 ml-2" />
+              </div>
             )}
           </div>
         </div>
