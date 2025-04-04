@@ -37,6 +37,10 @@ export function ThemeToggle() {
           <Sun className={styles.dropdownIcon} />
           <span>Light</span>
         </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("soft")}>
+          <Sun className={styles.dropdownIcon} />
+          <span>Soft</span>
+        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
           <Moon className={styles.dropdownIcon} />
           <span>Dark</span>
