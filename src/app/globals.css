@@ -163,12 +163,13 @@
     letter-spacing: 0.05em;
   }
 
-  /* Enhanced font size classes with header and math-content scaling */
+  /* Enhanced font size classes with header, paragraph, and math-content scaling */
   .text-size-small {
     font-size: 0.875rem;
     line-height: 1.25rem;
 
-    & h1, & .text-4xl {
+    /* Headings scaling */
+    & h1, & .text-4xl, & .pageTitle {
       font-size: 1.75rem !important;
       line-height: 2rem !important;
     }
@@ -176,9 +177,15 @@
       font-size: 1.5rem !important;
       line-height: 1.75rem !important;
     }
-    & h3, & .text-2xl {
+    & h3, & .text-2xl, & .sectionTitle {
       font-size: 1.25rem !important;
       line-height: 1.5rem !important;
+    }
+    
+    /* Paragraph scaling */
+    & p, & .pageSubtitle, & .sectionContent {
+      font-size: 0.875rem !important;
+      line-height: 1.375rem !important;
     }
     
     & .prose {
@@ -200,7 +207,8 @@
     font-size: 1rem;
     line-height: 1.5rem;
 
-    & h1, & .text-4xl {
+    /* Headings scaling */
+    & h1, & .text-4xl, & .pageTitle {
       font-size: 2.25rem !important;
       line-height: 2.5rem !important;
     }
@@ -208,9 +216,15 @@
       font-size: 1.875rem !important;
       line-height: 2.25rem !important;
     }
-    & h3, & .text-2xl {
+    & h3, & .text-2xl, & .sectionTitle {
       font-size: 1.5rem !important;
       line-height: 1.75rem !important;
+    }
+    
+    /* Paragraph scaling */
+    & p, & .pageSubtitle, & .sectionContent {
+      font-size: 1rem !important;
+      line-height: 1.5rem !important;
     }
     
     & .prose {
@@ -232,7 +246,8 @@
     font-size: 1.125rem;
     line-height: 1.75rem;
 
-    & h1, & .text-4xl {
+    /* Headings scaling */
+    & h1, & .text-4xl, & .pageTitle {
       font-size: 2.5rem !important;
       line-height: 2.75rem !important;
     }
@@ -240,9 +255,15 @@
       font-size: 2.125rem !important;
       line-height: 2.5rem !important;
     }
-    & h3, & .text-2xl {
+    & h3, & .text-2xl, & .sectionTitle {
       font-size: 1.75rem !important;
       line-height: 2rem !important;
+    }
+    
+    /* Paragraph scaling */
+    & p, & .pageSubtitle, & .sectionContent {
+      font-size: 1.125rem !important;
+      line-height: 1.75rem !important;
     }
     
     & .prose {
@@ -264,7 +285,8 @@
     font-size: 1.25rem;
     line-height: 1.875rem;
 
-    & h1, & .text-4xl {
+    /* Headings scaling */
+    & h1, & .text-4xl, & .pageTitle {
       font-size: 2.75rem !important;
       line-height: 3rem !important;
     }
@@ -272,9 +294,15 @@
       font-size: 2.375rem !important;
       line-height: 2.75rem !important;
     }
-    & h3, & .text-2xl {
+    & h3, & .text-2xl, & .sectionTitle {
       font-size: 2rem !important;
       line-height: 2.25rem !important;
+    }
+    
+    /* Paragraph scaling */
+    & p, & .pageSubtitle, & .sectionContent {
+      font-size: 1.25rem !important;
+      line-height: 1.875rem !important;
     }
     
     & .prose {
@@ -316,7 +344,6 @@
     .dark &, .midnight &, .forest &, .coffee & {
       @apply prose-invert text-muted-foreground;
     }
-
   }
 
   /* Color change MathContent prose to text-primary on hover */
@@ -327,6 +354,7 @@
     color: hsl(var(--primary));
   }
 }
+
 @layer base {
   * {
     @apply border-border;

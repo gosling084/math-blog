@@ -19,15 +19,15 @@
 
 @media (min-width: 640px) {
   .widePageContainer {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
 @media (min-width: 768px) {
   .widePageContainer {
-      padding-left: 2rem;
-      padding-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
@@ -46,7 +46,7 @@
 
 @media (min-width: 640px) {
   .pageHeader {
-      margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -95,64 +95,31 @@
   }
 }
 
-/* Update page title to be smaller on mobile */
+/* Page title - responsive by default */
 .pageTitle {
-  font-size: 1.25rem; /* text-xl */
   font-weight: 700;
   color: hsl(var(--foreground));
   line-height: 1.25;
 }
 
-@media (min-width: 480px) {
-  .pageTitle {
-    font-size: 1.5rem; /* text-2xl */
-  }
-}
-
-@media (min-width: 768px) {
-  .pageTitle {
-    font-size: 1.875rem; /* text-3xl */
-  }
-}
-
-@media (min-width: 1024px) {
-  .pageTitle {
-    font-size: 2.25rem; /* text-4xl */
-  }
-}
-
-/* Update page subtitle to be smaller on mobile */
 .pageSubtitle {
-  font-size: 0.75rem; /* text-xs */
   color: hsl(var(--muted-foreground));
   line-height: 1.25;
 }
 
-@media (min-width: 480px) {
-  .pageSubtitle {
-    font-size: 0.875rem; /* text-sm */
-  }
-}
-
-@media (min-width: 768px) {
-  .pageSubtitle {
-    font-size: 1rem; /* text-base */
-  }
-}
-
-@media (min-width: 1024px) {
-  .pageSubtitle {
-    font-size: 1.125rem; /* text-lg */
-  }
-}
 
 .sectionTitle {
-  font-size: 1.5rem; /* text-2xl */
   font-weight: 550;
   color: hsl(var(--card-foreground));
   margin-bottom: 1rem;
 }
 
+/* 
+ * Removed the font-size rule for sectionTitle
+ * These will now be controlled by the font toggle classes in globals.css
+ */
+
+/* Section content - now will inherit font size from font toggle */
 .sectionContent {
   color: hsl(var(--muted-foreground));
 }
@@ -173,20 +140,20 @@
 
 @media (min-width: 480px) {
   .cardGrid {
-      gap: 1.25rem;
+    gap: 1.25rem;
   }
 }
 
 @media (min-width: 768px) {
   .cardGrid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .cardGrid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -223,10 +190,10 @@
 
 @keyframes pulse {
   0%, 100% {
-      opacity: 1;
+    opacity: 1;
   }
   50% {
-      opacity: 0.5;
+    opacity: 0.5;
   }
 }
 
@@ -271,7 +238,7 @@
 
 @media (min-width: 480px) {
   .bookOverlay {
-      padding: 1rem;
+    padding: 1rem;
   }
 }
 
@@ -297,6 +264,7 @@
   }
 }
 
+/* Book title adjusts base size by screen, but will still be affected by font toggle */
 .bookTitle {
   color: white;
   font-size: 0.875rem;
@@ -311,13 +279,13 @@
 
 @media (min-width: 480px) {
   .bookTitle {
-      font-size: 1rem;
+    font-size: 1rem;
   }
 }
 
 @media (min-width: 768px) {
   .bookTitle {
-      font-size: 1.125rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -329,7 +297,7 @@
 
 @media (min-width: 480px) {
   .bookAuthor {
-      font-size: 0.875rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -341,8 +309,8 @@
 
 @media (min-width: 480px) {
   .bookYear {
-      font-size: 0.75rem;
-      margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -359,8 +327,8 @@
 
 @media (min-width: 480px) {
   .bookButton {
-      font-size: 0.875rem;
-      height: 2rem;
+    font-size: 0.875rem;
+    height: 2rem;
   }
 }
 
