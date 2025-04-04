@@ -74,9 +74,9 @@ export const HomePage = ({ onSelectTextbook }: HomePageProps) => {
                     
                     {/* Hover Overlay with Book Info */}
                     <div className={styles.bookOverlay}>
-                      <h3 className={styles.bookTitle}>{textbook.title}</h3>
-                      <p className={styles.bookAuthor}>{textbook.author}</p>
-                      <p className={styles.bookYear}>{textbook.year}</p>
+                      <div className={styles.bookTitle}>{textbook.title}</div>
+                      <div className={styles.bookAuthor}>{textbook.author}</div>
+                      <div className={styles.bookYear}>{textbook.year}</div>
                       
                       <Button 
                         size="sm"

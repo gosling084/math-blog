@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { ProblemSet, Problem } from "@/types/types";
 import { MathContent } from '@/components/shared/MathContent';
+import { cn } from '@/lib/utils';
 import styles from './pages.module.css';
 
 export const ProblemSetViewSkeleton = () => {
@@ -75,7 +76,13 @@ export const ProblemSetView = ({
   return (
     <div className={`${styles.pageContainer} ${styles.flexCol}`}>
       {/* Fixed top elements */}
-      <div className={styles.flexShrink}>
+      <div className={cn(
+        styles.stickyHeader,
+        // Negative top margin to counteract the padding from mainContent
+        "-mt-6", 
+        // Reduced padding for this specific component
+        "pt-3 pb-2 mb-2"
+      )}>
         {/* Combined navigation header with consistent centering */}
         <div className={styles.navGrid}>
           {/* Left side - Previous section button or spacer */}
@@ -131,7 +138,7 @@ export const ProblemSetView = ({
         </div>
 
         {/* Problem Set header */}
-        <div className={`${styles.spacingY} mb-4`}>
+        <div className={`${styles.spacingY} mb-2`}>
           <h1 className={`text-2xl font-bold text-card-foreground ${styles.borderBottom}`}>
             {problemSet.title}
           </h1>

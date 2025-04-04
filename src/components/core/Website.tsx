@@ -137,36 +137,34 @@ const Website = () => {
                   !router.params.problemId && router.activeContent.textbook && 
                   router.activeContent.chapter && router.activeContent.problemSet && (
                     <Suspense fallback={<ProblemSetViewSkeleton />}>
-                      <div className="h-full overflow-auto">
-                        <ProblemSetView
-                          problemSet={router.activeContent.problemSet}
-                          previousProblemSet={router.activeContent.previousProblemSet || null}
-                          nextProblemSet={router.activeContent.nextProblemSet || null}
-                          onNavigateToProblemSet={(problemSet) => {
-                            // Find the chapter for this problem set
-                            const chapter = router.activeContent.textbook!.chapters.find(c =>
-                              c.problemSets.some(ps => ps.id === problemSet.id)
+                      <ProblemSetView
+                        problemSet={router.activeContent.problemSet}
+                        previousProblemSet={router.activeContent.previousProblemSet || null}
+                        nextProblemSet={router.activeContent.nextProblemSet || null}
+                        onNavigateToProblemSet={(problemSet) => {
+                          // Find the chapter for this problem set
+                          const chapter = router.activeContent.textbook!.chapters.find(c =>
+                            c.problemSets.some(ps => ps.id === problemSet.id)
+                          );
+                          if (chapter) {
+                            router.actions.navigateToProblemSet(
+                              router.activeContent.textbook!,
+                              chapter,
+                              problemSet
                             );
-                            if (chapter) {
-                              router.actions.navigateToProblemSet(
-                                router.activeContent.textbook!,
-                                chapter,
-                                problemSet
-                              );
-                            }
-                          }}
-                          onSelectProblem={(problem) => 
-                            router.actions.navigateToProblem(
-                              router.activeContent.textbook!.id, 
-                              router.activeContent.chapter!.id, 
-                              router.activeContent.problemSet!.id, 
-                              problem.id
-                            )}
-                          onBackToContents={() => 
-                            router.actions.navigateToTextbook(router.activeContent.textbook!)
                           }
-                        />
-                      </div>
+                        }}
+                        onSelectProblem={(problem) => 
+                          router.actions.navigateToProblem(
+                            router.activeContent.textbook!.id, 
+                            router.activeContent.chapter!.id, 
+                            router.activeContent.problemSet!.id, 
+                            problem.id
+                          )}
+                        onBackToContents={() => 
+                          router.actions.navigateToTextbook(router.activeContent.textbook!)
+                        }
+                      />
                     </Suspense>
                   )}
 
@@ -176,31 +174,30 @@ const Website = () => {
                   router.activeContent.chapter && router.activeContent.problemSet && 
                   router.activeContent.problem && (
                     <Suspense fallback={<ProblemViewSkeleton />}>
-                      <div className="h-full overflow-auto">
-                        <ProblemView
-                          problemSet={router.activeContent.problemSet}
-                          problem={router.activeContent.problem}
-                          onNavigateToProblemSet={() => 
-                            router.actions.navigateToProblemSet(
-                              router.activeContent.textbook!, 
-                              router.activeContent.chapter!, 
-                              router.activeContent.problemSet!
-                            )}
-                          nextProblem={router.getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'next')}
-                          previousProblem={router.getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
-                          onNavigateToProblem={(problem) => {
-                            // Find the containing problem set and chapter if this might be a cross-section problem
-                            const [chapterNumber, problemSetNumber, problemNumber] = problem.number.split(".").map(id => Number(id));
-                            
-                            router.actions.navigateToProblem(
-                              router.activeContent.textbook!.id,
-                              chapterNumber,
-                              problemSetNumber,
-                              problemNumber
-                            );
-                          }}
-                        />
-                      </div>
+                      <ProblemView
+                        key={`problem-${router.params.problemId}`}
+                        problemSet={router.activeContent.problemSet}
+                        problem={router.activeContent.problem}
+                        onNavigateToProblemSet={() => 
+                          router.actions.navigateToProblemSet(
+                            router.activeContent.textbook!, 
+                            router.activeContent.chapter!, 
+                            router.activeContent.problemSet!
+                          )}
+                        nextProblem={router.getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'next')}
+                        previousProblem={router.getProblemNavigation(router.activeContent.textbook, router.activeContent.problem!, 'previous')}
+                        onNavigateToProblem={(problem) => {
+                          // Find the containing problem set and chapter if this might be a cross-section problem
+                          const [chapterNumber, problemSetNumber, problemNumber] = problem.number.split(".").map(id => Number(id));
+                          
+                          router.actions.navigateToProblem(
+                            router.activeContent.textbook!.id,
+                            chapterNumber,
+                            problemSetNumber,
+                            problemNumber
+                          );
+                        }}
+                      />
                     </Suspense>
                   )}
                 </div>
