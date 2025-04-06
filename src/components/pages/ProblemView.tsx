@@ -75,21 +75,8 @@ export const ProblemView = ({
   
   return (
     <div className={styles.pageContainer}>
-      {/* Top Navigation Bar */}
-      <div className="flex justify-between items-center mb-6">
-        {/* Left side - Back to section */}
-        <Button
-          variant="link"
-          className="flex items-center space-x-2"
-          onClick={onNavigateToProblemSet}
-        >
-          <ChevronLeft className="h-4 w-4" />
-          <span>Back to {formatSectionTitle(problemSet.title)}</span>
-        </Button>
-      </div>
-
       {/* Main Problem Card */}
-      <Card className="bg-card text-card-foreground mb-6 border-primary/20">
+      <Card className="bg-card text-card-foreground mb-6 mt-8 border-primary/20">
         <CardContent className={`p-6 ${styles.spacingY}`}>
           {/* Problem Header */}
           <div className="flex justify-between items-center">

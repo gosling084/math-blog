@@ -76,13 +76,7 @@ export const ProblemSetView = ({
   return (
     <div className={`${styles.pageContainer} ${styles.flexCol}`}>
       {/* Fixed top elements */}
-      <div className={cn(
-        styles.stickyHeader,
-        // Negative top margin to counteract the padding from mainContent
-        "-mt-6", 
-        // Reduced padding for this specific component
-        "pt-3 pb-2 mb-2"
-      )}>
+      <div className={styles.stickyHeader}>
         {/* Combined navigation header with consistent centering */}
         <div className={styles.navGrid}>
           {/* Left side - Previous section button or spacer */}
@@ -90,7 +84,7 @@ export const ProblemSetView = ({
             {previousProblemSet ? (
               <Button
                 variant="link"
-                className={`flex items-center space-x-2 ${styles.navButton}`}
+                className={`flex items-center gap-2 ${styles.navButton}`}
                 onClick={() => onNavigateToProblemSet(previousProblemSet)}
               >
                 <ChevronLeft className="h-4 w-4 flex-shrink-0" />
@@ -108,11 +102,10 @@ export const ProblemSetView = ({
           <div className={styles.navCenter}>
             <Button
               variant="link"
-              size="lg"
               className={`flex items-center gap-2 ${styles.navButton}`}
               onClick={onBackToContents}
             >
-              <BookOpen className="h-5 w-5 flex-shrink-0" />
+              <BookOpen className="h-4 w-4 flex-shrink-0" />
               <span>Table of Contents</span>
             </Button>
           </div>
@@ -122,7 +115,7 @@ export const ProblemSetView = ({
             {nextProblemSet ? (
               <Button
                 variant="link"
-                className={`flex items-center space-x-2 ${styles.navButton}`}
+                className={`flex items-center gap-2 ${styles.navButton}`}
                 onClick={() => onNavigateToProblemSet(nextProblemSet)}
               >
                 <span className="truncate">{formatSectionTitle(nextProblemSet)}</span>
@@ -136,20 +129,21 @@ export const ProblemSetView = ({
             )}
           </div>
         </div>
-
-        {/* Problem Set header */}
-        <div className={`${styles.spacingY} mb-2`}>
-          <h1 className={`text-2xl font-bold text-card-foreground ${styles.borderBottom}`}>
-            {problemSet.title}
-          </h1>
-          <p className={styles.sectionContent}>
-            {problemSet.description}
-          </p>
-        </div>
       </div>
   
       {/* Scrollable content area */}
+        {/* Problem Set header */}
+        <div className={styles.titleContainer}>
+            <h1 className={`text-2xl font-bold text-card-foreground`}>
+              {problemSet.title}
+            </h1>
+        </div>
       <div className={styles.scrollableContent}>
+        {/* Add problem set description to scrollable content */}
+        <p className={`${styles.sectionContent} mb-4`}>
+            {problemSet.description}
+        </p>
+
         {/* Problems List - Book-like Problem Set Layout */}
         <Card className="bg-card">
           <CardContent className="py-6">

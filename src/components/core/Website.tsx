@@ -90,25 +90,21 @@ const Website = () => {
             <main className={styles.mainContent}>
               {/* About section */}
               {router.activeSection === 'about' && 
-                <div className="h-full overflow-auto">
-                  <About />
-                </div>
+                <About />
               }
 
               {/* Contact section */}
               {router.activeSection === 'contact' && 
-                <div className="h-full overflow-auto">
-                  <Contact />
-                </div>
+                <Contact />
               }
 
               {/* Main content sections */}
               {router.activeSection === 'home' && (
-                <div className="h-full">
+                <div>
                   {/* Home view */}
                   {!router.params.bookId && (
                     <Suspense fallback={<HomePageSkeleton />}>
-                      <div className="h-full">
+                      <div>
                         <HomePage
                           onSelectTextbook={router.actions.navigateToTextbook}
                         />

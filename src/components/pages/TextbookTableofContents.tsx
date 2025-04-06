@@ -93,9 +93,10 @@ export const TextbookTableOfContents = ({
                 />
               </div>
             </div>
-            
+          </div>
 
-            { /* Title section */}
+          {/* Scrollable content area */}
+          { /* Title section */}
             <div className={styles.titleContainer}>
               <h3 className={styles.pageTitle}>
                 {textbook.title}
@@ -109,9 +110,6 @@ export const TextbookTableOfContents = ({
                 Solutions Manual for {textbook.title} by {textbook.author} - Complete problem solutions
               </h2>
             </div>
-          </div>
-
-          {/* Scrollable content area */}
           <div className={styles.mainContent}>
             <Card className="bg-card">
               <CardHeader className="sticky top-0 bg-card z-10">
