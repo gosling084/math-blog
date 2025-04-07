@@ -132,33 +132,28 @@ export const ProblemSetView = ({
       </div>
   
       {/* Scrollable content area */}
-        {/* Problem Set header */}
-        <div className={styles.titleContainer}>
-            <h1 className={`text-2xl font-bold text-card-foreground`}>
-              {problemSet.title}
-            </h1>
-        </div>
       <div className={styles.scrollableContent}>
         {/* Add problem set description to scrollable content */}
-        <p className={`${styles.sectionContent} mb-4`}>
-            {problemSet.description}
+        <p className={`${styles.sectionContent} ${styles.problemSetDescription}`}>
+          {problemSet.description}
         </p>
 
         {/* Problems List - Book-like Problem Set Layout */}
         <Card className="bg-card">
           <CardContent className="py-6">
-            <div className={styles.spacingY}>
+            <div className={styles.problemList}>
               {problemSet.problems.map((problem) => (
                 <div 
                   key={problem.id}
-                  className="py-4 rounded-md px-3 transition-colors"
+                  className={styles.problemItem}
                 >
-                  <div className="flex items-start">
-                    <div className="font-medium text-foreground w-8 shrink-0">
+                  <div className={styles.problemContent}>
+                    <div className={styles.problemNumber}>
                       {problem.id.toString()}.
                     </div>
-                    <div className="problem-content-container w-full">
-                      <div className="math-content cursor-pointer"
+                    <div className={styles.problemContainer}>
+                      <div 
+                        className={styles.mathContentWrapper}
                         onClick={() => onSelectProblem(problem)}
                       >
                         <MathContent content={problem.content} />

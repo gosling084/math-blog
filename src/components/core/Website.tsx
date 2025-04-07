@@ -67,16 +67,6 @@ const Website = () => {
                       <Info className={styles.navIcon} />
                       About
                     </button>
-                    <button 
-                      onClick={() => router.setActiveSection('contact')}
-                      className={cn(
-                        styles.navButton,
-                        router.activeSection === 'contact' ? styles.navButtonActive : styles.navButtonInactive
-                      )}
-                    >
-                      <Mail className={styles.navIcon} />
-                      Contact
-                    </button>
                   </div>
                   <div className="flex items-center">
                     <FontToggle />
@@ -91,11 +81,6 @@ const Website = () => {
               {/* About section */}
               {router.activeSection === 'about' && 
                 <About />
-              }
-
-              {/* Contact section */}
-              {router.activeSection === 'contact' && 
-                <Contact />
               }
 
               {/* Main content sections */}

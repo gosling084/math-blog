@@ -116,26 +116,26 @@ export const TextbookTableOfContents = ({
                 <CardTitle className="text-xl font-medium">Table of Contents</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-10">
+                <div className={styles.tocContent}>
                   {textbook.chapters.map((chapter) => (
-                    <div key={chapter.id} className="space-y-4">
-                      <h3 className={`text-lg text-foreground ${styles.borderBottom}`}>
+                    <div key={chapter.id} className={styles.chapterSection}>
+                      <h3 className={`${styles.chapterTitle} ${styles.borderBottom}`}>
                         {chapter.title}
                       </h3>
-                      <div className="space-y-3 pl-6 pr-4">
+                      <div className={styles.problemSetList}>
                         {chapter.problemSets.map((problemSet) => (
                           <div 
                             key={problemSet.id} 
-                            className="group"
+                            className={styles.problemSetItem}
                           >
                             <button 
                               onClick={() => onSelectProblemSet(chapter, problemSet)}
-                              className="text-primary hover:text-primary/80 hover:underline text-left w-full"
+                              className={styles.problemSetButton}
                             >
-                              <div className="flex items-baseline">
-                                <span className="font-medium w-16">{`${chapter.id}.${problemSet.id}`}</span>
-                                <span className="flex-1">{problemSet.description}</span>
-                                <span className="text-muted-foreground text-sm whitespace-nowrap ml-2">
+                              <div className={styles.problemSetContent}>
+                                <span className={styles.sectionNumber}>{`${chapter.id}.${problemSet.id}`}</span>
+                                <span className={styles.sectionDescription}>{problemSet.description}</span>
+                                <span className={styles.problemCount}>
                                   ({problemSet.problems.length} {problemSet.problems.length === 1 ? 'problem' : 'problems'})
                                 </span>
                               </div>
