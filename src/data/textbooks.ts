@@ -5963,6 +5963,292 @@ And as we can see, $\\pmb{\\omega}(t)$ is the same regardless of position. Thus,
                   date: "2025-03-05"
                 }
               ]
+            },
+            {
+              id: 21,
+              title: "14.21 Miscellaneous Review Exercises",
+              description: "Review exercises on the calculus of vector-valued functions.",
+              problems: [
+                {
+                  id: 1,
+                  number: "14.21.1",
+                  content: `Let $\\mathbf{r}$ denote the vector from the origin to an arbitrary point on the parabola $y^2 = x$, let $\\alpha$ be the angle that $\\mathbf{r}$ makes with the tangent line, $0 \\leq \\alpha \\leq \\pi$. Express $\\alpha$ in terms of $\\theta$, where $\\theta$ is the angle that $\\mathbf{r}$ makes with the positive $x$-axis, $0 \\leq \\theta \\leq \\pi$.`,
+                  hint: `Recall that if $\\alpha$ is the angle between two vectors $A$ and $B,$ we have
+\\begin{align*}
+\\\\
+\\sin\\alpha &= \\frac{\\|A \\times B\\|}{\\|A\\|\\|B\\|},
+\\quad
+\\cos\\alpha = \\frac{A \\cdot B}{\\|A\\|\\|B\\|}.
+\\end{align*}
+We can also express $\\alpha$ in terms of its tangent to eliminate the norm calculations. For $A \\cdot B \\neq 0$ we have:
+\\begin{align*}
+\\\\
+\\tan\\alpha &= \\frac{\\|A \\times B\\|}{A \\cdot B}.
+\\end{align*}
+Putting $\\mathbf{r}$ in rectangular coordinates gives us $\\mathbf{r} = (x, y).$ But, every point on the parabola must satisfy $x = y^2,$ giving us $\\mathbf{r} = (y^2, y).$ Taking its derivative with respect to $y$ gives us $\\mathbf{r}' = (2y, 1).$ But $\\mathbf{r}'$ is parallel to the line tangent to the curve at $(x, y)$. Thus, $\\alpha$ can be expressed as the angle between $\\mathbf{r}$ and $\\mathbf{r}'.$ 
+`,
+                  solution: `We know that the line tangent to $\\mathbf{r}$ must be parallel to $\\mathbf{r}'$, so we can use the dot and cross products of $\\mathbf{r}$ and $\\mathbf{r}'$ to give us:
+\\begin{align*}
+\\\\
+\\tan \\alpha &= \\frac{\\sin \\alpha}{\\cos \\alpha}
+\\\\
+\\\\ 
+&= \\frac{\\|\\mathbf{r} \\times \\mathbf{r}'\\|}{\\|\\mathbf{r}\\|\\|\\mathbf{r}'\\|}\\frac{\\|\\mathbf{r}\\|\\|\\mathbf{r}'\\|}{\\mathbf{r} \\cdot \\mathbf{r}'}
+\\\\
+\\\\
+&= \\frac{\\|\\mathbf{r} \\times \\mathbf{r}'\\|}{\\mathbf{r} \\cdot \\mathbf{r}'}
+\\end{align*}
+And since $x = y^2$ for all $(x, y)$ on the parabola, we get $\\mathbf{r} = (y^2, y)$ and $\\mathbf{r}' = (2y, 1),$ giving us:
+\\begin{align*}
+\\\\
+\\tan \\alpha &= \\frac{\\|\\mathbf{r} \\times \\mathbf{r}'\\|}{\\mathbf{r} \\cdot \\mathbf{r}'}
+\\\\
+\\\\
+&= \\frac{\\|-y^2\\,\\mathbf{k}\\|}{2y^3 + y}
+\\\\
+\\\\
+&= \\frac{y^2}{2y^3 + y}
+\\\\
+\\\\
+&= \\frac{y}{2y^2 + 1}
+\\end{align*}
+Now, to express $\\tan\\alpha$ in terms of the angle $\\theta$ between $\\mathbf{r}$ and the positive $x$-axis, we first express $\\mathbf{r}$ in terms of polar coordinates to give us $x = r\\cos\\theta$ and $y = r\\sin\\theta.$ This gives us $y/x = \\tan\\theta$ for $x \\neq 0.$ But since $x = y^2,\\,\\tan\\theta = 1/y$ for $y \\neq 0.$ We can then express $\\tan \\alpha$ in terms of $\\theta$ as:
+\\begin{align*}
+\\\\
+\\tan\\alpha &= \\frac{1/\\tan\\theta}{2/\\tan^2\\theta + 1}
+\\\\
+\\\\
+&= \\frac{\\tan\\theta}{2 + \\tan^2\\theta}
+\\quad
+\\blacksquare
+\\end{align*}
+`,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 2,
+                  number: "14.21.2",
+                  content: `Show that the vector $T = y\\,\\mathbf{i} + 2c\\,\\mathbf{j}$ is tangent to the parabola $y^2 = 4cx$ at the point $(x, y),$ and that the vector $N = 2c\\,\\mathbf{i} - y\\,\\mathbf{j}$ is perpendicular to $T$.
+[Hint: Write a vector equation for the parabola, using $y$ as a parameter.]`,
+                  hint: `To find the vector equation for the parabola using $y$ as a parameter, we rewrite the equation $y^2 = 4cx$ as $\\frac{y^2}{4c} = x$, which gives us: 
+\\begin{align*}
+\\mathbf{r}(y) &= \\frac{y^2}{4c}\\,\\mathbf{i} + y\\,\\mathbf{j}
+\\end{align*}`,
+                  solution: `$N$ and $T$ are perpendicular since $N \\cdot T = 0.$
+                  
+To show that $T$ is tangent to the parabola $y^2 = 4cx$ at $(x, y),$ it will suffice to show that $T$ is parallel to the derivative of the curve parameterized by $y.$ Writing the parabola as a vector equation, using $y$ as a parameter, we get:
+\\begin{align*}
+\\\\
+\\mathbf{r}(y) &= \\frac{y^2}{4c}\\,\\mathbf{i} + y\\,\\mathbf{j}
+\\end{align*}
+Its derivative is then:
+\\begin{align*}
+\\mathbf{r}'(y) &= \\frac{y}{2c}\\,\\mathbf{i} + \\mathbf{j}
+\\end{align*}
+But we can see that that $T$ is parallel to $\\mathbf{r}'(y),$ with $T = 2c\\,\\mathbf{r}'(y).$ Thus, $T$ is tangent to the parabola at $(x, y).\\,\\blacksquare$
+`,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 3,
+                  number: "14.21.3",
+                  content: `Prove that an equation of the line of slope $m$ that is tangent to the parabola $y^2 = 4cx$ can be written in the form $y = mx + c/m$. What are the coordinates of the point of contact?`,
+                  hint: `Note that slope $m$ is a constant. Take the derivative of the parabola with respect to $x$ and use slope $m$ to find the $y$-coordinate of the point of contact. From here, use $m$ and the point of contact to find the $y$-intercept.`,
+                  solution: `Taking the derivative of the parabola with respect to $x,$ we get:
+\\begin{align*}
+\\\\
+2y\\frac{dy}{dx} &= 4c
+\\end{align*}
+Setting $dy/dx = m$ and rearranging terms we find that, at the point of contact, $y = 2c/m.$ Then, $y^2 = 4c^2/m^2 = 4cx,$ which means that the point of contact is:
+\\begin{align*}
+\\\\
+\\left(\\frac{c}{m^2}, \\frac{2c}{m}\\right)
+\\end{align*}
+Putting this point into slope-intercept form, we get:
+\\begin{align*}
+\\\\
+y &= mx + b 
+\\Rightarrow
+\\frac{2c}{m} = \\frac{c}{m} + b
+\\end{align*}
+Solving for $b,$ we see that the equation for the line of slope $m$ tangent to the curve $y^2 = 4cx$ is
+\\begin{align*}
+\\\\
+y &= mx + \\frac{c}{m}
+\\quad
+\\blacksquare
+\\end{align*}`,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 4,
+                  number: "14.21.4",
+                  content: `(a) Solve Exercise 3 for the parabola $(y - y_0)^2 = 4c(x - x_0)$.
+(b) Solve Exercise 3 for the parabola $x^2 = 4cy$ and, more generally, for the parabola $(x - x_0)^2 = 4c(y - y_0)$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 5,
+                  number: "14.21.5",
+                  content: `Prove that an equation of the line that is tangent to the parabola $y^2 = 4cx$ at the point $(x_1, y_1)$ can be written in the form $y y_1 = 2c(x + x_1)$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 6,
+                  number: "14.21.6",
+                  content: `Solve Exercise 5 for each of the parabolas described in Exercise 4.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 7,
+                  number: "14.21.7",
+                  content: `(a) Let $P$ be a point on the parabola $y = x^2$. Let $Q$ be the point of intersection of the normal line at $P$ with the $y$-axis. What is the limiting position of $Q$ as $P$ tends to the $y$-axis?
+            (b) Solve the same problem for the curve $y = f(x)$, where $f(0) = 0$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 8,
+                  number: "14.21.8",
+                  content: `Given that the line $y = c$ intersects the parabola $y = x^2$ at two points. Find the radius of the circle passing through these two points and through the vertex of the parabola. The radius you determine depends on $c$. What happens to this radius as $c \\to 0$?`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 9,
+                  number: "14.21.9",
+                  content: `Prove that a point $(x_0, y_0)$ is inside, on, or outside the ellipse $x^2/a^2 + y^2/b^2 = 1$ according as $x_0^2/a^2 + y_0^2/b^2$ is less than, equal to, or greater than 1.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 10,
+                  number: "14.21.10",
+                  content: `Given an ellipse $x^2/a^2 + y^2/b^2 = 1$. Show that the vectors $T$ and $N$ given by
+            
+            \\begin{align*}
+            \\
+            T = -\\frac{y}{b^2}\\,\\mathbf{i} + \\frac{x}{a^2}\\,\\mathbf{j}, \\quad N = \\frac{x}{a^2}\\,\\mathbf{i} + \\frac{y}{b^2}\\,\\mathbf{j}
+            \\end{align*}
+            
+            are, respectively, tangent and normal to the ellipse when placed at the point $(x,y)$. If the eccentric angle of $(x_0, y_0)$ is $\\theta_0$, show that the tangent line at $(x_0, y_0)$ has the Cartesian equation
+            
+            \\begin{align*}
+            \\
+            \\frac{x}{a} \\cos \\theta_0 + \\frac{y}{b} \\sin \\theta_0 = 1.
+            \\end{align*}`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 11,
+                  number: "14.21.11",
+                  content: `Show that the tangent line to the ellipse $x^2/a^2 + y^2/b^2 = 1$ at the point $(x_0, y_0)$ has the equation $x x_0/a^2 + y y_0/b^2 = 1$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 12,
+                  number: "14.21.12",
+                  content: `Prove that the product of the perpendicular distances from the foci of an ellipse to any tangent line is constant, this constant being the square of the length of half the minor axis.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 13,
+                  number: "14.21.13",
+                  content: `Two tangent lines are drawn to the ellipse $x^2 + 4y^2 = 8$, each parallel to the line $x + 2y = 7$. Find the points of tangency.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 14,
+                  number: "14.21.14",
+                  content: `A circle passes through both foci of an ellipse and is tangent to the ellipse at two points. Find the eccentricity of the ellipse.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 15,
+                  number: "14.21.15",
+                  content: `Let $V$ be one of the two vertices of a hyperbola whose transverse axis has length $2a$ and whose eccentricity is 2. Let $P$ be a point on the same branch as $V$. Denote by $A$ the area of the region bounded by the hyperbola and the line segment $VP$, and let $r$ be the length of $VP$.
+            (a) Place the coordinate axes in a convenient position and write an equation for the hyperbola.
+            (b) Express the area $A$ as an integral and, without attempting to evaluate this integral, show that $Ar^{-3}$ tends to a limit as the point $P$ tends to $V$. Find this limit.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 16,
+                  number: "14.21.16",
+                  content: `Show that the vectors $T = (y/b^2)\\,\\mathbf{i} + (x/a^2)\\,\\mathbf{j}$ and $N = (x/a^2)\\,\\mathbf{i} - (y/b^2)\\,\\mathbf{j}$ are, respectively, tangent and normal to the hyperbola $x^2/a^2 - y^2/b^2 = 1$ if placed at the point $(x, y)$ on the curve.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 17,
+                  number: "14.21.17",
+                  content: `Show that the tangent line to the hyperbola $x^2/a^2 - y^2/b^2 = 1$ at the point$(x_0, y_0)$ is given by the equation $x_0x/a^2 - y_0y/b^2 = 1$.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 18,
+                  number: "14.21.18",
+                  content: `The normal line at each point of a curve and the line from that point to the origin form an isosceles triangle whose base is on the $x$-axis. Show that the curve is a hyperbola.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 19,
+                  number: "14.21.19",
+                  content: `The normal line at a point $P$ of a curve intersects the $x$-axis at $X$ and the $y$-axis at $Y$. Find the curve if each $P$ is the mid-point of the corresponding line segment $XY$ and if the point $(4, 5)$ is on the curve.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 20,
+                  number: "14.21.20",
+                  content: `Prove that the product of the perpendicular distances from an arbitrary point on a hyperbola to its asymptotes is constant.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 21,
+                  number: "14.21.21",
+                  content: `A curve is given by a polar equation $r = f(\\theta)$. Find $f$ if an arbitrary arc joining two distinct points of the curve has arc length proportional to (a) the angle subtended at the origin; (b) the difference of the radial distances from the origin to its endpoints; (c) the area of the sector formed by the arc and the radii to its endpoints.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                },
+                {
+                  id: 22,
+                  number: "14.21.22",
+                  content: `If a curve in 3-space is described by a vector-valued function $r$ defined on a parametric interval $[a, b]$, prove that the scalar triple product $r'(t) \\cdot r(a) \\times r(b)$ is zero for at least one $t$ in $(a, b)$. Interpret this result geometrically.`,
+                  hint: ``,
+                  solution: ``,
+                  date: "2025-04-05"
+                }
+              ]
             }
           ]
         },
