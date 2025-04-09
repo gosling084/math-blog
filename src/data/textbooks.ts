@@ -6085,24 +6085,202 @@ y &= mx + \\frac{c}{m}
                   number: "14.21.4",
                   content: `(a) Solve Exercise 3 for the parabola $(y - y_0)^2 = 4c(x - x_0)$.
 (b) Solve Exercise 3 for the parabola $x^2 = 4cy$ and, more generally, for the parabola $(x - x_0)^2 = 4c(y - y_0)$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `(a) What happens to the point of contact when $x$ and $y$ are translated by $x_0$ and $y_0,$ respectively?
+(b) What happens to our graphs and their point of contact when the axes are switched, but $m$ stays the same?`,
+                  solution: `(a) As in Exercise 3, we take the derivative of the equation with respect to $x$ and set $dy/dx = m$ to find the point of contact:
+\\begin{align*}
+\\\\
+2(y - y_0)\\frac{dy}{dx} = 4c
+&\\Rightarrow
+y = \\frac{2c}{m} + y_0
+\\\\
+\\\\
+(y - y_0)^2 = 4c(x - x_0)
+&\\Rightarrow
+x = \\frac{1}{4c}(y - y_0)^2 + x_0
+\\\\
+\\\\
+&\\Rightarrow
+x = \\frac{c}{m^2} + x_0
+\\end{align*}
+As we can see, the point of contact is that from Exercise 3, translated by $(x_0, y_0).$ Putting the point of contact into slope-intercept form, we find the $y$-intercept:
+\\begin{align*}
+\\\\
+y = mx + b
+&\\Rightarrow
+\\frac{2c}{m} + y_0 = \\frac{c}{m} + mx_0 + b
+\\\\
+\\\\
+&\\Rightarrow b = \\frac{c}{m} + y_0 - mx_0
+\\end{align*}
+The equation of the line of slope $m$ tangent to the parabola $(y - y_0)^2 = 4c(x - x_0)$ is then:
+\\begin{align*}
+\\\\
+y = mx + \\frac{c}{m} + y_0 - mx_0
+\\end{align*}
+Rearranging terms gives us the equation of the line in translated point-slope form:
+\\begin{align*}
+\\\\
+y - y_0 &= m(x - x_0) + \\frac{c}{m}
+\\quad
+\\blacksquare
+\\end{align*}
+(b) We first take the derivative of the equation $x^2 = 4cy$ with respect to $x$ and set $dy/dx = m$ to find the point of contact:
+\\begin{align*}
+\\\\
+2x = 4c\\frac{dy}{dx}
+&\\Rightarrow
+x = 2cm
+\\\\
+\\\\
+x^2 = 4cy
+&\\Rightarrow
+y = cm^2
+\\end{align*}
+Putting this point into slope-intercept form, we get
+\\begin{align*}
+\\\\
+y &= mx + b 
+\\Rightarrow
+cm^2 = 2cm^2 + b
+\\end{align*}
+Making the $y$-intercept $b = -cm^2.$ The line of slope $m$ tangent to the parabola $x^2 = 4cy$ then has the equation:
+\\begin{align*}
+\\\\
+y &= mx - cm^2
+\\end{align*}
+In the general case of a parabola translated by $(x_0, y_0),$ we translate the point of contact accordingly, giving us:
+\\begin{align*}
+\\\\
+(x, y) &= \\left(2cm + x_0, cm^2 + y_0\\right)
+\\end{align*}
+Putting the point of contact into slope-intercept form, we get:
+\\begin{align*}
+\\\\
+cm^2 + y_0 &= 2cm^2 + mx_0 + b
+\\end{align*}
+Solving for the $y$-intercept $b,$ we get $b = y_0 - mx_0 -cm^2,$ making the equation of the line of slope $m$ tangent to the parabola $(x - x_0)^2 = 4c(y - y_0):$
+\\begin{align*}
+\\\\
+y &= mx + y_0 - mx_0 - cm^2
+\\end{align*}
+Rearranging terms gives us the equation in translated point-slope form:
+\\begin{align*}
+\\\\
+y - y_0 &= m(x - x_0) - cm^2
+\\quad
+\\blacksquare
+\\end{align*}`,
                   date: "2025-04-05"
                 },
                 {
                   id: 5,
                   number: "14.21.5",
-                  content: `Prove that an equation of the line that is tangent to the parabola $y^2 = 4cx$ at the point $(x_1, y_1)$ can be written in the form $y y_1 = 2c(x + x_1)$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `Prove that an equation of the line that is tangent to the parabola $y^2 = 4cx$ at the point $(x_1, y_1)$ can be written in the form $y_1 y = 2c(x + x_1)$.`,
+                  hint: `Express slope $m$ and $y$-intercept $b$ in terms of the coordinates of the point of contact $(x_1, y_1).$`,
+                  solution: `Recall from Exercise 3 that the line of slope $m$ is tangent to the parabola with equation $y^2 = 4cx$ at the point
+\\begin{align*}
+\\\\
+\\left(\\frac{c}{m^2}, \\frac{2c}{m}\\right)
+\\end{align*}
+With $y$-intercept $b = c/m.$ If we denote the point of contact as $(x_1, y_1),$ then we can rewrite $m$ in terms of $y_1,$ and $b$ in terms of $x_1.$ For $y_1 \\neq 0,$ the equation of the line then becomes
+\\begin{align*}
+\\\\
+y &= mx + b
+\\\\
+\\\\
+&= \\frac{2c}{y_1}x + mx_1
+\\\\
+\\\\
+&= \\frac{2c}{y_1}\\left(x + x_1\\right)
+\\end{align*}
+Multiplying both sides by $y_1$ gives us:
+\\begin{align*}
+y_1 y &= 2c(x + x_1)
+\\quad 
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 6,
                   number: "14.21.6",
                   content: `Solve Exercise 5 for each of the parabolas described in Exercise 4.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Use the results of Exercise 4 to give the equations and points of contact $(x_1, y_1)$ for the three tangent lines.`,
+                  solution: `(a) Following the result of Exercise 4(a), we know that the equation of the line of slope $m$ tangent to the parabola with equation $(y - y_0)^2 = 4c(x - x_0)$ is:
+\\begin{align*}
+y - y_0 &= m(x - x_0) + \\frac{c}{m}
+\\end{align*}
+with point of contact:
+\\begin{align*}
+\\\\
+(x_1, y_1) &= \\left(\\frac{c}{m^2} + x_0, \\frac{2c}{m} + y_0\\right)
+\\end{align*}
+In other words,
+\\begin{align*}
+\\left(\\frac{c}{m^2}, \\frac{2c}{m}\\right) &= (x_1 - x_0, y_1 - y_0)
+\\end{align*}
+We can use this to express slope $m$ in terms of $y_1 - y_0,$ with $m = 2c/(y_1 - y_0),$ for $y_1 \\neq y_0.$ We can also express $c/m$ in terms of $(x_1 - x_0)$ and $(y_1 - y_0)$ as:
+\\begin{align*}
+\\frac{c}{m} &= 2c\\frac{x_1 - x_0}{y_1 - y_0}
+\\end{align*}
+for $y_1 \\neq y_0.$ Then, the translated point-slope equation of the tangent line becomes:
+\\begin{align*}
+\\\\
+(y - y_0) &= \\frac{2c}{y_1 - y_0}\\left(x + x_1 - 2x_0\\right)
+\\end{align*}
+Multiplying both sides by $y_1 - y_0$ gives us:
+\\begin{align*}
+\\\\
+(y - y_0)(y_1 - y_0) &= 2c\\left(x + x_1 - 2x_0\\right)
+\\quad
+\\blacksquare
+\\end{align*}
+
+(b) Following the result of Exercise 4(b), we know that the equation of the line with slope $m,$ tangent to the parabola $x^2 = 4cy,$ is
+\\begin{align*}
+\\\\
+y = mx - cm^2
+\\end{align*}
+with point of contact $(x_1, y_1) = (2cm, cm^2).$ Then, expressing $m$ and $b$ in terms of $x_1$ and $y_1,$ we get:
+\\begin{align*}
+\\\\
+y &= \\frac{y_1}{x_1}(2x - x_1)
+\\end{align*}
+for $x_1 \\neq 0.$ Multiplying both sides by $x_1,$ we get:
+\\begin{align*}
+x_1y &= 2y_1x - x_1y_1
+\\quad
+\\blacksquare
+\\end{align*}
+(c) Following the result of Exercise 4(b), we know that the equation for the line with slope $m,$ tangent to the parabola $(x - x_0)^2 = 4c(y - y_0)$ is:
+\\begin{align*}
+\\\\
+y - y_0 = m(x - x_0) - cm^2
+\\end{align*}
+with point of contact being:
+\\begin{align*}
+(x_1, y_1) &= \\left(2cm + x_0, cm^2 + y_0\\right)
+\\end{align*}
+Written another way,
+\\begin{align*}
+\\\\
+\\left(2cm, cm^2\\right) &= \\left(x_1 - x_0, y_1 - y_0\\right)
+\\end{align*}
+Then, we can express $m$ and $b$ in terms of $x_1 - x_0$ and $y_1 - y_0$ to give us:
+\\begin{align*}
+\\\\
+y - y_0 = \\frac{y_1 - y_0}{x_1 - x_0}\\left[2(x - x_0) - (x_1 - x_0)\\right]
+\\end{align*}
+for $x_1 \\neq x_0.$ Multiplying both sides by $(x_1 - x_0)$ gives us
+\\begin{align*}
+\\\\
+(y - y_0)(x_1 - x_0) = 2(y_1 - y_0)(x - x_0) - (x_1 - x_0)(y_1 - y_0)
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
