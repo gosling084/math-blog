@@ -6287,25 +6287,139 @@ for $x_1 \\neq x_0.$ Multiplying both sides by $(x_1 - x_0)$ gives us
                   id: 7,
                   number: "14.21.7",
                   content: `(a) Let $P$ be a point on the parabola $y = x^2$. Let $Q$ be the point of intersection of the normal line at $P$ with the $y$-axis. What is the limiting position of $Q$ as $P$ tends to the $y$-axis?
-            (b) Solve the same problem for the curve $y = f(x)$, where $f(0) = 0$.`,
-                  hint: ``,
-                  solution: ``,
+(b) Solve the same problem for the curve $y = f(x)$, where $f'(0) = 0$.`,
+                  hint: `(a) Turn the equation of the parabola into a vector $P$ parameterized by $x.$ What is the derivative of $P?$ What is the vector $N$ normal to $P?$ How can we use the line described by $P$ and $N$ to find $Q?$
+
+(b) The approach from (a) can be used in the general case where $y = f(x)$ for some real-valued $f.$ Use L'Hôpital's rule (Theorem 7.9) for the indeterminate form if applicable.`,
+                  solution: `(a) We can describe any point $P$ on the curve with the parametric vector $P(x) = (x, x^2).$ Its derivative $P'(x)$ is then $(1, 2x).$ Thus, the line normal to the curve at point $P$ must be parallel to the vector $N = \\left(1, -\\frac{1}{2x}\\right)$ for $x \\neq 0.$ Then, by definition, the line $L,$ normal to the curve at $P = (x, x^2),$ is the following set of points:
+\\begin{align*}
+\\\\
+L &= \\{P + tN\\, \|\\, t\\ \\text{real}\\}
+\\end{align*}
+Or in other words, for all real $t$, $L$ is the set of points $\\left(x + t, x^2 - \\frac{t}{2x}\\right).$ Setting $t = -x$ we find the point $Q$ at which the normal line intersects the $y$-axis. That is, \\begin{align*}
+Q = \\left(0, x^2 + \\frac{1}{2}\\right)
+\\end{align*}
+As $x \\rightarrow 0,$ we find that $Q \\rightarrow \\left(0, \\frac{1}{2}\\right).\\,\\blacksquare$
+
+(b) We can use the same approach as in part (a) for the general case $y = f(x).$ We first turn the point $P$ into a vector parameterized by $x,$ namely $P = \\left(x, f(x)\\right).$ Then, its derivative is $P' = \\left(1, f'(x)\\right).$ The normal line at $P$ is then parallel to $N = \\left(1, -\\frac{1}{f'(x)}\\right)$ for $f'(x) \\neq 0,$ and the normal line $L$ is defined as:
+\\begin{align*}
+\\\\
+L &= \\{P + tN\\, \|\\, t\\ \\text{real}\\}
+\\end{align*}
+In other words, $L$ is the set of points $\\left(x + t, f(x) - \\frac{t}{f'(x)}\\right)$ for all real $t$ and where $f'(x) \\neq 0.$ Then, setting $t = -x,$ we see that the $y$-intercept of the normal line is the point
+\\begin{align*}
+\\\\
+Q &= \\left(0, f(x) + \\frac{x}{f'(x)}\\right)
+\\end{align*}
+Taking the limit of $Q$ as $x \\rightarrow 0$ gives us the indeterminate form $\\frac{0}{0},$ since $f'(0) = 0.$ We can then use L'Hôpital's rule for the indeterminate form to give us
+\\begin{align*}
+\\\\
+\\lim_{x \\to\\,0} Q &= \\left(0, f(x)\\right) + \\left(0, \\frac{1}{f''(x)}\\right)
+\\\\
+\\\\
+&= \\lim_{x \\to\\,0} \\left(0, f(x) + \\frac{1}{f''(x)}\\right).
+\\end{align*}
+If $f''(0) \\neq 0,$ 
+\\begin{align*}
+\\\\
+\\lim_{x \\to\\,0} Q &= \\left(0, f(0) + \\frac{1}{f''(0)}\\right)
+\\end{align*}
+Otherwise, 
+\\begin{align*}
+\\\\
+\\lim_{x \\to\\,0} \\left\|f(0) + \\frac{1}{f''(0)}\\right\| &= +\\infty
+\\quad
+\\blacksquare
+\\end{align*}`,
                   date: "2025-04-05"
                 },
                 {
                   id: 8,
                   number: "14.21.8",
                   content: `Given that the line $y = c$ intersects the parabola $y = x^2$ at two points. Find the radius of the circle passing through these two points and through the vertex of the parabola. The radius you determine depends on $c$. What happens to this radius as $c \\to 0$?`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `What are the $x$-coordinates of the two points at which the line $y = c$ intersects the graph of $y = x^2?$ What does this imply about the center of the circle? What happens to the radius if $c = 0;$ how does this differ from the radius in the limit as $c \\to 0?$`,
+                  solution: `The line $y = c$ intersects the parabola $y = x^2$ at the points $(-\\sqrt{c}, c)$ and $(\\sqrt{c}, c).$ If these two points are both on the circle with center at $P = (p, q),$ then it follows that
+\\begin{align*}
+\\|P - (-\\sqrt{c}, c)\\| = \\|P - (\\sqrt{c}, c)\\|
+\\end{align*}
+Or, in other words,
+\\begin{align*}
+\\left(p + \\sqrt{c}\\right)^2 + (q - c)^2 &= \\left(p - \\sqrt{c}\\right)^2 + (q - c)^2
+\\\\
+\\\\
+\\left(p + \\sqrt{c}\\right)^2 &= \\left(p - \\sqrt{c}\\right)^2
+\\end{align*}
+But, if $c \\neq 0,$ then this implies $p = 0.$ (Note: If $c = 0,$ then the two points converge at the vertex of the parabola and the circle has radius $0.$)
+
+Now, given that the circle also goes through the vertex of the parabola (ie, the origin), this means $\\|P\\| = \\|P - (-\\sqrt{c}, c)\\|$ and $\\|P\\| = \\|P - (\\sqrt{c}, c)\\|.$ And since the $x$-coordinate of $P$ is zero, we get:
+\\begin{align*}
+\\\\
+q^2 &= c + (q - c)^2
+\\\\
+\\\\
+&= c + q^2 - 2qc + c^2
+\\end{align*}
+Rearranging variables and simplifying, we find that
+\\begin{align*}
+q &= \\frac{1 + c}{2}
+\\end{align*}
+Which means that the center of the circle $P$ is at $\\left(0, \\frac{1 + c}{2}\\right).$ But since the circle goes through the origin, $\\|P\\|$ is the radius of the circle. Thus, the radius $r$ of the circle is $\\frac{1 + c}{2}.$ And in the limit, as $c \\rightarrow 0,$ $r \\to \\frac{1}{2}.\\,\\blacksquare$ 
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 9,
                   number: "14.21.9",
                   content: `Prove that a point $(x_0, y_0)$ is inside, on, or outside the ellipse $x^2/a^2 + y^2/b^2 = 1$ according as $x_0^2/a^2 + y_0^2/b^2$ is less than, equal to, or greater than 1.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall Theorem 13.19, Equation 13.34, and Equation 13.35:
+
+Theorem 13.19. Let $C$ be a conic section with eccentricity $e \\neq 1$ and with a focus $F$ at a distance $d$ from a directrix $L.$ If $N$ is a unit normal to $L$ and if $F = eaN,$ where $a = ed/(1 - e^2),$ then $C$ is the set of all points $X$ satisfying the equation
+\\begin{align*}
+\\\\
+\\|X\\|^2 + e^2a^2 &= e^2\\left(X \\cdot N\\right)^2 + a^2
+\\quad
+(13.34)
+\\end{align*}
+Then, putting $X$ into rectangular coordinates, [ie, $X = (x, y)$] and setting $N = \\mathbf{i}$ (meaning the directrix is vertical), Equation (13.34) becomes $x^2 + y^2 + e^2a^2 = e^2x^2 + a^2,$ or $x^2(1 - e^2) + y^2 = a^2(1 - e^2),$ giving us
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2} + \\frac{y^2}{a^2(1 - e^2)} &= 1
+\\quad
+(13.35)
+\\end{align*}
+`,
+                  solution: `If $X = (x_0, y_0)$ satisfies
+\\begin{align*}
+\\frac{x^2}{a^2} + \\frac{y^2}{b^2} &= 1
+\\end{align*}
+with $b^2 = a^2(1 - e^2),\\ 0 < e < 1,$ we know from Theorem 13.19 that $X$ is on the conic $C$ with focus $F = eaN,$ where $a = ed/(1 - e^2),$ $d$ is the distance from $F$ to the vertical directrix line $L$ located at $x = a/e,$ and $N$ is the unit vector normal to $L.$
+
+Now, suppose $X$ is such that
+\\begin{align*}
+\\frac{x^2}{a^2} + \\frac{y^2}{b^2} &> 1
+\\end{align*}
+Then, $x^2(1 - e^2) + y^2 > a^2(1 - e^2).$ In other words,
+\\begin{align*}
+\\|X\\|^2 + \\|F\\|^2 > e^2\\left(X \\cdot N\\right)^2 + a^2
+\\end{align*}
+Subtracting $2(F \\cdot X)$ from both sides, we get
+\\begin{align*}
+\\|X - F\\|^2 > (ex - a)^2
+\\end{align*}
+But the directrix of $C$ is located at $x = a/e,$ so we can write $(ex - a)^2$ as $e^2(x - \\frac{a}{e})^2,$ which gives us:
+\\begin{align*}
+\\\\
+\\|X - F\\|^2 > e^2d(X, L)^2
+\\end{align*}
+Where $d(X, L)$ is the distance from $X$ to the directrix $L.$ But this is equivalent to the inequality $\\|X - F\\| > ed(X, L),$ which implies that $X$ lies closer to the directrix than it does to the focus. In other words, $X$ lies outside of the ellipse $C.$
+
+Now, if $X$ is such that:
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2} + \\frac{y^2}{b^2} &< 1
+\\end{align*}
+we can use a similar argument to show that $\\|X - F\\| < ed(X, L)$ and hence $X$ lies inside the ellipse $C.$ This completes the proof.
+`,
                   date: "2025-04-05"
                 },
                 {
@@ -6313,27 +6427,96 @@ for $x_1 \\neq x_0.$ Multiplying both sides by $(x_1 - x_0)$ gives us
                   number: "14.21.10",
                   content: `Given an ellipse $x^2/a^2 + y^2/b^2 = 1$. Show that the vectors $T$ and $N$ given by
             
-            \\begin{align*}
-            \\
-            T = -\\frac{y}{b^2}\\,\\mathbf{i} + \\frac{x}{a^2}\\,\\mathbf{j}, \\quad N = \\frac{x}{a^2}\\,\\mathbf{i} + \\frac{y}{b^2}\\,\\mathbf{j}
-            \\end{align*}
-            
-            are, respectively, tangent and normal to the ellipse when placed at the point $(x,y)$. If the eccentric angle of $(x_0, y_0)$ is $\\theta_0$, show that the tangent line at $(x_0, y_0)$ has the Cartesian equation
-            
-            \\begin{align*}
-            \\
-            \\frac{x}{a} \\cos \\theta_0 + \\frac{y}{b} \\sin \\theta_0 = 1.
-            \\end{align*}`,
-                  hint: ``,
-                  solution: ``,
+\\begin{align*}
+\\\\
+T = -\\frac{y}{b^2}\\,\\mathbf{i} + \\frac{x}{a^2}\\,\\mathbf{j}, \\quad N = \\frac{x}{a^2}\\,\\mathbf{i} + \\frac{y}{b^2}\\,\\mathbf{j}
+\\end{align*}
+are, respectively, tangent and normal to the ellipse when placed at the point $(x,y)$. If the eccentric angle of $(x_0, y_0)$ is $\\theta_0$, show that the tangent line at $(x_0, y_0)$ has the Cartesian equation
+
+\\begin{align*}
+\\
+\\frac{x}{a} \\cos \\theta_0 + \\frac{y}{b} \\sin \\theta_0 = 1.
+\\end{align*}`,
+                  hint: `To find the vector tangent to the ellipse, first parameterize the coordinates $(x,y)$ in terms of $x.$ The derivative of this vector will be parallel to the tangent vector. To find the relation between the derivative vector and $dy/dx,$ differentiate the ellipse's standard form equation with respect to $x.$
+
+To show that the tangent line at $(x_0, y_0)$ has Cartesian equation
+\\begin{align*}
+\\\\
+\\frac{x}{a} \\cos \\theta_0 + \\frac{y}{b} \\sin \\theta_0 = 1.
+\\end{align*}
+recall Example 3 of Section 14.6 which gives the relation between a point $(x, y)$ on an ellipse and its eccentic angle $\\theta.$ Then, recall from Section 13.4 that the Cartesian equation of a line can be expressed in terms of a point $P$ on the line and the normal vector $N$ by $(X - P) \\cdot N = 0.$`,
+                  solution: `Let any point $(x, y)$ on the ellipse be parameterized by $x.$ Then, the vector $T$ tangent to the ellipse at $(x, y)$ is parallel to $\\mathbf{i} + \\frac{dy}{dx}\\mathbf{j}.$ To find $\\frac{dy}{dx},$ we take the derivative of the standard form equation with respect to $x$, giving us
+\\begin{align*}
+\\\\
+\\frac{2x}{a^2} + \\frac{2y}{b^2}\\frac{dy}{dx} &= 0
+\\end{align*}
+This means that $dy/dx$ satisfies the relation
+\\begin{align*}
+\\\\
+-\\frac{y}{b^2}\\frac{dy}{dx} &= \\frac{x}{a^2}
+\\end{align*}
+But as we can see, multiplying the vector $\\mathbf{i} + \\frac{dy}{dx}\\mathbf{j}$ by the scalar $-y/b^2$ gives us $T.$ This shows that $T$ is tangent to the ellipse at $(x,y).$ To show that $N$ is normal to the ellipse at $(x, y)$ we simply take the dot product $T \\cdot N$ and note that it is zero.
+
+If $\\theta_0$ is the eccentric angle of $(x_0, y_0),$ then the coordinates are related to the angle by the following equations:
+\\begin{align*}
+\\\\
+x_0 &= a\\cos\\theta_0,
+\\quad
+y_0 = b\\sin\\theta_0
+\\end{align*}
+Using our previously derived normal vector $N,$ we can express the Cartesian equation of the line tangent to the ellipse at $(x_0, y_0)$ in terms of the dot product relation $(X - P) \\cdot N = 0,$ where $X$ is a point $(x, y)$ on the line and $P = (x_0, y_0).$ This gives us:
+\\begin{align*}
+\\frac{x}{a^2}(x - x_0) + \\frac{y}{b^2}(y - y_0) &= 0
+\\end{align*}
+Expanding and rearranging terms, the equation becomes:
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2} + \\frac{y^2}{b^2} &= \\frac{x}{a^2}x_0 + \\frac{y}{b^2}y_0
+\\end{align*}
+But since we know that $x_0 = a\\cos\\theta_0,$ $y_0 = b\\sin\\theta_0,$ and $x^2/a^2 + y^2/b^2 = 1,$ we get:
+\\begin{align*}
+\\\\
+\\frac{x}{a}\\cos\\theta_0 + \\frac{y}{b}\\sin\\theta_0 &= 1 
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 11,
                   number: "14.21.11",
                   content: `Show that the tangent line to the ellipse $x^2/a^2 + y^2/b^2 = 1$ at the point $(x_0, y_0)$ has the equation $x x_0/a^2 + y y_0/b^2 = 1$.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Exercise 10 that the vector $N$ normal to the ellipse at $(x_0, y_0)$ is
+\\begin{align*}
+\\\\
+N &= \\frac{x_0}{a^2}\\mathbf{i} + \\frac{y_0}{b^2}\\mathbf{j}
+\\end{align*}
+Then, recall from Section 13.4 that the Cartesian equation of a line can be expressed in terms of a point $P$ on the line and the normal vector $N$ by $(X - P) \\cdot N = 0.$
+`,
+                  solution: `Let $P = (x_0, y_0)$ be a point on the ellipse. We know from Exercise 10 that the vector $N$ normal to the ellipse at $P$ is
+\\begin{align*}
+\\\\
+N &= \\frac{x_0}{a^2}\\mathbf{i} + \\frac{y_0}{b^2}\\mathbf{j}
+\\end{align*}
+Then, if $X = (x, y)$ is an arbitrary point on the line tangent to the ellipse at $P,$ we can express the Cartesian equation of the line in terms of $X,$ $P,$ and $N$ by the dot product relation $(X - P) \\cdot N = 0.$ In other words,
+\\begin{align*}
+\\\\
+\\frac{x_0}{a^2}(x - x_0) + \\frac{y_0}{b^2}(y - y_0) &= 0
+\\end{align*}
+Rearranging terms gives us
+\\begin{align*}
+\\\\
+\\frac{x}{a^2}x_0 + \\frac{y}{b^2}y_0 &= \\frac{x_0^2}{a^2} + \\frac{y_0^2}{b^2} 
+\\end{align*}
+And since we know that $(x_0, y_0)$ is on the ellipse, $x_0^2/a^2 + y_0^2/b^2 = 1,$ giving us
+\\begin{align*}
+\\\\
+\\frac{x}{a^2}x_0 + \\frac{y}{b^2}y_0 &= 1
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
