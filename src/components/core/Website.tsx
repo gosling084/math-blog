@@ -1,7 +1,7 @@
 // src/components/core/Website.tsx
 "use client";
 import React, { useState, useEffect, Suspense } from 'react';
-import { Home, Info, Mail } from 'lucide-react';
+import { Home, Info } from 'lucide-react';
 import { cn } from "@/lib/utils";
 import { 
   TextbookTableOfContents, 
@@ -12,8 +12,7 @@ import {
   ProblemSetViewSkeleton,
   ProblemView, 
   ProblemViewSkeleton,
-  About,
-  Contact
+  About
 } from '@/components/pages';
 import { ThemeToggle, FontToggle } from '@/components/ui';
 import { FontProvider } from '@/providers/font-provider';
@@ -157,7 +156,6 @@ const Website = () => {
                     <Suspense fallback={<ProblemViewSkeleton />}>
                       <ProblemView
                         key={`problem-${router.params.problemId}`}
-                        problemSet={router.activeContent.problemSet}
                         problem={router.activeContent.problem}
                         onNavigateToProblemSet={() => 
                           router.actions.navigateToProblemSet(

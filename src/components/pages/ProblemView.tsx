@@ -4,13 +4,12 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, BookOpen, ArrowLeft, ArrowRight, Lightbulb, PenTool } from 'lucide-react';
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { cn } from "@/lib/utils";
-import { Problem, ProblemSet } from "@/types/types";
+import { Problem } from "@/types/types";
 import { MathContent } from '@/components/shared/MathContent';
 import { CurveSketchInteractive } from '@/components/shared/CurveSketchInteractive';
 import styles from './pages.module.css';
 
 interface ProblemViewProps {
-  problemSet: ProblemSet;
   problem: Problem;
   onNavigateToProblemSet: () => void;
   nextProblem: Problem | null;
@@ -56,7 +55,6 @@ export const ProblemViewSkeleton = () => {
 };
 
 export const ProblemView = ({
-  problemSet,
   problem,
   onNavigateToProblemSet,
   nextProblem,
@@ -68,10 +66,10 @@ export const ProblemView = ({
   const [showVisualization, setShowVisualization] = useState(false);
 
   // Function to format the section title
-  const formatSectionTitle = (title: string) => {
-    const sectionMatch = title.match(/^(\d+\.\d+)/);
-    return sectionMatch ? sectionMatch[1] : title;
-  };
+  // const formatSectionTitle = (title: string) => {
+  //   const sectionMatch = title.match(/^(\d+\.\d+)/);
+  //   return sectionMatch ? sectionMatch[1] : title;
+  // };
   
   return (
     <div className={styles.pageContainer}>

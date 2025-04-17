@@ -5,7 +5,6 @@ import { ChevronLeft, ChevronRight, BookOpen } from 'lucide-react';
 import { Button, Card, CardContent } from "@/components/ui/shadcn";
 import { ProblemSet, Problem } from "@/types/types";
 import { MathContent } from '@/components/shared/MathContent';
-import { cn } from '@/lib/utils';
 import styles from './pages.module.css';
 
 export const ProblemSetViewSkeleton = () => {
