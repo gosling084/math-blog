@@ -6466,14 +6466,14 @@ y_0 = b\\sin\\theta_0
 \\end{align*}
 Using our previously derived normal vector $N,$ we can express the Cartesian equation of the line tangent to the ellipse at $(x_0, y_0)$ in terms of the dot product relation $(X - P) \\cdot N = 0,$ where $X$ is a point $(x, y)$ on the line and $P = (x_0, y_0).$ This gives us:
 \\begin{align*}
-\\frac{x}{a^2}(x - x_0) + \\frac{y}{b^2}(y - y_0) &= 0
+\\frac{x_0}{a^2}(x - x_0) + \\frac{y_0}{b^2}(y - y_0) &= 0
 \\end{align*}
 Expanding and rearranging terms, the equation becomes:
 \\begin{align*}
 \\\\
-\\frac{x^2}{a^2} + \\frac{y^2}{b^2} &= \\frac{x}{a^2}x_0 + \\frac{y}{b^2}y_0
+\\frac{x}{a^2}x_0 + \\frac{y}{b^2}y_0 &= \\frac{x_0^2}{a^2} + \\frac{y_0^2}{b^2}
 \\end{align*}
-But since we know that $x_0 = a\\cos\\theta_0,$ $y_0 = b\\sin\\theta_0,$ and $x^2/a^2 + y^2/b^2 = 1,$ we get:
+But since we know that $x_0 = a\\cos\\theta_0,$ $y_0 = b\\sin\\theta_0,$ and $x_0^2/a^2 + y_0^2/b^2 = 1,$ we get:
 \\begin{align*}
 \\\\
 \\frac{x}{a}\\cos\\theta_0 + \\frac{y}{b}\\sin\\theta_0 &= 1 
@@ -6523,8 +6523,64 @@ And since we know that $(x_0, y_0)$ is on the ellipse, $x_0^2/a^2 + y_0^2/b^2 = 
                   id: 12,
                   number: "14.21.12",
                   content: `Prove that the product of the perpendicular distances from the foci of an ellipse to any tangent line is constant, this constant being the square of the length of half the minor axis.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `1. For the ellipse with standard form equation $x^2/a^2 + y^2/b^2 = 1,$ the foci are located at $(-ae, 0)$ and $(ae, 0)$ where $a = ed/(1 - e^2),$ $d$ is the distance from the focus to the directrix, and $e$ is the eccentricity of the conic section. 
+                  
+2. In Exercise 10, we showed that the line tangent to the conic section at $(x_0, y_0)$ has a normal vector
+\\begin{align*}
+\\\\
+N &= \\frac{x_0}{a^2}\\mathbf{i} + \\frac{y_0}{b^2}\\mathbf{j}
+\\end{align*}
+3. Theorem 13.6 tells us that for a line $L$ with normal vector $N$ containing the point $P,$ the distance from a point $Q$ (not on $L$) to $L$ is given by
+\\begin{align*}
+\\frac{\|(P - Q) \\cdot N\|}{\\|N\\|} 
+\\end{align*}`,
+                  solution: `Let $C$ be the conic section with eccentricity $e,$ whose points $(x, y)$ satisfy $x^2/a^2 + y^2/b^2 = 1,$ where $b^2 = a^2(1 - e^2),$ $a = ed/(1 - e^2)$ and $d$ is the distance from each of the foci to the directrix lines. We know from Exercise 10 that the line tangent to any point $(x_0, y_0)$ on $C$ has a normal vector
+\\begin{align*}
+N &= \\frac{x_0}{a^2}\\mathbf{i} + \\frac{y_0}{b^2}\\mathbf{j}
+\\end{align*}
+We also know from the result of Theorem 13.19 that the foci of $C$ are $F_1 = (-ae, 0)$ and $F_2 = (ae, 0).$ As such, we know from Theorem 13.6 that the distance $d_1$ from $F_1$ to the line with normal $N$ containing point $P = (x_0, y_0)$ is 
+\\begin{align*}
+\\\\
+d_1 &= \\frac{\|(P - F_1) \\cdot N\|}{\\|N\\|} 
+\\\\
+\\\\
+&= \\frac{\|(x_0^2 + eax_0)/a^2 + y_0^2/b^2\|}{\\sqrt{x_0^2/a^4 + y_0^2/b^4}}
+\\\\
+\\\\
+&= \\frac{\|1 + ex_0/a\|}{\\sqrt{x_0^2/a^4 + y_0^2/b^4}}
+\\end{align*}
+we can use the same argument to find the distance $d_2$ from the tangent line to $F_2$
+\\begin{align*}
+\\\\
+d_2 &= \\frac{\|1 - ex_0/a\|}{\\sqrt{x_0^2/a^4 + y_0^2/b^4}}
+\\end{align*}
+Then the product of the distances $d_1d_2$ is
+\\begin{align*}
+\\\\
+d_1d_2 &= \\frac{\|1 - e^2x_0^2/a^2\|}{x_0^2/a^4 + y_0^2/b^4}
+\\\\
+\\\\
+&= \\frac{\|1 - e^2x_0^2/a^2\|}{x_0^2/a^4 + y_0^2/b^4}
+\\end{align*}
+Then, using the ellipse equation to give us $y_0^2 = b^2(1 - x_0^2/a^2),$ and noting that $b^2 = a^2(1 - e^2),$ we get:
+\\begin{align*}
+\\\\
+d_1d_2 &= \\frac{\|1 - e^2x_0^2/a^2\|}{x_0^2/a^4 + y_0^2/b^4}
+\\\\
+\\\\
+&= \\frac{\|1 - e^2x_0^2/a^2\|}{x_0^2/a^4 + (1 - x_0^2/a^2)/b^2}
+\\\\
+\\\\
+&= \\frac{\|a^2 - e^2x_0^2\|}{x_0^2/a^2 + (a^2 - x_0^2)/b^2}
+\\\\
+\\\\
+&= \\frac{b^2\|a^2 - e^2x_0^2\|}{x_0^2(1 - e^2) + (a^2 - x_0^2)}
+\\\\
+\\\\
+&= \\frac{b^2\|a^2 - e^2x_0^2\|}{(a^2 - e^2x_0^2)}
+\\end{align*}
+Then, we note that $x_0^2/a^2 + y_0^2/b^2 = 1$ and $e < 1,$ which means that $a^2 > x_0^2,$ and moreover, that $a^2 - e^2x_0^2> 0,$ simplifying the above equation to $d_1d_2 = b^2.$ But from Theorem 13.19 we know that this is the square of half the length of the minor axis. This completes the proof.
+`,
                   date: "2025-04-05"
                 },
                 {
