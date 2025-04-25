@@ -6587,42 +6587,166 @@ Then, we note that $x_0^2/a^2 + y_0^2/b^2 = 1$ and $e < 1,$ which means that $a^
                   id: 13,
                   number: "14.21.13",
                   content: `Two tangent lines are drawn to the ellipse $x^2 + 4y^2 = 8$, each parallel to the line $x + 2y = 7$. Find the points of tangency.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Use the result of Exercise 11.`,
+                  solution: `In Exercise 11, we showed that a line tangent to the ellipse $x^2/a^2 + y^2/b^2 = 1$ at $(x_0, y_0)$ has the equation
+\\begin{align*}
+\\\\
+\\frac{x}{a^2}x_0 + \\frac{y}{b^2}y_0 &= 1
+\\end{align*}
+From the given ellipse equation, we know that $a^2 = 8$ and $b^2 = 2.$ As such, we wish to find $(x_0, y_0)$ such that $(x_0/8)\\mathbf{i} + (y_0/2)\\mathbf{j}$ is parallel to $\\mathbf{i} + 2\\mathbf{j}$ and $x_0^2 + 4y_0^2 = 8.$ In other words, we wish to find $x_0$ and $y_0$ such that $x_0 = 2y_0$ and that $4y_0^2 = 8 - x_0^2.$ Substituting $x_0^2 = 4y_0^2$ we see that $y_0$ is satisfied by $1$ or $-1$ Then, plugging in $x_0 = 2y_0$ we can see that the two points of tangency are:
+\\begin{align*}
+(x_0, y_0) &= (2, 1),
+\\quad
+(x_0, y_0) = (-2, -1)
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 14,
                   number: "14.21.14",
                   content: `A circle passes through both foci of an ellipse and is tangent to the ellipse at two points. Find the eccentricity of the ellipse.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `The equation of the ellipse in standard form is 
+\\begin{align*}
+\\frac{x^2}{a^2} + \\frac{y^2}{b^2} &= 1
+\\end{align*}
+If the circle passes through the foci of the ellipse, then its radius must have length $ae,$ which means that the equation of the circle is then
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2e^2} + \\frac{y^2}{a^2e^2} &= 1
+\\end{align*}
+If the circle is tangent to the ellipse at two points, what does this imply about the points of tangency on the ellipse?`,
+                  solution: `First, we define our ellipse and circle in terms of the eccentricity $e$ and the distance $d$ from the focus of the ellipse to the directrix. The ellipse can be described by the standard-form equation
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2} + \\frac{y^2}{b^2} &= 1
+\\end{align*}
+where $a = ed/(1 - e^2)$ and $b^2 = a^2(1 - e^2).$ From Theorem 13.19, we know that its foci are located at $(-ae, 0)$ and $(ae, 0),$ which means that the circle passing through the foci has the standard form equation
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2e^2} + \\frac{y^2}{a^2e^2} &= 1
+\\end{align*}
+Now, to find the points of tangency, we must first find the points at which the slope of the circle and the slope of the ellipse are equal. To do so, we take the derivative with respect to $x$ of the ellipse and circle respectively:
+\\begin{align*}
+\\\\
+\\frac{2x}{a^2} + \\frac{2y}{b^2}\\frac{dy}{dx} &= 0,
+\\quad
+2x + 2y\\frac{dy}{dx} = 0
+\\end{align*}
+And since the circle passes through the foci of the ellipse located at $(-ae, 0)$ and $(ae, 0),$ we know that the circle cannot be tangent to the ellipse when $y = 0.$ As such, we can express the respective slopes of the ellipse and circle as follows:
+\\begin{align*}
+\\\\
+\\frac{dy}{dx} &= -\\frac{b^2x}{a^2y},
+\\quad
+\\frac{dy}{dx} = -\\frac{x}{y}
+\\end{align*}
+Then, setting the two equal, we find that the slope of the circle is parallel to that of the ellipse when $b^2x/a^2 = x,$ or when $e^2x = 0.$ And since we know that $e > 0,$ we can see that the slopes are parallel when $x = 0.$ 
+
+To show tangency, we must also find the eccentricity $e$ such that the two curves intersect when $x = 0.$ In other words, we wish to find $e$ that satisfies $b^2 = a^2e^2,$ or $e^2 = 1 - e^2.$ This is satisfied by
+\\begin{align*}
+e &= \\frac{1}{2}\\sqrt{2}
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 15,
                   number: "14.21.15",
                   content: `Let $V$ be one of the two vertices of a hyperbola whose transverse axis has length $2a$ and whose eccentricity is 2. Let $P$ be a point on the same branch as $V$. Denote by $A$ the area of the region bounded by the hyperbola and the line segment $VP$, and let $r$ be the length of $VP$.
-            (a) Place the coordinate axes in a convenient position and write an equation for the hyperbola.
-            (b) Express the area $A$ as an integral and, without attempting to evaluate this integral, show that $Ar^{-3}$ tends to a limit as the point $P$ tends to $V$. Find this limit.`,
-                  hint: ``,
-                  solution: ``,
+
+(a) Place the coordinate axes in a convenient position and write an equation for the hyperbola.
+(b) Express the area $A$ as an integral and, without attempting to evaluate this integral, show that $Ar^{-3}$ tends to a limit as the point $P$ tends to $V$. Find this limit.`,
+                  hint: `Recall from Section 13.22 that for a conic of eccentricity $e$ and distance from the focus to directrix $d,$ we have $a = ed/(1 - e^2).$ Then, if $N$ is the unit vector normal to the directrix, the vertices of the conic are located at $\\pm aN.$ For a hyperbola, the transverse axis is the line segment joining these two points.`,
+                  solution: `(a) Let the $x$- and $y$-axes be the coordinate axes, with $N = \\mathbf{i}$ being the vector normal to the directrix. The standard form equation for a conic with $e \\neq 1$ is then:
+\\begin{align*}
+\\frac{x^2}{a^2} + \\frac{y^2}{a^2(1-e^2)} &= 1
+\\end{align*}
+If $e = 2,$ then $3x^2 - y^2 = 3a^2 \\quad \\blacksquare$
+
+(b) From our choice of coordinate axes and normal vector, we know from Section 13.22 that the vertices of the hyperbola are located at $(-a, 0)$ and $(a, 0).$ Let $V = (a, 0)$ and let $P = (x_0, y_0)$ be a point on the right branch in the first quadrant. Then, the line segment connecting $V$ to $P$ can be parameterized by $x$ as
+\\begin{align*}
+y &= \\frac{y_0}{x_0 - a}(x - a)
+\\end{align*}
+Then, the integral $A$ is the area under the hyperbola in quadrant 1 minus the area under the line $y$ from $x = a$ to $x = x_0$
+\\begin{align*}
+A &= \\int_a^{x_0} \\sqrt{3(x^2 - a^2)} - \\frac{y_0}{x_0 - a}(x - a)\\,dx
+\\end{align*}
+The length $r$ of the line segment $VP$ is the norm $\\|P - V\\| = \\sqrt{(x_0 - a)^2 + y_0^2}.$ But since $y_0$ is on the hyperbola, we can write $r = \\sqrt{(x_0 - a)^2 + 3(x_0^2 - a^2)}.$ Now, let $h = x_0 - a,$ $h > 0.$ We can express $A$ as:
+\\begin{align*}
+A &= \\int_a^{a + h} \\sqrt{3(x^2 - a^2)} - \\frac{\\sqrt{3h^2 + 6ha}}{h}(x - a)\\,dx
+\\\\
+\\\\
+&= \\int_a^{a + h} \\sqrt{3(x^2 - a^2)}\\,dx - \\frac{h}{2}\\sqrt{3h^2 + 6ha}
+\\end{align*}
+Making the substitution $u = x - a,$ $u < h,$
+\\begin{align*}
+A &= \\int_0^h \\sqrt{3(u^2 + 2au)}\\,du - \\frac{h}{2}\\sqrt{3h^2 + 6ha}
+\\end{align*}
+And with $h = x_0 - a,$ $r$ becomes $\\sqrt{4h^2 + 6ha},$ making $r^3 = \\left(4h^2 + 6ha\\right)^{3/2}.$ Then, as $h \\to 0,$ $u \\to 0,$ and the limit of $Ar^{-3}$ becomes:
+\\begin{align*}
+Ar^{-3} &= r^{-3}\\int_0^h \\sqrt{6au}\\left[1 + o(1)\\right]\\,du - \\frac{\\left[1 + o(1)\\right]}{4\\left(2h + 3a\\right)}
+\\\\
+\\\\
+&= \\frac{2\\sqrt{6a}}{3}\\left(\\frac{h}{4h^2 + 6ha}\\right)^{3/2} - \\frac{\\left[1 + o(1)\\right]}{4\\left(2h + 3a\\right)}
+\\\\
+\\\\
+&= \\frac{2\\sqrt{6a}}{3}\\left(\\frac{1}{4h + 6a}\\right)^{3/2} - \\frac{\\left[1 + o(1)\\right]}{4\\left(2h + 3a\\right)}
+\\\\
+\\\\
+&= \\frac{1}{9a} - \\frac{1}{12a}
+\\\\
+\\\\
+&= \\frac{1}{36a}
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 16,
                   number: "14.21.16",
                   content: `Show that the vectors $T = (y/b^2)\\,\\mathbf{i} + (x/a^2)\\,\\mathbf{j}$ and $N = (x/a^2)\\,\\mathbf{i} - (y/b^2)\\,\\mathbf{j}$ are, respectively, tangent and normal to the hyperbola $x^2/a^2 - y^2/b^2 = 1$ if placed at the point $(x, y)$ on the curve.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Use the same approach as in Exercise 10.`,
+                  solution: `If we parameterize the point $(x, y)$ by $x,$ then its derivative vector is $D = \\mathbf{i} + \\frac{dy}{dx}\\mathbf{j}.$ To show that $T$ is tangent to the curve at $(x, y),$ then we must show that it is parallel to $D$ at $(x, y).$ The derivative of the hyperbola at $(x, y)$ satisfies the following relation
+\\begin{align*}
+\\frac{x}{a^2} &= \\frac{y}{b^2}\\frac{dy}{dx}
+\\end{align*}
+But, setting $c = y/b^2,$ we can see that $T = cD.$ This shows that $T$ is parallel to the line tangent to $(x, y).$ To make $T$ tangent to the curve, we can simlpy translate it by $(x, y).$ To show that $N$ is normal to the hyperbola at $(x, y),$ it will suffice to show that $N \\cdot T = 0$ and then to translate it by $(x, y). \\quad \\blacksquare$`,
                   date: "2025-04-05"
                 },
                 {
                   id: 17,
                   number: "14.21.17",
-                  content: `Show that the tangent line to the hyperbola $x^2/a^2 - y^2/b^2 = 1$ at the point$(x_0, y_0)$ is given by the equation $x_0x/a^2 - y_0y/b^2 = 1$.`,
-                  hint: ``,
-                  solution: ``,
+                  content: `Show that the tangent line to the hyperbola $x^2/a^2 - y^2/b^2 = 1$ at the point $(x_0, y_0)$ is given by the equation $x_0x/a^2 - y_0y/b^2 = 1$.`,
+                  hint: `Use the same approach as in Exercise 11.`,
+                  solution: `From Exercise 16, we know that the vector normal to the hyperbola at point $P = (x_0, y_0)$ is given by
+\\begin{align*}
+\\\\
+N &= \\frac{x_0}{a^2}\\mathbf{i} - \\frac{y_0}{b^2}\\mathbf{j}
+\\end{align*}
+The Cartesian equation for the line containing point $P$ with normal vector $N$ can be expressed as $(X - P)\\cdot N = 0.$ In other words, if $X = (x, y),$ we have:
+\\begin{align*}
+\\\\
+\\frac{x_0}{a^2}(x - x_0) - \\frac{y_0}{b^2}(y - y_0) &= 0
+\\end{align*}
+Expanding and rearranging terms, we get
+\\begin{align*}
+\\\\
+\\frac{x_0}{a^2}x - \\frac{y_0}{b^2}y &= \\frac{x_0^2}{a^2} - \\frac{y_0^2}{b^2}
+\\end{align*}
+But we know that $P$ is a point on the hyperbola, which means $x_0^2/a^2 - y_0^2/b^2 = 1,$ giving us:
+\\begin{align*}
+\\\\
+\\frac{x_0}{a^2}x - \\frac{y_0}{b^2}y &= 1
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
