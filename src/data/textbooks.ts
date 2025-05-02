@@ -6753,32 +6753,257 @@ But we know that $P$ is a point on the hyperbola, which means $x_0^2/a^2 - y_0^2
                   id: 18,
                   number: "14.21.18",
                   content: `The normal line at each point of a curve and the line from that point to the origin form an isosceles triangle whose base is on the $x$-axis. Show that the curve is a hyperbola.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `1. If the point $P$ on the $x$-axis forms an isosceles triangle with the origin and $X = (x, y),$ what does this imply about the norm of $P - X?$ 
+                  
+2. If $P$ and $X$ are both points on the line normal to the curve at $X,$ what is the Cartesian equation of the normal line? Parameterize $y$ by $x$ and take its derivative to find the slope of the line tangent to $X.$`,
+                  solution: `Let $X = (x, y)$ be a point on the curve, parameterized by $x.$ Its derivative is $X' = (1, \\frac{dy}{dx}).$ The line normal to the curve at $X$ is then parallel to $N = (\\frac{dy}{dx}, -1).$ Now, let $P = (x_0, 0)$ be a point at the intersection of the $x$-axis and normal line such that the line segments $OX$ and $PX$ form an isosceles triangle whose base of length $x_0$ is on the $x$-axis. In other words, we have $\\|P - X\\| = \\|X\\|,$ or
+\\begin{align*}
+\\\\
+(x_0 - x)^2 + y^2 &= x^2 + y^2
+\\end{align*}
+We can see from this relation that $x_0^2 = 2x_0x.$ Assuming that the triangle has a nonzero base, we can see that $x_0 = 2x.$ To find $y$ in terms of its parameter $x,$ we note that since $X$ and $P$ are both points on the normal line, $(P - X)$ is parallel to $N$ and perpendicular to $X'.$ Thus, the Cartesian equation of the normal line is $(P - X) \\cdot X' = 0$ or:
+\\begin{align*}
+\\\\
+x - y\\frac{dy}{dx} &= 0
+\\end{align*}
+But as we can see, this is a separable differential equation. Separating variables and integrating, we get
+\\begin{align*}
+\\\\
+\\frac{x^2}{2} &= \\frac{y^2}{2} + C
+\\end{align*}
+where $C$ is the sum of the constants of integration. But as we can see, by rearranging variables, we get $x^2 - y^2 = 2C$ which is the equation for a hyperbola. $\\,\\blacksquare$
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 19,
                   number: "14.21.19",
                   content: `The normal line at a point $P$ of a curve intersects the $x$-axis at $X$ and the $y$-axis at $Y$. Find the curve if each $P$ is the mid-point of the corresponding line segment $XY$ and if the point $(4, 5)$ is on the curve.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `1. Let $P = (x, y),$ $X = (x_0, 0),$ and $Y = (0, y_0).$ If $P$ is the midpoint between $X$ and $Y,$ what does that imply about the norms $\\|P - X\\|$ and $\\|P - Y\\|?$ What does this imply about $x_0$ and $y_0?$
+
+2. Let $P$ be parameterized by $x.$ What is its derivative? If $P,$ $X,$ and $Y$ are all on the line normal to the curve at $P,$ what does that imply about the line segments $(P-X)$ and $(P - Y)?$`,
+                  solution: `Let $X = (x_0, 0)$ $Y = (0, y_0),$ and $P = (x, y).$ Then, if $P$ is at the midpoint of the line segment $XY,$ by definition, $\\|P - X\\| = \\|P - Y\\|.$ Equivalently, this means that $\\|P - X\\|^2 = \\|P - Y\\|^2,$ or $(x - x_0)^2 + y^2 = x^2 + (y - y_0)^2.$  Simplifying terms, we get $x_0(x_0 - 2x) = y_0(y_0 - 2y),$ which is satisfied when $x_0 = 2x$ and $y_0 = 2y.$ 
+                  
+To find the family of curves satisfying this condition, we note that $X$ and $P$ are both points on the line normal to the curve at $P.$ In other words, if $P$ is parameterized by $x,$ then the line segment $(P - X)$ is perpendicular to $P' = (1, \\frac{dy}{dx}).$ That is, $(P - X)\\cdot P' = 0,$ or
+\\begin{align*}
+-x + y\\frac{dy}{dx} &= 0
+\\end{align*}
+As we can see, this is a separable differential equation. Separating variables and integrating, we get the following family of hyperbolas 
+\\begin{align*}
+\\frac{1}{2}y^2 &= \\frac{1}{2}x^2 + C
+\\end{align*}
+To find the specific curve containing $P = (4, 5),$ we simply set $x = 4$ and $y = 5$ and solve for $C.$
+\\begin{align*}
+\\frac{1}{2}(25)&= \\frac{1}{2}(16) + C
+\\end{align*}
+As we can see, $C = 9/2,$ which means that the curve satisfying the initial conditions is the hyperbola $y^2 - x^2 = 9. \\quad\\blacksquare$
+`,
                   date: "2025-04-05"
                 },
                 {
                   id: 20,
                   number: "14.21.20",
                   content: `Prove that the product of the perpendicular distances from an arbitrary point on a hyperbola to its asymptotes is constant.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `For a hyperbola with standard-form equation:
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2} - \\frac{y^2}{b^2} &= 1
+\\end{align*}
+its asymptotes are the lines $y = -bx/\|a\|$ and $y = bx/\|a\|.$ For $P = (x, y)$ on the hyperbola, the perpendicular distance $d$ is given by
+\\begin{align*}
+d &= \\frac{\|(P - X) \\cdot N\|}{\\|N\\|}
+\\end{align*} where $X$ is a point on the asymptote and $N$ is the vector normal to the asymptote.`,
+                  solution: `Suppose we have a hyperbola with standard-form equation:
+\\begin{align*}
+\\\\
+\\frac{x^2}{a^2} - \\frac{y^2}{b^2} &= 1
+\\end{align*}
+Where $b = \|a\|\\sqrt{e^2 - 1},$ $a = ed/(1 - e^2),$ and $d$ is the distance from the focus to the directrix. From Section 13.23, we know that the asymptotes of this hyperbola are the lines $y = -bx/\|a\|$ and $y = bx/\|a\|.$ 
+
+Let $P = (x, y)$ be an arbitrary point on the hyperbola. Note that the asymptote lines $y_1 = -bx/\|a\|$ and $y_2 = bx/\|a\|$ pass through the origin. As such, we can express the perpendicular distance from $P$ to the lines given by $y_1$ and $y_2$ as $d_1 = \|P \\cdot N_1\|/\\|N_1\\|$ and $d_2 = \|P \\cdot N_2\|/\\|N_2\\|,$ where
+\\begin{align*}
+\\\\
+N_1 &= \\frac{b}{\|a\|}\\mathbf{i} + \\mathbf{j},
+\\quad
+N_2 = \\frac{b}{\|a\|}\\mathbf{i} - \\mathbf{j}
+\\end{align*}
+are the vectors normal to the asymptote lines $y_1$ and $y_2,$ respectively. The product of the two distances is then
+\\begin{align*}
+\\\\
+d_1d_2 &= \\frac{\|P \\cdot N_1\|\|P \\cdot N_2\|}{\\|N_1\\|\\|N_2\\|}
+\\\\
+\\\\
+&= \\frac{\\left\|bx/\|a\| + y\\right\|\\left\|bx/\|a\| - y\\right\|}{(b^2/a^2) + 1}
+\\\\
+\\\\
+&= \\frac{b^2x^2 - a^2y^2}{b^2 + a^2}
+\\end{align*}
+But we know that all points $P$ on the hyperbola satisfy $x^2/a^2 - y^2/b^2 = 1,$ so we can rewrite $b^2x^2 - a^2y^2 = a^2b^2$ to give us
+\\begin{align*}
+\\\\
+d_1d_2 &= \\frac{a^2b^2}{a^2 + b^2}
+\\end{align*}
+which is constant for all $P$ on the hyperbola. $\\,\\blacksquare$`,
                   date: "2025-04-05"
                 },
                 {
                   id: 21,
                   number: "14.21.21",
                   content: `A curve is given by a polar equation $r = f(\\theta)$. Find $f$ if an arbitrary arc joining two distinct points of the curve has arc length proportional to (a) the angle subtended at the origin; (b) the difference of the radial distances from the origin to its endpoints; (c) the area of the sector formed by the arc and the radii to its endpoints.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `Recall from Section 14.19, Exercise 4 where we proved that for a polar function $r = f(\\theta),$ its arc length from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi,$ is given by:
+\\begin{align*}
+\\int_a^b \\sqrt{r^2 + \\left(\\frac{dr}{d\\theta}\\right)^2}\\,d\\theta
+\\end{align*}`,
+                  solution: `(a) For a polar function $r = f(\\theta),$ its arc length from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi,$ is given by:
+\\begin{align*}
+\\int_a^b \\sqrt{f^2(\\theta) + \\left[f'(\\theta)\\right]^2}\\,d\\theta
+\\end{align*}
+Then, if an arbitrary arc joining points $(a, f(a))$ and $(x, f(x))$ is proportional to the angle $x$ distended from the origin, we have
+\\begin{align*}
+\\int_a^x \\sqrt{f^2(\\theta) + \\left[f'(\\theta)\\right]^2}\\,d\\theta &= kx
+\\end{align*}
+for some $k > 0.$ Using the First Fundamental Theorem of Calculus and differentiating with respect to $x,$ we have $k = \\sqrt{f^2(x) + \\left[f'(x)\\right]^2},$ or equivalently, 
+\\begin{align*}
+k^2 &= f^2(x) + \\left[f'(x)\\right]^2
+\\end{align*}
+Differentiating once more, we see that $f'(x)\\left[f(x) + f''(x)\\right] = 0.$ This relation is satisfied in two possible ways:
+
+1. $f'(x) = 0.$ In this case, $f(x)$ is constant and the integral for arc length becomes
+\\begin{align*}
+\\\\
+\\int_a^{\\theta} \\sqrt{f^2(x) + \\left[f'(x)\\right]^2}\\,dx &= \\int_a^{\\theta} f(x)\\,dx
+\\\\
+\\\\
+&= F(\\theta) - F(a)
+\\\\
+\\\\
+&= k\\theta
+\\end{align*}
+where $F'(\\theta) = f(\\theta).$ Then, differentiating $F$ with respect to $\\theta$ gives us $f(\\theta) = k.$
+
+2. $f'(x) \\neq 0.$ In this case, $f''(x) + f(x) = 0.$ But recall from Theorem 8.6 (c) that for $b > 0 $ the the second order equation $y'' + by = 0$ is satisfied uniquely by
+\\begin{align*}
+y &= c_1\\cos cx + c_2\\sin cx
+\\end{align*}
+where $c_1$ and $c_2$ are arbitrary constants, and $b = c^2.$ But in this case, $b = 1,$ which gives us
+\\begin{align*}
+\\\\
+f(x) &= c_1\\cos x + c_2\\sin x
+\\end{align*}
+Where $c_1^2 + c_2^2 = k^2.$ Then, setting $c_1 = 0,$ $c_2 = k,$ and $C = 0,$ we can then use the identity $\\sin(x + C) = \\sin x \\cos C + \\cos x \\sin C$ to rewrite $f(x) = k\\sin(x + C).\\, \\blacksquare$
+
+(b) For a polar function $r = f(\\theta),$ its arc length from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi,$ is given by:
+\\begin{align*}
+\\int_a^b \\sqrt{f^2(\\theta) + \\left[f'(\\theta)\\right]^2}\\,d\\theta
+\\end{align*}
+Then, if an arbitrary arc joining points $(a, f(a))$ and $(x, f(x))$ is proportional to the difference of the radial distances from the origin, we have:
+\\begin{align*}
+\\int_a^x \\sqrt{f^2(\\theta) + \\left[f'(\\theta)\\right]^2}\\,d\\theta &= k\\left[f(x) - f(a)\\right]
+\\end{align*}
+for some $k > 0.$ Using the First Fundamental Theorem of Calculus and differentiating with respect to $x,$ we have $\\sqrt{f^2(x) + \\left[f'(x)\\right]^2} = kf'(x),$ or equivalently, 
+\\begin{align*}
+\\\\
+f^2(x) + \\left[f'(x)\\right]^2 &= k^2\\left[f'(x)\\right]^2
+\\end{align*}
+Differentiating once more and combining terms, we get
+\\begin{align*}
+\\\\
+f'(x)\\left[f(x) + f''(x)\\right] &= f'(x)k^2f''(x)
+\\end{align*}
+If $f'(x) = 0$ then $f(x)$ is constant for all $x$ and the difference $f(\\theta) - f(a)$ is trivially zero. Suppose then that $f'(x) \\neq 0.$ If $k = 1,$ we have $f(x) = 0.$ Otherwise, we can see that $f(x)$ is a scalar multiple of $f''(x),$ where
+\\begin{align*}
+\\\\
+f''(x) + \\frac{1}{1 - k^2}f(x) &= 0
+\\end{align*}
+Following the result of Theorem 8.6 for the second order equation $y'' + by = 0,$ we have two cases:
+
+1. $0 < k < 1.$ In this case, $b > 0$ and $y = f(x)$ can be solved for arbitrary constants $c_1$ and $c_2$ as
+$$y = c_1\\cos cx + c_2\\sin cx$$ where $c = \\sqrt{1/(1 - k^2)}.$
+
+2. $k > 1.$ In this case, $b < 0$ and $y = f(x)$ can be solved for arbitrary constants $c_1$ and $c_2$ as 
+\\begin{align*}
+f(x) &= c_1e^{cx} + c_2e^{-cx}
+\\end{align*} where $c = \\sqrt{1/(k^2 - 1)}.$ Setting $c_1 = C$ and $c_2 = 0,$ we get
+\\begin{align*}
+\\\\
+f(x) &= Ce^{x/\\sqrt{k^2 - 1}} \\quad \\blacksquare
+\\end{align*}
+(c) For a polar function $r = f(\\theta),$ its arc length from $\\theta = a$ to $\\theta = b,$ where $a \\leq \\theta \\leq b \\leq a + 2\\pi,$ is given by:
+\\begin{align*}
+\\int_a^b \\sqrt{f^2(\\theta) + \\left[f'(\\theta)\\right]^2}\\,d\\theta
+\\end{align*}
+Then, if an arbitrary arc joining points $(a, f(a))$ and $(x, f(x))$ is proportional to the area of the sector formed by the arc and the radii to its endpoints, we have:
+\\begin{align*}
+\\int_a^x \\sqrt{f^2(\\theta) + \\left[f'(\\theta)\\right]^2}\\,d\\theta &= \\frac{k}{2}\\int_a^x f^2(\\theta)\\,d\\theta
+\\end{align*}
+for some $k > 0.$ Using the First Fundamental Theorem of Calculus and differentiating with respect to $x,$ we have $\\sqrt{f^2(x) + \\left[f'(x)\\right]^2} = \\frac{k}{2}f^{2}(x),$ or equivalently, 
+\\begin{align*}
+\\\\
+f^2(x) + \\left[f'(x)\\right]^2 &= \\frac{k^2}{4}f^{4}(x)
+\\end{align*}
+Differentiating once more, setting $y = f(x),$ we get
+\\begin{align*}
+\\\\
+2yy' + 2y'y'' &= k^2y^3y'
+\\end{align*}
+This gives us two possible cases
+1. $y' = 0.$ In this case, $y$ is a constant $C$ for all $\\theta$ and the relation between arc length and sector area becomes
+\\begin{align*}
+\\\\
+C\\int_a^x \\,d\\theta &= C^2\\frac{k}{2}\\int_a^x\\,d\\theta
+\\end{align*}
+And, assuming $C \\neq 0,$ we find that $f(\\theta) = C = 2/k.$
+
+2. $y' \\neq 0.$ In this case, we can return to the first-order equation, setting $r = f(\\theta)$ to give us
+\\begin{align*}
+\\\\
+\\left(\\frac{dr}{d\\theta}\\right)^2 &= \\frac{k^2}{4}r^4 - r^2
+\\\\
+\\\\
+&= r^2\\left(\\frac{k^2}{4}r^2 - 1\\right)
+\\end{align*}
+Taking the square root of both sides gives us the separable differential equation
+\\begin{align*}
+\\\\
+\\frac{dr}{d\\theta} &= r\\left(\\frac{k^2}{4}r^2 - 1\\right)^{1/2}
+\\end{align*}
+Separating the variables and setting up the integrals, we get
+\\begin{align*}
+\\\\
+\\int \\frac{dr}{r\\sqrt{(k^2r^2/4) - 1}} &= \\int d\\theta
+\\end{align*}
+Now, recall from Section 6.22 Exercise 4 that
+\\begin{align*}
+D\\, \\text{arcsec}\\,x &= \\frac{1}{\|x\|\\sqrt{x^2 - 1}}
+\\end{align*}
+This means that if $x = kr/2$ and $dx = kdr/2,$ the left-hand side becomes
+\\begin{align*}
+\\\\
+\\int \\frac{dr}{r\\sqrt{(k^2r^2/4) - 1}} &= \\frac{2}{k}\\int \\frac{dx}{\\frac{2x}{k}\\sqrt{x^2 - 1}}
+\\\\
+\\\\
+&= \\int \\frac{dx}{x\\sqrt{x^2 - 1}}
+\\\\
+\\\\
+&= \\text{arcsec}\\,x + C
+\\\\
+\\\\
+&= \\text{arcsec}\\left(\\frac{kr}{2}\\right) + C
+\\end{align*}
+Then, evaluating the right-hand side and rearranging terms, we see that
+\\begin{align*}
+\\\\
+\\text{arcsec}\\,\\frac{kr}{2} &= \\theta + C
+\\\\
+\\\\
+\\frac{kr}{2} &= \\sec\\left(\\theta + C\\right)
+\\\\
+\\\\
+r &= \\left(\\frac{2}{k}\\right)\\sec\\left(\\theta + C \\right)
+\\quad
+\\blacksquare
+\\end{align*}
+`,
                   date: "2025-04-05"
                 },
                 {
