@@ -173,7 +173,7 @@ export const ProblemView = ({
               <Lightbulb className="h-5 w-5 mr-2 text-primary" />
               Hint
             </h2>
-            <div className="math-content pl-7">
+            <div className="math-content">
               <MathContent content={problem.hint} />
             </div>
           </CardContent>
@@ -188,7 +188,7 @@ export const ProblemView = ({
               <PenTool className="h-5 w-5 mr-2 text-primary" />
               Solution
             </h2>
-            <div className="math-content pl-7">
+            <div className="math-content">
               <MathContent content={problem.solution} />
             </div>
           </CardContent>

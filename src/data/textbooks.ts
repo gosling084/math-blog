@@ -7010,8 +7010,15 @@ r &= \\left(\\frac{2}{k}\\right)\\sec\\left(\\theta + C \\right)
                   id: 22,
                   number: "14.21.22",
                   content: `If a curve in 3-space is described by a vector-valued function $r$ defined on a parametric interval $[a, b]$, prove that the scalar triple product $r'(t) \\cdot r(a) \\times r(b)$ is zero for at least one $t$ in $(a, b)$. Interpret this result geometrically.`,
-                  hint: ``,
-                  solution: ``,
+                  hint: `$\\text{Theorem 4.5. Mean-Value Theorem for Derivatives.}\\,$ Assume that $f$ is continuous everywhere on a closed interval $[a, b]$ and has a derivative at each point of the open interval $(a, b).$ Then there is at least one interior point $c$ of $(a,b)$ for which
+\\begin{align*}
+f(b) - f(a) &= f'(c)(b - a)
+\\qquad (4.25)
+\\end{align*}`,
+                  solution: `We can see that $r(a) \\times r(b)$ is a constant vector, so its derivative with respect to $t$ must be zero. As such, we can rewrite the scalar triple-product $r'(t) \\cdot r(a) \\times r(b)$ as the derivative of $g(t) = r(t) \\cdot r(a) \\times r(b).$ But since $g$ is a real-valued function, it follows the Mean-Value Theorem for Derivatives on the interval $(a, b).$ That is, there is at least one $t$ in $(a, b)$ such that $g'(t)(b - a) = g(b) - g(a).$ But $g(b) - g(a) = 0.$ Thus, if $a \\neq b,$ it implies that $g'(t) = 0$ for some $t$ in $(a, b).$ But $g'(t) = r'(t) \\cdot r(a) \\times r(b).$ This completes the proof.
+
+Geometrically, this implies that for some $t$ in $(a, b),$ $r'(t)$ is a linear combination of $r(a)$ and $r(b). \\quad \\blacksquare$
+`,
                   date: "2025-04-05"
                 }
               ]
