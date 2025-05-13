@@ -35,7 +35,7 @@ export const About = () => {
                 Acknowledgements
               </h2>
               <p className={styles.sectionContent}>
-                Special thanks to <a href="https://stumblingrobot.com" rel="noopener noreferrer">Stumbling Robot</a>, whose solutions for &quot;Tommy 1&quot; helped pave the way for this blog.
+                Special thanks to <a href="https://web.archive.org/web/20250210074011/https://www.stumblingrobot.com/" target="_blank" rel="noopener noreferrer">Stumbling Robot</a>, whose solutions for &quot;Tommy 1&quot; helped pave the way for this blog.
               </p>
             </div>
 
