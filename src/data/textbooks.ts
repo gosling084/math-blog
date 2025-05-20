@@ -7025,7 +7025,2728 @@ Geometrically, this implies that for some $t$ in $(a, b),$ $r'(t)$ is a linear c
             }
           ]
         },
+        {
+          id: 15,
+          title: "15. Linear Spaces",
+          description: "A linear space is a set of elements of any kind on which certain operations (called addition and multiplication by numbers) can be performed.",
+          problemSets: [
+            {
+              id: 5,
+              title: "15.5 Exercises",
+              description: "Exercises on the axioms and elementary theorems of linear spaces.",
+              problems: [
+                {
+                  id: 1,
+                  number: "15.5.1",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+1. All rational functions.`,
+                  hint: `By definition, the set $V$ is a linear space if it satisfies the following ten axioms.
+
+$\\textit{Closure axioms}$
+
+$\\text{Axiom 1.}\\quad$ $\\text{Closure Under Addition. }$ For every pair of elements $x$ and $y$ in $V,$ there corresponds a unique element in $V$ called the sum of $x$ and $y,$ denoted by $x + y.$
+
+$\\text{Axiom 2.}\\quad$ $\\text{Closure Under Multiplication. }$ For every $x$ in $V$ and every real number $a$ there corresponds an element in $V$ called the product of $a$ and $x,$ denoted by $ax.$
+
+$\\textit{Axioms for addition}$
+
+$\\text{Axiom 3.}\\quad$ $\\text{Commutative Law. }$ For all $x$ and $y$ in $V,$ we have $x + y = y + x.$
+
+$\\text{Axiom 4.}\\quad$ $\\text{Associative Law. }$ For all $x,$ $y,$ and $z$ in $V,$ we have $(x + y) + z = x + (y + z).$
+
+$\\text{Axiom 5.}\\quad$ $\\text{Existence of Zero Element. }$ There is an element in $V,$ denoted by $O,$ such that
+$$
+x + O = x
+\\quad
+\\text{for all $x$ in $V$.}
+$$
+$\\text{Axiom 6.}\\quad$ $\\text{Existence of Negatives. }$ For every $x$ in $V,$ the element $(-1)x$ has the property
+$$
+x + (-1)x = O
+$$
+$\\textit{Axioms for multiplication by numbers}$
+
+$\\text{Axiom 7.}\\quad$ $\\text{Associative Law. }$ For every $x$ in $V$ and all real numbers $a$ and $b,$ we have
+$$
+a(bx) = (ab)x.
+$$
+$\\text{Axiom 8.}\\quad$ $\\text{Distributive Law for Addition in $V$. }$ For all $x$ and $y$ in $V$ and all real $a,$ we have
+$$
+a(x + y) = ax + ay.
+$$
+$\\text{Axiom 9.}\\quad$ $\\text{Distributive Law for Addition of Numbers. }$ For all $x$ in $V$ and all real $a$ and $b,$ we have
+$$
+(a + b)x = ax + bx.
+$$
+$\\text{Axiom 10.}\\quad$ $\\text{Existence of Identity. }$ For every $x$ in $V,$ we have $1x = x.$
+`,
+                  solution: `Recall that a rational function is the quotient $p/q,$ where $p$ and $q$ are polynomials of degree greater than or equal to zero, defined for all $x$ such that $q(x) \\neq 0$. In other words they satisfy the ten axioms in the same way the real numbers do. Thus, the set of all rational functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 2,
+                  number: "15.5.2",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+2. All rational functions $f/g$, with the degree of $f \\leq$ the degree of $g$ (including $f = 0$).`,
+                  hint: `By definition, the set $V$ is a linear space if it satisfies the following ten axioms.
+
+$\\textit{Closure axioms}$
+
+$\\text{Axiom 1.}\\quad$ $\\text{Closure Under Addition. }$ For every pair of elements $x$ and $y$ in $V,$ there corresponds a unique element in $V$ called the sum of $x$ and $y,$ denoted by $x + y.$
+
+$\\text{Axiom 2.}\\quad$ $\\text{Closure Under Multiplication. }$ For every $x$ in $V$ and every real number $a$ there corresponds an element in $V$ called the product of $a$ and $x,$ denoted by $ax.$
+
+$\\textit{Axioms for addition}$
+
+$\\text{Axiom 3.}\\quad$ $\\text{Commutative Law. }$ For all $x$ and $y$ in $V,$ we have $x + y = y + x.$
+
+$\\text{Axiom 4.}\\quad$ $\\text{Associative Law. }$ For all $x,$ $y,$ and $z$ in $V,$ we have $(x + y) + z = x + (y + z).$
+
+$\\text{Axiom 5.}\\quad$ $\\text{Existence of Zero Element. }$ There is an element in $V,$ denoted by $O,$ such that
+$$
+x + O = x
+\\quad
+\\text{for all $x$ in $V$.}
+$$
+$\\text{Axiom 6.}\\quad$ $\\text{Existence of Negatives. }$ For every $x$ in $V,$ the element $(-1)x$ has the property
+$$
+x + (-1)x = O
+$$
+$\\textit{Axioms for multiplication by numbers}$
+
+$\\text{Axiom 7.}\\quad$ $\\text{Associative Law. }$ For every $x$ in $V$ and all real numbers $a$ and $b,$ we have
+$$
+a(bx) = (ab)x.
+$$
+$\\text{Axiom 8.}\\quad$ $\\text{Distributive Law for Addition in $V$. }$ For all $x$ and $y$ in $V$ and all real $a,$ we have
+$$
+a(x + y) = ax + ay.
+$$
+$\\text{Axiom 9.}\\quad$ $\\text{Distributive Law for Addition of Numbers. }$ For all $x$ in $V$ and all real $a$ and $b,$ we have
+$$
+(a + b)x = ax + bx.
+$$
+$\\text{Axiom 10.}\\quad$ $\\text{Existence of Identity. }$ For every $x$ in $V,$ we have $1x = x.$
+`,
+                  solution: `Since all functions in this set are real-valued, they satisfy the axioms for multiplication by numbers the same way the set of real numbers does, and with the inclusion of $f = 0,$ they satisfy the axioms for addition as well. We can easily verify that all functions in the set satisfy closure under multiplication by real numbers since multiplying $f$ by any real number does not increase its degree, hence for any real $a,$ $(af)/g$ is a memeber of the set. Now, to verify closure under addition, we wish to show that for any functions $x$ and $y$ in the set, the sum $x + y$ is yet another rational function $f/g$ with the degree of $f$ smaller than or equal to the degree of $g.$ 
+
+Suppose we have two rational functions $x$ and $y$ with the degrees of their respective numerators being $a$ and $b$ and the degrees of their respective denominators being $c$ and $d.$ (In other words, $a \\leq c$ and $b \\leq d.$) If we take the sum $x + y$ then the degree of the numerator will be the greater of $a + d$ or $b + c,$ but both of these values are less than or equal to the degree of the denominator $c + d.$ Thus, the sum of $x + y$ is in the set of rational functions $f/g$ with the degree of $f$ $\\leq$ the degree of $g.$
+
+Hence, the set of rational functions $f/g$ with the degree of $f$ $\\leq$ the degree of $g,$ including $f = 0,$ is a linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 3,
+                  number: "15.5.3",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+3. All $f$ with $f(0) = f(1)$.`,
+                  hint: ``,
+                  solution: `To verify closure under addition, suppose we have two functions $f$ and $g$ in the set. Then, since $(f+g)(x) = f(x) + g(x),$ we can see that $(f + g)(0) = (f + g)(1)$ thus $f + g$ is also in the set. For closure under multiplication by real numbers, we can see that for any real $a$ that $af(0) = af(1),$ which also shows the existence of negatives if $a = -1.$ If we let $O = 0$ for all $x$, then we can see that for all $f$ in the set that $f + O = f.$ Then, for the remaining axioms, we can see that they are satisfied since all $f$ in the set are real-valued and hence behave like the set of real numbers under addition and multiplication. 
+                  
+The set of all $f$ where $f(0) = f(1)$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 4,
+                  number: "15.5.4",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+4. All $f$ with $2f(0) = f(1)$.`,
+                  hint: ``,
+                  solution: `Let $f$ and $g$ be members of this set, then $(f + g)(x) = f(x) + g(x)$ which gives us
+\\begin{align*}
+(f + g)(1) &= f(1) + g(1)
+\\\\
+\\\\
+&= 2f(0) + 2g(0)
+\\\\
+\\\\
+&= 2\\left[f(0) + g(0)\\right]
+\\\\
+\\\\
+&= 2(f + g)(0)
+\\end{align*}Which verifies closure under addition. Then, let $g = af,$ where $a$ is a real scalar and $f$ is an element in the set. We then have $g(1) = af(1) = 2af(0) = 2g(0)$ which verifies closure under multiplication by real numbers (and by extension, the existence of negatives). The existence of the zero element is given by the constant function $O = 0$ for all $x,$ and the remaining axioms are satisfied by all elements being real-valued.
+
+The set of all $f$ with $2f(0) = f(1)$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 5,
+                  number: "15.5.5",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+5. All $f$ with $f(1) = 1 + f(0)$.`,
+                  hint: ``,
+                  solution: `Let $f$ and $g$ be elements in the set, with addition of functions defined as $(f + g)(x) = f(x) + g(x).$ We then have:
+\\begin{align*}
+(f + g)(1) &= 1 + (f + g)(0)
+\\\\
+\\\\
+&= 1 + f(0) + g(0)
+\\\\
+\\\\
+&= f(1) + g(0)
+\\\\
+\\\\
+&\\neq f(1) + g(1)
+\\end{align*}
+Hence, set of all $f$ with $f(1) = 1 + f(0)$ fails to satisfy the axiom under closure by addition and is not a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 6,
+                  number: "15.5.6",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+6. All step functions defined on [0, 1].`,
+                  hint: `Recall from Volume 1, Section 1.8, the definition of a step function:
+$\\text{Definition of a Step Function.}$ A function $s,$ whose domain is a closed interval $[a, b],$ is called a step function if there is a partition $P = \\{x_0, x_1, ..., x_n\\}$ of $[a,b]$ such that $s$ is a constant on each open subinterval of $P.$ That is to say, for each $k = 1,\\ 2,\\ ...,\\ n,$ there is a real number $s_k$ such that
+\\begin{align*}
+\\\\
+s(x) &= s_k 
+\\quad
+\\text{if}
+\\quad
+x_{k - 1} < x < x_k
+\\end{align*}
+Note: At each of the endpoints $x_{k - 1}$ and $x_k$ the function must have some well-defined value, but this need not be the same as $s_k.$`,
+                  solution: `To verify closure under addition, we note that for any two step functions defined on $[0, 1],$ if $x$ is in the respective partitions of the domains of $f$ and $g$ such that $f(x) = s_k$ and $g(x) = t_k$ then $(f + g)(x) = s_k + t_k = f(x) + g(x).$ If we define the zero function as the step function $f(x) = 0$ for all $x$ in $[0, 1]$ then we can see that the set is a linear space since the remaining axioms are satisfied by all step functions defined on $[0,1]$ being real-valued. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 7,
+                  number: "15.5.7",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+7. All $f$ with $f(x) \\to 0$ as $x \\to +\\infty$.`,
+                  hint: `Recall Theorem 3.1 which gives basic theorems on limits:
+$\\text{Theorem 3.1.}\\quad $ Let $f$ and $g$ be functions such that
+\\begin{align*}
+\\lim_{x \\to p}f(x) &= A,
+\\quad
+\\lim_{x \\to p} g(x) = B.
+\\end{align*}Then we have
+\\begin{align*}
+\\text{(i)}
+\\quad
+\\lim_{x \\to p}\\,[f(x) + g(x)] &= A + B
+\\\\
+\\\\
+\\text{(ii)}
+\\quad
+\\lim_{x \\to p}\\,[f(x) - g(x)] &= A - B
+\\\\
+\\\\
+\\text{(iii)}
+\\quad
+\\lim_{x \\to p}\\,f(x) \\cdot g(x) &= A \\cdot B
+\\\\
+\\\\
+\\text{(iv)}
+\\quad
+\\lim_{x \\to p}\\,f(x) / g(x) &= A / B
+\\\\
+\\\\
+\\end{align*}`,
+                  solution: `To verify the closure under addition, we wish to show that as $x \\to \\infty,$ $(f + g)(x) \\to 0.$ But we know that addition of functions is defined as $(f + g)(x) = f(x) + g(x).$ And from Theorem 3.1, we know that if $\\lim_{x \\to p}f(x) = A$ and $\\lim_{x \\to p}g(x) = B$,
+\\begin{align*}
+\\lim_{x \\to p}\\,[f(x) + g(x)] &= A + B
+\\end{align*}
+which means that $\\lim_{x \\to \\infty}(f + g)(x) = 0,$ so the set satisfies closure under addition.
+
+To verify closure under multiplication by real numbers, we use a special case of Theorem 3.1 (iii) where $f(x)$ is some real constant $A$ for all $x.$ Then, if $g(x)$ is a member of the set, its limit goes to zero as $x$ goes to infinity, and we get
+\\begin{align*}
+\\lim_{x \\to \\infty}\\,f(x) \\cdot g(x) &= A \\cdot 0
+\\\\
+&= 0.
+\\end{align*}which verifies closure under multiplication by real numbers.
+
+We can see that $f(x) = 0$ is also in this set, which satisfies the existence of a zero element. And since the set satisfies closure under multiplication by real numbers, it satisfies the existence of negatives by setting $A = -1.$ Then, the remaining axioms are easily verified since all functions in the set are real valued for all $x$.
+
+Thus, we have verified that the set of all $f$ with $f(x) \\to 0$ as $x \\to \\infty$ is a linear space. $\\, \\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 8,
+                  number: "15.5.8",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+8. All even functions.`,
+                  hint: `Recall the definition of even and odd functions from Section 1.26 Exercise 24:
+
+Let $f$ be a continuous function whose domain contains $-x$ whenever it contains $x.$ We say $f$ is an $even$ function if $f(-x) = f(x)$ and an $odd$ function if $f(-x) = -f(x)$ for all $x$ in the domain of $f.$`,
+                  solution: `To verify closure under addition, let $f$ and $g$ be even functions defined for all real $x,$ and let addition of functions be defined for any $x$ as $(f + g)(x) = f(x) + g(x).$ Then, we have
+\\begin{align*}
+(f + g)(-x) &= f(-x) + g(-x)
+\\\\
+\\\\
+&= f(x) + g(x)
+\\\\
+\\\\
+&= (f + g)(x)
+\\end{align*}which shows that the set of even functions satisfies closure under addition. Now, to verify closure under multiplication by real numbers, let $a$ be some real constant. Then, since $f$ is real-valued for all $x$ we have $af(-x) = af(x)$ which shows that even functions satisfy closure under multiplication by real numbers, and by extension satisfies the existence of negatives when $a = -1.$ 
+
+The function $f(x) = 0$ is an even function and satisfies the existence of a zero element. Then, since all functions in the set are real-valued, the remaining axioms are easily verified.
+
+As such, we can see that the set of even functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 9,
+                  number: "15.5.9",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+9. All odd functions.`,
+                  hint: `Recall the definition of even and odd functions from Section 1.26 Exercise 24:
+
+Let $f$ be a continuous function whose domain contains $-x$ whenever it contains $x.$ We say $f$ is an $even$ function if $f(-x) = f(x)$ and an $odd$ function if $f(-x) = -f(x)$ for all $x$ in the domain of $f.$`,
+                  solution: `To verify closure under addition, let $f$ and $g$ be odd functions defined for all real $x,$ and let addition of functions be defined for any $x$ as $(f + g)(x) = f(x) + g(x).$ Then, we have
+\\begin{align*}
+(f + g)(-x) &= f(-x) + g(-x)
+\\\\
+\\\\
+&= -f(x) - g(x)
+\\\\
+\\\\
+&= -[f(x) + g(x)]
+\\\\
+\\\\
+&= -(f + g)(x)
+\\end{align*}which shows that the set of odd functions satisfies closure under addition. 
+
+Now, to verify closure under multiplication by real numbers, let $a$ be some real constant. Since $f$ is real-valued for all $x$ we have $af(-x) = a[-f(x)] = -af(x)$ which shows that odd functions satisfy closure under multiplication by real numbers, and by extension satisfies the existence of negatives when $a = -1.$ 
+
+The function $f(x) = 0$ is odd function since $f(-x) = -f(x) = 0$ for all $x,$ thus satisfying the existence of a zero element. Then, since all functions in the set are real-valued, the remaining axioms are easily verified.
+
+As such, we can see that the set of odd functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 10,
+                  number: "15.5.10",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+10. All bounded functions.`,
+                  hint: `Recall from Section 1.16 (Volume 1) that a function bounded on an interval $[a, b]$ is a function for which there exists a number $M > 0$ such that $-M \\leq f(x) \\leq M$ for every $x$ in $[a, b].$`,
+                  solution: `To verify closure under addition, let $f$ and $g$ be bounded by $M$ and $N$ respectively, where $M>0$ and $N>0.$ Then, we have $-M \\leq f(x) \\leq M$ and $-N \\leq g(x) \\leq N,$ which means
+\\begin{align*}
+-M - N \\leq f(x) + g(x) \\leq M + N
+\\end{align*}for all $x.$ But by definition, $f(x) + g(x) = (f + g)(x),$ which means that $f + g$ is bounded by $M + N.$ And since $f$ and $g$ are arbitrary, this shows that the set of all bounded functions satisfies closure under addition.
+
+To show closure under multiplication by real numbers, let $a$ be some real constant, and let $f(x)$ be bounded by some $M > 0.$ Then, we can multiply the inequality $-M \\leq f(x) \\leq M$ by $a$ to get
+\\begin{align*}
+-aM \\leq af(x) \\leq aM
+\\end{align*}for all $x,$ which means $af$ is bounded. This can also be extended to verify the associative law, distributive laws, and the existence of identity.
+
+The zero function $f(x) = 0$ is bounded for any $M >0,$ and multiplying any bounded $f$ by $-1$ leaves the inequality unchanged, thus verifying the existence of negatives. The commutative and associative laws of addition can be verified by noting that all bounded $f$ are real-valued and any $M > 0$ bounding a $f$ is also a real number.
+
+Thus, we have shown that the set of all bounded functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 11,
+                  number: "15.5.11",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+11. All increasing functions.`,
+                  hint: `Recall from Section 1.20 (Volume 1) that a function $f$ is said to be $increasing$ on a set $S$ if $f(x) \\leq f(y)$ for every pair of points $x$ and $y$ in $S$ with $x < y.$`,
+                  solution: `The set of increasing functions is not a linear space. 
+
+Let $f$ be an increasing function. Then, for any pair $x$ and $y$ in the domain of $f,$ with $x < y,$ $f(x) \\leq f(y).$ Now, let $g = (-1)f$ be the negative of $f.$ We can see that $g$ is not an increasing function since $f(x) \\geq f(y)$ when $x < y.$ Thus, the set does not satisfy closure under multiplication by real numbers nor the existence of negatives. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 12,
+                  number: "15.5.12",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+12. All functions with period $2\\pi$.`,
+                  hint: `Recall from section 2.5 (Volume 1) that a function is said to be $periodic$ with period $p \\neq 0$ if its domain contains $x + p$ whenever it contains $x$ and $f(x + p) = f(x)$ for every $x$ in the domain of $f.$`,
+                  solution: `Since every $f$ in the set is defined for all real $x,$ we know that $x + p$ is in the domain of $f$ whenever $x$ is. Now, to show closure under addition, let $f$ and $g$ be periodic functions with $p = 2\\pi.$ Then, with $(f + g)(x) = f(x) + g(x)$ and $f(x + 2\\pi) = f(x),$ we have
+\\begin{align*}
+(f + g)(x + 2\\pi) &= f(x + 2\\pi) + g(x + 2\\pi)
+\\\\
+\\\\
+&= f(x) + g(x)
+\\\\
+\\\\
+&= (f + g)(x)
+\\end{align*}which shows that $f + g$ is periodic with $p = 2\\pi.$ Closure under multiplication by real numbers can be verified by noting that for any $f$ in the set and any real $a,$ $af(x + 2\\pi) = af(x).$ This can also be extended to the case of $a = -1,$ verifying the existence of negatives. The function $f(x) = 0$ is also periodic for all $p,$ satisfying the existence of the zero element. The remaining axioms can be verified by noting that $f(x)$ is real-valued for all $x.$
+
+Thus, we can see that the set of all functions with period $2\\pi$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 13,
+                  number: "15.5.13",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+13. All $f$ integrable on [0, 1] with $\\int_0^1 f(x) dx = 0$.`,
+                  hint: `Recall Theorem 1.16 from Section 1.24 (Volume 1):
+$\\text{Theorem 1.16.$\\quad$ Linearity with Respect to the Integrand.}\\quad$ If both $f$ and $g$ are integrable on $[a, b],$ so is $c_1f + c_2g$ for every pair of constants $c_1$ and $c_2.$ Furthermore, we have:
+\\begin{align*}
+\\int_a^b[c_1f(x) + c_2g(x)]\\,dx &= c_1\\int_a^bf(x)\\,dx + c_2\\int_a^bg(x)\\,dx 
+\\end{align*}`,
+                  solution: `Applying what we know from Theorem 1.16 (Volume 1, Section 1.24), we know that for any real constants $c_1$ and $c_2$ and any functions $f$ and $g$ in the set, we have
+\\begin{align*}
+\\int_0^1[c_1f(x) + c_2g(x)]\\,dx &= c_1\\int_0^1f(x)\\,dx + c_2\\int_0^1g(x)\\,dx
+\\\\
+\\\\
+&= 0
+\\end{align*}
+which verifies that the set satisfies closure under addition and closure under multiplication by real numbers. Moreover, setting $c_1 = c_2 = -1$ verifies the existence of negatives in the set. The function $f(x) = 0$ is also a member of the set, verifying the existence of the zero element. The remaining axioms can be verified by noting that $f(x)$ is real-valued for $x$ in $[0, 1].$
+
+As such, we can see that the set of all $f,$ integrable on $[0, 1],$ with $\\int_0^1f(x)\\,dx = 0$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 14,
+                  number: "15.5.14",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+14. All $f$ integrable on [0, 1] with $\\int_0^1 f(x) dx \\geq 0$.`,
+                  hint: `Recall Theorem 1.16 from Section 1.24 (Volume 1):
+$\\text{Theorem 1.16.$\\quad$ Linearity with Respect to the Integrand.}\\quad$ If both $f$ and $g$ are integrable on $[a, b],$ so is $c_1f + c_2g$ for every pair of constants $c_1$ and $c_2.$ Furthermore, we have:
+\\begin{align*}
+\\int_a^b[c_1f(x) + c_2g(x)]\\,dx &= c_1\\int_a^bf(x)\\,dx + c_2\\int_a^bg(x)\\,dx 
+\\end{align*}`,
+                  solution: `Let $f$ be a member of the set such that $\\int_0^1f(x)\\,dx > 0.$ Then, if we set $c_1 < 0,$ we can see that $c_1\\int_0^1f(x)\\,dx < 0,$ which violates closure under multiplication by real numbers. Thus, the set of all $f$ integrable on $[0, 1]$ with $\\int_0^1f(x)\\,dx \\geq 0$ is not a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 15,
+                  number: "15.5.15",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+15. All $f$ satisfying $f(x) = f(1 - x)$ for all $x$.`,
+                  hint: ``,
+                  solution: `Let $f$ and $g$ be functions in the set. Then, with function addition defined as $(f + g)(x) = f(x) + g(x),$ we have
+\\begin{align*}
+(f + g)(1 - x) &= f(1 - x) + g(1 - x)
+\\\\
+&= f(x) + g(x)
+\\\\
+&= (f + g)(x)
+\\end{align*}Thus verifying closure under addition. Now, suppose $f$ is a function in the set and let $a$ be a real scalar. Then, $af(x) = af(1-x)$ which verifies closure under multiplication by real numbers, and by extension, the existence of negatives. Then, we can see that $f(x) = 0$ is a member of the set, satisfying the existence of a zero element. The remaining axioms can be confirmed by noting that $f(x)$ is real-valued for all real $x.$ Thus, the set of all $f$ satisfying $f(x) = f(1 - x)$ for all $x$ is a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 16,
+                  number: "15.5.16",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+16. All Taylor polynomials of degree $\\leq n$ for a fixed $n$ (including the zero polynomial).`,
+                  hint: `Recall Theorem 7.1 (Volume 1, Section 7.2):
+$\\text{Theorem 7.1. $\\quad$}$ Let $f$ be a function with derivatives of order $n$ at the point $x = 0.$ Then there exists one and only one polynomial $P$ of degree $\\leq n$ which satisfies the $n + 1$ conditions
+\\begin{align*}
+P(0) &= f(0),
+\\quad
+P'(0) = f'(0),
+\\quad
+...,
+\\quad
+P^{(n)}(0) = f^{(n)}(0).
+\\end{align*}This polynomial is given by the formula
+\\begin{align*}
+P(x) &= \\sum_{k = 0}^n\\frac{f^{(k)}(0)}{k!}x^k
+\\end{align*}In the same way, we may show that there is one and only one polynomial of degree $\\leq n$ which agrees with $f$ and its first $n$ derivatives at a point $x = a.$ If we evaluate the derivatives at $x = a$ in place of $x = 0,$ we find
+\\begin{align*}
+P(x) &= \\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\end{align*}This is the one and only one polynomial $P$ of degree $\\leq n$ which satisfies the $n + 1$ conditions
+\\begin{align*}
+P(a) &= f(a),
+\\quad
+P'(a) = f'(a),
+\\quad
+...,
+\\quad
+P^{(n)}(a) = f^{(n)}(a).
+\\end{align*}and it is referred to as a Taylor polynomial of degree $n$ generated by $f$ at the point $a.$ or in short, a $\\textit{Taylor polynomial.}$`,
+                  solution: `Let $P$ and $Q$ be Taylor polynomials of degree $\\leq n$ that agree with $f,$ $g,$ and their first $n$ derivatives, respectively, at a given point $x = a$. In other words, define $P$ and $Q$ as
+\\begin{align*}
+P(x) &= \\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+Q(x) &= \\sum_{k = 0}^n\\frac{g^{(k)}(a)}{k!}(x - a)^k
+\\end{align*}Then, if we define function addition in the usual way, we find that
+\\begin{align*}
+(P + Q)(x) &= P(x) + Q(x)
+\\\\
+\\\\
+&= \\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+&+ \\sum_{k = 0}^n\\frac{g^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+&= \\sum_{k = 0}^n\\frac{[f^{(k)}(a) + g^{(k)}(a)]}{k!}(x - a)^k
+\\end{align*}But from Theorem 4.1 (i) (Volume 1, Section 4.5) we can see that the function $f^{(k)}(a) + g^{(k)}(a)$ can be written as $[f(a) + g(a)]^{(k)} = [(f + g)(a)]^{(k)}$ $[$That is, the $k^{th}$ derivative of $(f + g)(a)].$ As such, we can see that $(P + Q)(x)$ is a Taylor polynomial of degree $\\leq n$ generated by $f + g$ at $a,$ thus verifying closure under addition.
+
+To verify closure under multiplication by real numbers, we can use a specific case of Theorem 4.1 (iii): 
+$$(f \\cdot g)' = f'\\cdot g + g'\\cdot f$$where $g(x) = b$ for some real constant $b.$ Then, using the zero-derivative theorem in (Theorem 5.2, Volume 1, Section 5.2) in conjunction with Theorem 4.1 (iii), we can see that $bP(x)$ is given by
+\\begin{align*}
+bP(x) &= b\\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+&= \\sum_{k = 0}^n\\frac{bf^{(k)}(a)}{k!}(x - a)^k
+\\end{align*}Then, if we set $h(x) = bf(x),$ we can see that $bP(x)$ is a Taylor polynomial of degree $\\leq n$ generated by $h$ at $a,$ which verifies closure under multiplication by real numbers. If $b = -1,$ it also verifies the existence of negatives. The explicit inclusion of the zero polynomial $(b = 0)$ verifies the existence of the zero element. And since every $P$ in the set is a real polynomial in $x$ for all real $x,$ the remaining axioms can be verified by treating $P(x)$ as a real number for any given $x.$
+
+As such, we have shown that the set of all Taylor polynomials of degree $\\leq n$ for a fixed $n$ (including the zero polynomial) is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 17,
+                  number: "15.5.17",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+17. All solutions of a linear second-order homogeneous differential equation $y'' + P(x)y' + Q(x)y = 0$, where $P$ and $Q$ are given functions, continuous everywhere.`,
+                  hint: ``,
+                  solution: `Let $y_1$ and $y_2$ be solutions to the second-order homogeneous differential equation $y'' + P(x)y' + Q(x)y = 0.$ Then by definition,
+\\begin{align*}
+y_1'' + P(x)y_1' + Q(x)y_1 &= 0
+\\\\
+\\\\
+y_2'' + P(x)y_2' + Q(x)y_2 &= 0
+\\end{align*}
+Adding both sides of the equations gives us
+\\begin{align*}
+(y_1 + y_2)'' + P(x)(y_1 + y_2)' + Q(x)(y_1 + y_2) &= 0
+\\end{align*}which means that $(y_1 + y_2)$ is also in the set of solutions to the second-order homogeneous equation $y'' + P(x)y' + Q(x)y = 0$, thus verifying closure under addition.
+
+Closure under multiplication by real numbers is easily verified by noting that if $y$ is a solution to the equation
+\\begin{align*}
+y'' + P(x)y' + Q(x)y &= 0
+\\end{align*}then $ay$ is also a solution since for any real scalar $a,$ we have
+\\begin{align*}
+ay'' + P(x)ay' + Q(x)ay &= a\\cdot 0
+\\\\
+&= 0
+\\end{align*}which also verifies the existence of negatives. We can trivially confirm the existence of the zero element by setting $y = 0,$ and the remaining axioms can be verified by noting that $y$ is real-valued over its domain. As such, the set of solutions to the second-order homogeneous differential equation
+$$
+y'' + P(x)y' + Q(x)y = 0
+$$is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 18,
+                  number: "15.5.18",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+18. All bounded real sequences.`,
+                  hint: `Recall from Theorem 10.1 (Volume 1, Section 10.3) that a sequence $\\{f(n)\\}$ is called $bounded$ if there exists a positive number $M$ such that $\|f(n)\| \\leq M$ for all $n.$`,
+                  solution: `Let $\\{f(n)\\}$ and $\\{g(n)\\}$ be bounded real sequences. That means that there are positive real numbers $M$ and $N$ such that $\|f(n)\| \\leq M$ and $\|g(n)\| \\leq N$ for all $n.$ But this means that $\|f(n)\| + \|g(n)\| \\leq M + N$ for all $n.$ Using the triangle inequality for real numbers (Theorem I.39 - Volume 1, Section I4.8) we find that $\|f(n) + g(n)\| \\leq M + N$ for all $n,$ showing that the sequence $\\{f(n) + g(n)\\}$ is bounded, hence verifying closure under addition.
+                  
+If we multiply both sides of the inequality by $\|f(n)\| \\leq M$ by $\|a\|,$ with $a$ being a real scalar, then we can see that $\\{af(n)\\}$ is also bounded, thus verifying closure under multiplication by real numbers. The existence of negatives can be deduced by the definition of a bounded sequence because if $\|f(n)\| \\leq M$ then $ \|-f(n)\| \\leq M$ for all $n.$ Setting $f(n) = 0$ for all $n$ verifies the existence of a zero element since $0$ is bounded by all $M > 0.$ Then, for the remaining axioms, we can verify them by noting that if $\\{f(n)\\}$ is bounded by some $M > 0$, then for each $n$, $f(n)$ is some real number with $\|f(n)\| \\leq M$.
+
+As such, we have shown that the set of all bounded sequences is a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 19,
+                  number: "15.5.19",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+19. All convergent real sequences.`,
+                  hint: `Recall the definition of a convergent sequence from Volume 1, Section 10.2.
+
+$\\text{Definition.}\\quad$ A sequence $\\{f(n)\\}$ is said to have a limit $L$ if, for every positive number $\\epsilon,$ there is another positive number $N$ (which may depend on $\\epsilon$) such that
+$$
+\|f(n) - L\| < \\epsilon
+\\quad
+\\textit{for all}\\ n \\geq N.
+$$In this case, we say the sequence $\\{f(n)\\}$ converges to $L$ and we write
+$$
+\\lim_{n \\to \\infty} f(n) = L,
+\\quad
+\\text{or}
+\\quad
+f(n) \\to L
+\\,\\
+\\text{as}\\,\\ n \\to \\infty.
+$$`,
+                  solution: `Let $\\{f(n)\\}$ and $\\{g(n)\\}$ be convergent real sequences with limits $L$ and $M,$ respectively. Then for every positive number $\\epsilon,$ there is another positive number $N$ (which may depend on $\\epsilon$) such that
+$$
+\|f(n) - L\| < \\epsilon,
+\\quad
+\\text{and}
+\\quad
+\|g(n) - M\| < \\epsilon
+$$for all $n \\geq N.$ Adding these two inequalities, we find that for all $n \\geq N,$ we have
+$$
+\|f(n) - L\|  + \|g(n) - M\| < 2\\epsilon
+$$But, recalling the triangle inequality for real numbers, we know that 
+$$
+\|f(n) + g(n) - (L + M)\| \\leq \|f(n) - L\|  + \|g(n) - M\|
+$$Thus, for all positive $\\epsilon$ and all $n \\geq N,$ we have
+$$
+\|f(n) + g(n) - (L + M)\| < 2\\epsilon
+$$Which means that $\\{f(n) + g(n)\\}$ is convergent, and the set of all convergent real sequences satisfies closure under addition.
+
+Now, suppose $\\{f(n)\\}$ is a convergent real sequence with limit $L.$ We know by definition that there exists some positive $N$ such that $\|f(n) - L\| < \\epsilon$ for all $n \\geq N$ and for all $\\epsilon > 0.$ If we multiply both sides of this inequality by $\|a\|,$ where $a$ is some real scalar, then we find that for all $n \\geq N,$
+$$
+\|af(n) - aL \| < \|a\|\\epsilon
+$$But since this is the case for all $\\epsilon > 0,$ this implies that $af(n) \\to aL$ as $n \\to \\infty,$ which implies that $\\{af(n)\\}$ is convergent, and the set of all convergent sequences satisfies closure under multiplication by real numbers.
+
+We can see that the sequence with $f(n) = 0$ for all $n$ is convergent with limit $L = 0,$ satisfying the existence of a zero element. In verifying closure under multiplication by real numbers, we can deduce the existence of negatives by setting $a = -1$ and noting that
+$$
+\|aL - af(n)\| = \|af(n) - aL\|.
+$$
+And since $f(n)$ is real-valued for all $n,$ we can easily verify the remaining axioms on addition and multiplication by scalars. Hence, the set of all convergent real sequences is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 20,
+                  number: "15.5.20",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+20. All convergent real series.`,
+                  hint: `Recall from Volume 1 Section 10.5 the definition of an infinite series:
+
+From a given sequence of realor complex numbers, we can always generate a new sequence by adding together successive terms. Thus, if the given sequence has the terms
+$$
+a_1,\\ a_2,\\ ..., a_n,\\ ...
+$$we may form, in succession, the "partial sums"
+$$
+s_1 = a_1,
+\\quad
+s_2 = a_1 + a_2,
+\\quad
+s_3 = a_1 + a_2 + a_3,
+$$and so on, the partial sum $s_n$ of the first $n$ terms being defined as follows:
+\\begin{align*}
+s_n = a_1 + a_2 + \\cdots + a_n &= \\sum_{k = 1}^n a_k.
+\\end{align*}The sequence $\\{s_n\\}$ of partial sums is called and infinite series, or simple a $series.$ If there is a real or complex number $S$ such that
+$$
+\\lim_{n \\to \\infty}s_n = S
+$$we say that the series $\\sum_{k = 1}^{\\infty}a_k$ is convergent and has the sum $S,$ in which case we write:
+$$
+\\sum_{k = 1}^{\\infty}a_k = S.
+$$
+`,
+                  solution: `Suppose we have two real-valued series whose respective terms are $a_k$ and $b_k$ for $k = 1, 2, 3, ...$ and whose respective $n^{th}$ partial sums are $s_n$ and $t_n$. If they are convergent, then for some real $S$ and $T,$ we have 
+\\begin{align*}
+\\\\
+\\lim_{n \\to \\infty}s_n &= S,
+\\quad
+\\text{and}
+\\quad
+\\lim_{n \\to \\infty}t_n = T,
+\\end{align*}
+Now, suppose we have another series whose $k^{th}$ term is $c_k = a_k + b_k$ and whose $n^{th}$ partial sum is $g_n = s_n + t_n.$ But as a consequence of Theorem 3.1 (i) [Volume 1, Section 3.3], $g_n \\to S + T$ as $n \\to \\infty,$ which means that $\\sum_{k = 1}^{\\infty}c_k$ is convergent. Moreover, this means the set of convergent real series satisfies closure under addition.
+
+To verify closure under multiplication by real numbers, we refer to Theorem 3.1 (iii). If $a$ is some real constant, and $\\sum_{k = 1}^{\\infty}s_k = S,$ then we have:
+\\begin{align*}
+\\sum_{k = 1}^{\\infty}a\\cdot s_k &= a\\sum_{k = 1}^{\\infty}s_k
+\\\\
+&= aS
+\\end{align*}Then, if $a = -1,$ we can verify that $\\sum_{k = 1}^{\\infty}-s_k$ is also convergent, with
+\\begin{align*}
+\\sum_{k = 1}^{\\infty}s_k - s_k &= 0
+\\end{align*}thus verifying the existence of negatives in the set. The zero element is the series whose elements are $z_k = 0$ for all $k$ and whose sum is trivially $0.$ 
+
+Now, since every convergent series of real-valued terms has a real-valued sum, we can treat each sum (and partial sum) as a real number when verifying axioms regarding addition and multiplication by real numbers. As such, we have shown that the set of all convergent real-valued series is a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 21,
+                  number: "15.5.21",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+21. All absolutely convergent real series.`,
+                  hint: `Recall the definition of absolute convergence from Volume 1, Section 10.18.
+
+$\\text{Definition. $\\quad$}$ A series $\\sum a_n$ is called absolutely convergent if $\\sum \|a_n\|$ converges. It is called conditionally convergent if $\\sum a_n$ converges but $\\sum \|a_n\|$ diverges.`,
+                  solution: `Suppose we have two absolutely convergent series $\\sum a_n$ and $\\sum b_n,$ and let $\\alpha$ and $\\beta$ be real scalars. Then, by the triangle inequality for real numbers, we have
+\\begin{align*}
+\\sum_{n = 1}^{M} \|\\alpha a_n + \\beta b_n\| &\\leq \|\\alpha\|\\sum_{n = 1}^{M} \|a_n\| + \|\\beta\|\\sum_{n = 1}^{M} \|b_n\|
+\\\\
+\\\\
+&\\leq \|\\alpha\|\\sum_{n = 1}^{\\infty} \|a_n\| + \|\\beta\|\\sum_{n = 1}^{\\infty} \|b_n\|
+\\end{align*}But since $\\sum\|\\alpha a_n + \\beta b_n\|$ is bounded by $\|\\alpha\|\\sum\|a_n\| + \|\\beta\|\\sum \|b_n\|,$ we know from Volume 1, Theorem 10.1, that the sequence of the partial sums of $\\sum\|\\alpha a_n + \\beta b_n\|$ must be convergent. Hence $\\sum \\alpha a_n + \\beta b_n$ is absolutely convergent. Moreover, this shows that the set of absolutely convergent series satisfies closure under addition and closure under multiplication by real numbers. This also satisfies the existence of negatives by setting $\\beta = -\\alpha$ and $b_n = a_n.$
+
+The existence of the zero element is satisfied by setting $a_n = 0$ for all $n,$ and the remaining axioms can be verified by noting that the parial sums of any absolutely convergent series are real numbers whose absolute value is bounded by some positive real number $S.$
+
+As such, we can see that the set of all absolutely convergent series is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 22,
+                  number: "15.5.22",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+22. All vectors $(x, y, z)$ in $V_3$ with $z = 0$.`,
+                  hint: ``,
+                  solution: `Let $A = (x_0, y_0, 0)$ and $B = (x_1, y_1, 0)$ be vectors in $V_3$ with $z = 0.$ Then, $A + B = (x_0 + x_1, y_0 + y_1, 0)$ is a vector $(x, y, z)$ in $V_3$ with $z = 0.$ If $c$ is a real scalar, then $cA = (cx_0, cy_0, 0)$ is also a vector $(x, y, z)$ in $V_3$ with $z = 0.$ As such, we have verified the closure axioms.
+
+The vector $O = (0, 0, 0)$ satisfies the existence of the zero element since it is a vector $(x, y, z)$ in $V_3$ with $z = 0$ such that $A + O = A$ for all $A$ in the set. If we let $c = 1,$ we can see that the set satisfies the existence of identity and if we set $c = -1$ we find that $A + cA = A - A = O,$ verifying the existence of negatives.
+
+We can confirm element-wise that for any real vectors $A,$ $B,$ and $C$ in the set, we have $A + B = B + A$ and $(A + B) + C = A + (B + C),$ thus satisfying the commutative and associative laws of addition.
+
+To verify the axioms for multiplication by real numbers, let $a$ and $b$ be real scalars and let $X = (x_1, x_2, 0)$ and $Y = (y_1, y_2, 0)$ Then, $bX = (bx_1, bx_2, 0)$ and $a(bX) = a(bx_1, bx_2, 0) = (abx_1, abx_2, 0) = (ab)X.$ Since addition of vectors in $V_3$ occurs element-wise, we have $(X + Y) = (x_1 + y_1, x_2 + y_2, 0)$ with 
+\\begin{align*}
+a(X + Y) &= a(x_1 + y_1, x_2 + y_2, 0) 
+\\\\
+&= (ax_1 + ay_1, ax_2 + ay_2, 0) 
+\\\\
+&= aX + aY
+\\end{align*}
+And since the components of any $X$ in $V_3$ are presumed to be real-valued, we can see that
+\\begin{align*}
+(a + b)X &=\\left[(a + b)x_1, (a + b)x_2, 0\\right]
+\\\\
+&=\\left(ax_1 + bx_1, ax_2 + bx_2, 0\\right)
+\\\\
+&= aX + bX
+\\end{align*}
+Thus, we have shown that the set of all vectors $(x, y, z)$ in $V_3$ with $z = 0$ is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 23,
+                  number: "15.5.23",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+23. All vectors $(x, y, z)$ in $V_3$ with $x = 0$ or $y = 0$.`,
+                  hint: ``,
+                  solution: `Let $X = (0, x_2, x_3)$ and $Y = (y_1, 0, y_3)$ where $x_2$ and $y_1$ are nonzero. We can see that $X$ and $Y$ are members of the set, but the sum $X + Y = (y_1, x_2, x_3 + y_3)$ is not. Since it fails to satisfy closure under addition, the set of all vectors $(x, y, z)$ in $V_3$ with $x = 0$ or $y = 0$ is not a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 24,
+                  number: "15.5.24",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+24. All vectors $(x, y, z)$ in $V_3$ with $y = 5x$.`,
+                  hint: ``,
+                  solution: `Let $A = (x_1, 5x_1, z_1)$ and $B = (x_2, 5x_2, z_2)$ be vectors $(x, y, z)$ in $V_3$ with $5 = 5x.$ Then, 
+\\begin{align*}
+A + B &= (x_1 + x_2, 5x_1 + 5x_2, z_1 + z_2)
+\\\\
+&= [x_1 + x_2, 5(x_1 + x_2), z_1 + z_2]
+\\end{align*}which is yet another vector $(x, y, z)$ in $V_3$ satisfying $y = 5x,$ thus verifying closure under addition. We can also see that since $A$ and $B$ have real-valued components, $A + B = B + A,$ verifying the commutative property of addition. If $C = (x_3, 5x_3, z_3),$ we have
+\\begin{align*}
+(A + B) + C &= [(x_1 + x_2) + x_3, 5(x_1 + x_2) + 5x_3, (z_1 + z_2) + z_3]
+\\\\
+&= [x_1 + (x_2 + x_3), 5x_1 + 5(x_2 + x_3), z_1 + (z_2 + z_3)]
+\\\\
+&= A + (B + C)
+\\end{align*}satisfying the associative law of addition.
+
+Now, let $c$ and $d$ be real scalars. Then, $cA = (cx_1, 5cx_1, cz_1),$ which is also a vector $(x, y, z)$ in $V_3$ satisfying $y = 5x,$ verifying closure under addition. The zero vector $O = (0, 0, 0)$ trivially satisfies $y = 5x$ and also satisfies $A + O = A$ for all $A$ in $V_3,$ satisfying the existence of the zero element. Setting $c = 1$ we can see that the set satisfies the existence of identity, and setting $c = -1,$ we see that it satisfies the existence of negatives.
+
+With $A$ and $B$ as defined above, we have
+\\begin{align*}
+c(dA) &= c(dx_1, 5dx_1, cz_1)
+\\\\
+&= (cdx_1, 5cdx_1, cdz_1)
+\\\\
+&= (cd)A
+\\\\
+\\\\
+c(A + B) &= c(x_1 + x_2, 5x_1 + 5x_2, z_1 + z_2)
+\\\\
+&= (cx_1 + cx_2, 5cx_1 + 5cx_2, cz_1 + cz_2)
+\\\\
+&= cA + cB
+\\\\
+\\\\
+(c + d)A &= (c + d)(x_1, 5x_1, z_1)
+\\\\
+&= [(c + d)x_1, (c + d)5x_1, (c + d)z_1]
+\\\\
+&= (cx_1 + dx_1, 5cx_1 + 5dx_1, cz_1 + dz_1)
+\\\\
+&= cA + dA
+\\end{align*}
+This verifies that the set of vectors $(x, y, z)$ in $V_3$ verifies the ten axioms and is thus a linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 25,
+                  number: "15.5.25",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+25. All vectors $(x, y, z)$ in $V_3$ with $3x + 4y = 1$, $z = 0$.`,
+                  hint: ``,
+                  solution: `Let $A = (\\frac{1}{3}, 0, 0)$ and $B = (0, \\frac{1}{4}, 0).$ As we can see, they are vectors $(x, y, z)$ in $V_3$ with $3x + 4y = 1$ and $z = 0.$ But, $A + B = \\left(\\frac{1}{3}, \\frac{1}{4}, 0\\right)$ is a vector $(x, y, z)$ in $V_3$ with $3x + 4y \\neq 1,$ violating closure under addition. Moreover, if we let $c$ be some real scalar we find that for $cA$ and $cB,$ $3x + 4y = 1$ is only satisfied when $c = 1,$ violating closure under multiplication by real numbers. Thus, the set of all vectors $(x, y, z)$ in $V_3$ with $3x + 4y = 1$ and $z = 0$ is not a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 26,
+                  number: "15.5.26",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+26. All vectors $(x, y, z)$ in $V_3$ which are scalar multiples of $(1, 2, 3)$.`,
+                  hint: ``,
+                  solution: `Let $A = (a_1, a_2, a_3)$ and $B = (b_1, b_2, b_3)$ be vectors $(x, y, z)$ in $V_3$ which are scalar multiples of $(1, 2, 3).$ In other words, for real scalars $a$ and $b,$ we can write $A = (a, 2a, 3a)$ and $B = (b, 2b, 3b).$ Then, we have
+\\begin{align*}
+A + B &= (a + b, 2a + 2b, 3a + 3b)
+\\\\
+&= [(a + b), 2(a + b), 3(a + b)]
+\\\\
+&= (a + b)(1, 2, 3)
+\\end{align*}which we can see is another scalar multiple of $(1, 2, 3)$ in $V_3,$ satisfying closure under addition. Now, let $c$ be another real scalar, and let $C = (c, 2c, 3c).$ By component-wise addition, we can see that $A + B = B + A$ and $(A + B) + C = A + (B + C).$ Setting $c = 0,$ we can see that the zero vector $O = (0, 0, 0)$ is trivially a member of the set, with $A + O = A.$ If we set $c = 1$ we can see that $cA = A,$ confirming the existence of identity, and if we set $c = -1,$ we find that $cA + A = O,$ confirming the existence of negatives.
+
+Now, with our vectors $A$ and $B$ and scalars $a,$ $b,$ and $c$ defined as before, we can easily verify the axioms for multiplication by real numbers:
+\\begin{align*}
+c(aB) &= c(ab, 2ab, 3ab)
+\\\\
+&= (cab, 2cab, 3cab)
+\\\\
+&= (ca)B
+\\\\
+\\\\
+c(A + B) &= c[(a + b), 2(a + b), 3(a + b)]
+\\\\
+&= (ca + cb, 2ca + 2cb, 3ca + 3cb)
+\\\\
+&= cA + cB
+\\\\
+\\\\
+(b + c)A &= (b + c)(a, 2a, 3a)
+\\\\
+&= [(b + c)a, (b + c)2a, (b + c)3a]
+\\\\
+&=(ba + ca, 2ba + 2ca, 3ba + 3ca)
+\\\\
+&= bA + cA
+\\end{align*}
+Thus, we have shown that the set of all scalar multiples of $(1, 2, 3)$ in $V_3$ is a linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 27,
+                  number: "15.5.27",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+27. All vectors $(x, y, z)$ in $V_3$ whose components satisfy a system of three linear equations of the form:
+\\begin{align*}
+a_{11}x + a_{12}y + a_{13}z = 0, \\quad a_{21}x + a_{22}y + a_{23}z = 0, \\quad a_{31}x + a_{32}y + a_{33}z = 0.
+\\end{align*}`,
+                  hint: ``,
+                  solution: `Suppose we have two vectors $X = (x_1, x_2, x_3)$ and $Y = (y_1, y_2, y_3)$ that satisfy the system of linear equations defined above. Then, we have
+\\begin{align*}
+& a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = 0, \\quad a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = 0, \\quad a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = 0.
+\\\\
+& a_{11}y_1 + a_{12}y_2 + a_{13}y_3 = 0, \\quad a_{21}y_1 + a_{22}y_2 + a_{23}y_3 = 0, \\quad a_{31}y_1 + a_{32}y_2 + a_{33}y_3 = 0.
+\\end{align*}
+But, if we add the top equations to the bottom, we find that
+\\begin{align*}
+a_{11}(x_1 + y_1) + a_{12}(x_2 + y_2) + a_{13}(x_3 + y_3) &= 0
+\\\\ 
+a_{21}(x_1 + y_1) + a_{22}(x_2 + y_2) + a_{23}(x_3 + y_3) &= 0
+\\\\ 
+a_{31}(x_1 + y_1) + a_{32}(x_2 + y_2) + a_{33}(x_3 + y_3) &= 0
+\\end{align*}which shows that the set of all vectors $(x, y, z)$ satisfying this system of linear equations satisfies closure under addition. Now, let $b$ be a real scalar. If we multiply both sides of
+\\begin{align*}
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 &= 0
+\\\\ 
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3 &= 0
+\\\\ 
+a_{31}x_1 + a_{32}x_2 + a_{33}x_3 &= 0
+\\end{align*}by $b,$ we get:
+\\begin{align*}
+b(a_{11}x_1 + a_{12}x_2 + a_{13}x_3) &= 0
+\\\\ 
+b(a_{21}x_1 + a_{22}x_2 + a_{23}x_3) &= 0
+\\\\ 
+b(a_{31}x_1 + a_{32}x_2 + a_{33}x_3) &= 0
+\\end{align*}
+But since the components of $X$ and all of the coefficients $a_{ij}$ are real-valued, we can use the distributive law of addition to get
+\\begin{align*}
+ba_{11}x_1 + ba_{12}x_2 + ba_{13}x_3 &= 0
+\\\\ 
+ba_{21}x_1 + ba_{22}x_2 + ba_{23}x_3 &= 0
+\\\\ 
+ba_{31}x_1 + ba_{32}x_2 + ba_{33}x_3 &= 0
+\\end{align*}
+Then, we can use the commutative law of multiplication to get
+\\begin{align*}
+a_{11}bx_1 + a_{12}bx_2 + a_{13}bx_3 &= 0
+\\\\ 
+a_{21}bx_1 + a_{22}bx_2 + a_{23}bx_3 &= 0
+\\\\ 
+a_{31}bx_1 + a_{32}bx_2 + a_{33}bx_3 &= 0
+\\end{align*}
+As we can see, $bX$ satisfies the system of linear equations, which means the set of vectors satisfying the system of equations satisfies closure under multiplication by real numbers. 
+
+The vector $O = (0, 0, 0)$ trivially satisfies this system of equations, and for any $X$ in $V_3,$ we have $X + O = X,$ thus confirming the existence of a zero element. 
+
+For the remaining axioms, since the set of $X$ satisfying this system of linear equations is a subset of $V_3,$ we know from previous exercises that any $X$ and $Y$ in this set satisfy the axioms on addition and multiplication by real numbers. Thus, the set of vectors $(x, y, z)$ in $V_3$ satisfying the system of linear equations 
+\\begin{align*}
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 &= 0
+\\\\ 
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3 &= 0
+\\\\ 
+a_{31}x_1 + a_{32}x_2 + a_{33}x_3 &= 0
+\\end{align*}is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 28,
+                  number: "15.5.28",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+28. All vectors in $V_n$ that are linear combinations of two given vectors $A$ and $B$.`,
+                  hint: ``,
+                  solution: `Let $a, b, c, d, x,$ and $y$ be real scalars and let $X = aA + bB,$ $Y = cA + dB.$ Then, we have 
+\\begin{align*}
+xX + yY &= x(aA + bB) + y(cA + dB)
+\\\\
+&= (xa + yc)A + (xb + yd)B
+\\end{align*}
+As we can see, this is another linear combination of $A$ and $B.$ Hence, the set of all linear combinations of $A$ and $B$ satisfies closure under addition and closure under multiplication by real numbers. We can also confirm the associative law of multiplication by noting that in the above equation, $x(aA) = (ax)A.$ 
+
+The zero vector can be found trivially by setting $a = b = 0,$ with $X + O = X$ for all $X$ in the set. If we set $x = 1$ we find that $xX = 1(aA + bB) = aA + bB = X,$ confirming the distributive law of addition and the existence of identity. Setting $x = -1,$ we find
+\\begin{align*}
+xX + X &= -(aA + bB) + aA + bB
+\\\\
+&= (a - a)A + (b - b)B
+\\\\
+&= O
+\\end{align*}confirming the commutative law, distributive law for addition of numbers, and existence of negatives. And if $X,$ $Y,$ and $Z$ are vectors in $V_n,$ we know that $X + (Y + Z) = (X + Y) + Z$
+
+As such, we have shown that the set of vectors in $V_n$ that are linear combinations of given vectors $A$ and $B$ is a rea linear space.$\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 29,
+                  number: "15.5.29",
+                  content: `Let $V = R^+$, the set of positive real numbers. Define the "sum" of two elements $x$ and $y$ in $V$ to be their product $x \\cdot y$ (in the usual sense), and define "multiplication" of an element $x$ in $V$ by a scalar $c$ to be $x^c$. Prove that $V$ is a real linear space with 1 as the zero element.`,
+                  hint: `By definition, the set $V$ is a linear space if it satisfies the following ten axioms.
+
+$\\textit{Closure axioms}$
+
+$\\text{Axiom 1.}\\quad$ $\\text{Closure Under Addition. }$ For every pair of elements $x$ and $y$ in $V,$ there corresponds a unique element in $V$ called the sum of $x$ and $y,$ denoted by $x + y.$
+
+$\\text{Axiom 2.}\\quad$ $\\text{Closure Under Multiplication. }$ For every $x$ in $V$ and every real number $a$ there corresponds an element in $V$ called the product of $a$ and $x,$ denoted by $ax.$
+
+$\\textit{Axioms for addition}$
+
+$\\text{Axiom 3.}\\quad$ $\\text{Commutative Law. }$ For all $x$ and $y$ in $V,$ we have $x + y = y + x.$
+
+$\\text{Axiom 4.}\\quad$ $\\text{Associative Law. }$ For all $x,$ $y,$ and $z$ in $V,$ we have $(x + y) + z = x + (y + z).$
+
+$\\text{Axiom 5.}\\quad$ $\\text{Existence of Zero Element. }$ There is an element in $V,$ denoted by $O,$ such that
+$$
+x + O = x
+\\quad
+\\text{for all $x$ in $V$.}
+$$
+$\\text{Axiom 6.}\\quad$ $\\text{Existence of Negatives. }$ For every $x$ in $V,$ the element $(-1)x$ has the property
+$$
+x + (-1)x = O
+$$
+$\\textit{Axioms for multiplication by numbers}$
+
+$\\text{Axiom 7.}\\quad$ $\\text{Associative Law. }$ For every $x$ in $V$ and all real numbers $a$ and $b,$ we have
+$$
+a(bx) = (ab)x.
+$$
+$\\text{Axiom 8.}\\quad$ $\\text{Distributive Law for Addition in $V$. }$ For all $x$ and $y$ in $V$ and all real $a,$ we have
+$$
+a(x + y) = ax + ay.
+$$
+$\\text{Axiom 9.}\\quad$ $\\text{Distributive Law for Addition of Numbers. }$ For all $x$ in $V$ and all real $a$ and $b,$ we have
+$$
+(a + b)x = ax + bx.
+$$
+$\\text{Axiom 10.}\\quad$ $\\text{Existence of Identity. }$ For every $x$ in $V,$ we have $1x = x.$
+`,
+                  solution: `$Proof.\\quad$ Let $x$ and $y$ be two positive real numbers, then their sum $x + y = xy$ is yet another positive real number, thus satisfying closure under addition. If $c$ is some real scalar, then we have $cx = x^c.$ But, we can rewrite $x^c = e^{c\\log x}$ since $c\\log x$ is real-valued for any positive real $x.$ But by definition, if $c\\log x$ is real-valued, then $e^{c\\log x}$ is a positive real number, thus satisfying closure under multiplication.
+
+Since every element in this set is a positive real number, we can set $y = (-1)x = x^{-1},$ which is another positive real number. With this, we can confirm the existence of negatives since $x + y = xy = xx^{-1} = x/x = 1$ (with $1$ being the zero element in this set). Moreover, since $1$ is the zero element, for all $x$ in the set, we have $x + 1 = 1x = x.$ If we treat the zero element as a scalar, this also confirms existence of identity since $1x = x^1 = x.$ And since multiplication of real numbers is both commutative and associative, we can see that for any elements $x,$ $y,$ and $z$ in $R^+,$ we have $$x + y = xy = yx = y + x$$ and $$x + (y + z) = x(yz) = (xy)z = (x + y) + z.$$
+To show that $R^+$ fulfills the remaining axioms on multiplication by numbers, suppose $x$ and $y$ are elements of $R^+$ with $a$ and $b$ being real scalars, then we have $bx = x^b$ and $$a(bx) = (x^b)^{a} = x^{ba} = x^{ab} = (ab)x.$$
+We also have $$a(x + y) = (xy)^a = x^ay^a = ax + ay$$ and $$(a + b)x = x^{(a + b)} = x^ax^b = ax + bx.$$
+As such, we have shown that the set of all positive real numbers is a real linear space. This completes the proof.
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 30,
+                  number: "15.5.30",
+                  content: `(a) Prove that Axiom 10 can be deduced from the other axioms.
+(b) Prove that Axiom 10 cannot be deduced from the other axioms if Axiom 6 is replaced by Axiom 6': For every $x$ in $V$ there is an element $y$ in $V$ such that $x + y = O$.`,
+                  hint: `Refer to Theorems 15.2 and 15.3 of Section 15.4 (Volume 1):
+
+$\\text{Theorem 15.2. $\\quad$ Uniqueness of Negative Elements.}\\quad$ In any linear space every element has exactly one negative. That is, for every $x,$ there is one and only one $y$ such that $x + y = O.$
+
+$\\text{Theorem 15.3. $\\quad$}$ In any given linear space, let $x$ and $y$ denote arbitrary elements and let $a$ and $b$ denote arbitrary scalars. Then we have the following properties:
+  (a)   $0x = O$
+  (b)   $aO = O$
+  (c)   $(-a)x = -(ax) = a(-x)$
+  (d)   If $ax = O,$ then either $a = 0$ or $x = O.$
+  (e)   If $ax = ay$ and $a \\neq 0,$ then $x = y.$
+  (f)   If $ax = bx$ and $x \\neq O,$ then $a = b.$
+  (g)   $-(x + y) = (-x) + (-y) = -x - y.$
+  (h)   $x + x = 2x,$ $x + x + x = 3x,$ and in general, $\\sum_{i = 1}^n x = nx.$`,
+                  solution: `(a) We know from Theorem 15.2 that there is exactly one $y$ such that $x + y = O,$ and we know from Axiom 6 that $y = (-1)x,$ giving us $x + (-1)x = O.$ If we multiply both sides by $(-1),$ we get $(-1)x + 1x = O.$ In other words, we have $$x + (-1)x = 1x + (-1)x.$$Which implies that $1x = x.\\,\\blacksquare$
+                  
+(b) Let $x$ and $y$ be elements in $V$ such that $x + y = O,$ and let $a$ be a real scalar. Setting $a = 1$ and using the distributive law for addition in $V,$ we find that $1(x + y) = 1x + 1y.$ Since $V$ has closure under multiplication by real numbers, we know that $1x$ is an element in $V.$ However, it is not necessary that $1x + 1y \\neq O,$ thus we cannot deduce that $1x = x$ for all $x$ in $V$ since in this case it would mean that $1O \\neq O.\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 31,
+                  number: "15.5.31",
+                  content: `Let $S$ be the set of all ordered pairs $(x_1, x_2)$ of real numbers. In each case determine whether or not $S$ is a linear space with the operations of addition and multiplication by scalars defined as indicated. If the set is not a linear space, indicate which axioms are violated.
+    (a) $(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, x_2 + y_2)$, $\\quad a(x_1, x_2) = (ax_1, 0)$.
+    (b) $(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, 0)$, $\\quad a(x_1, x_2) = (ax_1, ax_2)$.
+    (c) $(x_1, x_2) + (y_1, y_2) = (x_1, x_2 + y_2)$, $\\quad a(x_1, x_2) = (ax_1, ax_2)$.
+    (d) $(x_1, x_2) + (y_1, y_2) = (|x_1 + x_2|, |y_1 + y_2|)$, $\\quad a(x_1, x_2) = (|ax_1|, |ax_2|)$.`,
+                  hint: ``,
+                  solution: `(a) $$(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, x_2 + y_2)\\quad a(x_1, x_2) = (ax_1, 0)$$
+Axiom 1. Closure Under Addition. As we can see, for the ordered pairs $x = (x_1, x_1)$ and $y = (y_1, y_2)$ in $S$ we have a unique element $(x_1 + y_1, x_2 + y_2)$ corresponding to the addition of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ and $a$ be a real scalar. Then, there is an element $(ax_1, 0)$ in $S$ corresponding to the product $ax.$
+
+Axiom 3. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then,
+\\begin{align*}
+x + y &= (x_1 + y_1, x_2 + y_2)
+\\\\
+&= (y_1 + x_1, y_2 + x_2)
+\\\\
+&= y + x
+\\end{align*} 
+Axiom 4. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then,
+\\begin{align*}
+(x + y) + z &= (x_1 + y_1, x_2 + y_2) + (z_1, z_2)
+\\\\
+&= (x_1 + y_1 + z_1, x_2 + y_2 + z_2)
+\\\\
+&= (x_1, x_2) + (y_1 + z_1, y_2 + z_2)
+\\\\
+&= x + (y + z)
+\\end{align*}
+Axiom 5. Existence of the Zero Element. The ordered pair $O = (0, 0)$ is an element in $S$ such that for any $x = (x_1, x_2)$ in $S$ we have $$x + O = (x_1 + 0, x_2 + 0) = x.$$
+Axiom 6*. Existence of Negative Elements. Let $x = (x_1, x_2)$ be an element in $S.$ Then, $(-1)x = (-x_1, 0)$ and $x + (-1)x$ is
+\\begin{align*}
+x + (-1)x &= (x_1, x_2) + (-x_1, 0)
+\\\\
+&= (x_1 - x_1, x_2)
+\\\\
+&= (0, x_2)
+\\\\
+&\\neq O
+\\end{align*}
+*The set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ and let $a$ and $b$ be real scalars. Then, $bx = (bx_1, 0)$ and we have
+\\begin{align*}
+a(bx) &= (abx_1, 0)
+\\\\
+&= (ab)(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S$ and let $a$ be a real scalar. Then we have:
+\\begin{align*}
+a(x + y) &= a(x_1 + y_1, x_2 + y_2)
+\\\\
+&= (ax_1 + ay_1, 0)
+\\\\
+&= (ax_1, 0) + (ay_1, 0)
+\\\\
+&= a(x_1, x_2) + a(y_1, y_2)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9. Distributive Law for Addition of Numbers. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+(a + b)x &= [(a + b)x_1, 0]
+\\\\
+&= (ax_1 + bx_1, 0)
+\\\\
+&= (ax_1, 0) + (bx_1, 0)
+\\\\
+&= a(x_1, x_2) + b(x_1, x_2)
+\\\\
+&= ax + bx
+\\end{align*}
+Axiom 10*. Existence of Identity. Let $x = (x_1, x_2)$ be an element of $S$ and let $a = 1.$ Then we have
+\\begin{align*}
+1x &= 1(x_1, x_2)
+\\\\
+&= (x_1, 0)
+\\\\
+&\\neq x
+\\end{align*}
+*The set violates this axiom.
+
+(b) $$(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, 0)\\quad a(x_1, x_2) = (ax_1, ax_2)$$
+Axiom 1. Closure Under Addition. As we can see, for the ordered pairs $x = (x_1, x_1)$ and $y = (y_1, y_2)$ in $S$ we have a unique element $(x_1 + y_1, 0)$ corresponding to the addition of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ and $a$ be a real scalar. Then, there is an element $(ax_1, ax_2)$ in $S$ corresponding to the product $ax.$
+
+Axiom 3. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then,
+\\begin{align*}
+x + y &= (x_1 + y_1, 0)
+\\\\
+&= (y_1 + x_1, 0)
+\\\\
+&= y + x
+\\end{align*} 
+Axiom 4. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then,
+\\begin{align*}
+(x + y) + z &= (x_1 + y_1, 0) + (z_1, z_2)
+\\\\
+&= (x_1 + y_1 + z_1, 0)
+\\\\
+&= (x_1, x_2) + (y_1 + z_1, 0)
+\\\\
+&= x + (y + z)
+\\end{align*}
+Axiom 5*. Existence of the Zero Element. For any $x$ in $S$ whose second term is nonzero, there is no ordered pair $O$ in $S$ for which the sum $x + O = x.$
+*The set violates this axiom.
+
+Axiom 6*. Existence of Negative Elements. Because there is no defined zero element for all $x$ in $S,$ we cannot prove the existence of negative elements.
+*This set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ and let $a$ and $b$ be real scalars. Then, $bx = (bx_1, bx_2)$ and we have
+\\begin{align*}
+a(bx) &= (abx_1, abx_2)
+\\\\
+&= (ab)(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S$ and let $a$ be a real scalar. Then we have:
+\\begin{align*}
+a(x + y) &= a(x_1 + y_1, 0)
+\\\\
+&= (ax_1 + ay_1, 0)
+\\\\
+&= (ax_1, ax_2) + (ay_1, ay_2)
+\\\\
+&= a(x_1, x_2) + a(y_1, y_2)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9*. Distributive Law for Addition of Numbers. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+ax + bx &= (ax_1, ax_2) + (bx_1, bx_2)
+\\\\
+&= (ax_1 + bx_1, 0)
+\\\\
+\\\\
+(a + b)x &= [(a + b)x_1, (a + b)x_2]
+\\\\
+&= (ax_1 + bx_1, ax_2 + bx_2)
+\\\\
+&\\neq ax + bx
+\\end{align*}
+*The set violates this axiom.
+
+Axiom 10. Existence of Identity. Let $x = (x_1, x_2)$ be an element of $S$ and let $a = 1.$ Then we have
+\\begin{align*}
+1x &= 1(x_1, x_2)
+\\\\
+&= (x_1, x_2)
+\\\\
+&= x
+\\end{align*}
+(c) $$(x_1, x_2) + (y_1, y_2) = (x_1, x_2 + y_2)\\quad a(x_1, x_2) = (ax_1, ax_2)$$
+Axiom 1. Closure Under Addition. As we can see, for the ordered pairs $x = (x_1, x_1)$ and $y = (y_1, y_2)$ in $S$ we have a unique element $(x_1, x_2 + y_2)$ corresponding to the addition of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ and $a$ be a real scalar. Then, there is an element $(ax_1, ax_2)$ in $S$ corresponding to the product $ax.$
+
+Axiom 3*. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then,
+\\begin{align*}
+x + y &= (x_1, x_2 + y_2)
+\\\\
+y + x &= (y_1, y_2 + x_2)
+\\\\
+x + y &\\neq y + x
+\\end{align*}*The set violates this axiom.
+
+Axiom 4. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then,
+\\begin{align*}
+(x + y) + z &= (x_1, x_2 + y_2) + (z_1, z_2)
+\\\\
+&= (x_1, x_2 + y_2 + z_2)
+\\\\
+&= (x_1, x_2) + (y_1, y_2 + z_2)
+\\\\
+&= x + (y + z)
+\\end{align*}
+Axiom 5. Existence of the Zero Element. Let $O = (0, 0).$ Then for any $x = (x_1, x_2)$ in $S$ we have $$x + O = (x_1, x_2 + 0) = (x_1, x_2) = x.$$
+Axiom 6*. Existence of Negative Elements. Let $x = (x_1, x_2)$ be an element in $S.$ Then, the sum $x + (-1)x$ is
+\\begin{align*}
+x + (-1)x &= (x_1, 0) \\neq O
+\\end{align*}*The set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ and let $a$ and $b$ be real scalars. Then, $bx = (bx_1, bx_2)$ and we have
+\\begin{align*}
+a(bx) &= (abx_1, abx_2)
+\\\\
+&= (ab)(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S$ and let $a$ be a real scalar. Then we have:
+\\begin{align*}
+a(x + y) &= a(x_1, x_2 + y_2)
+\\\\
+&= (ax_1, ax_2 + ay_2)
+\\\\
+&= (ax_1, ax_2) + (ay_1, ay_2)
+\\\\
+&= a(x_1, x_2) + a(y_1, y_2)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9*. Distributive Law for Addition of Numbers. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+(a + b)x &= [(a + b)x_1, (a + b)x_2]
+\\\\
+&= (ax_1 + bx_1, ax_2 + bx_2)
+\\\\
+\\\\
+ax + bx &= (ax_1, ax_2) + (bx_1, bx_2)
+\\\\
+&= (ax_1, ax_2 + bx_2)
+\\\\
+\\\\
+(a + b)x &\\neq ax + bx
+\\end{align*}*The set violates this axiom.
+
+Axiom 10. Existence of Identity. Let $x = (x_1, x_2)$ be an element of $S$ and let $a = 1.$ Then we have
+\\begin{align*}
+1x &= 1(x_1, x_2)
+\\\\
+&= (x_1, x_2)
+\\\\
+&= x
+\\end{align*}
+(d) $$(x_1, x_2) + (y_1, y_2) = (\|x_1 + x_2\|, \|y_1 + y_2\|),\\quad a(x_1, x_2) = (\|ax_1\|, \|ax_2\|)$$
+Axiom 1. Closure Under Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then, there exists a unique element $x + y = (\|x_1 + x_2\|, \|y_1 + y_2\|)$ corresponding to the sum of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ be an element in $S$ and let $a$ be a real scalar. Then there exists an element $ax = (\|ax_1\|, \|ax_2\|)$ corresponding to the product of $a$ and $x.$
+
+Axiom 3*. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then, we have
+\\begin{align*}
+x + y &= (\|x_1 + x_2\|, \|y_1 + y_2\|)
+\\\\
+y + x &= (\|y_1 + y_2\|, \|x_1 + x_2\|)
+\\\\
+x + y & \\neq y + x
+\\end{align*}*The set violates this axiom.
+
+Axiom 4*. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then we have
+\\begin{align*}
+(x + y) + z &= (\|x_1 + x_2\|, \|y_1 + y_2\|) + (z_1, z_2)
+\\\\
+&= (\|x_1 + x_2 + y_1 + y_2\|, \|z_1 + z_2\|)
+\\\\
+\\\\
+x + (y + z) &= (x_1, x_2) + (\|y_1 + y_2\|, \|z_1 + z_2\|)
+\\\\
+&= (\|x_1 + x_2\|, \|y_1 + y_2 + z_1 + z_2\|)
+\\\\
+\\\\
+(x + y) + z &\\neq x + (y + z)
+\\end{align*}*The set violates this axiom.
+
+Axiom 5*. Existence of the Zero Element. Suppose $x = (x_1, x_2)$ is an element in $S$ such that $x_1, x_2 < 0.$ Then, there is no element $O = (o_1, o_2)$ in $S$ such that $x + O = x$ since we have
+$$x + O = (\|x_1 + x_2\|, \|o_1 + o_2\|)$$
+implying that for any $x,$ the components of $x + O$ will always be positive. 
+*The set violates this axiom.
+
+Axiom 6*. Existence of Negative Elements. Because there is no zero element in $S$ such that $x + O = x$ for all $x$ in $S,$ there is no way to prove the existence of negative elements.
+*The set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+a(bx) &= a(\|bx_1\|, \|bx_2\|)
+\\\\
+&= (\|abx_1\|, \|abx_2\|)
+\\\\
+&= ab(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $a$ be a scalar and let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements of $S.$ Then we have
+\\begin{align*}
+a(x + y) &= a(\|x_1 + x_2\|, \|y_1 + y_2\|)
+\\\\
+&= (\|ax_1 + ax_2\|, \|ay_1 + ay_2\|)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9. Distributive Law for Addition of Numbers*. Let $a$ and $b$ be real scalars and let $x = (x_1, x_2)$ be an element of $S.$ Then we have
+\\begin{align*}
+(a + b)x &= \\left[\|(a + b)x_1\|, \|(a + b)x_2\|\\right]
+\\\\
+&= \\left(\|ax_1 + bx_1\|,\|ax_2 + bx_2\|\\right)
+\\\\
+\\\\
+ax + bx &= a(x_1, x_2) + b(x_1, x_2)
+\\\\
+&=(\|ax_1\|, \|ax_2\|) + (\|bx_1\|, \|bx_2\|)
+\\\\
+&= \\left(\|ax_1 + ax_2\|, \|bx_1 + bx_2\|\\right)
+\\\\
+\\\\
+(a + b)x &\\neq ax + bx
+\\end{align*}*The set violates this axiom.
+
+Axiom 10*. Existence of Identity. Let $x = (x_1, x_2)$ and let $a = 1.$ We then have:
+\\begin{align*}
+ax &= 1x
+\\\\
+&= 1(x_1, x_2)
+\\\\
+&= (\|1 \\cdot x_1\|, \|1 \\cdot x_2\|)
+\\\\
+&= (\|x_1\|, \|x_2\|)
+\\end{align*}
+But if $x_1$ or $x_2$ is less than zero, then $1x \\neq x,$ violating the axiom.
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 32,
+                  number: "15.5.32",
+                  content: `Prove parts (d) through (h) of Theorem 15.3.`,
+                  hint: `Recall Theorem 15.3. (Volume 1, Section 15.4) $\\text{Theorem 15.3. $\\quad$}$ In any given linear space, let $x$ and $y$ denote arbitrary elements and let $a$ and $b$ denote arbitrary scalars. Then we have the following properties:
+  (a)   $0x = O$
+  (b)   $aO = O$
+  (c)   $(-a)x = -(ax) = a(-x)$
+  (d)   If $ax = O,$ then either $a = 0$ or $x = O.$
+  (e)   If $ax = ay$ and $a \\neq 0,$ then $x = y.$
+  (f)   If $ax = bx$ and $x \\neq O,$ then $a = b.$
+  (g)   $-(x + y) = (-x) + (-y) = -x - y.$
+  (h)   $x + x = 2x,$ $x + x + x = 3x,$ and in general, $\\sum_{i = 1}^n x = nx.$`,
+                  solution: `$Proof.$
+(d)   Let $ax = O.$ Then we have $x + ax = (1 + a)x = 1x.$ If $a = 0,$ then the proof is complete. If $a \\neq 0,$ then we can multiply both sides of the equation $ax = O$ by $c = 1/a$ to give us
+\\begin{align*}
+x &= cO
+\\end{align*}But we know from (b) that for any scalar $c,$ $cO = O,$ hence $x = O.$
+
+(e) We know from the associative law of multiplication that for any scalars $a$ and $b,$ we have
+\\begin{align*}
+a(bx) &= (ab)x
+\\end{align*}Now, if $a \\neq 0,$ set $b = 1/a.$ Then, if $ax = ay,$ we have
+\\begin{align*}
+b(ax) &= b(ay)
+\\\\
+(ba)x &= (ba)y
+\\\\
+(a/a)x &= (a/a)y
+\\\\
+1x &= 1y
+\\end{align*}And by the existence of identity, we conclude that if $ax = ay,$ $x = y.$
+
+(f) Suppose $ax = bx.$ Then, if we add $(-b)x$ to both sides and apply the distributive law for addition of numbers, we find that 
+\\begin{align*}
+ax + (-bx) &= (a - b)x = O
+\\end{align*}But from the proof of (d), we know that if $cx = O,$ then either $c = 0$ or $x = O.$ But since we know $x \\neq O,$ then $c = (a - b)$ must be zero. Or in other words, $a = b.$
+
+(g) From (c), we know that $-(ax) = (-a)x$ for some scalar $a$ and element $x$ in $V.$ Setting $a = -1,$ we can see that $-(x + y) = (-1)(x + y).$ But by the distributive law for addition in $V,$ we know $$(-1)(x + y) = (-1)x + (-1)y$$Applying the result of (c) once more, we can see that $(-1)x + (-1)y = 1(-x) + 1(-y).$ Using the existence of identity, the right-hand side becomes $-x - y$ giving us $$-(x + y) = (-x) + (-y) = -x - y$$
+(h) This follows as a result of inductively applying the distributive law for addition of numbers. Let $n \\geq 1$ be an integer. Then, using the existence of identity, we can write the sum $\\sum_{i = 1}^nx$ as 
+\\begin{align*} 
+\\sum_{i = 1}^n x &= 1x + \\sum_{i = 1}^{n - 1}1x
+\\\\
+\\end{align*}
+If $n \\geq 2,$ we have
+\\begin{align*}
+\\sum_{i = 1}^n x &= 1x + 1x + \\sum_{i = 1}^{n - 2}1x
+\\\\
+&= (1 + 1)x + \\sum_{i = 1}^{n - 2}1x
+\\\\
+&= 2x + \\sum_{i = 1}^{n - 2}1x
+\\end{align*}Moreover, for each integer $k \\leq n,$ we find that
+\\begin{align*}
+\\sum_{i = 1}^n x &= kx + \\sum_{i = 1}^{n - k}1x
+\\end{align*}Setting $k = n,$ we find that the rightmost sum vanishes, leaving us with 
+\\begin{align*}
+\\sum_{i = 1}^n x &= nx
+\\end{align*}
+This completes the proof.`,
+                  date: "2025-05-06"
+                }
+              ],              
+            }
+          ]
+        },
       ]
+    },
+    {
+      id: 2,
+      title: "Calculus, Vol. 2: Multi-Variable Calculus and Linear Algebra, with Applications to Differential Equations and Probability",
+      author: "Tom M. Apostol",
+      edition: "Second Edition",
+      year: "1991",
+      chapters: [
+        {
+          id: 1,
+          title: "1. Linear Spaces",
+          description: "A linear space is a set of elements of any kind on which certain operations (called addition and multiplication by numbers) can be performed.",
+          problemSets: [
+            {
+              id: 5,
+              title: "1.5 Exercises",
+              description: "Exercises on the axioms and elementary theorems of linear spaces.",
+              problems: [
+                {
+                  id: 1,
+                  number: "1.5.1",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+1. All rational functions.`,
+                  hint: `By definition, the set $V$ is a linear space if it satisfies the following ten axioms.
+
+$\\textit{Closure axioms}$
+
+$\\text{Axiom 1.}\\quad$ $\\text{Closure Under Addition. }$ For every pair of elements $x$ and $y$ in $V,$ there corresponds a unique element in $V$ called the sum of $x$ and $y,$ denoted by $x + y.$
+
+$\\text{Axiom 2.}\\quad$ $\\text{Closure Under Multiplication. }$ For every $x$ in $V$ and every real number $a$ there corresponds an element in $V$ called the product of $a$ and $x,$ denoted by $ax.$
+
+$\\textit{Axioms for addition}$
+
+$\\text{Axiom 3.}\\quad$ $\\text{Commutative Law. }$ For all $x$ and $y$ in $V,$ we have $x + y = y + x.$
+
+$\\text{Axiom 4.}\\quad$ $\\text{Associative Law. }$ For all $x,$ $y,$ and $z$ in $V,$ we have $(x + y) + z = x + (y + z).$
+
+$\\text{Axiom 5.}\\quad$ $\\text{Existence of Zero Element. }$ There is an element in $V,$ denoted by $O,$ such that
+$$
+x + O = x
+\\quad
+\\text{for all $x$ in $V$.}
+$$
+$\\text{Axiom 6.}\\quad$ $\\text{Existence of Negatives. }$ For every $x$ in $V,$ the element $(-1)x$ has the property
+$$
+x + (-1)x = O
+$$
+$\\textit{Axioms for multiplication by numbers}$
+
+$\\text{Axiom 7.}\\quad$ $\\text{Associative Law. }$ For every $x$ in $V$ and all real numbers $a$ and $b,$ we have
+$$
+a(bx) = (ab)x.
+$$
+$\\text{Axiom 8.}\\quad$ $\\text{Distributive Law for Addition in $V$. }$ For all $x$ and $y$ in $V$ and all real $a,$ we have
+$$
+a(x + y) = ax + ay.
+$$
+$\\text{Axiom 9.}\\quad$ $\\text{Distributive Law for Addition of Numbers. }$ For all $x$ in $V$ and all real $a$ and $b,$ we have
+$$
+(a + b)x = ax + bx.
+$$
+$\\text{Axiom 10.}\\quad$ $\\text{Existence of Identity. }$ For every $x$ in $V,$ we have $1x = x.$
+`,
+                  solution: `Recall that a rational function is the quotient $p/q,$ where $p$ and $q$ are polynomials of degree greater than or equal to zero, defined for all $x$ such that $q(x) \\neq 0$. In other words they satisfy the ten axioms in the same way the real numbers do. Thus, the set of all rational functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 2,
+                  number: "1.5.2",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+2. All rational functions $f/g$, with the degree of $f \\leq$ the degree of $g$ (including $f = 0$).`,
+                  hint: `By definition, the set $V$ is a linear space if it satisfies the following ten axioms.
+
+$\\textit{Closure axioms}$
+
+$\\text{Axiom 1.}\\quad$ $\\text{Closure Under Addition. }$ For every pair of elements $x$ and $y$ in $V,$ there corresponds a unique element in $V$ called the sum of $x$ and $y,$ denoted by $x + y.$
+
+$\\text{Axiom 2.}\\quad$ $\\text{Closure Under Multiplication. }$ For every $x$ in $V$ and every real number $a$ there corresponds an element in $V$ called the product of $a$ and $x,$ denoted by $ax.$
+
+$\\textit{Axioms for addition}$
+
+$\\text{Axiom 3.}\\quad$ $\\text{Commutative Law. }$ For all $x$ and $y$ in $V,$ we have $x + y = y + x.$
+
+$\\text{Axiom 4.}\\quad$ $\\text{Associative Law. }$ For all $x,$ $y,$ and $z$ in $V,$ we have $(x + y) + z = x + (y + z).$
+
+$\\text{Axiom 5.}\\quad$ $\\text{Existence of Zero Element. }$ There is an element in $V,$ denoted by $O,$ such that
+$$
+x + O = x
+\\quad
+\\text{for all $x$ in $V$.}
+$$
+$\\text{Axiom 6.}\\quad$ $\\text{Existence of Negatives. }$ For every $x$ in $V,$ the element $(-1)x$ has the property
+$$
+x + (-1)x = O
+$$
+$\\textit{Axioms for multiplication by numbers}$
+
+$\\text{Axiom 7.}\\quad$ $\\text{Associative Law. }$ For every $x$ in $V$ and all real numbers $a$ and $b,$ we have
+$$
+a(bx) = (ab)x.
+$$
+$\\text{Axiom 8.}\\quad$ $\\text{Distributive Law for Addition in $V$. }$ For all $x$ and $y$ in $V$ and all real $a,$ we have
+$$
+a(x + y) = ax + ay.
+$$
+$\\text{Axiom 9.}\\quad$ $\\text{Distributive Law for Addition of Numbers. }$ For all $x$ in $V$ and all real $a$ and $b,$ we have
+$$
+(a + b)x = ax + bx.
+$$
+$\\text{Axiom 10.}\\quad$ $\\text{Existence of Identity. }$ For every $x$ in $V,$ we have $1x = x.$
+`,
+                  solution: `Since all functions in this set are real-valued, they satisfy the axioms for multiplication by numbers the same way the set of real numbers does, and with the inclusion of $f = 0,$ they satisfy the axioms for addition as well. We can easily verify that all functions in the set satisfy closure under multiplication by real numbers since multiplying $f$ by any real number does not increase its degree, hence for any real $a,$ $(af)/g$ is a memeber of the set. Now, to verify closure under addition, we wish to show that for any functions $x$ and $y$ in the set, the sum $x + y$ is yet another rational function $f/g$ with the degree of $f$ smaller than or equal to the degree of $g.$ 
+
+Suppose we have two rational functions $x$ and $y$ with the degrees of their respective numerators being $a$ and $b$ and the degrees of their respective denominators being $c$ and $d.$ (In other words, $a \\leq c$ and $b \\leq d.$) If we take the sum $x + y$ then the degree of the numerator will be the greater of $a + d$ or $b + c,$ but both of these values are less than or equal to the degree of the denominator $c + d.$ Thus, the sum of $x + y$ is in the set of rational functions $f/g$ with the degree of $f$ $\\leq$ the degree of $g.$
+
+Hence, the set of rational functions $f/g$ with the degree of $f$ $\\leq$ the degree of $g,$ including $f = 0,$ is a linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 3,
+                  number: "1.5.3",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+3. All $f$ with $f(0) = f(1)$.`,
+                  hint: ``,
+                  solution: `To verify closure under addition, suppose we have two functions $f$ and $g$ in the set. Then, since $(f+g)(x) = f(x) + g(x),$ we can see that $(f + g)(0) = (f + g)(1)$ thus $f + g$ is also in the set. For closure under multiplication by real numbers, we can see that for any real $a$ that $af(0) = af(1),$ which also shows the existence of negatives if $a = -1.$ If we let $O = 0$ for all $x$, then we can see that for all $f$ in the set that $f + O = f.$ Then, for the remaining axioms, we can see that they are satisfied since all $f$ in the set are real-valued and hence behave like the set of real numbers under addition and multiplication. 
+                  
+The set of all $f$ where $f(0) = f(1)$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 4,
+                  number: "1.5.4",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+4. All $f$ with $2f(0) = f(1)$.`,
+                  hint: ``,
+                  solution: `Let $f$ and $g$ be members of this set, then $(f + g)(x) = f(x) + g(x)$ which gives us
+\\begin{align*}
+(f + g)(1) &= f(1) + g(1)
+\\\\
+\\\\
+&= 2f(0) + 2g(0)
+\\\\
+\\\\
+&= 2\\left[f(0) + g(0)\\right]
+\\\\
+\\\\
+&= 2(f + g)(0)
+\\end{align*}Which verifies closure under addition. Then, let $g = af,$ where $a$ is a real scalar and $f$ is an element in the set. We then have $g(1) = af(1) = 2af(0) = 2g(0)$ which verifies closure under multiplication by real numbers (and by extension, the existence of negatives). The existence of the zero element is given by the constant function $O = 0$ for all $x,$ and the remaining axioms are satisfied by all elements being real-valued.
+
+The set of all $f$ with $2f(0) = f(1)$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 5,
+                  number: "1.5.5",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+5. All $f$ with $f(1) = 1 + f(0)$.`,
+                  hint: ``,
+                  solution: `Let $f$ and $g$ be elements in the set, with addition of functions defined as $(f + g)(x) = f(x) + g(x).$ We then have:
+\\begin{align*}
+(f + g)(1) &= 1 + (f + g)(0)
+\\\\
+\\\\
+&= 1 + f(0) + g(0)
+\\\\
+\\\\
+&= f(1) + g(0)
+\\\\
+\\\\
+&\\neq f(1) + g(1)
+\\end{align*}
+Hence, set of all $f$ with $f(1) = 1 + f(0)$ fails to satisfy the axiom under closure by addition and is not a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 6,
+                  number: "1.5.6",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+6. All step functions defined on [0, 1].`,
+                  hint: `Recall from Volume 1, Section 1.8, the definition of a step function:
+$\\text{Definition of a Step Function.}$ A function $s,$ whose domain is a closed interval $[a, b],$ is called a step function if there is a partition $P = \\{x_0, x_1, ..., x_n\\}$ of $[a,b]$ such that $s$ is a constant on each open subinterval of $P.$ That is to say, for each $k = 1,\\ 2,\\ ...,\\ n,$ there is a real number $s_k$ such that
+\\begin{align*}
+\\\\
+s(x) &= s_k 
+\\quad
+\\text{if}
+\\quad
+x_{k - 1} < x < x_k
+\\end{align*}
+Note: At each of the endpoints $x_{k - 1}$ and $x_k$ the function must have some well-defined value, but this need not be the same as $s_k.$`,
+                  solution: `To verify closure under addition, we note that for any two step functions defined on $[0, 1],$ if $x$ is in the respective partitions of the domains of $f$ and $g$ such that $f(x) = s_k$ and $g(x) = t_k$ then $(f + g)(x) = s_k + t_k = f(x) + g(x).$ If we define the zero function as the step function $f(x) = 0$ for all $x$ in $[0, 1]$ then we can see that the set is a linear space since the remaining axioms are satisfied by all step functions defined on $[0,1]$ being real-valued. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 7,
+                  number: "1.5.7",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+7. All $f$ with $f(x) \\to 0$ as $x \\to +\\infty$.`,
+                  hint: `Recall Theorem 3.1 which gives basic theorems on limits:
+$\\text{Theorem 3.1.}\\quad $ Let $f$ and $g$ be functions such that
+\\begin{align*}
+\\lim_{x \\to p}f(x) &= A,
+\\quad
+\\lim_{x \\to p} g(x) = B.
+\\end{align*}Then we have
+\\begin{align*}
+\\text{(i)}
+\\quad
+\\lim_{x \\to p}\\,[f(x) + g(x)] &= A + B
+\\\\
+\\\\
+\\text{(ii)}
+\\quad
+\\lim_{x \\to p}\\,[f(x) - g(x)] &= A - B
+\\\\
+\\\\
+\\text{(iii)}
+\\quad
+\\lim_{x \\to p}\\,f(x) \\cdot g(x) &= A \\cdot B
+\\\\
+\\\\
+\\text{(iv)}
+\\quad
+\\lim_{x \\to p}\\,f(x) / g(x) &= A / B
+\\\\
+\\\\
+\\end{align*}`,
+                  solution: `To verify the closure under addition, we wish to show that as $x \\to \\infty,$ $(f + g)(x) \\to 0.$ But we know that addition of functions is defined as $(f + g)(x) = f(x) + g(x).$ And from Theorem 3.1, we know that if $\\lim_{x \\to p}f(x) = A$ and $\\lim_{x \\to p}g(x) = B$,
+\\begin{align*}
+\\lim_{x \\to p}\\,[f(x) + g(x)] &= A + B
+\\end{align*}
+which means that $\\lim_{x \\to \\infty}(f + g)(x) = 0,$ so the set satisfies closure under addition.
+
+To verify closure under multiplication by real numbers, we use a special case of Theorem 3.1 (iii) where $f(x)$ is some real constant $A$ for all $x.$ Then, if $g(x)$ is a member of the set, its limit goes to zero as $x$ goes to infinity, and we get
+\\begin{align*}
+\\lim_{x \\to \\infty}\\,f(x) \\cdot g(x) &= A \\cdot 0
+\\\\
+&= 0.
+\\end{align*}which verifies closure under multiplication by real numbers.
+
+We can see that $f(x) = 0$ is also in this set, which satisfies the existence of a zero element. And since the set satisfies closure under multiplication by real numbers, it satisfies the existence of negatives by setting $A = -1.$ Then, the remaining axioms are easily verified since all functions in the set are real valued for all $x$.
+
+Thus, we have verified that the set of all $f$ with $f(x) \\to 0$ as $x \\to \\infty$ is a linear space. $\\, \\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 8,
+                  number: "1.5.8",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+8. All even functions.`,
+                  hint: `Recall the definition of even and odd functions from Section 1.26 Exercise 24:
+
+Let $f$ be a continuous function whose domain contains $-x$ whenever it contains $x.$ We say $f$ is an $even$ function if $f(-x) = f(x)$ and an $odd$ function if $f(-x) = -f(x)$ for all $x$ in the domain of $f.$`,
+                  solution: `To verify closure under addition, let $f$ and $g$ be even functions defined for all real $x,$ and let addition of functions be defined for any $x$ as $(f + g)(x) = f(x) + g(x).$ Then, we have
+\\begin{align*}
+(f + g)(-x) &= f(-x) + g(-x)
+\\\\
+\\\\
+&= f(x) + g(x)
+\\\\
+\\\\
+&= (f + g)(x)
+\\end{align*}which shows that the set of even functions satisfies closure under addition. Now, to verify closure under multiplication by real numbers, let $a$ be some real constant. Then, since $f$ is real-valued for all $x$ we have $af(-x) = af(x)$ which shows that even functions satisfy closure under multiplication by real numbers, and by extension satisfies the existence of negatives when $a = -1.$ 
+
+The function $f(x) = 0$ is an even function and satisfies the existence of a zero element. Then, since all functions in the set are real-valued, the remaining axioms are easily verified.
+
+As such, we can see that the set of even functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 9,
+                  number: "1.5.9",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+9. All odd functions.`,
+                  hint: `Recall the definition of even and odd functions from Section 1.26 Exercise 24:
+
+Let $f$ be a continuous function whose domain contains $-x$ whenever it contains $x.$ We say $f$ is an $even$ function if $f(-x) = f(x)$ and an $odd$ function if $f(-x) = -f(x)$ for all $x$ in the domain of $f.$`,
+                  solution: `To verify closure under addition, let $f$ and $g$ be odd functions defined for all real $x,$ and let addition of functions be defined for any $x$ as $(f + g)(x) = f(x) + g(x).$ Then, we have
+\\begin{align*}
+(f + g)(-x) &= f(-x) + g(-x)
+\\\\
+\\\\
+&= -f(x) - g(x)
+\\\\
+\\\\
+&= -[f(x) + g(x)]
+\\\\
+\\\\
+&= -(f + g)(x)
+\\end{align*}which shows that the set of odd functions satisfies closure under addition. 
+
+Now, to verify closure under multiplication by real numbers, let $a$ be some real constant. Since $f$ is real-valued for all $x$ we have $af(-x) = a[-f(x)] = -af(x)$ which shows that odd functions satisfy closure under multiplication by real numbers, and by extension satisfies the existence of negatives when $a = -1.$ 
+
+The function $f(x) = 0$ is odd function since $f(-x) = -f(x) = 0$ for all $x,$ thus satisfying the existence of a zero element. Then, since all functions in the set are real-valued, the remaining axioms are easily verified.
+
+As such, we can see that the set of odd functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 10,
+                  number: "1.5.10",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+10. All bounded functions.`,
+                  hint: `Recall from Section 1.16 (Volume 1) that a function bounded on an interval $[a, b]$ is a function for which there exists a number $M > 0$ such that $-M \\leq f(x) \\leq M$ for every $x$ in $[a, b].$`,
+                  solution: `To verify closure under addition, let $f$ and $g$ be bounded by $M$ and $N$ respectively, where $M>0$ and $N>0.$ Then, we have $-M \\leq f(x) \\leq M$ and $-N \\leq g(x) \\leq N,$ which means
+\\begin{align*}
+-M - N \\leq f(x) + g(x) \\leq M + N
+\\end{align*}for all $x.$ But by definition, $f(x) + g(x) = (f + g)(x),$ which means that $f + g$ is bounded by $M + N.$ And since $f$ and $g$ are arbitrary, this shows that the set of all bounded functions satisfies closure under addition.
+
+To show closure under multiplication by real numbers, let $a$ be some real constant, and let $f(x)$ be bounded by some $M > 0.$ Then, we can multiply the inequality $-M \\leq f(x) \\leq M$ by $a$ to get
+\\begin{align*}
+-aM \\leq af(x) \\leq aM
+\\end{align*}for all $x,$ which means $af$ is bounded. This can also be extended to verify the associative law, distributive laws, and the existence of identity.
+
+The zero function $f(x) = 0$ is bounded for any $M >0,$ and multiplying any bounded $f$ by $-1$ leaves the inequality unchanged, thus verifying the existence of negatives. The commutative and associative laws of addition can be verified by noting that all bounded $f$ are real-valued and any $M > 0$ bounding a $f$ is also a real number.
+
+Thus, we have shown that the set of all bounded functions is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 11,
+                  number: "1.5.11",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+11. All increasing functions.`,
+                  hint: `Recall from Section 1.20 (Volume 1) that a function $f$ is said to be $increasing$ on a set $S$ if $f(x) \\leq f(y)$ for every pair of points $x$ and $y$ in $S$ with $x < y.$`,
+                  solution: `The set of increasing functions is not a linear space. 
+
+Let $f$ be an increasing function. Then, for any pair $x$ and $y$ in the domain of $f,$ with $x < y,$ $f(x) \\leq f(y).$ Now, let $g = (-1)f$ be the negative of $f.$ We can see that $g$ is not an increasing function since $f(x) \\geq f(y)$ when $x < y.$ Thus, the set does not satisfy closure under multiplication by real numbers nor the existence of negatives. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 12,
+                  number: "1.5.12",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+12. All functions with period $2\\pi$.`,
+                  hint: `Recall from section 2.5 (Volume 1) that a function is said to be $periodic$ with period $p \\neq 0$ if its domain contains $x + p$ whenever it contains $x$ and $f(x + p) = f(x)$ for every $x$ in the domain of $f.$`,
+                  solution: `Since every $f$ in the set is defined for all real $x,$ we know that $x + p$ is in the domain of $f$ whenever $x$ is. Now, to show closure under addition, let $f$ and $g$ be periodic functions with $p = 2\\pi.$ Then, with $(f + g)(x) = f(x) + g(x)$ and $f(x + 2\\pi) = f(x),$ we have
+\\begin{align*}
+(f + g)(x + 2\\pi) &= f(x + 2\\pi) + g(x + 2\\pi)
+\\\\
+\\\\
+&= f(x) + g(x)
+\\\\
+\\\\
+&= (f + g)(x)
+\\end{align*}which shows that $f + g$ is periodic with $p = 2\\pi.$ Closure under multiplication by real numbers can be verified by noting that for any $f$ in the set and any real $a,$ $af(x + 2\\pi) = af(x).$ This can also be extended to the case of $a = -1,$ verifying the existence of negatives. The function $f(x) = 0$ is also periodic for all $p,$ satisfying the existence of the zero element. The remaining axioms can be verified by noting that $f(x)$ is real-valued for all $x.$
+
+Thus, we can see that the set of all functions with period $2\\pi$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 13,
+                  number: "1.5.13",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+13. All $f$ integrable on [0, 1] with $\\int_0^1 f(x) dx = 0$.`,
+                  hint: `Recall Theorem 1.16 from Section 1.24 (Volume 1):
+$\\text{Theorem 1.16.$\\quad$ Linearity with Respect to the Integrand.}\\quad$ If both $f$ and $g$ are integrable on $[a, b],$ so is $c_1f + c_2g$ for every pair of constants $c_1$ and $c_2.$ Furthermore, we have:
+\\begin{align*}
+\\int_a^b[c_1f(x) + c_2g(x)]\\,dx &= c_1\\int_a^bf(x)\\,dx + c_2\\int_a^bg(x)\\,dx 
+\\end{align*}`,
+                  solution: `Applying what we know from Theorem 1.16 (Volume 1, Section 1.24), we know that for any real constants $c_1$ and $c_2$ and any functions $f$ and $g$ in the set, we have
+\\begin{align*}
+\\int_0^1[c_1f(x) + c_2g(x)]\\,dx &= c_1\\int_0^1f(x)\\,dx + c_2\\int_0^1g(x)\\,dx
+\\\\
+\\\\
+&= 0
+\\end{align*}
+which verifies that the set satisfies closure under addition and closure under multiplication by real numbers. Moreover, setting $c_1 = c_2 = -1$ verifies the existence of negatives in the set. The function $f(x) = 0$ is also a member of the set, verifying the existence of the zero element. The remaining axioms can be verified by noting that $f(x)$ is real-valued for $x$ in $[0, 1].$
+
+As such, we can see that the set of all $f,$ integrable on $[0, 1],$ with $\\int_0^1f(x)\\,dx = 0$ is a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 14,
+                  number: "1.5.14",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+14. All $f$ integrable on [0, 1] with $\\int_0^1 f(x) dx \\geq 0$.`,
+                  hint: `Recall Theorem 1.16 from Section 1.24 (Volume 1):
+$\\text{Theorem 1.16.$\\quad$ Linearity with Respect to the Integrand.}\\quad$ If both $f$ and $g$ are integrable on $[a, b],$ so is $c_1f + c_2g$ for every pair of constants $c_1$ and $c_2.$ Furthermore, we have:
+\\begin{align*}
+\\int_a^b[c_1f(x) + c_2g(x)]\\,dx &= c_1\\int_a^bf(x)\\,dx + c_2\\int_a^bg(x)\\,dx 
+\\end{align*}`,
+                  solution: `Let $f$ be a member of the set such that $\\int_0^1f(x)\\,dx > 0.$ Then, if we set $c_1 < 0,$ we can see that $c_1\\int_0^1f(x)\\,dx < 0,$ which violates closure under multiplication by real numbers. Thus, the set of all $f$ integrable on $[0, 1]$ with $\\int_0^1f(x)\\,dx \\geq 0$ is not a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 15,
+                  number: "1.5.15",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+15. All $f$ satisfying $f(x) = f(1 - x)$ for all $x$.`,
+                  hint: ``,
+                  solution: `Let $f$ and $g$ be functions in the set. Then, with function addition defined as $(f + g)(x) = f(x) + g(x),$ we have
+\\begin{align*}
+(f + g)(1 - x) &= f(1 - x) + g(1 - x)
+\\\\
+&= f(x) + g(x)
+\\\\
+&= (f + g)(x)
+\\end{align*}Thus verifying closure under addition. Now, suppose $f$ is a function in the set and let $a$ be a real scalar. Then, $af(x) = af(1-x)$ which verifies closure under multiplication by real numbers, and by extension, the existence of negatives. Then, we can see that $f(x) = 0$ is a member of the set, satisfying the existence of a zero element. The remaining axioms can be confirmed by noting that $f(x)$ is real-valued for all real $x.$ Thus, the set of all $f$ satisfying $f(x) = f(1 - x)$ for all $x$ is a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 16,
+                  number: "1.5.16",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+16. All Taylor polynomials of degree $\\leq n$ for a fixed $n$ (including the zero polynomial).`,
+                  hint: `Recall Theorem 7.1 (Volume 1, Section 7.2):
+$\\text{Theorem 7.1. $\\quad$}$ Let $f$ be a function with derivatives of order $n$ at the point $x = 0.$ Then there exists one and only one polynomial $P$ of degree $\\leq n$ which satisfies the $n + 1$ conditions
+\\begin{align*}
+P(0) &= f(0),
+\\quad
+P'(0) = f'(0),
+\\quad
+...,
+\\quad
+P^{(n)}(0) = f^{(n)}(0).
+\\end{align*}This polynomial is given by the formula
+\\begin{align*}
+P(x) &= \\sum_{k = 0}^n\\frac{f^{(k)}(0)}{k!}x^k
+\\end{align*}In the same way, we may show that there is one and only one polynomial of degree $\\leq n$ which agrees with $f$ and its first $n$ derivatives at a point $x = a.$ If we evaluate the derivatives at $x = a$ in place of $x = 0,$ we find
+\\begin{align*}
+P(x) &= \\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\end{align*}This is the one and only one polynomial $P$ of degree $\\leq n$ which satisfies the $n + 1$ conditions
+\\begin{align*}
+P(a) &= f(a),
+\\quad
+P'(a) = f'(a),
+\\quad
+...,
+\\quad
+P^{(n)}(a) = f^{(n)}(a).
+\\end{align*}and it is referred to as a Taylor polynomial of degree $n$ generated by $f$ at the point $a.$ or in short, a $\\textit{Taylor polynomial.}$`,
+                  solution: `Let $P$ and $Q$ be Taylor polynomials of degree $\\leq n$ that agree with $f,$ $g,$ and their first $n$ derivatives, respectively, at a given point $x = a$. In other words, define $P$ and $Q$ as
+\\begin{align*}
+P(x) &= \\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+Q(x) &= \\sum_{k = 0}^n\\frac{g^{(k)}(a)}{k!}(x - a)^k
+\\end{align*}Then, if we define function addition in the usual way, we find that
+\\begin{align*}
+(P + Q)(x) &= P(x) + Q(x)
+\\\\
+\\\\
+&= \\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+&+ \\sum_{k = 0}^n\\frac{g^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+&= \\sum_{k = 0}^n\\frac{[f^{(k)}(a) + g^{(k)}(a)]}{k!}(x - a)^k
+\\end{align*}But from Theorem 4.1 (i) (Volume 1, Section 4.5) we can see that the function $f^{(k)}(a) + g^{(k)}(a)$ can be written as $[f(a) + g(a)]^{(k)} = [(f + g)(a)]^{(k)}$ $[$That is, the $k^{th}$ derivative of $(f + g)(a)].$ As such, we can see that $(P + Q)(x)$ is a Taylor polynomial of degree $\\leq n$ generated by $f + g$ at $a,$ thus verifying closure under addition.
+
+To verify closure under multiplication by real numbers, we can use a specific case of Theorem 4.1 (iii): 
+$$(f \\cdot g)' = f'\\cdot g + g'\\cdot f$$where $g(x) = b$ for some real constant $b.$ Then, using the zero-derivative theorem in (Theorem 5.2, Volume 1, Section 5.2) in conjunction with Theorem 4.1 (iii), we can see that $bP(x)$ is given by
+\\begin{align*}
+bP(x) &= b\\sum_{k = 0}^n\\frac{f^{(k)}(a)}{k!}(x - a)^k
+\\\\
+\\\\
+&= \\sum_{k = 0}^n\\frac{bf^{(k)}(a)}{k!}(x - a)^k
+\\end{align*}Then, if we set $h(x) = bf(x),$ we can see that $bP(x)$ is a Taylor polynomial of degree $\\leq n$ generated by $h$ at $a,$ which verifies closure under multiplication by real numbers. If $b = -1,$ it also verifies the existence of negatives. The explicit inclusion of the zero polynomial $(b = 0)$ verifies the existence of the zero element. And since every $P$ in the set is a real polynomial in $x$ for all real $x,$ the remaining axioms can be verified by treating $P(x)$ as a real number for any given $x.$
+
+As such, we have shown that the set of all Taylor polynomials of degree $\\leq n$ for a fixed $n$ (including the zero polynomial) is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 17,
+                  number: "1.5.17",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+17. All solutions of a linear second-order homogeneous differential equation $y'' + P(x)y' + Q(x)y = 0$, where $P$ and $Q$ are given functions, continuous everywhere.`,
+                  hint: ``,
+                  solution: `Let $y_1$ and $y_2$ be solutions to the second-order homogeneous differential equation $y'' + P(x)y' + Q(x)y = 0.$ Then by definition,
+\\begin{align*}
+y_1'' + P(x)y_1' + Q(x)y_1 &= 0
+\\\\
+\\\\
+y_2'' + P(x)y_2' + Q(x)y_2 &= 0
+\\end{align*}
+Adding both sides of the equations gives us
+\\begin{align*}
+(y_1 + y_2)'' + P(x)(y_1 + y_2)' + Q(x)(y_1 + y_2) &= 0
+\\end{align*}which means that $(y_1 + y_2)$ is also in the set of solutions to the second-order homogeneous equation $y'' + P(x)y' + Q(x)y = 0$, thus verifying closure under addition.
+
+Closure under multiplication by real numbers is easily verified by noting that if $y$ is a solution to the equation
+\\begin{align*}
+y'' + P(x)y' + Q(x)y &= 0
+\\end{align*}then $ay$ is also a solution since for any real scalar $a,$ we have
+\\begin{align*}
+ay'' + P(x)ay' + Q(x)ay &= a\\cdot 0
+\\\\
+&= 0
+\\end{align*}which also verifies the existence of negatives. We can trivially confirm the existence of the zero element by setting $y = 0,$ and the remaining axioms can be verified by noting that $y$ is real-valued over its domain. As such, the set of solutions to the second-order homogeneous differential equation
+$$
+y'' + P(x)y' + Q(x)y = 0
+$$is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 18,
+                  number: "1.5.18",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+18. All bounded real sequences.`,
+                  hint: `Recall from Theorem 10.1 (Volume 1, Section 10.3) that a sequence $\\{f(n)\\}$ is called $bounded$ if there exists a positive number $M$ such that $\|f(n)\| \\leq M$ for all $n.$`,
+                  solution: `Let $\\{f(n)\\}$ and $\\{g(n)\\}$ be bounded real sequences. That means that there are positive real numbers $M$ and $N$ such that $\|f(n)\| \\leq M$ and $\|g(n)\| \\leq N$ for all $n.$ But this means that $\|f(n)\| + \|g(n)\| \\leq M + N$ for all $n.$ Using the triangle inequality for real numbers (Theorem I.39 - Volume 1, Section I4.8) we find that $\|f(n) + g(n)\| \\leq M + N$ for all $n,$ showing that the sequence $\\{f(n) + g(n)\\}$ is bounded, hence verifying closure under addition.
+                  
+If we multiply both sides of the inequality by $\|f(n)\| \\leq M$ by $\|a\|,$ with $a$ being a real scalar, then we can see that $\\{af(n)\\}$ is also bounded, thus verifying closure under multiplication by real numbers. The existence of negatives can be deduced by the definition of a bounded sequence because if $\|f(n)\| \\leq M$ then $ \|-f(n)\| \\leq M$ for all $n.$ Setting $f(n) = 0$ for all $n$ verifies the existence of a zero element since $0$ is bounded by all $M > 0.$ Then, for the remaining axioms, we can verify them by noting that if $\\{f(n)\\}$ is bounded by some $M > 0$, then for each $n$, $f(n)$ is some real number with $\|f(n)\| \\leq M$.
+
+As such, we have shown that the set of all bounded sequences is a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 19,
+                  number: "1.5.19",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+19. All convergent real sequences.`,
+                  hint: `Recall the definition of a convergent sequence from Volume 1, Section 10.2.
+
+$\\text{Definition.}\\quad$ A sequence $\\{f(n)\\}$ is said to have a limit $L$ if, for every positive number $\\epsilon,$ there is another positive number $N$ (which may depend on $\\epsilon$) such that
+$$
+\|f(n) - L\| < \\epsilon
+\\quad
+\\textit{for all}\\ n \\geq N.
+$$In this case, we say the sequence $\\{f(n)\\}$ converges to $L$ and we write
+$$
+\\lim_{n \\to \\infty} f(n) = L,
+\\quad
+\\text{or}
+\\quad
+f(n) \\to L
+\\,\\
+\\text{as}\\,\\ n \\to \\infty.
+$$`,
+                  solution: `Let $\\{f(n)\\}$ and $\\{g(n)\\}$ be convergent real sequences with limits $L$ and $M,$ respectively. Then for every positive number $\\epsilon,$ there is another positive number $N$ (which may depend on $\\epsilon$) such that
+$$
+\|f(n) - L\| < \\epsilon,
+\\quad
+\\text{and}
+\\quad
+\|g(n) - M\| < \\epsilon
+$$for all $n \\geq N.$ Adding these two inequalities, we find that for all $n \\geq N,$ we have
+$$
+\|f(n) - L\|  + \|g(n) - M\| < 2\\epsilon
+$$But, recalling the triangle inequality for real numbers, we know that 
+$$
+\|f(n) + g(n) - (L + M)\| \\leq \|f(n) - L\|  + \|g(n) - M\|
+$$Thus, for all positive $\\epsilon$ and all $n \\geq N,$ we have
+$$
+\|f(n) + g(n) - (L + M)\| < 2\\epsilon
+$$Which means that $\\{f(n) + g(n)\\}$ is convergent, and the set of all convergent real sequences satisfies closure under addition.
+
+Now, suppose $\\{f(n)\\}$ is a convergent real sequence with limit $L.$ We know by definition that there exists some positive $N$ such that $\|f(n) - L\| < \\epsilon$ for all $n \\geq N$ and for all $\\epsilon > 0.$ If we multiply both sides of this inequality by $\|a\|,$ where $a$ is some real scalar, then we find that for all $n \\geq N,$
+$$
+\|af(n) - aL \| < \|a\|\\epsilon
+$$But since this is the case for all $\\epsilon > 0,$ this implies that $af(n) \\to aL$ as $n \\to \\infty,$ which implies that $\\{af(n)\\}$ is convergent, and the set of all convergent sequences satisfies closure under multiplication by real numbers.
+
+We can see that the sequence with $f(n) = 0$ for all $n$ is convergent with limit $L = 0,$ satisfying the existence of a zero element. In verifying closure under multiplication by real numbers, we can deduce the existence of negatives by setting $a = -1$ and noting that
+$$
+\|aL - af(n)\| = \|af(n) - aL\|.
+$$
+And since $f(n)$ is real-valued for all $n,$ we can easily verify the remaining axioms on addition and multiplication by scalars. Hence, the set of all convergent real sequences is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 20,
+                  number: "1.5.20",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+20. All convergent real series.`,
+                  hint: `Recall from Volume 1 Section 10.5 the definition of an infinite series:
+
+From a given sequence of realor complex numbers, we can always generate a new sequence by adding together successive terms. Thus, if the given sequence has the terms
+$$
+a_1,\\ a_2,\\ ..., a_n,\\ ...
+$$we may form, in succession, the "partial sums"
+$$
+s_1 = a_1,
+\\quad
+s_2 = a_1 + a_2,
+\\quad
+s_3 = a_1 + a_2 + a_3,
+$$and so on, the partial sum $s_n$ of the first $n$ terms being defined as follows:
+\\begin{align*}
+s_n = a_1 + a_2 + \\cdots + a_n &= \\sum_{k = 1}^n a_k.
+\\end{align*}The sequence $\\{s_n\\}$ of partial sums is called and infinite series, or simple a $series.$ If there is a real or complex number $S$ such that
+$$
+\\lim_{n \\to \\infty}s_n = S
+$$we say that the series $\\sum_{k = 1}^{\\infty}a_k$ is convergent and has the sum $S,$ in which case we write:
+$$
+\\sum_{k = 1}^{\\infty}a_k = S.
+$$
+`,
+                  solution: `Suppose we have two real-valued series whose respective terms are $a_k$ and $b_k$ for $k = 1, 2, 3, ...$ and whose respective $n^{th}$ partial sums are $s_n$ and $t_n$. If they are convergent, then for some real $S$ and $T,$ we have 
+\\begin{align*}
+\\\\
+\\lim_{n \\to \\infty}s_n &= S,
+\\quad
+\\text{and}
+\\quad
+\\lim_{n \\to \\infty}t_n = T,
+\\end{align*}
+Now, suppose we have another series whose $k^{th}$ term is $c_k = a_k + b_k$ and whose $n^{th}$ partial sum is $g_n = s_n + t_n.$ But as a consequence of Theorem 3.1 (i) [Volume 1, Section 3.3], $g_n \\to S + T$ as $n \\to \\infty,$ which means that $\\sum_{k = 1}^{\\infty}c_k$ is convergent. Moreover, this means the set of convergent real series satisfies closure under addition.
+
+To verify closure under multiplication by real numbers, we refer to Theorem 3.1 (iii). If $a$ is some real constant, and $\\sum_{k = 1}^{\\infty}s_k = S,$ then we have:
+\\begin{align*}
+\\sum_{k = 1}^{\\infty}a\\cdot s_k &= a\\sum_{k = 1}^{\\infty}s_k
+\\\\
+&= aS
+\\end{align*}Then, if $a = -1,$ we can verify that $\\sum_{k = 1}^{\\infty}-s_k$ is also convergent, with
+\\begin{align*}
+\\sum_{k = 1}^{\\infty}s_k - s_k &= 0
+\\end{align*}thus verifying the existence of negatives in the set. The zero element is the series whose elements are $z_k = 0$ for all $k$ and whose sum is trivially $0.$ 
+
+Now, since every convergent series of real-valued terms has a real-valued sum, we can treat each sum (and partial sum) as a real number when verifying axioms regarding addition and multiplication by real numbers. As such, we have shown that the set of all convergent real-valued series is a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 21,
+                  number: "1.5.21",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+21. All absolutely convergent real series.`,
+                  hint: `Recall the definition of absolute convergence from Volume 1, Section 10.18.
+
+$\\text{Definition. $\\quad$}$ A series $\\sum a_n$ is called absolutely convergent if $\\sum \|a_n\|$ converges. It is called conditionally convergent if $\\sum a_n$ converges but $\\sum \|a_n\|$ diverges.`,
+                  solution: `Suppose we have two absolutely convergent series $\\sum a_n$ and $\\sum b_n,$ and let $\\alpha$ and $\\beta$ be real scalars. Then, by the triangle inequality for real numbers, we have
+\\begin{align*}
+\\sum_{n = 1}^{M} \|\\alpha a_n + \\beta b_n\| &\\leq \|\\alpha\|\\sum_{n = 1}^{M} \|a_n\| + \|\\beta\|\\sum_{n = 1}^{M} \|b_n\|
+\\\\
+\\\\
+&\\leq \|\\alpha\|\\sum_{n = 1}^{\\infty} \|a_n\| + \|\\beta\|\\sum_{n = 1}^{\\infty} \|b_n\|
+\\end{align*}But since $\\sum\|\\alpha a_n + \\beta b_n\|$ is bounded by $\|\\alpha\|\\sum\|a_n\| + \|\\beta\|\\sum \|b_n\|,$ we know from Volume 1, Theorem 10.1, that the sequence of the partial sums of $\\sum\|\\alpha a_n + \\beta b_n\|$ must be convergent. Hence $\\sum \\alpha a_n + \\beta b_n$ is absolutely convergent. Moreover, this shows that the set of absolutely convergent series satisfies closure under addition and closure under multiplication by real numbers. This also satisfies the existence of negatives by setting $\\beta = -\\alpha$ and $b_n = a_n.$
+
+The existence of the zero element is satisfied by setting $a_n = 0$ for all $n,$ and the remaining axioms can be verified by noting that the parial sums of any absolutely convergent series are real numbers whose absolute value is bounded by some positive real number $S.$
+
+As such, we can see that the set of all absolutely convergent series is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 22,
+                  number: "1.5.22",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+22. All vectors $(x, y, z)$ in $V_3$ with $z = 0$.`,
+                  hint: ``,
+                  solution: `Let $A = (x_0, y_0, 0)$ and $B = (x_1, y_1, 0)$ be vectors in $V_3$ with $z = 0.$ Then, $A + B = (x_0 + x_1, y_0 + y_1, 0)$ is a vector $(x, y, z)$ in $V_3$ with $z = 0.$ If $c$ is a real scalar, then $cA = (cx_0, cy_0, 0)$ is also a vector $(x, y, z)$ in $V_3$ with $z = 0.$ As such, we have verified the closure axioms.
+
+The vector $O = (0, 0, 0)$ satisfies the existence of the zero element since it is a vector $(x, y, z)$ in $V_3$ with $z = 0$ such that $A + O = A$ for all $A$ in the set. If we let $c = 1,$ we can see that the set satisfies the existence of identity and if we set $c = -1$ we find that $A + cA = A - A = O,$ verifying the existence of negatives.
+
+We can confirm element-wise that for any real vectors $A,$ $B,$ and $C$ in the set, we have $A + B = B + A$ and $(A + B) + C = A + (B + C),$ thus satisfying the commutative and associative laws of addition.
+
+To verify the axioms for multiplication by real numbers, let $a$ and $b$ be real scalars and let $X = (x_1, x_2, 0)$ and $Y = (y_1, y_2, 0)$ Then, $bX = (bx_1, bx_2, 0)$ and $a(bX) = a(bx_1, bx_2, 0) = (abx_1, abx_2, 0) = (ab)X.$ Since addition of vectors in $V_3$ occurs element-wise, we have $(X + Y) = (x_1 + y_1, x_2 + y_2, 0)$ with 
+\\begin{align*}
+a(X + Y) &= a(x_1 + y_1, x_2 + y_2, 0) 
+\\\\
+&= (ax_1 + ay_1, ax_2 + ay_2, 0) 
+\\\\
+&= aX + aY
+\\end{align*}
+And since the components of any $X$ in $V_3$ are presumed to be real-valued, we can see that
+\\begin{align*}
+(a + b)X &=\\left[(a + b)x_1, (a + b)x_2, 0\\right]
+\\\\
+&=\\left(ax_1 + bx_1, ax_2 + bx_2, 0\\right)
+\\\\
+&= aX + bX
+\\end{align*}
+Thus, we have shown that the set of all vectors $(x, y, z)$ in $V_3$ with $z = 0$ is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 23,
+                  number: "1.5.23",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+23. All vectors $(x, y, z)$ in $V_3$ with $x = 0$ or $y = 0$.`,
+                  hint: ``,
+                  solution: `Let $X = (0, x_2, x_3)$ and $Y = (y_1, 0, y_3)$ where $x_2$ and $y_1$ are nonzero. We can see that $X$ and $Y$ are members of the set, but the sum $X + Y = (y_1, x_2, x_3 + y_3)$ is not. Since it fails to satisfy closure under addition, the set of all vectors $(x, y, z)$ in $V_3$ with $x = 0$ or $y = 0$ is not a real linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 24,
+                  number: "1.5.24",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+24. All vectors $(x, y, z)$ in $V_3$ with $y = 5x$.`,
+                  hint: ``,
+                  solution: `Let $A = (x_1, 5x_1, z_1)$ and $B = (x_2, 5x_2, z_2)$ be vectors $(x, y, z)$ in $V_3$ with $5 = 5x.$ Then, 
+\\begin{align*}
+A + B &= (x_1 + x_2, 5x_1 + 5x_2, z_1 + z_2)
+\\\\
+&= [x_1 + x_2, 5(x_1 + x_2), z_1 + z_2]
+\\end{align*}which is yet another vector $(x, y, z)$ in $V_3$ satisfying $y = 5x,$ thus verifying closure under addition. We can also see that since $A$ and $B$ have real-valued components, $A + B = B + A,$ verifying the commutative property of addition. If $C = (x_3, 5x_3, z_3),$ we have
+\\begin{align*}
+(A + B) + C &= [(x_1 + x_2) + x_3, 5(x_1 + x_2) + 5x_3, (z_1 + z_2) + z_3]
+\\\\
+&= [x_1 + (x_2 + x_3), 5x_1 + 5(x_2 + x_3), z_1 + (z_2 + z_3)]
+\\\\
+&= A + (B + C)
+\\end{align*}satisfying the associative law of addition.
+
+Now, let $c$ and $d$ be real scalars. Then, $cA = (cx_1, 5cx_1, cz_1),$ which is also a vector $(x, y, z)$ in $V_3$ satisfying $y = 5x,$ verifying closure under addition. The zero vector $O = (0, 0, 0)$ trivially satisfies $y = 5x$ and also satisfies $A + O = A$ for all $A$ in $V_3,$ satisfying the existence of the zero element. Setting $c = 1$ we can see that the set satisfies the existence of identity, and setting $c = -1,$ we see that it satisfies the existence of negatives.
+
+With $A$ and $B$ as defined above, we have
+\\begin{align*}
+c(dA) &= c(dx_1, 5dx_1, cz_1)
+\\\\
+&= (cdx_1, 5cdx_1, cdz_1)
+\\\\
+&= (cd)A
+\\\\
+\\\\
+c(A + B) &= c(x_1 + x_2, 5x_1 + 5x_2, z_1 + z_2)
+\\\\
+&= (cx_1 + cx_2, 5cx_1 + 5cx_2, cz_1 + cz_2)
+\\\\
+&= cA + cB
+\\\\
+\\\\
+(c + d)A &= (c + d)(x_1, 5x_1, z_1)
+\\\\
+&= [(c + d)x_1, (c + d)5x_1, (c + d)z_1]
+\\\\
+&= (cx_1 + dx_1, 5cx_1 + 5dx_1, cz_1 + dz_1)
+\\\\
+&= cA + dA
+\\end{align*}
+This verifies that the set of vectors $(x, y, z)$ in $V_3$ verifies the ten axioms and is thus a linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 25,
+                  number: "1.5.25",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+25. All vectors $(x, y, z)$ in $V_3$ with $3x + 4y = 1$, $z = 0$.`,
+                  hint: ``,
+                  solution: `Let $A = (\\frac{1}{3}, 0, 0)$ and $B = (0, \\frac{1}{4}, 0).$ As we can see, they are vectors $(x, y, z)$ in $V_3$ with $3x + 4y = 1$ and $z = 0.$ But, $A + B = \\left(\\frac{1}{3}, \\frac{1}{4}, 0\\right)$ is a vector $(x, y, z)$ in $V_3$ with $3x + 4y \\neq 1,$ violating closure under addition. Moreover, if we let $c$ be some real scalar we find that for $cA$ and $cB,$ $3x + 4y = 1$ is only satisfied when $c = 1,$ violating closure under multiplication by real numbers. Thus, the set of all vectors $(x, y, z)$ in $V_3$ with $3x + 4y = 1$ and $z = 0$ is not a linear space. $\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 26,
+                  number: "1.5.26",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+26. All vectors $(x, y, z)$ in $V_3$ which are scalar multiples of $(1, 2, 3)$.`,
+                  hint: ``,
+                  solution: `Let $A = (a_1, a_2, a_3)$ and $B = (b_1, b_2, b_3)$ be vectors $(x, y, z)$ in $V_3$ which are scalar multiples of $(1, 2, 3).$ In other words, for real scalars $a$ and $b,$ we can write $A = (a, 2a, 3a)$ and $B = (b, 2b, 3b).$ Then, we have
+\\begin{align*}
+A + B &= (a + b, 2a + 2b, 3a + 3b)
+\\\\
+&= [(a + b), 2(a + b), 3(a + b)]
+\\\\
+&= (a + b)(1, 2, 3)
+\\end{align*}which we can see is another scalar multiple of $(1, 2, 3)$ in $V_3,$ satisfying closure under addition. Now, let $c$ be another real scalar, and let $C = (c, 2c, 3c).$ By component-wise addition, we can see that $A + B = B + A$ and $(A + B) + C = A + (B + C).$ Setting $c = 0,$ we can see that the zero vector $O = (0, 0, 0)$ is trivially a member of the set, with $A + O = A.$ If we set $c = 1$ we can see that $cA = A,$ confirming the existence of identity, and if we set $c = -1,$ we find that $cA + A = O,$ confirming the existence of negatives.
+
+Now, with our vectors $A$ and $B$ and scalars $a,$ $b,$ and $c$ defined as before, we can easily verify the axioms for multiplication by real numbers:
+\\begin{align*}
+c(aB) &= c(ab, 2ab, 3ab)
+\\\\
+&= (cab, 2cab, 3cab)
+\\\\
+&= (ca)B
+\\\\
+\\\\
+c(A + B) &= c[(a + b), 2(a + b), 3(a + b)]
+\\\\
+&= (ca + cb, 2ca + 2cb, 3ca + 3cb)
+\\\\
+&= cA + cB
+\\\\
+\\\\
+(b + c)A &= (b + c)(a, 2a, 3a)
+\\\\
+&= [(b + c)a, (b + c)2a, (b + c)3a]
+\\\\
+&=(ba + ca, 2ba + 2ca, 3ba + 3ca)
+\\\\
+&= bA + cA
+\\end{align*}
+Thus, we have shown that the set of all scalar multiples of $(1, 2, 3)$ in $V_3$ is a linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 27,
+                  number: "1.5.27",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+27. All vectors $(x, y, z)$ in $V_3$ whose components satisfy a system of three linear equations of the form:
+\\begin{align*}
+a_{11}x + a_{12}y + a_{13}z = 0, \\quad a_{21}x + a_{22}y + a_{23}z = 0, \\quad a_{31}x + a_{32}y + a_{33}z = 0.
+\\end{align*}`,
+                  hint: ``,
+                  solution: `Suppose we have two vectors $X = (x_1, x_2, x_3)$ and $Y = (y_1, y_2, y_3)$ that satisfy the system of linear equations defined above. Then, we have
+\\begin{align*}
+& a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = 0, \\quad a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = 0, \\quad a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = 0.
+\\\\
+& a_{11}y_1 + a_{12}y_2 + a_{13}y_3 = 0, \\quad a_{21}y_1 + a_{22}y_2 + a_{23}y_3 = 0, \\quad a_{31}y_1 + a_{32}y_2 + a_{33}y_3 = 0.
+\\end{align*}
+But, if we add the top equations to the bottom, we find that
+\\begin{align*}
+a_{11}(x_1 + y_1) + a_{12}(x_2 + y_2) + a_{13}(x_3 + y_3) &= 0
+\\\\ 
+a_{21}(x_1 + y_1) + a_{22}(x_2 + y_2) + a_{23}(x_3 + y_3) &= 0
+\\\\ 
+a_{31}(x_1 + y_1) + a_{32}(x_2 + y_2) + a_{33}(x_3 + y_3) &= 0
+\\end{align*}which shows that the set of all vectors $(x, y, z)$ satisfying this system of linear equations satisfies closure under addition. Now, let $b$ be a real scalar. If we multiply both sides of
+\\begin{align*}
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 &= 0
+\\\\ 
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3 &= 0
+\\\\ 
+a_{31}x_1 + a_{32}x_2 + a_{33}x_3 &= 0
+\\end{align*}by $b,$ we get:
+\\begin{align*}
+b(a_{11}x_1 + a_{12}x_2 + a_{13}x_3) &= 0
+\\\\ 
+b(a_{21}x_1 + a_{22}x_2 + a_{23}x_3) &= 0
+\\\\ 
+b(a_{31}x_1 + a_{32}x_2 + a_{33}x_3) &= 0
+\\end{align*}
+But since the components of $X$ and all of the coefficients $a_{ij}$ are real-valued, we can use the distributive law of addition to get
+\\begin{align*}
+ba_{11}x_1 + ba_{12}x_2 + ba_{13}x_3 &= 0
+\\\\ 
+ba_{21}x_1 + ba_{22}x_2 + ba_{23}x_3 &= 0
+\\\\ 
+ba_{31}x_1 + ba_{32}x_2 + ba_{33}x_3 &= 0
+\\end{align*}
+Then, we can use the commutative law of multiplication to get
+\\begin{align*}
+a_{11}bx_1 + a_{12}bx_2 + a_{13}bx_3 &= 0
+\\\\ 
+a_{21}bx_1 + a_{22}bx_2 + a_{23}bx_3 &= 0
+\\\\ 
+a_{31}bx_1 + a_{32}bx_2 + a_{33}bx_3 &= 0
+\\end{align*}
+As we can see, $bX$ satisfies the system of linear equations, which means the set of vectors satisfying the system of equations satisfies closure under multiplication by real numbers. 
+
+The vector $O = (0, 0, 0)$ trivially satisfies this system of equations, and for any $X$ in $V_3,$ we have $X + O = X,$ thus confirming the existence of a zero element. 
+
+For the remaining axioms, since the set of $X$ satisfying this system of linear equations is a subset of $V_3,$ we know from previous exercises that any $X$ and $Y$ in this set satisfy the axioms on addition and multiplication by real numbers. Thus, the set of vectors $(x, y, z)$ in $V_3$ satisfying the system of linear equations 
+\\begin{align*}
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 &= 0
+\\\\ 
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3 &= 0
+\\\\ 
+a_{31}x_1 + a_{32}x_2 + a_{33}x_3 &= 0
+\\end{align*}is a real linear space. $\\,\\blacksquare$
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 28,
+                  number: "1.5.28",
+                  content: `In Exercises 1 through 28, determine whether each of the given sets is a real linear space, if addition and multiplication by real scalars are defined in the usual way. For those that are not, tell which axioms fail to hold. The functions in Exercises 1 through 17 are real-valued. In Exercises 3, 4, and 5, each function has domain containing 0 and 1. In Exercises 7 through 12, each domain contains all real numbers.
+              
+28. All vectors in $V_n$ that are linear combinations of two given vectors $A$ and $B$.`,
+                  hint: ``,
+                  solution: `Let $a, b, c, d, x,$ and $y$ be real scalars and let $X = aA + bB,$ $Y = cA + dB.$ Then, we have 
+\\begin{align*}
+xX + yY &= x(aA + bB) + y(cA + dB)
+\\\\
+&= (xa + yc)A + (xb + yd)B
+\\end{align*}
+As we can see, this is another linear combination of $A$ and $B.$ Hence, the set of all linear combinations of $A$ and $B$ satisfies closure under addition and closure under multiplication by real numbers. We can also confirm the associative law of multiplication by noting that in the above equation, $x(aA) = (ax)A.$ 
+
+The zero vector can be found trivially by setting $a = b = 0,$ with $X + O = X$ for all $X$ in the set. If we set $x = 1$ we find that $xX = 1(aA + bB) = aA + bB = X,$ confirming the distributive law of addition and the existence of identity. Setting $x = -1,$ we find
+\\begin{align*}
+xX + X &= -(aA + bB) + aA + bB
+\\\\
+&= (a - a)A + (b - b)B
+\\\\
+&= O
+\\end{align*}confirming the commutative law, distributive law for addition of numbers, and existence of negatives. And if $X,$ $Y,$ and $Z$ are vectors in $V_n,$ we know that $X + (Y + Z) = (X + Y) + Z$
+
+As such, we have shown that the set of vectors in $V_n$ that are linear combinations of given vectors $A$ and $B$ is a rea linear space.$\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 29,
+                  number: "1.5.29",
+                  content: `Let $V = R^+$, the set of positive real numbers. Define the "sum" of two elements $x$ and $y$ in $V$ to be their product $x \\cdot y$ (in the usual sense), and define "multiplication" of an element $x$ in $V$ by a scalar $c$ to be $x^c$. Prove that $V$ is a real linear space with 1 as the zero element.`,
+                  hint: `By definition, the set $V$ is a linear space if it satisfies the following ten axioms.
+
+$\\textit{Closure axioms}$
+
+$\\text{Axiom 1.}\\quad$ $\\text{Closure Under Addition. }$ For every pair of elements $x$ and $y$ in $V,$ there corresponds a unique element in $V$ called the sum of $x$ and $y,$ denoted by $x + y.$
+
+$\\text{Axiom 2.}\\quad$ $\\text{Closure Under Multiplication. }$ For every $x$ in $V$ and every real number $a$ there corresponds an element in $V$ called the product of $a$ and $x,$ denoted by $ax.$
+
+$\\textit{Axioms for addition}$
+
+$\\text{Axiom 3.}\\quad$ $\\text{Commutative Law. }$ For all $x$ and $y$ in $V,$ we have $x + y = y + x.$
+
+$\\text{Axiom 4.}\\quad$ $\\text{Associative Law. }$ For all $x,$ $y,$ and $z$ in $V,$ we have $(x + y) + z = x + (y + z).$
+
+$\\text{Axiom 5.}\\quad$ $\\text{Existence of Zero Element. }$ There is an element in $V,$ denoted by $O,$ such that
+$$
+x + O = x
+\\quad
+\\text{for all $x$ in $V$.}
+$$
+$\\text{Axiom 6.}\\quad$ $\\text{Existence of Negatives. }$ For every $x$ in $V,$ the element $(-1)x$ has the property
+$$
+x + (-1)x = O
+$$
+$\\textit{Axioms for multiplication by numbers}$
+
+$\\text{Axiom 7.}\\quad$ $\\text{Associative Law. }$ For every $x$ in $V$ and all real numbers $a$ and $b,$ we have
+$$
+a(bx) = (ab)x.
+$$
+$\\text{Axiom 8.}\\quad$ $\\text{Distributive Law for Addition in $V$. }$ For all $x$ and $y$ in $V$ and all real $a,$ we have
+$$
+a(x + y) = ax + ay.
+$$
+$\\text{Axiom 9.}\\quad$ $\\text{Distributive Law for Addition of Numbers. }$ For all $x$ in $V$ and all real $a$ and $b,$ we have
+$$
+(a + b)x = ax + bx.
+$$
+$\\text{Axiom 10.}\\quad$ $\\text{Existence of Identity. }$ For every $x$ in $V,$ we have $1x = x.$
+`,
+                  solution: `$Proof.\\quad$ Let $x$ and $y$ be two positive real numbers, then their sum $x + y = xy$ is yet another positive real number, thus satisfying closure under addition. If $c$ is some real scalar, then we have $cx = x^c.$ But, we can rewrite $x^c = e^{c\\log x}$ since $c\\log x$ is real-valued for any positive real $x.$ But by definition, if $c\\log x$ is real-valued, then $e^{c\\log x}$ is a positive real number, thus satisfying closure under multiplication.
+
+Since every element in this set is a positive real number, we can set $y = (-1)x = x^{-1},$ which is another positive real number. With this, we can confirm the existence of negatives since $x + y = xy = xx^{-1} = x/x = 1$ (with $1$ being the zero element in this set). Moreover, since $1$ is the zero element, for all $x$ in the set, we have $x + 1 = 1x = x.$ If we treat the zero element as a scalar, this also confirms existence of identity since $1x = x^1 = x.$ And since multiplication of real numbers is both commutative and associative, we can see that for any elements $x,$ $y,$ and $z$ in $R^+,$ we have $$x + y = xy = yx = y + x$$ and $$x + (y + z) = x(yz) = (xy)z = (x + y) + z.$$
+To show that $R^+$ fulfills the remaining axioms on multiplication by numbers, suppose $x$ and $y$ are elements of $R^+$ with $a$ and $b$ being real scalars, then we have $bx = x^b$ and $$a(bx) = (x^b)^{a} = x^{ba} = x^{ab} = (ab)x.$$
+We also have $$a(x + y) = (xy)^a = x^ay^a = ax + ay$$ and $$(a + b)x = x^{(a + b)} = x^ax^b = ax + bx.$$
+As such, we have shown that the set of all positive real numbers is a real linear space. This completes the proof.
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 30,
+                  number: "1.5.30",
+                  content: `(a) Prove that Axiom 10 can be deduced from the other axioms.
+(b) Prove that Axiom 10 cannot be deduced from the other axioms if Axiom 6 is replaced by Axiom 6': For every $x$ in $V$ there is an element $y$ in $V$ such that $x + y = O$.`,
+                  hint: `Refer to Theorems 1.2 and 1.3 of Section 1.4:
+
+$\\text{Theorem 1.2. $\\quad$ Uniqueness of Negative Elements.}\\quad$ In any linear space every element has exactly one negative. That is, for every $x,$ there is one and only one $y$ such that $x + y = O.$
+
+$\\text{Theorem 1.3. $\\quad$}$ In any given linear space, let $x$ and $y$ denote arbitrary elements and let $a$ and $b$ denote arbitrary scalars. Then we have the following properties:
+  (a)   $0x = O$
+  (b)   $aO = O$
+  (c)   $(-a)x = -(ax) = a(-x)$
+  (d)   If $ax = O,$ then either $a = 0$ or $x = O.$
+  (e)   If $ax = ay$ and $a \\neq 0,$ then $x = y.$
+  (f)   If $ax = bx$ and $x \\neq O,$ then $a = b.$
+  (g)   $-(x + y) = (-x) + (-y) = -x - y.$
+  (h)   $x + x = 2x,$ $x + x + x = 3x,$ and in general, $\\sum_{i = 1}^n x = nx.$`,
+                  solution: `(a) We know from Theorem 1.2 that there is exactly one $y$ such that $x + y = O,$ and we know from Axiom 6 that $y = (-1)x,$ giving us $x + (-1)x = O.$ If we multiply both sides by $(-1),$ we get $(-1)x + 1x = O.$ In other words, we have $$x + (-1)x = 1x + (-1)x.$$Which implies that $1x = x.\\,\\blacksquare$
+                  
+(b) Let $x$ and $y$ be elements in $V$ such that $x + y = O,$ and let $a$ be a real scalar. Setting $a = 1$ and using the distributive law for addition in $V,$ we find that $1(x + y) = 1x + 1y.$ Since $V$ has closure under multiplication by real numbers, we know that $1x$ is an element in $V.$ However, it is not necessary that $1x + 1y \\neq O,$ thus we cannot deduce that $1x = x$ for all $x$ in $V$ since in this case it would mean that $1O \\neq O.\\,\\blacksquare$`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 31,
+                  number: "1.5.31",
+                  content: `Let $S$ be the set of all ordered pairs $(x_1, x_2)$ of real numbers. In each case determine whether or not $S$ is a linear space with the operations of addition and multiplication by scalars defined as indicated. If the set is not a linear space, indicate which axioms are violated.
+    (a) $(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, x_2 + y_2)$, $\\quad a(x_1, x_2) = (ax_1, 0)$.
+    (b) $(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, 0)$, $\\quad a(x_1, x_2) = (ax_1, ax_2)$.
+    (c) $(x_1, x_2) + (y_1, y_2) = (x_1, x_2 + y_2)$, $\\quad a(x_1, x_2) = (ax_1, ax_2)$.
+    (d) $(x_1, x_2) + (y_1, y_2) = (|x_1 + x_2|, |y_1 + y_2|)$, $\\quad a(x_1, x_2) = (|ax_1|, |ax_2|)$.`,
+                  hint: ``,
+                  solution: `(a) $$(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, x_2 + y_2)\\quad a(x_1, x_2) = (ax_1, 0)$$
+Axiom 1. Closure Under Addition. As we can see, for the ordered pairs $x = (x_1, x_1)$ and $y = (y_1, y_2)$ in $S$ we have a unique element $(x_1 + y_1, x_2 + y_2)$ corresponding to the addition of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ and $a$ be a real scalar. Then, there is an element $(ax_1, 0)$ in $S$ corresponding to the product $ax.$
+
+Axiom 3. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then,
+\\begin{align*}
+x + y &= (x_1 + y_1, x_2 + y_2)
+\\\\
+&= (y_1 + x_1, y_2 + x_2)
+\\\\
+&= y + x
+\\end{align*} 
+Axiom 4. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then,
+\\begin{align*}
+(x + y) + z &= (x_1 + y_1, x_2 + y_2) + (z_1, z_2)
+\\\\
+&= (x_1 + y_1 + z_1, x_2 + y_2 + z_2)
+\\\\
+&= (x_1, x_2) + (y_1 + z_1, y_2 + z_2)
+\\\\
+&= x + (y + z)
+\\end{align*}
+Axiom 5. Existence of the Zero Element. The ordered pair $O = (0, 0)$ is an element in $S$ such that for any $x = (x_1, x_2)$ in $S$ we have $$x + O = (x_1 + 0, x_2 + 0) = x.$$
+Axiom 6*. Existence of Negative Elements. Let $x = (x_1, x_2)$ be an element in $S.$ Then, $(-1)x = (-x_1, 0)$ and $x + (-1)x$ is
+\\begin{align*}
+x + (-1)x &= (x_1, x_2) + (-x_1, 0)
+\\\\
+&= (x_1 - x_1, x_2)
+\\\\
+&= (0, x_2)
+\\\\
+&\\neq O
+\\end{align*}
+*The set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ and let $a$ and $b$ be real scalars. Then, $bx = (bx_1, 0)$ and we have
+\\begin{align*}
+a(bx) &= (abx_1, 0)
+\\\\
+&= (ab)(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S$ and let $a$ be a real scalar. Then we have:
+\\begin{align*}
+a(x + y) &= a(x_1 + y_1, x_2 + y_2)
+\\\\
+&= (ax_1 + ay_1, 0)
+\\\\
+&= (ax_1, 0) + (ay_1, 0)
+\\\\
+&= a(x_1, x_2) + a(y_1, y_2)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9. Distributive Law for Addition of Numbers. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+(a + b)x &= [(a + b)x_1, 0]
+\\\\
+&= (ax_1 + bx_1, 0)
+\\\\
+&= (ax_1, 0) + (bx_1, 0)
+\\\\
+&= a(x_1, x_2) + b(x_1, x_2)
+\\\\
+&= ax + bx
+\\end{align*}
+Axiom 10*. Existence of Identity. Let $x = (x_1, x_2)$ be an element of $S$ and let $a = 1.$ Then we have
+\\begin{align*}
+1x &= 1(x_1, x_2)
+\\\\
+&= (x_1, 0)
+\\\\
+&\\neq x
+\\end{align*}
+*The set violates this axiom.
+
+(b) $$(x_1, x_2) + (y_1, y_2) = (x_1 + y_1, 0)\\quad a(x_1, x_2) = (ax_1, ax_2)$$
+Axiom 1. Closure Under Addition. As we can see, for the ordered pairs $x = (x_1, x_1)$ and $y = (y_1, y_2)$ in $S$ we have a unique element $(x_1 + y_1, 0)$ corresponding to the addition of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ and $a$ be a real scalar. Then, there is an element $(ax_1, ax_2)$ in $S$ corresponding to the product $ax.$
+
+Axiom 3. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then,
+\\begin{align*}
+x + y &= (x_1 + y_1, 0)
+\\\\
+&= (y_1 + x_1, 0)
+\\\\
+&= y + x
+\\end{align*} 
+Axiom 4. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then,
+\\begin{align*}
+(x + y) + z &= (x_1 + y_1, 0) + (z_1, z_2)
+\\\\
+&= (x_1 + y_1 + z_1, 0)
+\\\\
+&= (x_1, x_2) + (y_1 + z_1, 0)
+\\\\
+&= x + (y + z)
+\\end{align*}
+Axiom 5*. Existence of the Zero Element. For any $x$ in $S$ whose second term is nonzero, there is no ordered pair $O$ in $S$ for which the sum $x + O = x.$
+*The set violates this axiom.
+
+Axiom 6*. Existence of Negative Elements. Because there is no defined zero element for all $x$ in $S,$ we cannot prove the existence of negative elements.
+*This set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ and let $a$ and $b$ be real scalars. Then, $bx = (bx_1, bx_2)$ and we have
+\\begin{align*}
+a(bx) &= (abx_1, abx_2)
+\\\\
+&= (ab)(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S$ and let $a$ be a real scalar. Then we have:
+\\begin{align*}
+a(x + y) &= a(x_1 + y_1, 0)
+\\\\
+&= (ax_1 + ay_1, 0)
+\\\\
+&= (ax_1, ax_2) + (ay_1, ay_2)
+\\\\
+&= a(x_1, x_2) + a(y_1, y_2)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9*. Distributive Law for Addition of Numbers. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+ax + bx &= (ax_1, ax_2) + (bx_1, bx_2)
+\\\\
+&= (ax_1 + bx_1, 0)
+\\\\
+\\\\
+(a + b)x &= [(a + b)x_1, (a + b)x_2]
+\\\\
+&= (ax_1 + bx_1, ax_2 + bx_2)
+\\\\
+&\\neq ax + bx
+\\end{align*}
+*The set violates this axiom.
+
+Axiom 10. Existence of Identity. Let $x = (x_1, x_2)$ be an element of $S$ and let $a = 1.$ Then we have
+\\begin{align*}
+1x &= 1(x_1, x_2)
+\\\\
+&= (x_1, x_2)
+\\\\
+&= x
+\\end{align*}
+(c) $$(x_1, x_2) + (y_1, y_2) = (x_1, x_2 + y_2)\\quad a(x_1, x_2) = (ax_1, ax_2)$$
+Axiom 1. Closure Under Addition. As we can see, for the ordered pairs $x = (x_1, x_1)$ and $y = (y_1, y_2)$ in $S$ we have a unique element $(x_1, x_2 + y_2)$ corresponding to the addition of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ and $a$ be a real scalar. Then, there is an element $(ax_1, ax_2)$ in $S$ corresponding to the product $ax.$
+
+Axiom 3*. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then,
+\\begin{align*}
+x + y &= (x_1, x_2 + y_2)
+\\\\
+y + x &= (y_1, y_2 + x_2)
+\\\\
+x + y &\\neq y + x
+\\end{align*}*The set violates this axiom.
+
+Axiom 4. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then,
+\\begin{align*}
+(x + y) + z &= (x_1, x_2 + y_2) + (z_1, z_2)
+\\\\
+&= (x_1, x_2 + y_2 + z_2)
+\\\\
+&= (x_1, x_2) + (y_1, y_2 + z_2)
+\\\\
+&= x + (y + z)
+\\end{align*}
+Axiom 5. Existence of the Zero Element. Let $O = (0, 0).$ Then for any $x = (x_1, x_2)$ in $S$ we have $$x + O = (x_1, x_2 + 0) = (x_1, x_2) = x.$$
+Axiom 6*. Existence of Negative Elements. Let $x = (x_1, x_2)$ be an element in $S.$ Then, the sum $x + (-1)x$ is
+\\begin{align*}
+x + (-1)x &= (x_1, 0) \\neq O
+\\end{align*}*The set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ and let $a$ and $b$ be real scalars. Then, $bx = (bx_1, bx_2)$ and we have
+\\begin{align*}
+a(bx) &= (abx_1, abx_2)
+\\\\
+&= (ab)(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S$ and let $a$ be a real scalar. Then we have:
+\\begin{align*}
+a(x + y) &= a(x_1, x_2 + y_2)
+\\\\
+&= (ax_1, ax_2 + ay_2)
+\\\\
+&= (ax_1, ax_2) + (ay_1, ay_2)
+\\\\
+&= a(x_1, x_2) + a(y_1, y_2)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9*. Distributive Law for Addition of Numbers. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+(a + b)x &= [(a + b)x_1, (a + b)x_2]
+\\\\
+&= (ax_1 + bx_1, ax_2 + bx_2)
+\\\\
+\\\\
+ax + bx &= (ax_1, ax_2) + (bx_1, bx_2)
+\\\\
+&= (ax_1, ax_2 + bx_2)
+\\\\
+\\\\
+(a + b)x &\\neq ax + bx
+\\end{align*}*The set violates this axiom.
+
+Axiom 10. Existence of Identity. Let $x = (x_1, x_2)$ be an element of $S$ and let $a = 1.$ Then we have
+\\begin{align*}
+1x &= 1(x_1, x_2)
+\\\\
+&= (x_1, x_2)
+\\\\
+&= x
+\\end{align*}
+(d) $$(x_1, x_2) + (y_1, y_2) = (\|x_1 + x_2\|, \|y_1 + y_2\|),\\quad a(x_1, x_2) = (\|ax_1\|, \|ax_2\|)$$
+Axiom 1. Closure Under Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then, there exists a unique element $x + y = (\|x_1 + x_2\|, \|y_1 + y_2\|)$ corresponding to the sum of $x$ and $y.$
+
+Axiom 2. Closure Under Multiplication by Real Numbers. Let $x = (x_1, x_2)$ be an element in $S$ and let $a$ be a real scalar. Then there exists an element $ax = (\|ax_1\|, \|ax_2\|)$ corresponding to the product of $a$ and $x.$
+
+Axiom 3*. Commutative Law of Addition. Let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements in $S.$ Then, we have
+\\begin{align*}
+x + y &= (\|x_1 + x_2\|, \|y_1 + y_2\|)
+\\\\
+y + x &= (\|y_1 + y_2\|, \|x_1 + x_2\|)
+\\\\
+x + y & \\neq y + x
+\\end{align*}*The set violates this axiom.
+
+Axiom 4*. Associative Law of Addition. Let $x = (x_1, x_2),$ $y = (y_1, y_2),$ and $z = (z_1, z_2)$ be elements in $S.$ Then we have
+\\begin{align*}
+(x + y) + z &= (\|x_1 + x_2\|, \|y_1 + y_2\|) + (z_1, z_2)
+\\\\
+&= (\|x_1 + x_2 + y_1 + y_2\|, \|z_1 + z_2\|)
+\\\\
+\\\\
+x + (y + z) &= (x_1, x_2) + (\|y_1 + y_2\|, \|z_1 + z_2\|)
+\\\\
+&= (\|x_1 + x_2\|, \|y_1 + y_2 + z_1 + z_2\|)
+\\\\
+\\\\
+(x + y) + z &\\neq x + (y + z)
+\\end{align*}*The set violates this axiom.
+
+Axiom 5*. Existence of the Zero Element. Suppose $x = (x_1, x_2)$ is an element in $S$ such that $x_1, x_2 < 0.$ Then, there is no element $O = (o_1, o_2)$ in $S$ such that $x + O = x$ since we have
+$$x + O = (\|x_1 + x_2\|, \|o_1 + o_2\|)$$
+implying that for any $x,$ the components of $x + O$ will always be positive. 
+*The set violates this axiom.
+
+Axiom 6*. Existence of Negative Elements. Because there is no zero element in $S$ such that $x + O = x$ for all $x$ in $S,$ there is no way to prove the existence of negative elements.
+*The set violates this axiom.
+
+Axiom 7. Associative Law of Multiplication. Let $x = (x_1, x_2)$ be an element of $S$ and let $a$ and $b$ be real scalars. Then we have
+\\begin{align*}
+a(bx) &= a(\|bx_1\|, \|bx_2\|)
+\\\\
+&= (\|abx_1\|, \|abx_2\|)
+\\\\
+&= ab(x_1, x_2)
+\\\\
+&= (ab)x
+\\end{align*}
+Axiom 8. Distributive Law for Addition in $V.$ Let $a$ be a scalar and let $x = (x_1, x_2)$ and $y = (y_1, y_2)$ be elements of $S.$ Then we have
+\\begin{align*}
+a(x + y) &= a(\|x_1 + x_2\|, \|y_1 + y_2\|)
+\\\\
+&= (\|ax_1 + ax_2\|, \|ay_1 + ay_2\|)
+\\\\
+&= ax + ay
+\\end{align*}
+Axiom 9. Distributive Law for Addition of Numbers*. Let $a$ and $b$ be real scalars and let $x = (x_1, x_2)$ be an element of $S.$ Then we have
+\\begin{align*}
+(a + b)x &= \\left[\|(a + b)x_1\|, \|(a + b)x_2\|\\right]
+\\\\
+&= \\left(\|ax_1 + bx_1\|,\|ax_2 + bx_2\|\\right)
+\\\\
+\\\\
+ax + bx &= a(x_1, x_2) + b(x_1, x_2)
+\\\\
+&=(\|ax_1\|, \|ax_2\|) + (\|bx_1\|, \|bx_2\|)
+\\\\
+&= \\left(\|ax_1 + ax_2\|, \|bx_1 + bx_2\|\\right)
+\\\\
+\\\\
+(a + b)x &\\neq ax + bx
+\\end{align*}*The set violates this axiom.
+
+Axiom 10*. Existence of Identity. Let $x = (x_1, x_2)$ and let $a = 1.$ We then have:
+\\begin{align*}
+ax &= 1x
+\\\\
+&= 1(x_1, x_2)
+\\\\
+&= (\|1 \\cdot x_1\|, \|1 \\cdot x_2\|)
+\\\\
+&= (\|x_1\|, \|x_2\|)
+\\end{align*}
+But if $x_1$ or $x_2$ is less than zero, then $1x \\neq x,$ violating the axiom.
+`,
+                  date: "2025-05-06"
+                },
+                {
+                  id: 32,
+                  number: "1.5.32",
+                  content: `Prove parts (d) through (h) of Theorem 1.3.`,
+                  hint: `Recall Theorem 1.3. (Section 1.4) $\\text{Theorem 1.3. $\\quad$}$ In any given linear space, let $x$ and $y$ denote arbitrary elements and let $a$ and $b$ denote arbitrary scalars. Then we have the following properties:
+  (a)   $0x = O$
+  (b)   $aO = O$
+  (c)   $(-a)x = -(ax) = a(-x)$
+  (d)   If $ax = O,$ then either $a = 0$ or $x = O.$
+  (e)   If $ax = ay$ and $a \\neq 0,$ then $x = y.$
+  (f)   If $ax = bx$ and $x \\neq O,$ then $a = b.$
+  (g)   $-(x + y) = (-x) + (-y) = -x - y.$
+  (h)   $x + x = 2x,$ $x + x + x = 3x,$ and in general, $\\sum_{i = 1}^n x = nx.$`,
+                  solution: `$Proof.$
+(d)   Let $ax = O.$ Then we have $x + ax = (1 + a)x = 1x.$ If $a = 0,$ then the proof is complete. If $a \\neq 0,$ then we can multiply both sides of the equation $ax = O$ by $c = 1/a$ to give us
+\\begin{align*}
+x &= cO
+\\end{align*}But we know from (b) that for any scalar $c,$ $cO = O,$ hence $x = O.$
+
+(e) We know from the associative law of multiplication that for any scalars $a$ and $b,$ we have
+\\begin{align*}
+a(bx) &= (ab)x
+\\end{align*}Now, if $a \\neq 0,$ set $b = 1/a.$ Then, if $ax = ay,$ we have
+\\begin{align*}
+b(ax) &= b(ay)
+\\\\
+(ba)x &= (ba)y
+\\\\
+(a/a)x &= (a/a)y
+\\\\
+1x &= 1y
+\\end{align*}And by the existence of identity, we conclude that if $ax = ay,$ $x = y.$
+
+(f) Suppose $ax = bx.$ Then, if we add $(-b)x$ to both sides and apply the distributive law for addition of numbers, we find that 
+\\begin{align*}
+ax + (-bx) &= (a - b)x = O
+\\end{align*}But from the proof of (d), we know that if $cx = O,$ then either $c = 0$ or $x = O.$ But since we know $x \\neq O,$ then $c = (a - b)$ must be zero. Or in other words, $a = b.$
+
+(g) From (c), we know that $-(ax) = (-a)x$ for some scalar $a$ and element $x$ in $V.$ Setting $a = -1,$ we can see that $-(x + y) = (-1)(x + y).$ But by the distributive law for addition in $V,$ we know $$(-1)(x + y) = (-1)x + (-1)y$$Applying the result of (c) once more, we can see that $(-1)x + (-1)y = 1(-x) + 1(-y).$ Using the existence of identity, the right-hand side becomes $-x - y$ giving us $$-(x + y) = (-x) + (-y) = -x - y$$
+(h) This follows as a result of inductively applying the distributive law for addition of numbers. Let $n \\geq 1$ be an integer. Then, using the existence of identity, we can write the sum $\\sum_{i = 1}^nx$ as 
+\\begin{align*} 
+\\sum_{i = 1}^n x &= 1x + \\sum_{i = 1}^{n - 1}1x
+\\\\
+\\end{align*}
+If $n \\geq 2,$ we have
+\\begin{align*}
+\\sum_{i = 1}^n x &= 1x + 1x + \\sum_{i = 1}^{n - 2}1x
+\\\\
+&= (1 + 1)x + \\sum_{i = 1}^{n - 2}1x
+\\\\
+&= 2x + \\sum_{i = 1}^{n - 2}1x
+\\end{align*}Moreover, for each integer $k \\leq n,$ we find that
+\\begin{align*}
+\\sum_{i = 1}^n x &= kx + \\sum_{i = 1}^{n - k}1x
+\\end{align*}Setting $k = n,$ we find that the rightmost sum vanishes, leaving us with 
+\\begin{align*}
+\\sum_{i = 1}^n x &= nx
+\\end{align*}
+This completes the proof.`,
+                  date: "2025-05-06"
+                }
+              ],              
+            }
+          ]
+        },
+      ]  
     },
     // {
     //   id: 2,

@@ -44,7 +44,7 @@ export const HomePage = ({ onSelectTextbook }: HomePageProps) => {
           Mathematical Immaturity
         </h1>
         <p className={styles.pageSubtitle}>
-          Push it to the limit.
+          In search of identity.
         </p>
       </div>
 
